@@ -11,58 +11,79 @@
 
 \chapter{Estado del arte}
 \label{makereference2}
-
-In this chapter, I want to refer to Chapter~\ref{makereference},
-so I'm going to use the slash ref command along with the
-"makereference" label which I assigned back at the beginning of
-Chapter 1.
-
 \section{Realidad Aumentada}
-\label{makereference2.1} I should also be able to refer to a
-specific page number, such as page~\pageref{makereference}.  Of
-course, I'll need to have a slash label command and a unique name
-in each section that I want to be able to refer to later in the
-text.
+\label{makereference2.1}
+\subsection{Tecnologías actuales}
+\label{makereference2.1.1}
+\paragraph{ARCore:}
+Plataforma creada por Google para desarrollar aplicaciones de
+ realidad aumentada con soporte para Android, Android NDK, iOS,
+ Unity y Unreal Engine. Aunque las funcionalidades que se ofrecen
+ para iOS y Unity for iOS se limitan a Cloud Anchors, los anchors
+ sirven para hacer que objetos virtuales aparezcan en un lugar
+ captado por la cámara de nuestro dispositivo estos son compartidos
+ en la nube para que multitud de dispositivos disfruten de la misma
+ experiencia, los dispositivos con iOS podrán usarlos utilizando ARKit.
+
+Tiene una curva de aprendizaje media y con su versión 1.5 demuestra una
+ estabilidad interesante respecto a su reciente creación. Cabe destacar
+ que no todos los dispositivos son compatibles, esto depende de que las
+ empresas que desarrollan estos dispositivos cumplan unos requisitos
+ para asegurar que la experiencia con ARCore es la adecuada y de la
+ versión del sistema operativo. se puede ver con más detalle en esta
+ dirección \url{https://developers.google.com/ar/discover/supported-devices}.
+
+ARCore usa tres características a través de la cámara del dispositivo:
+ \begin{itemize}  
+     \item {\bf Motion tracking} permite al dispositivo entender y rastrear la posición relativa del mundo.
+     \item {\bf Environmental understanding} permite al dispositivo detectar el tamaño y localización de todos los tipos de superficies.
+     \item {\bf Light estimation} permite al dispositivo estimar las condiciones de luz del entorno actual.
+ \end{itemize}
+
+\paragraph{ARKit:}
+Podemos utilizar experiencias de realidad aumentada persistente, compartirlas entre distintos dispositivos iOS,
+ detecta imágenes 2D incluso en movimiento y objetos 3D.
+
+\paragraph{Wikitude:}
+Kit de desarrollo para realidad aumentada con soporte para Android, iOS, Unity, Cordova, Xamarin (mala
+ documentación y versiones obsoletas), Titanium, React Native.
+Su licencia es de pago aunque hay versiones limitadas gratuitas.
+Utiliza ARCore o ARKit cuando los dispositivos lo soportan y en caso que no utiliza tecnología de Wikitude
+ para que el número de dispositivos compatibles sea mayor. 
+
+\paragraph{Vuforia:}
+Kit de desarrollo para realidad aumentada con soporte para Android, iOS, UWP y Unity.
+Software de pago solo permite usarse gratis para pruebas.
+
+\paragraph{ViroReact:}
+Plataforma para construir aplicaciones con realidad aumentada usando React Native.
+ Utiliza ARKit y ARCore para dotar a las aplicaciones de una experiencia de RA sin
+ utilizar código distinto y con una curva de aprendizaje fácil. Al basarse en React
+ Native que no tiene versión estable provoca problemas con las versiones de dependencias,
+ configuraciones tediosas y largas compilaciones.
+Es un software privativo gratuito.
+
+\paragraph{Expo AR:}
+API que permite crear aplicaciones en React Native utilizando ARKit únicamente.
+Está en una fase muy inicial.
+
+
+
 
 \section{Análisis de las necesidades del usuario}
-\label{makereference2.2} Now, I'm going to refer to different
-sections within Chapter 1. I gave an example of a figure in
-section~\ref{makereference1.1} and an example of a table in
-section~\ref{makereference1.2}.  In
-section~\ref{makereference1.3}, we looked at examples of
-bibliographic citations.
+\label{makereference2.2}
 
 \section{Entrevistas}
-\label{makereference2.3} Now, I'm going to refer to different
-sections within Chapter 1. I gave an example of a figure in
-section~\ref{makereference1.1} and an example of a table in
-section~\ref{makereference1.2}.  In
-section~\ref{makereference1.3}, we looked at examples of
-bibliographic citations.
+\label{makereference2.3}
 
 \section{Análisis de la competencia}
-\label{makereference2.4} Now, I'm going to refer to different
-sections within Chapter 1. I gave an example of a figure in
-section~\ref{makereference1.1} and an example of a table in
-section~\ref{makereference1.2}.  In
-section~\ref{makereference1.3}, we looked at examples of
-bibliographic citations.
+\label{makereference2.4}
 
 \section{Fuentes de información}
-\label{makereference2.5} Now, I'm going to refer to different
-sections within Chapter 1. I gave an example of a figure in
-section~\ref{makereference1.1} and an example of a table in
-section~\ref{makereference1.2}.  In
-section~\ref{makereference1.3}, we looked at examples of
-bibliographic citations.
+\label{makereference2.5}
 
 \section{Técnicas de recomendación}
-\label{makereference2.6} Now, I'm going to refer to different
-sections within Chapter 1. I gave an example of a figure in
-section~\ref{makereference1.1} and an example of a table in
-section~\ref{makereference1.2}.  In
-section~\ref{makereference1.3}, we looked at examples of
-bibliographic citations.
+\label{makereference2.6}
 
 
 

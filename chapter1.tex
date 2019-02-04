@@ -20,10 +20,6 @@
 %\label{ch:chapter1}
 \label{makereference}
 
-In this chapter, there will be examples of various features you
-may want to incorporate into your document. Here's an example of a
-figure inserted into the text:
-
 % +--------------------------------------------------------------------+
 % |To create cross-references to figures, tables and segments
 % |of text, LaTeX provides the following commands:
@@ -40,47 +36,6 @@ figure inserted into the text:
 % |
 % +--------------------------------------------------------------------+
 
-Here is an example of a Table:
-
-\begin{table}
-
-% +--------------------------------------------------------------------+
-% | We include the command \begin{center} to center the table
-% | horizontally on the page.  Note use of the command \end{center}
-% | to turn off centering after the table is defined.
-% +--------------------------------------------------------------------+
-    \begin{center}
-
-% +--------------------------------------------------------------------+
-% | The table is created with this command
-% |
-% | \begin{tabular}[pos]{table spec}
-% |
-% | The "pos" argument specifies the vertical position of the table relative to
-% | the baseline of the surrounding text.  Use t, b, or c to specify alignment
-% | at the top, bottom, or center.
-% |
-% | The "table spec" command defines the format of the table
-% |   l for a column of left-aligned text
-% |   r for a column of right-aligned text
-% |   c for centered text
-% |   p{width} for a column containing justified text with line breaks
-% |   | for a vertical line
-% +--------------------------------------------------------------------+
-
-    \begin{tabular}[c]{|c|c|c|}
-        \hline
-        Column 1 Heading & Column 2 Heading & Column 3 Heading \\
-        \hline
-        Col 1 Row 1 & Col 2 Row 1 & Col 3 Row 1\\
-        Col 1 Row 2 & Col 2 Row 2 & Col 3 Row 2\\
-        Col 1 Row 3 & Col 2 Row 3 & Col 3 Row 3\\
-        \hline
-    \end{tabular}
-    \caption{Caption to appear below the table}
-    \label{table1}
-   \end{center}
-\end{table}
 
 % +--------------------------------------------------------------------+
 % | Replace \section headings below with the title of your
@@ -91,23 +46,11 @@ Here is an example of a Table:
 \section{Antecedentes}
 \label{makereference1.1}
 
-In this paragraph, we want to refer to Fig.~\ref{figure1}
-mentioned at the beginning of this chapter.  We also refer to the
-Table~\ref{table1}.
-
 \section{Objetivos}
 \label{makereference1.2}
 
-In this section, we refer back to text mentioned in
-Section~\ref{makereference1.1} on page~\pageref{makereference1.1}.
-
 \section{Plan de trabajo}
 \label{makereference1.3}
-
-Here's an example of a citation to a single
-work.~\citet{CT:Weiner:1999} It's also possible to make multiple
-citations.~\citet{CT:Phillips:1985, ARP:Loy:1974}
-
 
 
 
