@@ -24,16 +24,6 @@ In this chapter, there will be examples of various features you
 may want to incorporate into your document. Here's an example of a
 figure inserted into the text:
 
-\begin{figure}[htb]%t=top, b=bottom, h=here
-
-    \includegraphics[height=2.5in]{figures/graph.png}
-
-    \caption[Optional: Short caption to appear in List of
-    Figures]{Full caption to appear below the Figure}
-
-    \label{figure1}
-\end{figure}
-
 % +--------------------------------------------------------------------+
 % |To create cross-references to figures, tables and segments
 % |of text, LaTeX provides the following commands:
@@ -98,22 +88,26 @@ Here is an example of a Table:
 % | 1.2, 1.3, etc.
 % +--------------------------------------------------------------------+
 
-\section{Making References to Figures or Tables}
+\section{Antecedentes}
 \label{makereference1.1}
 
 In this paragraph, we want to refer to Fig.~\ref{figure1}
 mentioned at the beginning of this chapter.  We also refer to the
 Table~\ref{table1}.
 
-\section{Making a Reference to a Chapter Subsection}
+\section{Objetivos}
 \label{makereference1.2}
 
 In this section, we refer back to text mentioned in
 Section~\ref{makereference1.1} on page~\pageref{makereference1.1}.
 
-\section{Making a Citation}
+\section{Plan de trabajo}
 \label{makereference1.3}
 
 Here's an example of a citation to a single
 work.~\citet{CT:Weiner:1999} It's also possible to make multiple
 citations.~\citet{CT:Phillips:1985, ARP:Loy:1974}
+
+
+
+
