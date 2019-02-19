@@ -35,58 +35,89 @@
  
 \subsection{ViroMedia} 
 \label{makereference3.6.2} 
- 
+
+\newpage
 \subsection{Vuforia + Android} 
 \label{makereference3.6.3} 
  
-En este prototipo se utilizó la librería de vuforia nativa para android, 
-el cual hicimos las pruebas de tecnología para reconocer imágenes tanto en  
-local como en la nube y después renderizar objetos y textos sobre ello.  
+\begin{flushleft}
+En este prototipo utilizamos la librería nativa de Vuforia para Android para 
+realizar las pruebas de tecnología de reconocimiento de imágenes tanto en  
+local como usando la nube que nos ofrecía Vuforia, para la posterior renderización
+de objetos y textos.
+
+Las características tecnológicas de este prototipo son las siguientes:
+\end{flushleft}
+
+\begin{enumerate}
+    \item La librería de Vuforia para android está diseñada a muy baja nivel.
+    \item Vuforia para dibujar en 3D usa la librería OpenGL.
+    \item OpenGL utiliza una serie de espacios donde se va colocando las cosas: 
+    \begin{enumerate}
+        \item \textbf{Local space}: Es el espacio local de cada objeto.
+        \item \textbf{World space}: Es el mundo donde se encuentra los objetos.
+        \item \textbf{View space}: El mundo visto desde la perspectiva de la cámara.
+        \item \textbf{Clip space}: Se integra con la pantalla del móvil y definiendo los límites visibles, se establecen unas coordenadas de rango (-1,-1) - (1,1).
+    \end{enumerate}
+    \begin{flushleft}
+        Las transformaciones de estos espacios se realizan mediante matrices 4x4, 
+        en las que la primera fila hace referencia a la coordenada x, la segunda a la coordenada y y la 
+        tercera a la coordenada z, mientras que la última columna hace referencia a los desplazamientos 
+        de los objetos en esos 3 ejes.
+        \end{flushleft}
+        
+            \break
+            \break
+        
+            \begin{figure}
+                \centering
+                \includegraphics[width=5in]{figures/space-transformation.png}
+                \caption{Esquema de los distintos espacios que usa OpenGL}
+            \end{figure}
+           
+            \break
+            \break
+        
+            \begin{figure}
+                \centering
+                \includegraphics[width=5in]{figures/teapot.png}
+                \caption{Ejemplo de un modelo en 3D}
+            \end{figure}
+    
+    \item En OpenGL es necesario escribir código para que las tarjetas gráficas rendericen el modelo 3D,
+    el lenguaje que se usa es GLSL. Este código de GLSL se escribe en forma de String y se llama a un método 
+    que proporciona OpenGL.
+    \begin{figure}
+        \centering
+        \includegraphics[width=5in]{figures/GLSL.png}
+        \caption{Código en GLSL}
+    \end{figure}
+        
+    \item Otro aspecto a tener en cuenta es que OpenGL solo ofrece lo básico, no nos ofrece métodos para dibujar 
+    directamente objetos sino que hay que seguir un pipeline de procesos para conseguir dibujar algo.
+    \newline
+    \begin{flushleft}
+    Esto consiste en pasar un array de números (cada tres para definir un punto) 
+    a las tarjetas gráficas, establecer triángulos entre los puntos (más arrays de números) 
+    definir colores a partir de los puntos (más arrays)..., y con el código del shader, ejecutar 
+    estos datos.
+    \begin{figure}
+        \centering
+        \includegraphics[width=4in]{figures/pipeline.png}
+        \caption{Pipeline de la construcción de un modelo}
+    \end{figure}
+    \end{flushleft}
+    \newpage
+    \item Por último como sólo ofrece métodos básicos, no hay métodos de escritura de texto, y la forma que 
+    encontramos y que funcione fue usar un bitmap con los caracteres. Rechazamos esto por un principal motivo, para hacer que funciones hay que codificar a muy bajo nivel y 
+    nos costaría mucho tiempo y esfuerzo.
+    \begin{figure}
+        \centering
+        \includegraphics[width=5in]{figures/bitmap-font.png}
+        \caption{Mapa de bits de caracteres usado}
+    \end{figure}
+\end{enumerate}
  
-1. La librería de vuforia para android está diseñada a muy baja nivel. 
 
-2. Vuforia para dibujar en 3D usa la librería OpenGL.
-
-3. OpenGL utiliza una serie de espacios donde se va colocando las cosas:
-
-Local space: Es el espacio local de cada objeto.
-World space: Es el mundo donde se encuentra los objetos.
-View space: El mundo visto desde la perspectiva de la cámara.
-Clip space: Se integra con la pantalla del móvil y definiendo los límites 
-visibles, se establece unas coordenadas de rango -1.0 - 1.0
-
-Las transformaciones de estos espacios se realiza mediante matrices 4x4 
-el cual la primera fila significa el punto x, la segunda el punto y y la 
-tercera z, mientras que la última columna significa los desplazamientos 
-de los objetos de esos ejes.
-
-\includegraphics[height=2.5in]{figures/space-transformation.png}
-
-\includegraphics[height=2.5in]{figures/teapot.png}
-
-3. En OpenGL es necesario escribir código para las tarjetas gráficas, el lenguaje que se usa es GLSL.
-este código de GLSL se escribe en forma de String y se llama a un método 
-que proporciona OpenGL.
-
-\includegraphics[height=2.5in]{figures/GLSL.png}
-
-4. Otro aspecto es que OpenGL solo ofrece lo básico, no ofrece métodos para dibujar directamente objetos sino 
-que hay que seguir un pipeline de procesos para conseguir dibujar algo.
-
-\includegraphics[height=2.5in]{figures/pipeline.png}
-
-Esto consiste en pasar un array de números (cada tres para definir un punto) 
-a las tarjetas gráficas, establecer triángulos entre los puntos (más array de números) 
-definir colores a partir de los puntos (más arrays)..., y con el código del shader, ejecutar 
-estos datos.
-
-5. Por último como sólo ofrece métodos básicos, no hay métodos de escritura de texto, y la forma que 
-encontramos y que funcione fue usar un bitmap con los caracteres.
-
-\includegraphics[height=2.5in]{figures/bitmap-font.png}
-
-Rechazamos esto por un principal motivo, para hacer que funciones hay que codificar a muy bajo nivel y 
-nos costaría mucho tiempo y esfuerzo.
- 
 \subsection{Vuforia + Unity} 
 \label{makereference3.6.4}
