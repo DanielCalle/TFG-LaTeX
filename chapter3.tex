@@ -33,33 +33,59 @@
 \subsection{ARCore} 
 \label{makereference3.6.1} 
  
-\subsection{ViroMedia} 
+\subsection{Viro Media} 
 \label{makereference3.6.2}
 \begin{flushleft}
-El objetivo del prototipo es reconocer imágenes almacenadas en el dispositivo y mostrar texto y
+El objetivo del prototipo es reconocer imágenes almacenadas en el dispositivo para mostrar texto y
  objetos virtuales. Además de probar tecnologías de desarrollo móvil web como en este caso \textbf{React Native}
- tanto en plataformas de \textbf{iOS} como en \textbf{Android}.
+ para plataformas \textbf{iOS} y \textbf{Android}.
 \end{flushleft}
 \begin{flushleft}
-Comenzamos con una interfaz sencilla con botones que nos llevará a la escena de RA.
+Comenzamos construyendo una interfaz sencilla con botones que nos llevan a la escena de RA.
 Para esta interfaz utilizamos \textbf{NativeBase} que es una librería que nos permite
  dar apariencia de una aplicación \textbf{iOS} y \textbf{Android} según el dispositivo.
 \end{flushleft}
+
+\begin{figure}[htb]
+    \centering
+    \makebox[0pt][c]{%
+    \begin{minipage}[b]{0.6\linewidth}
+    \centering
+      \includegraphics[scale=0.4]{figures/chapter-3/viromedia/android.png}
+      \caption{Visualización con NativeBase en Android}
+    \label{sva}
+    \end{minipage}%
+    \hspace{0.5cm}
+    \begin{minipage}[b]{0.6\linewidth}
+    \centering
+     \includegraphics[scale=0.4]{figures/chapter-3/viromedia/ios.jpg}
+      \caption{Visualización con NativeBase en iOS}
+    \label{svb}
+    \end{minipage}%
+    }%
+\end{figure}
+
 \begin{flushleft}
 Para la escena de realidad aumentada mostramos texto y al detectar el poster de Pantera Negra,
- reaciona mostrando la animación de dicho super heroe saltando del póster.
+ reaciona mostrando una animación de dicho super heroe saliendo del póster.
 \end{flushleft}
  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/chapter-3/viromedia/blackpanther.png}
+    \caption{Visualización de RA}
+\end{figure}
+
 \begin{flushleft}
-Una de las ventajas que apreciamos fue facilidad del lenguaje en este caso \textbf{Javascript}
- utilizando el popular framework \textbf{ReactJS} y la buena documentación de \textbf{ViroMedia}
- hacia que el proceso de codificación fuera agradable.
+Una de las ventajas que apreciamos fue la facilidad del lenguaje en este caso \textbf{Javascript}
+ utilizando la popular librería \textbf{ReactJS} y la buena documentación de \textbf{Viro Media}
+ que hacian que el proceso de codificación fuera agradable.
 \end{flushleft}
 \begin{flushleft}
-Uno de los problemas es que las dependencias de ViroMedia entran en conflicto con las de native base
- no habiendo forma de encontrar versiones compatibles utilizamos la ultima que a pesar de lanzar
+Uno de los problemas es que las dependencias de \textbf{Viro Media} entran en conflicto con las de \textbf{NativeBase}
+ no habiendo forma de encontrar versiones compatibles. Utilizamos las últimas que a pesar de lanzar
  advertencias funcionaba el ejemplo realizado.
-Otro problema es la compilación de la aplicación, viro media tiene una aplicación para probar la
+Otro problema es la compilación de la aplicación, \textbf{Viro Media} tiene una aplicación para probar la
  que nosotros desarrollamos conectándose a nuestro ordenador a traves de la red. El problema es
  que algunos recursos como los iconos que utilizaba \textbf{NativeBase} no eran descargados, por lo que la
  mejor forma era probar la versión compilada de \textbf{iOS} y \textbf{Android}. La forma de compilar
@@ -68,7 +94,7 @@ Otro problema es la compilación de la aplicación, viro media tiene una aplicac
 \end{flushleft}
 
 \begin{flushleft}
-La conlusión fue que \textbf{ViroMedia} y \textbf{React Native} son tecnologías muy prometedoras pero debido a los
+La conlusión fue que \textbf{Viro Media} y \textbf{React Native} son tecnologías muy prometedoras pero debido a los
  problemas surgidos y a que todas sus versiones no eran estables vimos un claro riesgo para
  nuestro proyecto.
 \end{flushleft}
