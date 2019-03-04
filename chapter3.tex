@@ -199,9 +199,36 @@ Las características tecnológicas de este prototipo son las siguientes:
     \end{enumerate}
 \end{flushleft}
 
+\subsection{Vuforia + Unity + Android} 
+\label{makereference3.6.5}
+\begin{flushleft}
+Una vez realizado el prototipo en \textbf{Vuforia} con \textbf{Unity} comenzamos a investigar como realizar el resto de la aplicación que no requería de Realidad Aumentada.
+\break
+Hasta este momento teníamos claro que \textbf{Vuforia} con \textbf{Unity} era la mejor convinación para realizar la parte de Realidad Aumentada, sin embargo, \textbf{Unity} no era igual de intuitivo ni eficaz a la hora de realizar tareas propias de una aplicación "normal", como el desarrollo de interfaces o la lógica.
+\break
+Por este motivo intentamos buscar la opción de realizar una aplicación en la que la Realidad Aumentada estuviese diseñada en \textbf{Unity} con \textbf{Vuforia} y el resto de la aplicación en Android.
+\end{flushleft}
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=1in]{figures/androidUnityVuforia.jpg}
+        \caption{Botón que comunicaba Android con Unity}
+\end{figure}
+\begin{flushleft}
+    Finalmente conseguimos tener ambos proyectos independientes, la Realidad Aumentada se desarrollaba en \textbf{Unity} con \textbf{Vuforia} y se exportaba a un proyecto Android donde se encontraba el resto de la aplicación.
+    Esto nos permitía realizar la Realidad Aumentada con la herramienta que tras las primeras tomas de contacto habíamos comprobado que era la mejor (\textbf{Unity} con \textbf{Vuforia}) y del mismo modo realizar el resto de la aplicación con la mejor herramienta para esta parte (AndroidStudio).
+\end{flushleft}
+\begin{flushleft}
+    Tras realizar este prototipo, consideramos que estas herramientas podrían ser las que usásemos en la aplicación final puesto que:
+    \begin{enumerate}
+    \item Como ya habíamos descubierto en el prototipo anterior, \textbf{Unity} era una herramienta muy completa y junto con \textbf{Vuforia} nos proporcionaban todas las herramientas necesarias para cumplir con los casos de uso de Realidad Aumentada que teníamos en mente.
+    \item Al haber encontrado la forma de combinar \textbf{Unity + Android} no teníamos que renunciar a ninguna de las dos herramientas. Lo que nos permitía explotar las cosas buenas de ambas herramientas.
+    \item La comunicación entre \textbf{Unity} y Android era relativamente sencilla pese a ser dos proyectos distintos.
+    \end{enumerate}
+\end{flushleft}
+
 \newpage
 \subsection{Server en Spring} 
-\label{makereference3.6.5}
+\label{makereference3.6.6}
 
 \begin{flushleft}
     Para la realización de la parte backend de la aplicación decidimos
