@@ -17,10 +17,57 @@
 
 \section{Escenarios}
 \label{makereference3.2}
+Antes de decidir como implementaríamos nuestra aplicación decidimos que sería importante establecer una serie
+de escenarios en los que podría ser usada. Tras esto pudimos ponernos de acuerdo en que funcionalidades incluiríamos y que 
+éstas se ajusten a las necesidades de los usuarios. Además estos escenarios deberían usar la \textbf{realidad aumentada} para que 
+les aporte valor, ya que, como hemos expuesto anteriormente en el capítulo 2, el grueso de nuestra aplicación se centra en esta tecnología.
+
+\paragraph{Escenario 1. Usando la aplicación en casa:\\}
+\begin{itemize}
+    \item Te apetece ir al cine y encuentras el cartel de una película que te interesa ver en cualquier lado (ordenador, revista, etc.), sacas tu móvil con la aplicación y 
+    la escaneas, con la realidad aumentada te saldrán los distintos paneles y botones que te facilitan información sobre la película:
+    \begin{enumerate}
+        \item Ver el tráiler.
+        \item Valoración que tiene en páginas web, como por ejemplo \textbf{IMDB}.
+        \item Botón para crear un plan para ir a ver esa película o unirte a uno que uno de tus amigos ya haya creado para esa misma película.
+        \item Botón para guardar la película en tu lista de películas guardadas.
+    \end{enumerate}
+    \item Te apetece ir al cine y has visto varias películas que te interesan, pero no sabes a cuál ir, captas todas ellas con la aplicación 
+    y para cada una de ellas tendrás las opciones anteriores más poder añadirlas a un plan ya creado, crear un nuevo plan o guardarlas.
+\end{itemize}
+
+\paragraph{Escenario 2. Usando la aplicación en la calle.\\}
+Vas por la calle y ves el anuncio de una película en cualquier sitio, ya sea en el metro, paradas de autobús, en una fachada o que simplemente pases 
+por delante de un cine. Sacas tu aplicación, escaneas dicha película y podrás hacer lo mismo que cuando estás en casa, pero si vas con prisa coge más peso 
+el guardar la película en tu lista de películas para posteriormente añadirla a un plan o poder ver la información de ésta, además de la opción de poder valorarla.
+
+
 
 \section{Requisitos funcionales}
 \label{makereference3.3}
 
+\paragraph{Planes:\\}
+
+Los planes están compuestos por una película, un usuario creador del plan, y los usuarios que se hayan unido. El plan
+es creado debido a la necesidad que tiene un usuario de querer ver una película específica con una serie de usuarios que 
+entrarán en el plan por tener interés en ver dicha película debido a su afinidad con la misma.
+\\
+\textbf{Funciones:}
+\begin{enumerate}
+    \item \textbf{Crear plan}: para crear un plan un usuario ha tenido que guardar previamente una película tras reconocerla con la cámara y al entrar a la interfaz de la información de dicha película podrá presionar el botón para crear un plan con dicha película.
+    \item \textbf{Unirse a un plan}: dependiendo de si el plan es privado o público solo podrán unirse los amigos del usuario creador del plan o cualquiera, al entrar en la interfaz que tiene la información de un plan podremos pulsar un botón para unirnos.
+    \item \textbf{Información de un plan}: simplemente con presionar en un plan podremos ver la información del mismo, es decir, la película a ver y los usuarios que se han unido.
+\end{enumerate}
+
+\paragraph{Películas guardadas:\\}
+
+Las películas guardadas son aquellas que el usuario ha decidido guardar para ver su información más tarde o para posteriormente añadirlas a un plan.
+\\
+\textbf{Funciones:}
+\begin{enumerate}
+    \item \textbf{Guardar película}: cuando un usuario reconoce una película con la cámara, le aparecerá un botón que le permitirá guardar la película como favorita, para poder ver su información posteriormente o crear un plan con ella.
+    \item \textbf{Información de una película}: un usuario puede ver la información de una película que haya guardado con presionar en la misma. Podrá ver una pequeña sinopsis, el género y el director, además de la posibilidad de poder valorarla.
+\end{enumerate} 
 \section{Interfaz de usuario}
 \label{makereference3.4}
 
