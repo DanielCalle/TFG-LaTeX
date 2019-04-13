@@ -14,7 +14,16 @@
 
 \section{Stakeholders}
 \label{makereference3.1}
-
+En este apartado hablaremos de aquellos grupos que tengan un cierto interés sobre nuestra aplicación. Cuando se planteo
+la idea de este proyecto observamos que, como su nombre indica, su dominio es el ocio, siendo en este caso en particular el mundo del cine.
+\\
+La aplicación surge de la necesidad de aquellas personas de querer ver una película acompañados, ya sea por amigos o por usuarios que tengan un gusto similar, 
+siendo la afinidad de las personas a cierta película una faceta importante de nuestra aplicación a la hora de tomar una decisión. Con esto queremos reflejar que 
+cualquier persona que posea un cierto grado de cinefilia podrá pertenecer al grupo de stakeholders.
+\\
+También podríamos incluir empresas dedicadas al sector de actividades de exhibición cinematográfica en España tales como Cinesa o Yelmo, ya que podríamos incluir 
+una forma de redirigir a la compra de entradas para una película en la que el usuario está interesado para una de las dos entidades anteriores.
+\newpage 
 \section{Escenarios}
 \label{makereference3.2}
 Antes de decidir como implementaríamos nuestra aplicación decidimos que sería importante establecer una serie
@@ -35,7 +44,7 @@ les aporte valor, ya que, como hemos expuesto anteriormente en el capítulo 2, e
     \item Te apetece ir al cine y has visto varias películas que te interesan, pero no sabes a cuál ir, captas todas ellas con la aplicación 
     y para cada una de ellas tendrás las opciones anteriores más poder añadirlas a un plan ya creado, crear un nuevo plan o guardarlas.
 \end{itemize}
-
+\newpage
 \paragraph{Escenario 2. Usando la aplicación en la calle.\\}
 Vas por la calle y ves el anuncio de una película en cualquier sitio, ya sea en el metro, paradas de autobús, en una fachada o que simplemente pases 
 por delante de un cine. Sacas tu aplicación, escaneas dicha película y podrás hacer lo mismo que cuando estás en casa, pero si vas con prisa coge más peso 
@@ -46,7 +55,7 @@ el guardar la película en tu lista de películas para posteriormente añadirla 
 \section{Requisitos funcionales}
 \label{makereference3.3}
 
-\paragraph{Planes:\\}
+\paragraph{\large Planes:\\}
 
 Los planes están compuestos por una película, un usuario creador del plan, y los usuarios que se hayan unido. El plan
 es creado debido a la necesidad que tiene un usuario de querer ver una película específica con una serie de usuarios que 
@@ -58,8 +67,8 @@ entrarán en el plan por tener interés en ver dicha película debido a su afini
     \item \textbf{Unirse a un plan}: dependiendo de si el plan es privado o público solo podrán unirse los amigos del usuario creador del plan o cualquiera, al entrar en la interfaz que tiene la información de un plan podremos pulsar un botón para unirnos.
     \item \textbf{Información de un plan}: simplemente con presionar en un plan podremos ver la información del mismo, es decir, la película a ver y los usuarios que se han unido.
 \end{enumerate}
-
-\paragraph{Películas guardadas:\\}
+\newpage
+\paragraph{\large Películas guardadas:\\}
 
 Las películas guardadas son aquellas que el usuario ha decidido guardar para ver su información más tarde o para posteriormente añadirlas a un plan.
 \\
@@ -70,7 +79,46 @@ Las películas guardadas son aquellas que el usuario ha decidido guardar para ve
 \end{enumerate} 
 \section{Interfaz de usuario}
 \label{makereference3.4}
+A continuación mostraremos las distintas interfaces de usuario de nuestra aplicación y la evolución que han ido sufriendo.
+\subsection{Interfaz de lista de planes}
+\label{makereference3.4.1}
+El objetivo de esta vista es el de mostrar los planes públicos que existen, indicando con una imagen de fondo la película para la que se creó el plan, el usuario
+que creó dicho plan y los usuarios que se han unido. La primera vista que realizamos fue la siguiente
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/PlansList1.jpg}
+    \caption{Lista de planes, primera versión}
+\end{figure}
+Podemos observar como cada elemento representa un plan, con el fondo siendo el cartel de la película, el título de la película en la esquina superior izquierda,
+debajo el nombre del usuario que lo ha creado junto con las personas que se han unido al plan.
+\\
+Tras mostrarla en una de las reuniones con los directores de nuestro TFG, nos sugirieron cambiarla debido a que no reflejaba correctamente lo que era, es decir, 
+cada plan no otorgaba la información suficiente a un usuario para que éste supiera que era un plan en sí. Por lo que posteriormente decidimos cambiar la vista
+para mostrar al usuario la estructura de un plan correctamente y así ofrecerle una mejor experiencia de usuario. 
+\\
+La siguiente figura muestra la segunda versión de nuestra lista de planes: 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/escudo.jpg}
+    \caption{Lista de planes, segunda versión}
+\end{figure}
 
+\subsection{Interfaz de lista de películas guardadas}
+\label{makereference3.4.2}
+Para mostrar las películas guardadas decidimos usar un grid que muestre solamente los carteles de las películas, es una interfaz simple pero muy visual, para acceder a la información
+de cada película simplemente debemos pulsar en uno de los carteles.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/FilmsList.jpg}
+    \caption{Lista de películas guardadas}
+\end{figure}
+En la figura 3.3 podemos observar que el usuario solo ha guardado 2 películas, si se guardaran más irían apareciendo al lado de las que ya están o pasarían debajo en cuanto una 
+fila tuviera 3 elementos, elegimos este tamaño para que pudieran verse correctamente los carteles y los títulos de las películas.
+\subsection{Interfaz principal}
+\label{makereference3.4.3}
+En la figura 3.3 también vemos como es la interfaz principal, con una barra en la parte inferior para movernos por las 3 secciones de nuestra aplicación: \textbf{mis planes} , \textbf{recomendaciones}, \textbf{mis películas}.
+Cada sección incluye un icono para apoyar a la representación.
+Además encontramos un botón con un símbolo de una cámara en todas las secciones que nos permitirá acceder a la parte de \textbf{Realidad Aumentada}
 \section{Sistema de recomendación}
 \label{makereference3.5}
 
