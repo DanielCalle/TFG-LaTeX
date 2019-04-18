@@ -77,8 +77,10 @@ Las películas guardadas son aquellas que el usuario ha decidido guardar para ve
     \item \textbf{Guardar película}: cuando un usuario reconoce una película con la cámara, le aparecerá un botón que le permitirá guardar la película como favorita, para poder ver su información posteriormente o crear un plan con ella.
     \item \textbf{Información de una película}: un usuario puede ver la información de una película que haya guardado con presionar en la misma. Podrá ver una pequeña sinopsis, el género y el director, además de la posibilidad de poder valorarla.
 \end{enumerate} 
+
 \section{Interfaz de usuario}
 \label{makereference3.4}
+
 A continuación mostraremos las distintas interfaces de usuario de nuestra aplicación y la evolución que han ido sufriendo.
 \subsection{Interfaz de lista de planes}
 \label{makereference3.4.1}
@@ -119,6 +121,38 @@ fila tuviera 3 elementos, elegimos este tamaño para que pudieran verse correcta
 En la figura 3.3 también vemos como es la interfaz principal, con una barra en la parte inferior para movernos por las 3 secciones de nuestra aplicación: \textbf{mis planes} , \textbf{recomendaciones}, \textbf{mis películas}.
 Cada sección incluye un icono para apoyar a la representación.
 Además encontramos un botón con un símbolo de una cámara en todas las secciones que nos permitirá acceder a la parte de \textbf{Realidad Aumentada}
+
+\subsection{Interfaz de realidad aumentada al reconocer una película}
+\label{makereference3.4.4}
+En esta interfaz destacamos los distintos componentes que aparecen al usar la cámara de nuestro teléfono y reconocer el cartel de una película.
+Lo primero que podemos observar al entrar a la intefaz de realidad aumentada es una especie de simulación de un escáner que se superpone a lo que vemos con la
+cámara del teléfono, incitando así al usuario a reconocer algo con la cámara, esto lo podemos ver en la figura 3.4.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/escudo.jpg}
+    \caption{Escáner}
+\end{figure}
+
+Cuando reconocemos un cartel, sobre la imagen de la película nos aparecerá en la parte superior una valoración numérica de la película, la cual la hemos 
+sacado de \textbf{IMDB}. justo en el medio de la imagen encontramos el icono típico de \textbf{Youtube} que, al pulsarlo, nos abrirá nuestra aplicación de \textbf{Youtube} para que
+el usuario pueda ver el trailer de esta película. En la esquina inferior derecha encontramos otro icono que al ser pulsado lo que hará será desplegar una serie de botones con distinta funcionalidad,
+uno de ellos nos redirige a la información de la película en \textbf{IMDB}, que sería el icono representado por una letra \textbf{i}, el otro botón representado por una mano con un pulgar hacia arriba nos permitirá
+guardar la película en nuestra lista de películas guardadas, para posteriormente acceder a su información, valorarla o crear un plan con ella. Todo esto lo podemos observar en la figura 3.5.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/escudo.jpg}
+    \caption{Realidad aumentada tras reconocer una película}
+\end{figure}
+
+\subsection{Interfaz de realidad aumentada al reconocer a un usuario}
+\label{makereference3.4.5}
+
+Cuando reconocemos a un usuario de la aplicación con la cámara de nuestro dispositivo se pueden dar dos casos, que sea amigo del usuario que lo está reconociendo o que todavía no lo sea.
+Si no es un amigo nos aparecerá cerca de su imagen, concretamente en la esquina inferior derecha, un icono para añadirle como amigo. Una vez que ese usuario que se ha reconocido se convierte
+en amigo del que está usando la cámara del dispositivo, junto a la imagen del usuario en su parte inferior hemos decidido mostrar 3 películas --------------
 \section{Sistema de recomendación}
 \label{makereference3.5}
 
