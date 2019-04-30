@@ -101,10 +101,12 @@ para mostrar al usuario la estructura de un plan correctamente y así ofrecerle 
 La siguiente figura muestra la segunda versión de nuestra lista de planes: 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=3in]{figures/escudo.jpg}
+    \includegraphics[width=3in]{figures/planslist2.jpg}
     \caption{Lista de planes, segunda versión}
 \end{figure}
-
+Podemos observar como ahora aparece la fecha para la que es el plan en la parte superior izquierda, justo debajo el título de la película que se quiere ver, arriba a la derecha el número del plan, algo simple pero que nos indica
+claramente lo que representa este elemento.
+El cambio más significativo es que, ahora en la parte inferior aparecen las fotos de los usuarios que se han unido al plan.
 \subsection{Interfaz de lista de películas guardadas}
 \label{makereference3.4.2}
 Para mostrar las películas guardadas decidimos usar un grid que muestre solamente los carteles de las películas, es una interfaz simple pero muy visual, para acceder a la información
@@ -130,7 +132,7 @@ cámara del teléfono, incitando así al usuario a reconocer algo con la cámara
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=3in]{figures/escudo.jpg}
+    \includegraphics[width=3in]{figures/escaner.jpg}
     \caption{Escáner}
 \end{figure}
 
@@ -138,14 +140,18 @@ Cuando reconocemos un cartel, sobre la imagen de la película nos aparecerá en 
 sacado de \textbf{IMDB}. justo en el medio de la imagen encontramos el icono típico de \textbf{Youtube} que, al pulsarlo, nos abrirá nuestra aplicación de \textbf{Youtube} para que
 el usuario pueda ver el trailer de esta película. En la esquina inferior derecha encontramos otro icono que al ser pulsado lo que hará será desplegar una serie de botones con distinta funcionalidad,
 uno de ellos nos redirige a la información de la película en \textbf{IMDB}, que sería el icono representado por una letra \textbf{i}, el otro botón representado por una mano con un pulgar hacia arriba nos permitirá
-guardar la película en nuestra lista de películas guardadas, para posteriormente acceder a su información, valorarla o crear un plan con ella. Todo esto lo podemos observar en la figura 3.5.
-
-
+guardar la película en nuestra lista de películas guardadas, para posteriormente acceder a su información, valorarla o crear un plan con ella. Todo esto lo podemos observar en la figura 3.5 y 3.6.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=3in]{figures/escudo.jpg}
+    \includegraphics[width=3in]{figures/filmrecognized1.jpg}
     \caption{Realidad aumentada tras reconocer una película}
 \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/filmrecognized2.jpg}
+    \caption{Realidad aumentada tras reconocer una película}
+\end{figure}
+
 
 \subsection{Interfaz de realidad aumentada al reconocer a un usuario}
 \label{makereference3.4.5}
@@ -178,16 +184,16 @@ realizar una aplicación con apariencias de tipo \textbf{iOS} o \textbf{Android}
 \begin{figure}[htb]
     \centering
     \makebox[0pt][c]{%
-    \begin{minipage}[b]{0.6\linewidth}
+    \begin{minipage}[b]{0.5\linewidth}
     \centering
-      \includegraphics[scale=0.4]{figures/chapter-3/viromedia/android.png}
+      \includegraphics[scale=0.3]{figures/chapter-3/viromedia/android.png}
       \caption{Visualización con NativeBase en Android}
     \label{sva}
     \end{minipage}%
-    \hspace{0.5cm}
-    \begin{minipage}[b]{0.6\linewidth}
+    \hspace{0.3cm}
+    \begin{minipage}[b]{0.5\linewidth}
     \centering
-     \includegraphics[scale=0.4]{figures/chapter-3/viromedia/ios.jpg}
+     \includegraphics[scale=0.3]{figures/chapter-3/viromedia/ios.jpg}
       \caption{Visualización con NativeBase en iOS}
     \label{svb}
     \end{minipage}%
