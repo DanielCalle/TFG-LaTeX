@@ -113,7 +113,7 @@ Para mostrar las películas guardadas decidimos usar un grid que muestre solamen
 de cada película simplemente debemos pulsar en uno de los carteles.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=3in]{figures/FilmsList.jpg}
+    \includegraphics[height=5in]{figures/FilmsList.jpg}
     \caption{Lista de películas guardadas}
 \end{figure}
 En la figura 3.3 podemos observar que el usuario solo ha guardado 2 películas, si se guardaran más irían apareciendo al lado de las que ya están o pasarían debajo en cuanto una 
@@ -152,13 +152,33 @@ guardar la película en nuestra lista de películas guardadas, para posteriormen
     \caption{Realidad aumentada tras reconocer una película}
 \end{figure}
 
-
+\newpage
 \subsection{Interfaz de realidad aumentada al reconocer a un usuario}
 \label{makereference3.4.5}
 
 Cuando reconocemos a un usuario de la aplicación con la cámara de nuestro dispositivo se pueden dar dos casos, que sea amigo del usuario que lo está reconociendo o que todavía no lo sea.
 Si no es un amigo nos aparecerá cerca de su imagen, concretamente en la esquina inferior derecha, un icono para añadirle como amigo. Una vez que ese usuario que se ha reconocido se convierte
 en amigo del que está usando la cámara del dispositivo, junto a la imagen del usuario en su parte inferior hemos decidido mostrar 3 películas --------------
+
+\subsection{Interfaz de inicio de sesión y de registro}
+\label{makereference3.4.6}
+
+Nos aparecerá una interfaz muy simple para realizar el inicio de sesión con un usuario en la aplicación al entrar. También nos permite registrarnos como usuarios si
+aun no poseemos una cuenta en la aplicación.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4in]{figures/login.jpg}
+    \caption{Inicio de sesión}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4in]{figures/register.jpg}
+    \caption{Registro}
+\end{figure}
+
+\subsection{Interfaz de recomendaciones}
+\label{makereference3.4.7}
 \section{Sistema de recomendación}
 \label{makereference3.5}
 
@@ -168,13 +188,20 @@ en amigo del que está usando la cámara del dispositivo, junto a la imagen del 
 \subsection{ARCore} 
 \label{makereference3.6.1} 
 \begin{flushleft}
-    Al comenzar la fase de desarrollo de proyectos, pensamos que una de las tecnologías que debíamos investigar y probar debía ser \textbf{ARCore}. Esto se debía a que, la empresa detrás de esta tecnología es \textbf{Google} y esto podría significar que tendríamos más material de consulta y ejemplos en comparación con otras tecnologías de fabricantes con menos recursos.
-    ArCore se encuentra disponible para Java, Unity, Unreal e iOS. Comenzamos realizando el "Quickstart" para Android y posteriormente para Unity. 
-    Tras realizar los proyectos propuestos por \textbf{ARCore}, realizamos algún proyecto propio para comprobar si la herramienta se ajustaba a la idea que teníamos para nuestro futuro proyecto.
-    Tras realizar ambos proyectos, concluimos que, aunque \textbf{ARCore} reúne las características necesarias para en un futuro convertirse en una de las tecnologías más importantes en Realidad Aumentada, no íbamos a seleccionarla para nuestro proyecto por las siguientes razones:
+    Al comenzar la fase de desarrollo de proyectos, pensamos que una de las tecnologías que debíamos 
+    investigar y probar debía ser \textbf{ARCore}. Esto se debía a que, la empresa detrás de esta 
+    tecnología es \textbf{Google} y esto podría significar que tendríamos más material de consulta 
+    y ejemplos en comparación con otras tecnologías de fabricantes con menos recursos.
+    \textbf{ARCore} se encuentra disponible para \textbf{Java}, \textbf{Unity}, \textbf{Unreal} e \textbf{iOS}. Comenzamos realizando el 
+    "Quickstart" para \textbf{Android} y posteriormente para \textbf{Unity}. 
+    Tras realizar los proyectos propuestos por \textbf{ARCore}, realizamos algún proyecto propio 
+    para comprobar si la herramienta se ajustaba a la idea que teníamos para nuestro futuro proyecto.
+    Tras realizar ambos proyectos, concluimos que, aunque \textbf{ARCore} reúne las características 
+    necesarias para en un futuro convertirse en una de las tecnologías más importantes en Realidad Aumentada, 
+    no íbamos a seleccionarla para nuestro proyecto por las siguientes razones:
     \begin{enumerate}
         \item \textbf{ARCore} dispone de mucha documentación para comenzar a usar la herramienta, pero poca para realizar tareas más complejas
-        \item \textbf{ARCore} resulta muy útil para realizar superposiciones de modelos 3D sobre superficies, sin embargo, una de las funcionalidades más importantes que nuestra aplicación requería era la interacción con la realidad aumentada mediante el uso de botones, imágenes y la carga dinámica de elementos para posicionar en la pantalla de Realidad Aumentada e interaccionar con el usuario. En este sentido ArCore no está, por el momento, tan preparada como otras tecnologías.
+        \item \textbf{ARCore} resulta muy útil para realizar superposiciones de modelos 3D sobre superficies, sin embargo, una de las funcionalidades más importantes que nuestra aplicación requería era la interacción con la realidad aumentada mediante el uso de botones, imágenes y la carga dinámica de elementos para posicionar en la pantalla de Realidad Aumentada e interaccionar con el usuario. En este sentido \textbf{ARCore} no está, por el momento, tan preparada como otras tecnologías.
     \end{enumerate}
     
 \end{flushleft}
