@@ -41,6 +41,73 @@ Al principio hicimos que las dos partes realizaran las peticiones en sus respect
 Además, en un principio, las imágenes que mostramos en la parte de \textbf{Android} se almacenan en \textbf{Google Drive} y mediante la librería de \textbf{Picasso} las obtenemos en tiempo de ejecución, esto se ha implementado de esta forma por la misma razón por la que tenemos las imágenes a reconocer en un \textbf{Cloud}.
 Finalmente, debido al coste en tiempo de esta operación y tras debatirlo con nuestros directores del Trabajo de Fin de Grado, hemos decidido guardar dichas imágenes en el mismo servidor para su rápida obtención.
 
+Nuestra aplicación consiste en dos grandes bloques, el primer bloque está implementada en Unity, cuya función es satisfacer todas las necesitades que necesita la aplicación para realizar los servicios relacionados con la RA, lo podemos describir como una librería incrustada dentro de la aplicación. El 
+segundo bloque, más grande está implementada en Android Studio, esta parte se encarga de todos los demás. 
+
+Como la mayor parte de la aplicación está implementada en Android Studio, la estructura de ésta se adapta a lo que ofrece la IDE, consiste en el flujo de unas actividades y fragmentos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/chapter-4/android_project_structure.png}
+    \caption{Estructura de ficheros del proyecto android}
+\end{figure}
+
+\subsection{Activities}
+\label{makereference4.3.1}
+Componentes de la aplicación que contiene una pantalla con la que los usuarios pueden interactuar para realizar una acción.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/chapter-4/activity_lifecycle.png}
+    \caption{Ciclo de vida de una actividad}
+\end{figure}
+
+En esta carpeta, podemos destacar dos activities: \textbf{MainActivity:} La primera actividad que se activa al iniciar la aplicación es la que llamamos MainActivity, el cual comprueba el estado de sesión del usuario, si está logueado, se queda en la actividad, y si no se redirige a otra actividad (LoginActivity). En la MainActivity se encuentra un paginador (ViewPager) de fragmentos (3), el cual son las interfaces de planes, 
+recomendaciones y películas guardadas. \textbf{UnityPlayerActivity:} Se trata de una actividad especial, pues es lo que usa Unity para establecer conexión con un proyecto android. Aquí se encuentran llamadas (funciones) que reciben de la parte de Unity, se realizan las ordenes y se devuelven.
+
+\subsection{Adapters}
+\label{makereference4.3.2} 
+Son elementos de manipulación de datos que se aplican a vistas y componentes. En el proyecto se han dado mucho de uso a una vista llamada \textbf{RecyclerView} (para representar listas de objetos). Para manejar los datos de cada elemento de la lista, se ha utilizado \textbf{RecyclerView.Adapter} el cual manipula cada dato correspondiente a un elemento de la lista. También se han creado otros adaptadores como un adaptador para manejar tres fragmentos dentro de una actividad (MainActivity).
+
+\subsection{Commands}
+\label{makereference4.3.3}
+Aquí se encuentran todos los elementos relacionados con el patrón comando, y está diseñado para la conexión con la parte del proyecto de Unity, el cual si se recibe una orden de ejecución desde Unity.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/chapter-4/command_pattern.png}
+    \caption{Patrón comando}
+\end{figure}
+
+Este patrón permite solicitar una operación a un objeto sin conocer realmente el contenido de esta operación, ni el receptor real de la misma. Para ello se encapsula la petición como un objeto, con lo que además facilita la parametrización de los métodos.
+
+La implementación de este patrón consiste en crear una interfaz en el cual las demás clases (comandos) las implementa. La interfaz tiene dos funciones: \textbf{execute} para ejecutar la tarea y \textbf{action} para comprobar si este commando es el indicado para ejecutar la tarea. Por otro 
+lado está una clase llamada CommandParser, el encargado de buscar el commando apropiado para su ejecución.
+
+\subsection{Entities}
+\label{makereference4.3.4}
+Todos los modelos de datos que podemos recibir del servidor como planes, películas, usuarios, etc.
+
+\subsection{Fragments}
+\label{makereference4.3.5}
+Representan un comportamiento o una parte de la interfaz de usuario en una actividad.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/chapter-4/fragment_lifecycle.png}
+    \caption{Ciclo de vida de un fragmento}
+\end{figure}
+
+Se utilizan para formar una vista compuesta de paginación en una actividad. 
+
+\subsection{Services}
+\label{makereference4.3.6}
+Se tratan de un conjunto de clases que solo tienen métodos estáticos para establecer peticiones HTTP al servidor. Se ha creado una clase genérica para la creación y llamada de peticiones HTTP, se ha diseñado de la manera que las respuestas se devuelven en forma de \textbf{callback} para un uso más fácil.
+
+\subsection{Views}
+\label{makereference4.3.7}
+Entre los componentes que ofrecen android hay algunas funcionalidades que no soportan. Entonces se crean componentes customizados para satisfacer a estas funcionalidades.
+
 \section{Dificultades encontradas}
 \label{makereference4.4}
 A continuación, mostraremos una lista de todas las dificultades encontradas a la hora de implementar nuestra aplicación:
