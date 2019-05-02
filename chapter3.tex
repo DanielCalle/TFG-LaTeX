@@ -14,7 +14,7 @@
 
 \section{Stakeholders}
 \label{makereference3.1}
-En este apartado hablaremos de aquellos grupos que tengan un cierto interés sobre nuestra aplicación. Cuando se planteo
+En este apartado hablaremos de aquellos grupos que tengan un cierto interés sobre nuestra aplicación. Cuando se planteó
 la idea de este proyecto observamos que, como su nombre indica, su dominio es el ocio, siendo en este caso en particular el mundo del cine.
 \\
 La aplicación surge de la necesidad de aquellas personas de querer ver una película acompañados, ya sea por amigos o por usuarios que tengan un gusto similar, 
@@ -28,7 +28,7 @@ una forma de redirigir a la compra de entradas para una película en la que el u
 \label{makereference3.2}
 Antes de decidir como implementaríamos nuestra aplicación decidimos que sería importante establecer una serie
 de escenarios en los que podría ser usada. Tras esto pudimos ponernos de acuerdo en que funcionalidades incluiríamos y que 
-éstas se ajusten a las necesidades de los usuarios. Además estos escenarios deberían usar la \textbf{realidad aumentada} para que 
+éstas se ajusten a las necesidades de los usuarios. Además, estos escenarios deberían usar la \textbf{realidad aumentada} para que 
 les aporte valor, ya que, como hemos expuesto anteriormente en el capítulo 2, el grueso de nuestra aplicación se centra en esta tecnología.
 
 \paragraph{Escenario 1. Usando la aplicación en casa:\\}
@@ -122,12 +122,12 @@ fila tuviera 3 elementos, elegimos este tamaño para que pudieran verse correcta
 \label{makereference3.4.3}
 En la figura 3.3 también vemos como es la interfaz principal, con una barra en la parte inferior para movernos por las 3 secciones de nuestra aplicación: \textbf{mis planes} , \textbf{recomendaciones}, \textbf{mis películas}.
 Cada sección incluye un icono para apoyar a la representación.
-Además encontramos un botón con un símbolo de una cámara en todas las secciones que nos permitirá acceder a la parte de \textbf{Realidad Aumentada}
+Además, encontramos un botón con un símbolo de una cámara en todas las secciones que nos permitirá acceder a la parte de \textbf{Realidad Aumentada}
 
 \subsection{Interfaz de realidad aumentada al reconocer una película}
 \label{makereference3.4.4}
 En esta interfaz destacamos los distintos componentes que aparecen al usar la cámara de nuestro teléfono y reconocer el cartel de una película.
-Lo primero que podemos observar al entrar a la intefaz de realidad aumentada es una especie de simulación de un escáner que se superpone a lo que vemos con la
+Lo primero que podemos observar al entrar a la interfaz de realidad aumentada es una especie de simulación de un escáner que se superpone a lo que vemos con la
 cámara del teléfono, incitando así al usuario a reconocer algo con la cámara, esto lo podemos ver en la figura 3.4.
 
 \begin{figure}[H]
@@ -138,7 +138,7 @@ cámara del teléfono, incitando así al usuario a reconocer algo con la cámara
 
 Cuando reconocemos un cartel, sobre la imagen de la película nos aparecerá en la parte superior una valoración numérica de la película, la cual la hemos 
 sacado de \textbf{IMDB}. justo en el medio de la imagen encontramos el icono típico de \textbf{Youtube} que, al pulsarlo, nos abrirá nuestra aplicación de \textbf{Youtube} para que
-el usuario pueda ver el trailer de esta película. En la esquina inferior derecha encontramos otro icono que al ser pulsado lo que hará será desplegar una serie de botones con distinta funcionalidad,
+el usuario pueda ver el tráiler de esta película. En la esquina inferior derecha encontramos otro icono que al ser pulsado lo que hará será desplegar una serie de botones con distinta funcionalidad,
 uno de ellos nos redirige a la información de la película en \textbf{IMDB}, que sería el icono representado por una letra \textbf{i}, el otro botón representado por una mano con un pulgar hacia arriba nos permitirá
 guardar la película en nuestra lista de películas guardadas, para posteriormente acceder a su información, valorarla o crear un plan con ella. Todo esto lo podemos observar en la figura 3.5 y 3.6.
 \begin{figure}[H]
@@ -164,7 +164,7 @@ en amigo del que está usando la cámara del dispositivo, junto a la imagen del 
 \label{makereference3.4.6}
 
 Nos aparecerá una interfaz muy simple para realizar el inicio de sesión con un usuario en la aplicación al entrar. También nos permite registrarnos como usuarios si
-aun no poseemos una cuenta en la aplicación.
+aún no poseemos una cuenta en la aplicación.
 
 \begin{figure}[H]
     \centering
@@ -251,7 +251,7 @@ Para la escena de Realidad Aumentada mostramos texto y al detectar el póster de
 \begin{flushleft}
 Una de las ventajas que apreciamos fue la facilidad del lenguaje, en este caso \textbf{Javascript},
  utilizando la popular librería \textbf{ReactJS} y la buena documentación de \textbf{Viro Media}
- que hacian que el proceso de codificación fuera agradable.
+ que hacían que el proceso de codificación fuera agradable.
 \end{flushleft}
 \begin{flushleft}
 Uno de los problemas que presentaba este prototipo era que las dependencias de \textbf{Viro Media} entraban en conflicto con las de \textbf{NativeBase}
@@ -266,7 +266,7 @@ Otro problema fue la compilación de la aplicación, \textbf{Viro Media} tiene u
 \end{flushleft}
 
 \begin{flushleft}
-La conlusión que obtuvimos de este prototipo fue que \textbf{Viro Media} y \textbf{React Native} son tecnologías muy prometedoras, pero debido a los
+La conclusión que obtuvimos de este prototipo fue que \textbf{Viro Media} y \textbf{React Native} son tecnologías muy prometedoras, pero debido a los
  problemas surgidos y a que todas sus versiones no eran estables vimos un claro riesgo para
  nuestro proyecto.
 \end{flushleft}
@@ -325,7 +325,7 @@ Las características tecnológicas de este prototipo son las siguientes:
     \end{figure}
         
     \item Otro aspecto a tener en cuenta es que \textbf{OpenGL} solo nos ofrece lo básico, no nos ofrece métodos para dibujar 
-    directamente objetos sino que hay que seguir un pipeline de procesos para conseguir dibujar algo.
+    directamente objetos, sino que hay que seguir un pipeline de procesos para conseguir dibujar algo.
     \newline
     \begin{flushleft}
     Esto consiste en pasar un \textbf{array} de números (cada tres para definir un punto) 
@@ -339,7 +339,7 @@ Las características tecnológicas de este prototipo son las siguientes:
     \end{figure}
     \end{flushleft}
     \newpage
-    \item Por último como sólo ofrece métodos básicos, no hay métodos de escritura de texto, y la forma que 
+    \item Por último, como sólo ofrece métodos básicos, no hay métodos de escritura de texto, y la forma que 
     encontramos y que funcione fue usar un bitmap con los caracteres. Rechazamos esto por un principal motivo, para hacer que funciones hay que codificar a muy bajo nivel y 
     nos costaría mucho tiempo y esfuerzo.
     \begin{figure}
@@ -374,9 +374,9 @@ Las características tecnológicas de este prototipo son las siguientes:
 \subsection{Vuforia + Unity + Android} 
 \label{makereference3.6.5}
 \begin{flushleft}
-Una vez realizado el prototipo en \textbf{Vuforia} con \textbf{Unity} comenzamos a investigar como realizar el resto de la aplicación que no requería de Realidad Aumentada.
+Una vez realizado el prototipo en \textbf{Vuforia} con \textbf{Unity} comenzamos a investigar cómo realizar el resto de la aplicación que no requería de Realidad Aumentada.
 \break
-Hasta este momento teníamos claro que \textbf{Vuforia} con \textbf{Unity} era la mejor convinación para realizar la parte de Realidad Aumentada, sin embargo, \textbf{Unity} no era igual de intuitivo ni eficaz a la hora de realizar tareas propias de una aplicación "normal", como el desarrollo de interfaces o la lógica.
+Hasta este momento teníamos claro que \textbf{Vuforia} con \textbf{Unity} era la mejor combinación para realizar la parte de Realidad Aumentada, sin embargo, \textbf{Unity} no era igual de intuitivo ni eficaz a la hora de realizar tareas propias de una aplicación "normal", como el desarrollo de interfaces o la lógica.
 \break
 Por este motivo intentamos buscar la opción de realizar una aplicación en la que la Realidad Aumentada estuviese diseñada en \textbf{Unity} con \textbf{Vuforia} y el resto de la aplicación en Android.
 \end{flushleft}
@@ -421,7 +421,7 @@ Por este motivo intentamos buscar la opción de realizar una aplicación en la q
     \end{figure}
 \break
 \break
-    También se investigaron distintas formas de realizar el acceso a la base de datos desde el servidor pero finalmente nos decantamos por usar la
+    También se investigaron distintas formas de realizar el acceso a la base de datos desde el servidor, pero finalmente nos decantamos por usar la
     clase \textbf{JPARepository} o \textbf{CRUDRepository}, las cuales nos ofrecen ya implementados los métodos típicos de las operaciones \textbf{CRUD}, además de la opción 
     de poder crear nuestros propios métodos.
 \end{flushleft}

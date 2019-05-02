@@ -20,7 +20,7 @@ Según el enlace de Wikipedia: \url{https://es.wikipedia.org/wiki/Realidad_aumen
 usa para describir al conjunto de tecnologías que permiten que un usuario visualice parte de mundo real a través de un dispositivo tecnológico 
 con información gráfica añadida por éste dispositivo. Este dispositivo o conjunto de dispositivos, añaden información virtual a la información 
 física ya existente; es decir, una parte sintética virtual a la real. Podemos estar de acuerdo en que es una tecnología en auge actualmente, sobre todo 
-en el uso de los \textbf{smartphone} ya que prácticamente todas las personas poseen uno. Esta tecnología nos permite añadir un valor importante a 
+en el uso de los \textbf{smartphones} ya que prácticamente todas las personas poseen uno. Esta tecnología nos permite añadir un valor importante a 
 nuestra aplicación, por lo que consideramos que el grueso de nuestro proyecto se centra en ella. Los casos de uso más importantes de nuestra aplicación 
 usarán la \textbf{realidad aumentada} para proveer al usuario de información adicional y de gran relevancia de las imágenes que reconozca, ya sean carteles
 de películas o caras de usuarios que usen la aplicación.
@@ -58,8 +58,8 @@ Podemos utilizar experiencias de realidad aumentada persistente, compartirlas en
 \paragraph{Wikitude:}
 Kit de desarrollo para realidad aumentada con soporte para Android, iOS, Unity, Cordova, Xamarin (mala
  documentación y versiones obsoletas), Titanium, React Native.
-Su licencia es de pago aunque hay versiones limitadas gratuitas.
-Utiliza ARCore o ARKit cuando los dispositivos lo soportan y en caso que no utiliza tecnología de Wikitude
+Su licencia es de pago, aunque hay versiones limitadas gratuitas.
+Utiliza ARCore o ARKit cuando los dispositivos lo soportan y en caso de que no utiliza tecnología de Wikitude
  para que el número de dispositivos compatibles sea mayor. 
 
 \paragraph{Vuforia:}
@@ -81,18 +81,26 @@ Está en una fase muy inicial.
 \section{Análisis de la competencia}
 \label{makereference2.2}
 \begin{flushleft}
-    Consideramos que la aplicación que hemos diseñado consta de dos partes claramente diferenciadas (la parte de \textbf{Realidad Aumentada} y la parte de \textbf{Recomendación y gestión} de películas), consideramos que existen distintos tipos de competencia dependiendo de cada una de ellas.
+    Consideramos que la aplicación que hemos diseñado consta de dos partes claramente diferenciadas (la parte de \textbf{Realidad Aumentada} 
+    y la parte de \textbf{Recomendación y gestión} de películas), consideramos que existen distintos tipos de competencia dependiendo de cada una de ellas.
      \begin{itemize}  
-         \item En la parte de recomendación y gestión de películas, compite claramente con aplicaciones como \textbf{IMDB} o \textbf{MovieBase}. Estas aplicaciones proporcionan, herramientas para guardar películas y recomendar éstas a los usuarios en función de sus gustos. Estas funcionalidades son muy parecidas a las que nosotros hemos decidido proporcionar a nuestros usuarios, con la diferencia que nuestra aplicación, además de las funcionalidades anteriormente mencionadas, permite realizar más acciones sobre las películas como crear planes con amigos.
-        \item A diferencia de la parte de recomendación y gestión en donde hay una gran variedad de aplicaciones que ofrecen servicios parecidos a los nuestros, únicamente hemos encontrado una aplicación (\textbf{Paramount AR+}) que ofrezca servicios parecidos a los nuestros relacionados con Realidad Aumentada. Según las especificaciones de la aplicación permite identificar pósteres y mostrar información sobre la película detectada, servicio muy parecido al que nosotros hemos proporcionado. 
+         \item En la parte de recomendación y gestión de películas, compite claramente con aplicaciones como \textbf{IMDB} o \textbf{MovieBase}. 
+         Estas aplicaciones proporcionan, herramientas para guardar películas y recomendar éstas a los usuarios en función de sus gustos. Estas funcionalidades son 
+         muy parecidas a las que nosotros hemos decidido proporcionar a nuestros usuarios, con la diferencia que nuestra aplicación, además de las funcionalidades anteriormente 
+         mencionadas, permite realizar más acciones sobre las películas como crear planes con amigos.
+        \item A diferencia de la parte de recomendación y gestión en donde hay una gran variedad de aplicaciones que ofrecen servicios parecidos a los nuestros, únicamente hemos 
+        encontrado una aplicación (\textbf{Paramount AR+}) que ofrezca servicios parecidos a los nuestros relacionados con Realidad Aumentada. Según las especificaciones de la aplicación permite identificar pósteres y 
+        mostrar información sobre la película detectada, servicio muy parecido al que nosotros hemos proporcionado. 
     \end{itemize}
-    Para intentar alejarnos de esta competencia, hemos decidido unir ambas funcionalidades en una aplicación y, además, proporcionar al usuario más funcionalidades como escanear una aplicación con Realidad Aumentada, ver su información y añadirla a un plan con amigos para ver dicha película. Para funcionalidades como ésta y otras en las que unimos la realidad aumentada con la recomendación de películas y gestión de planes no hemos encontrado actualmente ninguna aplicación que proporcione estos servicios.
+    Para intentar alejarnos de esta competencia, hemos decidido unir ambas funcionalidades en una aplicación y, además, proporcionar al usuario más funcionalidades como escanear una aplicación con Realidad Aumentada, 
+    ver su información y añadirla a un plan con amigos para ver dicha película. Para funcionalidades como ésta y otras en las que unimos la realidad aumentada con la recomendación de películas y gestión de planes no hemos encontrado actualmente ninguna aplicación que proporcione estos servicios.
     \\
-    Además, una funcionalidad nuestra aplicación proporciona y no hemos encontrado otra que lo haga es la gestión de amigos con Realidad Aumentada. Como que al enfocar con la cámara a un amigo y que en la misma pantalla de realidad Aumentada muestre visualmente la información de los tres planes activos que tiene mi amigo que más podrían gustarme y cuanto se estima que me gustaría ese plan.
+    Además, una funcionalidad nuestra aplicación proporciona y no hemos encontrado otra que lo haga es la gestión de amigos con Realidad Aumentada. 
+    Como que al enfocar con la cámara a un amigo y que en la misma pantalla de realidad Aumentada muestre visualmente la información de los tres planes activos que tiene mi amigo que más podrían gustarme y cuanto se estima que me gustaría ese plan.
     \begin{figure}[H]
         \centering
         \includegraphics[width=3in, angle=270]{figures/chapter-2/recomendadorAR.JPG}
-        \caption{Recomendador de planes en RA al enfocar a un amigo}
+        \caption{Vista encargada de recomendar planes en RA al enfocar a un amigo}
     \end{figure}
     
 \end{flushleft}
