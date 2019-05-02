@@ -30,7 +30,40 @@ Para la parte del servidor, hemos realizado una \textbf{API Rest} con \textbf{Sp
 Nuestro servidor está programado en \textbf{Java}, usando el framework \textbf{Spring} para la creación de una \textbf{API Rest} que mediante peticiones \textbf{HTTP} y una base de datos relacional en \textbf{PostgreSQL} nos proporcionará
 toda la información necesaria para alimentar de datos a nuestro cliente. El servidor necesita ser desplegado para que la aplicación pueda tener un uso real por lo que conseguimos desplegarlo de forma gratuita en \textbf{Heroku}, que además ofrece
 facilidades para desplegar un servidor creado mediante \textbf{Spring}, por lo que nos facilitó el trabajo considerablemente.
-
+\subsection{Despliegue en Heroku}
+\label{makereference4.2.1}
+Para el despliegue de la aplicación de servidor utilizamos Heroku. Esta plataforma nos ofrece un alojamiento gratuito con las características suficientes para el desarrollo del proyecto.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/heroku_1.png}
+    \caption{Crear nueva aplicación en Heroku}
+\end{figure}
+Una vez tenemos una cuenta en la plataforma creamos una nueva aplicación a la cual daremos un nombre como vemos en la figura 4.2 y este nombre a su vez será parte de la URL pública.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/heroku_2.png}
+    \caption{Configuración de la aplicación}
+\end{figure}
+Cuando creemos la aplicación accederemos a la configuración en la que veremos opciones como en la figura 4.3.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/heroku_3.png}
+    \caption{Métodos de despliegue}
+\end{figure}
+En la figura 4.4 vemos que nos ofrece diversos métodos de despliegue:
+\begin{itemize}
+    \item Heroku Git
+    \item GitHub
+    \item Container Registry
+\end{itemize}
+Elegimos la opción de GitHub que nos proporciona un despliegue fácil y rápido. Tenemos que vincular la cuenta de nuestro GitHub (Importante ser el dueño del repositorio).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/heroku_4.png}
+    \caption{Opciones de despliegue utilizando Github}
+\end{figure}
+Una vez vinculada la cuenta de GitHub tenemos dos métodos de despliegue como vemos en la figura 4.5. Un método automático para desplegar los cambios de una rama del repositorio que se accionara cada vez que subamos cambios y otro método manual que desplegara solo cuando presionemos el botón. 
+Cuando elijamos una de las opciones, la aplicación estará lista para usarse.
 \section{Aplicación}
 \label{makereference4.3}
 Nuestra aplicación está implementada principalmente en \textbf{Android}, las interfaces principales para el uso de los planes, recomendaciones y acceso a la información de las películas guardadas han sido desarrolladas mediante \textbf{Android Studio}. Sin embargo,
