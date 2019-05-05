@@ -78,9 +78,16 @@ Las películas guardadas son aquellas que el usuario ha decidido guardar para ve
     \item \textbf{Información de una película}: un usuario puede ver la información de una película que haya guardado con presionar en la misma. Podrá ver una pequeña sinopsis, el género y el director, además de la posibilidad de poder valorarla.
 \end{enumerate} 
 
-
 \section{Sistema de recomendación}
 \label{makereference3.5}
+Para la implementación de los sistemas de recomendación nos hemos encontrados con tres librerías:
+\begin{enumerate}
+    \item \textbf{Mahout}: Se trata de una librería bastante compleja, que básicamente abarca la mayoría de necesitades para la implementación del sistema de recomendación.
+    \item \textbf{Lenskit}: Es otra librería de java que para la implementación de sistemas de recomendación.
+    \item \textbf{LibRec}: Esta está colgada en un repositorio de github, se trata de una librería de terceros.
+\end{enumerate}
+
+Al final se ha decantado por \textbf{Mahout}, pues es la librería más conocida de las tres. Además que aporta una buena documentacón, otro motivo es que ofrece clases para la conexión directamente con base de datos y sin tener que leer desde ficheros csv. Por otro lado, en el testeo de librería de \textbf{Lenskit}, cuando se intentaba reproducir el ejemplo que ofrecían, se encontraban que algunas funciones estaban obsoletas y por tanto, no daban mucha confianza. Por último, \textbf{Mahout} se destaca por minimizar el uso del esfuerzo.
 
 \section{Prototipos}
 \label{makereference3.6}

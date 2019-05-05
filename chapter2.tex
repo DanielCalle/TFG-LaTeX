@@ -115,7 +115,26 @@ género y país de las películas, entre otros datos, debido a que consideramos 
 usuarios de nuestra aplicación.
 
 \section{Técnicas de recomendación}
-\label{makereference2.6}
+\label{makereference2.4}
+En nuestra aplicación, tenemos los siguientes datos para nuestro sistema de recomendación: \textbf{Información de usuarios}, \textbf{Información de películas} y \textbf{Valoraciones de los usuarios a las películas}.
+Entre los distintos tipos de sistemas de recomendación, vamos a destacar dos, pues son los que mejores asemejan a nuestra situación.
 
+\begin{itemize}
+    \item \textbf{Filtrado Colaborativo:} A este sistema de recomendación se basa en buscar usuarios que tienen preferencias similares. Entonces si a un individuo le ha gustado una película, entonces se le recomiendan las películas que les gustaron a otros pero que también les gustaron esta.
+    \item \textbf{Filtrado basado en el contenido:} Esta basado como lo indica su nombre, en su contenido, si a alguien le gusta una película, se le va a recomendar otra que es parecida.
+\end{itemize} 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in, angle=0]{figures/chapter-2/recommendation_systems.png}
+    \caption{Tipos de sistemas de recomendación}
+\end{figure}
+
+Decidimos para la aplicación el sistema de \textbf{Filtrado Colaborativo} por los siguientes motivos:
+
+\begin{itemize}
+    \item Tenemos valoraciones de usuarios a películas que podemos aprovechar, ya que es una de las acciones que puede realizar un usuario y se aprovecha para recolectar los datos.
+    \item Hemos conseguido un archivo csv de unos 200000 valoraciones de usuarios a películas con sus respectivos títulos. El cual solo tendríamos que crear los usuarios ficticios para conseguir una base inicial de datos para la base de datos.
+    \item Para usar el filtrado basado en el contenido tenemos que diseñar muy bien los datos de cada uno de las entidades, además de aplicar los pesos de importancia a los atributos para en un futuro aplicar el sistema.  
+\end{itemize} 
 
