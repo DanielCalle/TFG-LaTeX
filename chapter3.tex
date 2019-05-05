@@ -431,10 +431,59 @@ guardar la película en nuestra lista de películas guardadas, para posteriormen
 \newpage
 \subsection{Interfaz de realidad aumentada al reconocer a un usuario}
 \label{makereference3.4.5}
-
-Cuando reconocemos a un usuario de la aplicación con la cámara de nuestro dispositivo se pueden dar dos casos, que sea amigo del usuario que lo está reconociendo o que todavía no lo sea.
-Si no es un amigo nos aparecerá cerca de su imagen, concretamente en la esquina inferior derecha, un icono para añadirle como amigo. Una vez que ese usuario que se ha reconocido se convierte
-en amigo del que está usando la cámara del dispositivo, junto a la imagen del usuario en su parte inferior hemos decidido mostrar 3 películas --------------
+\begin{flushleft}
+Cuando reconocemos a un usuario de la aplicación con la cámara de nuestro dispositivo se pueden dar dos casos,
+ que sea amigo del usuario que lo está reconociendo o que todavía no lo sea.
+\end{flushleft}
+\begin{flushleft}
+Si no es un amigo aparecerá una interfaz para añadir al usuario como amigo, mientras que si es un amigo 
+aparecerá una interfaz distinta en donde el usuario puede incorporarse a los planes de su amigo.
+\end{flushleft}
+\subsection{Interfaz de realidad aumentada al reconocer a un usuario que no es amigo}
+\label{makereference3.4.5.1}
+\begin{flushleft}
+Se trata de una interfaz sencilla en donde al usuario que enfoca se le proporciona el nombre del usuario al
+ que está enfocando (siempre que el usuario enfocado esté registrado) junto a un botón de añadir amigo.
+\end{flushleft}
+\subsection{Interfaz de realidad aumentada al reconocer a un usuario que sí es amigo}
+\label{makereference3.4.5.2}
+\begin{flushleft}
+Esta interfaz que aparece al enfocar con la cámara a un usuario que es amigo del que enfoca, es una interfaz
+ más compleja que la anteriormente descrita.
+\end{flushleft}
+\begin{flushleft}
+Cuando un usuario enfoca a otro que es amigo, se proporciona la opción de incorporarse a uno de los planes del
+ amigo. Para ello, se le muestra una interfaz con los tres planes que según nuestro algoritmo de recomendación
+  más pueden interesarle de los que su amigo tiene.
+\end{flushleft}
+\begin{flushleft}
+La interfaz proporciona la imagen de las películas de los tres planes, además, mediante una interfaz dinámica 
+podemos movernos de un plan a otro, de esta forma podemos ver quien hay en el plan junto a la puntuación que 
+nuestro sistema de recomendación calcula que le gusta a cada participante el plan.
+\end{flushleft}
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=3in, angle=270]{figures/chapter-2/recomendadorAR.JPG}
+        \caption{Vista encargada de recomendar planes en RA al enfocar a un amigo}
+\end{figure}
+\begin{flushleft}
+Como se puede ver en la figura 3.20, en la interfaz aparecen las tres películas, únicamente se muestra la 
+información relacionada con los usuarios del plan situado en medio para no saturar la interfaz. Mediante los 
+botones de izquierda y derecha el usuario puede moverse entre planes para poder ver la información necesaria 
+de cada plan y elegir aquel que más le guste.
+\end{flushleft}
+\begin{flushleft}
+La información visual que aparece relacionada con los usuarios representa:
+\begin{itemize}
+    \item Arriba a la izquierda el amigo que se encuentra ya en el plan junto con una representación gráfica 
+    de cuanto estima el algoritmo de recomendación que le puede gustar la película.
+    \item Arriba a la derecha, la foto del usuario que está valorando unirse al plan junto con una representación 
+    gráfica de cuanto estima el algoritmo de recomendación que le puede gustar la película.
+    \item El resto de las posiciones identifican al resto de usuarios junto con la representación gráfica de 
+    cuanto se estima que le puede gustar la película.
+    
+\end{itemize}
+\end{flushleft}
 
 \subsection{Interfaz de inicio de sesión y de registro}
 \label{makereference3.4.6}
