@@ -144,7 +144,12 @@ Se trata de un conjunto de clases que solo poseen métodos estáticos para lleva
 
 \subsection{Vistas}
 \label{makereference4.3.7}
-Entre los componentes que ofrece \textbf{Android} hay algunas funcionalidades que no soporta. Entonces se crean componentes personalizados para satisfacer a estas funcionalidades.
+Entre los componentes que ofrece \textbf{Android} hay algunas funcionalidades que no soporta. Entonces se crean componentes personalizados para satisfacer a estas funcionalidades:
+\begin{itemize}
+    \item \textbf{AnchorVisibilityBehavior:} Implementa un comportamiento el cual aplicado a una vista determinada, genera el comportamiento deseado. En este caso el comportamiento es la visibilidad que tiene algunas vistas colocadas en un toolbar (depende de su altura). 
+    \item \textbf{CustomViewPager:} ViewPager es lo que se usa en el MainActivity para colocar los tres fragmentos. Se crea esta clase para desactivar la acción de poder pasar los fragmentos mediante deslizamiento.
+    \item \textbf{ExpandableTextView:} Es una clase que extiende de un TextView, se le añade un método para que cuando haya mucho texto, se pueda acortar. Además dispone de un botón para expandir.
+\end{itemize} 
 
 \section{Dificultades encontradas}
 \label{makereference4.4}
