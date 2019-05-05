@@ -78,162 +78,7 @@ Las películas guardadas son aquellas que el usuario ha decidido guardar para ve
     \item \textbf{Información de una película}: un usuario puede ver la información de una película que haya guardado con presionar en la misma. Podrá ver una pequeña sinopsis, el género y el director, además de la posibilidad de poder valorarla.
 \end{enumerate} 
 
-\section{Interfaz de usuario}
-\label{makereference3.4}
 
-A continuación mostraremos las distintas interfaces de usuario de nuestra aplicación y la evolución que han ido sufriendo.
-\subsection{Interfaz de lista de planes}
-\label{makereference3.4.1}
-El objetivo de esta vista es el de mostrar los planes públicos que existen, indicando con una imagen de fondo la película para la que se creó el plan, el usuario
-que creó dicho plan y los usuarios que se han unido. La primera vista que realizamos fue la siguiente
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=3in]{figures/PlansList1.jpg}
-    \caption{Lista de planes, primera versión}
-\end{figure}
-Podemos observar como cada elemento representa un plan, con el fondo siendo el cartel de la película, el título de la película en la esquina superior izquierda,
-debajo el nombre del usuario que lo ha creado junto con las personas que se han unido al plan.
-\\
-Tras mostrarla en una de las reuniones con los directores de nuestro TFG, nos sugirieron cambiarla debido a que no reflejaba correctamente lo que era, es decir, 
-cada plan no otorgaba la información suficiente a un usuario para que éste supiera que era un plan en sí. Por lo que posteriormente decidimos cambiar la vista
-para mostrar al usuario la estructura de un plan correctamente y así ofrecerle una mejor experiencia de usuario. 
-\\
-La siguiente figura muestra la segunda versión de nuestra lista de planes: 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=3in]{figures/planslist2.jpg}
-    \caption{Lista de planes, segunda versión}
-\end{figure}
-Podemos observar como ahora aparece la fecha para la que es el plan en la parte superior izquierda, justo debajo el título de la película que se quiere ver, arriba a la derecha el número del plan, algo simple pero que nos indica
-claramente lo que representa este elemento.
-El cambio más significativo es que, ahora en la parte inferior aparecen las fotos de los usuarios que se han unido al plan.
-\subsection{Interfaz de lista de películas guardadas}
-\label{makereference3.4.2}
-Para mostrar las películas guardadas decidimos usar un grid que muestre solamente los carteles de las películas, es una interfaz simple pero muy visual, para acceder a la información
-de cada película simplemente debemos pulsar en uno de los carteles.
-\begin{figure}[H]
-    \centering
-    \includegraphics[height=5in]{figures/FilmsList.jpg}
-    \caption{Lista de películas guardadas}
-\end{figure}
-En la figura 3.3 podemos observar que el usuario solo ha guardado 2 películas, si se guardaran más irían apareciendo al lado de las que ya están o pasarían debajo en cuanto una 
-fila tuviera 3 elementos, elegimos este tamaño para que pudieran verse correctamente los carteles y los títulos de las películas.
-\subsection{Interfaz principal}
-\label{makereference3.4.3}
-En la figura 3.3 también vemos como es la interfaz principal, con una barra en la parte inferior para movernos por las 3 secciones de nuestra aplicación: \textbf{mis planes} , \textbf{recomendaciones}, \textbf{mis películas}.
-Cada sección incluye un icono para apoyar a la representación.
-Además, encontramos un botón con un símbolo de una cámara en todas las secciones que nos permitirá acceder a la parte de \textbf{Realidad Aumentada}
-
-\subsection{Interfaz de realidad aumentada al reconocer una película}
-\label{makereference3.4.4}
-En esta interfaz destacamos los distintos componentes que aparecen al usar la cámara de nuestro teléfono y reconocer el cartel de una película.
-Lo primero que podemos observar al entrar a la interfaz de realidad aumentada es una especie de simulación de un escáner que se superpone a lo que vemos con la
-cámara del teléfono, incitando así al usuario a reconocer algo con la cámara, esto lo podemos ver en la figura 3.4.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=3in]{figures/escaner.jpg}
-    \caption{Escáner}
-\end{figure}
-
-Cuando reconocemos un cartel, sobre la imagen de la película nos aparecerá en la parte superior una valoración numérica de la película, la cual la hemos 
-sacado de \textbf{IMDB}. justo en el medio de la imagen encontramos el icono típico de \textbf{Youtube} que, al pulsarlo, nos abrirá nuestra aplicación de \textbf{Youtube} para que
-el usuario pueda ver el tráiler de esta película. En la esquina inferior derecha encontramos otro icono que al ser pulsado lo que hará será desplegar una serie de botones con distinta funcionalidad,
-uno de ellos nos redirige a la información de la película en \textbf{IMDB}, que sería el icono representado por una letra \textbf{i}, el otro botón representado por una mano con un pulgar hacia arriba nos permitirá
-guardar la película en nuestra lista de películas guardadas, para posteriormente acceder a su información, valorarla o crear un plan con ella. Todo esto lo podemos observar en la figura 3.5 y 3.6.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=3in]{figures/filmrecognized1.jpg}
-    \caption{Realidad aumentada tras reconocer una película}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=3in]{figures/filmrecognized2.jpg}
-    \caption{Realidad aumentada tras reconocer una película}
-\end{figure}
-
-\newpage
-\subsection{Interfaz de realidad aumentada al reconocer a un usuario}
-\label{makereference3.4.5}
-
-Cuando reconocemos a un usuario de la aplicación con la cámara de nuestro dispositivo se pueden dar dos casos, que sea amigo del usuario que lo está reconociendo o que todavía no lo sea.
-Si no es un amigo nos aparecerá cerca de su imagen, concretamente en la esquina inferior derecha, un icono para añadirle como amigo. Una vez que ese usuario que se ha reconocido se convierte
-en amigo del que está usando la cámara del dispositivo, junto a la imagen del usuario en su parte inferior hemos decidido mostrar 3 películas --------------
-
-\subsection{Interfaz de inicio de sesión y de registro}
-\label{makereference3.4.6}
-
-Nos aparecerá una interfaz muy simple para realizar el inicio de sesión con un usuario en la aplicación al entrar. También nos permite registrarnos como usuarios si
-aún no poseemos una cuenta en la aplicación.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[height=4in]{figures/login.jpg}
-    \caption{Inicio de sesión}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[height=4in]{figures/register.jpg}
-    \caption{Registro}
-\end{figure}
-
-\subsection{Interfaz de recomendaciones}
-\label{makereference3.4.7}
-
-\subsection{Interfaz de información de una película}
-\label{makereference3.4.8}
-
-Tras pulsar en una de las películas que hemos guardado nos aparecerá dicha interfaz. 
-Esta vista nos permite ver en primer plano el cartel de la película y la información correspondiente a la misma, como puede
-ser la sinopsis de la película, el género y el nombre del director. Además poseemos un \textbf{Gauge} que nos permite, al pulsarlo,
-valorar la película mediante una barra de progreso.
-Si hacemos scroll hacia abajo, la imagen de la película se irá ocultando para ofrecernos una mejor visión de la información de la película.
-En la parte inferior se nos presentan dos botones, uno para crear un plan con la película, que es el de color amarillo con el texto: \textbf{AÑADIR AL PLAN}. El otro botón de color
-violeta con el símbolo de reproducir un vídeo, nos llevará al trailer de la película en \textbf{Youtube}.
-Arriba a la derecha observamos el icono de un corazón, lo que nos permitirá quitar esta película de nuestras favoritas y ya no aparecerá en la
-lista de películas guardadas.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=3in]{figures/infoFilm1.jpg}
-    \caption{Información de la película}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=3in]{figures/infoFilm2.jpg}
-    \caption{Información de la película observando el cambio en el Gauge tras valorar}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=3in]{figures/infoFilm3.jpg}
-    \caption{Información de la película cuando se hace el scroll hacia abajo}
-\end{figure}
-
-\subsection{Interfaz de información de un plan}
-\label{makereference3.4.9}
-Esta interfaz aparece cuando pulsamos en un plan y es muy similar a la que se le muestra al usuario con la información
-de una película. También nos aparecerá en grande la imagen de la película que se quiere ir a ver con dicho plan, junto con información
-relevante de dicho plan, como puede ser:
-\begin{itemize}
-    \item \textbf{Fecha}: día, mes y año en el que tendrá lugar dicho plan.
-    \item \textbf{Hora}: hora del plan.
-    \item \textbf{Lugar}: localización que haya puesto el creador del plan para ver la película.
-    \item \textbf{Descripción}: breves anotaciones características que haya escrito el creador sobre el plan.
-    \item \textbf{Usuarios unidos}: imágenes de los usuarios que se han unido al plan.
-\end{itemize}
-Además nos aparece un botón en la parte inferior con el texto: \textbf{UNIRSE AL PLAN} o \textbf{SALIR DEL PLAN}, según estemos o no ya dentro del plan.
-También en la parte inferior derecha de la imagen de la película tenemos un botón que nos redirige a la interfaz de información de dicha película.
-En la parte superior derecha nos aparece un icono de una basura, lo que nos permitirá borrar el plan, si somos el creador.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=3in]{figures/infoPlan1.jpg}
-    \caption{Información del plan}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=3in]{figures/infoPlan2.jpg}
-    \caption{Información del plan tras hacer el scroll hacia abajo}
-\end{figure}
 \section{Sistema de recomendación}
 \label{makereference3.5}
 
@@ -499,3 +344,159 @@ Por este motivo intentamos buscar la opción de realizar una aplicación en la q
         \caption{Archivo pom.xml}
     \end{figure}
 \end{flushleft}
+\section{Interfaz de usuario}
+\label{makereference3.4}
+
+A continuación mostraremos las distintas interfaces de usuario de nuestra aplicación y la evolución que han ido sufriendo.
+\subsection{Interfaz de lista de planes}
+\label{makereference3.4.1}
+El objetivo de esta vista es el de mostrar los planes públicos que existen, indicando con una imagen de fondo la película para la que se creó el plan, el usuario
+que creó dicho plan y los usuarios que se han unido. La primera vista que realizamos fue la siguiente
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/PlansList1.jpg}
+    \caption{Lista de planes, primera versión}
+\end{figure}
+Podemos observar como cada elemento representa un plan, con el fondo siendo el cartel de la película, el título de la película en la esquina superior izquierda,
+debajo el nombre del usuario que lo ha creado junto con las personas que se han unido al plan.
+\\
+Tras mostrarla en una de las reuniones con los directores de nuestro TFG, nos sugirieron cambiarla debido a que no reflejaba correctamente lo que era, es decir, 
+cada plan no otorgaba la información suficiente a un usuario para que éste supiera que era un plan en sí. Por lo que posteriormente decidimos cambiar la vista
+para mostrar al usuario la estructura de un plan correctamente y así ofrecerle una mejor experiencia de usuario. 
+\\
+La siguiente figura muestra la segunda versión de nuestra lista de planes: 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/planslist2.jpg}
+    \caption{Lista de planes, segunda versión}
+\end{figure}
+Podemos observar como ahora aparece la fecha para la que es el plan en la parte superior izquierda, justo debajo el título de la película que se quiere ver, arriba a la derecha el número del plan, algo simple pero que nos indica
+claramente lo que representa este elemento.
+El cambio más significativo es que, ahora en la parte inferior aparecen las fotos de los usuarios que se han unido al plan.
+\subsection{Interfaz de lista de películas guardadas}
+\label{makereference3.4.2}
+Para mostrar las películas guardadas decidimos usar un grid que muestre solamente los carteles de las películas, es una interfaz simple pero muy visual, para acceder a la información
+de cada película simplemente debemos pulsar en uno de los carteles.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5in]{figures/FilmsList.jpg}
+    \caption{Lista de películas guardadas}
+\end{figure}
+En la figura 3.3 podemos observar que el usuario solo ha guardado 2 películas, si se guardaran más irían apareciendo al lado de las que ya están o pasarían debajo en cuanto una 
+fila tuviera 3 elementos, elegimos este tamaño para que pudieran verse correctamente los carteles y los títulos de las películas.
+\subsection{Interfaz principal}
+\label{makereference3.4.3}
+En la figura 3.3 también vemos como es la interfaz principal, con una barra en la parte inferior para movernos por las 3 secciones de nuestra aplicación: \textbf{mis planes} , \textbf{recomendaciones}, \textbf{mis películas}.
+Cada sección incluye un icono para apoyar a la representación.
+Además, encontramos un botón con un símbolo de una cámara en todas las secciones que nos permitirá acceder a la parte de \textbf{Realidad Aumentada}
+
+\subsection{Interfaz de realidad aumentada al reconocer una película}
+\label{makereference3.4.4}
+En esta interfaz destacamos los distintos componentes que aparecen al usar la cámara de nuestro teléfono y reconocer el cartel de una película.
+Lo primero que podemos observar al entrar a la interfaz de realidad aumentada es una especie de simulación de un escáner que se superpone a lo que vemos con la
+cámara del teléfono, incitando así al usuario a reconocer algo con la cámara, esto lo podemos ver en la figura 3.4.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/escaner.jpg}
+    \caption{Escáner}
+\end{figure}
+
+Cuando reconocemos un cartel, sobre la imagen de la película nos aparecerá en la parte superior una valoración numérica de la película, la cual la hemos 
+sacado de \textbf{IMDB}. justo en el medio de la imagen encontramos el icono típico de \textbf{Youtube} que, al pulsarlo, nos abrirá nuestra aplicación de \textbf{Youtube} para que
+el usuario pueda ver el tráiler de esta película. En la esquina inferior derecha encontramos otro icono que al ser pulsado lo que hará será desplegar una serie de botones con distinta funcionalidad,
+uno de ellos nos redirige a la información de la película en \textbf{IMDB}, que sería el icono representado por una letra \textbf{i}, el otro botón representado por una mano con un pulgar hacia arriba nos permitirá
+guardar la película en nuestra lista de películas guardadas, para posteriormente acceder a su información, valorarla o crear un plan con ella. Todo esto lo podemos observar en la figura 3.5 y 3.6.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/filmrecognized1.jpg}
+    \caption{Realidad aumentada tras reconocer una película}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/filmrecognized2.jpg}
+    \caption{Realidad aumentada tras reconocer una película}
+\end{figure}
+
+\newpage
+\subsection{Interfaz de realidad aumentada al reconocer a un usuario}
+\label{makereference3.4.5}
+
+Cuando reconocemos a un usuario de la aplicación con la cámara de nuestro dispositivo se pueden dar dos casos, que sea amigo del usuario que lo está reconociendo o que todavía no lo sea.
+Si no es un amigo nos aparecerá cerca de su imagen, concretamente en la esquina inferior derecha, un icono para añadirle como amigo. Una vez que ese usuario que se ha reconocido se convierte
+en amigo del que está usando la cámara del dispositivo, junto a la imagen del usuario en su parte inferior hemos decidido mostrar 3 películas --------------
+
+\subsection{Interfaz de inicio de sesión y de registro}
+\label{makereference3.4.6}
+
+Nos aparecerá una interfaz muy simple para realizar el inicio de sesión con un usuario en la aplicación al entrar. También nos permite registrarnos como usuarios si
+aún no poseemos una cuenta en la aplicación.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4in]{figures/login.jpg}
+    \caption{Inicio de sesión}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4in]{figures/register.jpg}
+    \caption{Registro}
+\end{figure}
+
+\subsection{Interfaz de recomendaciones}
+\label{makereference3.4.7}
+
+\subsection{Interfaz de información de una película}
+\label{makereference3.4.8}
+
+Tras pulsar en una de las películas que hemos guardado nos aparecerá dicha interfaz. 
+Esta vista nos permite ver en primer plano el cartel de la película y la información correspondiente a la misma, como puede
+ser la sinopsis de la película, el género y el nombre del director. Además poseemos un \textbf{Gauge} que nos permite, al pulsarlo,
+valorar la película mediante una barra de progreso.
+Si hacemos scroll hacia abajo, la imagen de la película se irá ocultando para ofrecernos una mejor visión de la información de la película.
+En la parte inferior se nos presentan dos botones, uno para crear un plan con la película, que es el de color amarillo con el texto: \textbf{AÑADIR AL PLAN}. El otro botón de color
+violeta con el símbolo de reproducir un vídeo, nos llevará al trailer de la película en \textbf{Youtube}.
+Arriba a la derecha observamos el icono de un corazón, lo que nos permitirá quitar esta película de nuestras favoritas y ya no aparecerá en la
+lista de películas guardadas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/infoFilm1.jpg}
+    \caption{Información de la película}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/infoFilm2.jpg}
+    \caption{Información de la película observando el cambio en el Gauge tras valorar}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/infoFilm3.jpg}
+    \caption{Información de la película cuando se hace el scroll hacia abajo}
+\end{figure}
+
+\subsection{Interfaz de información de un plan}
+\label{makereference3.4.9}
+Esta interfaz aparece cuando pulsamos en un plan y es muy similar a la que se le muestra al usuario con la información
+de una película. También nos aparecerá en grande la imagen de la película que se quiere ir a ver con dicho plan, junto con información
+relevante de dicho plan, como puede ser:
+\begin{itemize}
+    \item \textbf{Fecha}: día, mes y año en el que tendrá lugar dicho plan.
+    \item \textbf{Hora}: hora del plan.
+    \item \textbf{Lugar}: localización que haya puesto el creador del plan para ver la película.
+    \item \textbf{Descripción}: breves anotaciones características que haya escrito el creador sobre el plan.
+    \item \textbf{Usuarios unidos}: imágenes de los usuarios que se han unido al plan.
+\end{itemize}
+Además nos aparece un botón en la parte inferior con el texto: \textbf{UNIRSE AL PLAN} o \textbf{SALIR DEL PLAN}, según estemos o no ya dentro del plan.
+También en la parte inferior derecha de la imagen de la película tenemos un botón que nos redirige a la interfaz de información de dicha película.
+En la parte superior derecha nos aparece un icono de una basura, lo que nos permitirá borrar el plan, si somos el creador.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/infoPlan1.jpg}
+    \caption{Información del plan}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/infoPlan2.jpg}
+    \caption{Información del plan tras hacer el scroll hacia abajo}
+\end{figure}
