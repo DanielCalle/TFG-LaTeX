@@ -52,13 +52,13 @@ física ya existente, es decir, una parte sintética virtual a la real.
 
 
 La \textbf{realidad aumentada} se aplica a diversas áreas como seguridad, logística, sanidad, ocio, etc...
- Está en tantas partes como nuestra imaginación nos lleva y no solo se ha convertido en una herramienta útil si no que es una tecnología atractiva
+ Se pude aplicar a tantas disciplinas como podamos imaginar y no sólo se ha convertido en una herramienta útil si no que es una tecnología atractiva
  y además signo de modernidad. Por estas razones actualmente vemos ejemplos como el de las televisiones que compiten por aplicarla a sus programas
  y presumir de dar el mejor servicio a sus espectadores como vemos en las figuras 2.1 y 2.2. Con esta situación podemos por tanto estar de acuerdo
  en que es una tecnología en auge actualmente. 
 
 
-Los \textbf{smartphones} son los dispositivos con los que encontramos más interacción en esta tecnología, ya que prácticamente todas las personas poseen uno
+Los \textbf{smartphones} son los dispositivos que más interaccionan con esta tecnología, ya que prácticamente todas las personas poseen uno
  y están dotados de un amplio abanico de sensores necesarios para su correcto funcionamiento. Por esto elegimos este tipo de dispositivos para nuestro
  proyecto para los cuales esta tecnología nos permite añadir un valor importante a nuestra aplicación, consideramos que el grueso de nuestro proyecto se
  centra en ella. Los casos de uso más importantes de nuestra aplicación usarán la \textbf{realidad aumentada} para proveer al usuario de información adicional
@@ -71,8 +71,8 @@ Los \textbf{smartphones} son los dispositivos con los que encontramos más inter
 Plataforma creada por Google para desarrollar aplicaciones de
  realidad aumentada con soporte para Android, Android NDK, iOS,
  Unity y Unreal Engine. Aunque las funcionalidades que se ofrecen
- para iOS y Unity for iOS se limitan a Cloud Anchors, los anchors
- sirven para hacer que objetos virtuales aparezcan en un lugar
+ para iOS y Unity for iOS se limitan a Cloud Anchors. Los anchors
+ son herramientas que permiten que objetos virtuales aparezcan en un lugar
  captado por la cámara de nuestro dispositivo estos son compartidos
  en la nube para que multitud de dispositivos disfruten de la misma
  experiencia, los dispositivos con iOS podrán usarlos utilizando ARKit.
@@ -82,8 +82,8 @@ Tiene una curva de aprendizaje media y con su versión 1.5 demuestra una
  que no todos los dispositivos son compatibles, esto depende de que las
  empresas que desarrollan estos dispositivos cumplan unos requisitos
  para asegurar que la experiencia con ARCore es la adecuada y de la
- versión del sistema operativo. se puede ver con más detalle en esta
- dirección \url{https://developers.google.com/ar/discover/supported-devices}.
+ versión del sistema operativo. Para más información, consultar la información
+ provista por Google en el siguiente enlace \url{https://developers.google.com/ar/discover/supported-devices}.
 
 ARCore usa tres características a través de la cámara del dispositivo:
  \begin{itemize}  
@@ -100,7 +100,7 @@ Podemos utilizar experiencias de realidad aumentada persistente, compartirlas en
 Kit de desarrollo para realidad aumentada con soporte para Android, iOS, Unity, Cordova, Xamarin (mala
  documentación y versiones obsoletas), Titanium, React Native.
 Su licencia es de pago, aunque hay versiones limitadas gratuitas.
-Utiliza ARCore o ARKit cuando los dispositivos lo soportan y en caso de que no utiliza tecnología de Wikitude
+Utiliza ARCore o ARKit cuando los dispositivos lo soportan y en caso contrario utiliza tecnología de Wikitude
  para que el número de dispositivos compatibles sea mayor. 
 
 \paragraph{Vuforia:}
@@ -109,7 +109,7 @@ Software de pago solo permite usarse gratis para pruebas.
 
 \paragraph{ViroReact:}
 Plataforma para construir aplicaciones con realidad aumentada usando React Native.
- Utiliza ARKit y ARCore para dotar a las aplicaciones de una experiencia de RA sin
+ Utiliza ARKit y ARCore para dotar a las aplicaciones de una experiencia de Realidad Aumentada sin
  utilizar código distinto y con una curva de aprendizaje fácil. Al basarse en React
  Native que no tiene versión estable provoca problemas con las versiones de dependencias,
  configuraciones tediosas y largas compilaciones.
@@ -123,7 +123,7 @@ Está en una fase muy inicial.
 \label{makereference2.2}
 \begin{flushleft}
     Consideramos que la aplicación que hemos diseñado consta de dos partes claramente diferenciadas (la parte de \textbf{Realidad Aumentada} 
-    y la parte de \textbf{Recomendación y gestión} de películas), consideramos que existen distintos tipos de competencia dependiendo de cada una de ellas.
+    y la parte de \textbf{Recomendación y gestión} de películas), además, pensamos que existen distintos tipos de competencia dependiendo de cada una de ellas.
      \begin{itemize}  
          \item En la parte de recomendación y gestión de películas, compite claramente con aplicaciones como \textbf{IMDB} o \textbf{MovieBase}. 
          Estas aplicaciones proporcionan, herramientas para guardar películas y recomendar éstas a los usuarios en función de sus gustos. Estas funcionalidades son 
@@ -153,11 +153,11 @@ usuarios de nuestra aplicación.
 \section{Técnicas de recomendación}
 \label{makereference2.4}
 En nuestra aplicación, tenemos los siguientes datos para nuestro sistema de recomendación: \textbf{Información de usuarios}, \textbf{Información de películas} y \textbf{Valoraciones de los usuarios a las películas}.
-Entre los distintos tipos de sistemas de recomendación, vamos a destacar dos, pues son los que mejores asemejan a nuestra situación.
+Entre los distintos tipos de sistemas de recomendación, vamos a destacar dos, pues son los que mejor se asemejan a nuestra situación.
 
 \begin{itemize}
-    \item \textbf{Filtrado Colaborativo:} A este sistema de recomendación se basa en buscar usuarios que tienen preferencias similares. Entonces si a un individuo le ha gustado una película, entonces se le recomiendan las películas que les gustaron a otros pero que también les gustaron esta.
-    \item \textbf{Filtrado basado en el contenido:} Esta basado como lo indica su nombre, en su contenido, si a alguien le gusta una película, se le va a recomendar otra que es parecida.
+    \item \textbf{Filtrado Colaborativo:} Este sistema de recomendación se basa en buscar usuarios que tienen preferencias similares. Si a un individuo le ha gustado una película, entonces le recomendará las películas que le gustaron a otros usuarios a los que también les gustó esta.
+    \item \textbf{Filtrado basado en el contenido:} Como indica su nombre, está basado en su contenido, si a alguien le gusta una película, se le va a recomendar otra que es parecida.
 \end{itemize} 
 
 \begin{figure}[H]
@@ -166,11 +166,11 @@ Entre los distintos tipos de sistemas de recomendación, vamos a destacar dos, p
     \caption{Tipos de sistemas de recomendación}
 \end{figure}
 
-Decidimos para la aplicación el sistema de \textbf{Filtrado Colaborativo} por los siguientes motivos:
+Finalmente decidimos usar para la aplicación el sistema de \textbf{Filtrado Colaborativo} por los siguientes motivos:
 
 \begin{itemize}
     \item Tenemos valoraciones de usuarios a películas que podemos aprovechar, ya que es una de las acciones que puede realizar un usuario y se aprovecha para recolectar los datos.
-    \item Hemos conseguido un archivo csv de unas 200000 valoraciones de usuarios a películas con sus respectivos títulos. El cual solo tendríamos que crear los usuarios ficticios para conseguir una base inicial de datos para la base de datos.
+    \item Hemos conseguido un archivo csv de unas 200000 valoraciones de usuarios a películas con sus respectivos títulos. Por lo que sólo tendríamos que crear usuarios ficticios para conseguir una base de datos inicial.
     \item Para usar el filtrado basado en el contenido tenemos que diseñar muy bien los datos de cada una de las entidades, además de aplicar los pesos de importancia a los atributos para en un futuro aplicar el sistema.  
 \end{itemize} 
 

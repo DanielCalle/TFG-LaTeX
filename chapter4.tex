@@ -28,9 +28,9 @@ Para la parte del servidor, hemos realizado una \textbf{API Rest} con \textbf{Sp
 \section{Servidor}
 \label{makereference4.2}
 Nuestro servidor está programado en \textbf{Java}, usando el framework \textbf{Spring} para la creación de una \textbf{API Rest} que mediante peticiones \textbf{HTTP} y una base de datos relacional en \textbf{PostgreSQL} nos proporcionará
-toda la información necesaria para alimentar de datos a nuestro cliente. El servidor necesita ser desplegado para que la aplicación pueda tener un uso real por lo que conseguimos desplegarlo de forma gratuita en \textbf{Heroku}, que además ofrece
+toda la información necesaria para alimentar de datos a nuestro cliente. El servidor necesita ser desplegado para que la aplicación pueda tener un uso real por lo que decidimos desplegarlo de forma gratuita en \textbf{Heroku}, que además ofrece
 facilidades para desplegar un servidor creado mediante \textbf{Spring}, por lo que nos facilitó el trabajo considerablemente. También se encuentra en el servidor la implementación del sistema de recomendación, con el siguiente punto de acceso \textbf{/recommendations/\{user\}}.
-\subsection{Despliegue en Heroku}. 
+\subsection{Despliegue en Heroku}
 \label{makereference4.2.1}
 Para el despliegue de la aplicación de servidor utilizamos Heroku. Esta plataforma nos ofrece un alojamiento gratuito con las características suficientes para el desarrollo del proyecto.
 \begin{figure}[H]
@@ -62,7 +62,7 @@ Elegimos la opción de GitHub que nos proporciona un despliegue fácil y rápido
     \includegraphics[width=6in]{figures/chapter-4/heroku_4.png}
     \caption{Opciones de despliegue utilizando Github}
 \end{figure}
-Una vez vinculada la cuenta de GitHub tenemos dos métodos de despliegue como vemos en la figura 4.5. Un método automático para desplegar los cambios de una rama del repositorio que se accionara cada vez que subamos cambios y otro método manual que desplegara solo cuando presionemos el botón. 
+Una vez vinculada la cuenta de GitHub tenemos dos métodos de despliegue como vemos en la figura 4.5. Un método automático para desplegar los cambios de una rama del repositorio que se accionara cada vez que subamos cambios y otro método manual que se desplegará sólo cuando presionemos el botón. 
 Cuando elijamos una de las opciones, la aplicación estará lista para usarse.
 \section{Aplicación}
 \label{makereference4.3}
@@ -95,8 +95,8 @@ Son los componentes de la aplicación que representan una pantalla con la que lo
 
 Entre nuestras actividades podemos destacar dos: 
 \begin{itemize}
-    \item \textbf{MainActivity:} La primera actividad (actividad principal) que se activa al iniciar la aplicación, la cual comprueba el estado de sesión del usuario, si está logueado se queda en la actividad, y si no, se redirige al usuario a otra actividad (LoginActivity) para que pueda iniciar sesión o registrarse. En la MainActivity se encuentra un paginador (ViewPager) de 3 fragmentos, donde cada fragmento representa las interfaces de planes, recomendaciones y películas guardadas correspondientemente.
-    \item \textbf{UnityPlayerActivity:} Se trata de una actividad especial que nos permite comunicar la parte desarrollada en \textbf{Unity} con nuestro proyecto \textbf{Android}. Aquí se encuentran llamadas a funciones desde la parte de Unity, se realizan las órdenes y se devuelven.
+    \item \textbf{MainActivity:} La primera actividad (actividad principal) que se activa al iniciar la aplicación, la cual comprueba el estado de sesión del usuario, si está logueado se queda en la actividad, y si no, se redirige al usuario a otra actividad (LoginActivity) para que pueda iniciar sesión o registrarse. En MainActivity se encuentra un paginador (ViewPager) de 3 fragmentos, donde cada fragmento representa las interfaces de planes, recomendaciones y películas guardadas correspondientemente.
+    \item \textbf{UnityPlayerActivity:} Se trata de una actividad especial que nos permite comunicar la parte desarrollada en \textbf{Unity} con nuestro proyecto \textbf{Android}. Aquí se encuentran llamadas a funciones desde la parte de Unity, se realizan las órdenes y se devuelven a Unity.
 \end{itemize} 
 
 \subsection{Adaptadores}
@@ -113,7 +113,7 @@ Aquí se encuentran todos los elementos relacionados con el patrón comando y ha
     \caption{Patrón comando}
 \end{figure}
 
-Este patrón permite solicitar una operación a un objeto sin conocer realmente el contenido de esta operación, ni el receptor real de la misma. Para ello se encapsula la petición como un objeto, con lo que además facilita la parametrización de los métodos.
+Este patrón permite solicitar una operación a un objeto sin conocer realmente el contenido de esta operación, ni el receptor real de la misma. Para ello se encapsula la petición como un objeto, lo que además facilita la parametrización de los métodos.
 
 La implementación de este patrón consiste en crear una interfaz en la cual las demás clases (comandos) la implementan. La interfaz tiene dos funciones: 
 \begin{itemize}
@@ -144,9 +144,9 @@ Se trata de un conjunto de clases que solo poseen métodos estáticos para lleva
 
 \subsection{Vistas}
 \label{makereference4.3.7}
-Entre los componentes que ofrece \textbf{Android} hay algunas funcionalidades que no soporta. Entonces se crean componentes personalizados para satisfacer a estas funcionalidades:
+Entre los componentes que ofrece \textbf{Android} hay algunas funcionalidades que no soporta. Por ello hemos creado componentes personalizados para satisfacer a estas funcionalidades:
 \begin{itemize}
-    \item \textbf{AnchorVisibilityBehavior:} Implementa un comportamiento el cual aplicado a una vista determinada, genera el comportamiento deseado. En este caso el comportamiento es la visibilidad que tiene algunas vistas colocadas en un toolbar (depende de su altura). 
+    \item \textbf{AnchorVisibilityBehavior:} Implementa un comportamiento que aplicado a una vista determinada, genera el comportamiento deseado. En este caso el comportamiento es la visibilidad que tiene algunas vistas colocadas en un toolbar (depende de su altura). 
     \item \textbf{CustomViewPager:} ViewPager es lo que se usa en el MainActivity para colocar los tres fragmentos. Se crea esta clase para desactivar la acción de poder pasar los fragmentos mediante deslizamiento.
     \item \textbf{ExpandableTextView:} Es una clase que extiende de un TextView, se le añade un método para que cuando haya mucho texto, se pueda acortar. Además dispone de un botón para expandir.
 \end{itemize} 
