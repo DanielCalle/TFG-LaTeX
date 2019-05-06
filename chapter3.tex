@@ -85,12 +85,12 @@ Las películas guardadas son aquellas que el usuario ha decidido guardar para ve
 \label{makereference3.5}
 Para la implementación de los sistemas de recomendación nos hemos encontrados con tres librerías:
 \begin{enumerate}
-    \item \textbf{Mahout}: Se trata de una librería bastante compleja, que básicamente abarca la mayoría de necesitades para la implementación del sistema de recomendación.
+    \item \textbf{Mahout}: Se trata de una librería bastante compleja, que básicamente abarca la mayoría de necesidades para la implementación del sistema de recomendación.
     \item \textbf{Lenskit}: Es otra librería de java que para la implementación de sistemas de recomendación.
     \item \textbf{LibRec}: Esta está colgada en un repositorio de github, se trata de una librería de terceros.
 \end{enumerate}
 
-Al final se ha decantado por \textbf{Mahout}, pues es la librería más conocida de las tres. Además que aporta una buena documentacón, otro motivo es que ofrece clases para la conexión directamente con base de datos y sin tener que leer desde ficheros csv. Por otro lado, en el testeo de librería de \textbf{Lenskit}, cuando se intentaba reproducir el ejemplo que ofrecían, se encontraban que algunas funciones estaban obsoletas y por tanto, no daban mucha confianza. Por último, \textbf{Mahout} se destaca por minimizar el uso del esfuerzo.
+Al final se ha decantado por \textbf{Mahout}, pues es la librería más conocida de las tres. Además, que aporta una buena documentación, otro motivo es que ofrece clases para la conexión directamente con base de datos y sin tener que leer desde ficheros csv. Por otro lado, en el testeo de librería de \textbf{Lenskit}, cuando se intentaba reproducir el ejemplo que ofrecían, se encontraban que algunas funciones estaban obsoletas y, por tanto, no daban mucha confianza. Por último, \textbf{Mahout} se destaca por minimizar el uso del esfuerzo.
 
 \section{Prototipos}
 \label{makereference3.6}
@@ -165,7 +165,7 @@ Una de las ventajas que apreciamos fue la facilidad del lenguaje, en este caso \
 \end{flushleft}
 \begin{flushleft}
 Uno de los problemas que presentaba este prototipo era que las dependencias de \textbf{Viro Media} entraban en conflicto con las de \textbf{NativeBase}
-imposibilitándonos la forma de encontrar versiones compatibles. Utilizamos las últimas, que a pesar de lanzar
+imposibilitándonos la forma de encontrar versiones compatibles. Utilizamos las últimas que, a pesar de lanzar
  advertencias, funcionaba en el ejemplo realizado.
 Otro problema fue la compilación de la aplicación, \textbf{Viro Media} tiene una aplicación para probar lo
  que desarrollamos conectándose a nuestro ordenador a través de la red. El problema es
@@ -357,7 +357,7 @@ Por este motivo intentamos buscar la opción de realizar una aplicación en la q
 \section{Interfaz de usuario}
 \label{makereference3.4}
 
-A continuación mostraremos las distintas interfaces de usuario de nuestra aplicación y la evolución que han ido sufriendo.
+A continuación, mostraremos las distintas interfaces de usuario de nuestra aplicación y la evolución que han ido sufriendo.
 \subsection{Interfaz de lista de planes}
 \label{makereference3.4.1}
 El objetivo de esta vista es el de mostrar los planes públicos que existen, indicando con una imagen de fondo la película para la que se creó el plan, el usuario
@@ -396,7 +396,7 @@ En la figura 3.3 podemos observar que el usuario solo ha guardado 2 películas, 
 fila tuviera 3 elementos, elegimos este tamaño para que pudieran verse correctamente los carteles y los títulos de las películas.
 \subsection{Interfaz principal}
 \label{makereference3.4.3}
-En la figura 3.3 también vemos como es la interfaz principal, con una barra en la parte inferior para movernos por las 3 secciones de nuestra aplicación: \textbf{mis planes} , \textbf{recomendaciones}, \textbf{mis películas}.
+En la figura 3.3 también vemos como es la interfaz principal, con una barra en la parte inferior para movernos por las 3 secciones de nuestra aplicación: \textbf{mis planes}, \textbf{recomendaciones}, \textbf{mis películas}.
 Cada sección incluye un icono para apoyar a la representación.
 Además, encontramos un botón con un símbolo de una cámara en todas las secciones que nos permitirá acceder a la parte de \textbf{Realidad Aumentada}
 
@@ -510,7 +510,7 @@ aún no poseemos una cuenta en la aplicación.
 
 Tras pulsar en una de las películas que hemos guardado nos aparecerá dicha interfaz. 
 Esta vista nos permite ver en primer plano el cartel de la película y la información correspondiente a la misma, como puede
-ser la sinopsis de la película, el género y el nombre del director. Además poseemos un \textbf{Gauge} que nos permite, al pulsarlo,
+ser la sinopsis de la película, el género y el nombre del director. Además, poseemos un \textbf{Gauge} que nos permite, al pulsarlo,
 valorar la película mediante una barra de progreso.
 Si hacemos scroll hacia abajo, la imagen de la película se irá ocultando para ofrecernos una mejor visión de la información de la película.
 En la parte inferior se nos presentan dos botones, uno para crear un plan con la película, que es el de color amarillo con el texto: \textbf{AÑADIR AL PLAN}. El otro botón de color
@@ -546,7 +546,7 @@ relevante de dicho plan, como puede ser:
     \item \textbf{Descripción}: breves anotaciones características que haya escrito el creador sobre el plan.
     \item \textbf{Usuarios unidos}: imágenes de los usuarios que se han unido al plan.
 \end{itemize}
-Además nos aparece un botón en la parte inferior con el texto: \textbf{UNIRSE AL PLAN} o \textbf{SALIR DEL PLAN}, según estemos o no ya dentro del plan.
+Además, nos aparece un botón en la parte inferior con el texto: \textbf{UNIRSE AL PLAN} o \textbf{SALIR DEL PLAN}, según estemos o no ya dentro del plan.
 También en la parte inferior derecha de la imagen de la película tenemos un botón que nos redirige a la interfaz de información de dicha película.
 En la parte superior derecha nos aparece un icono de una basura, lo que nos permitirá borrar el plan, si somos el creador.
 \begin{figure}[H]
