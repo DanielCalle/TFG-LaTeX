@@ -22,13 +22,13 @@ siendo la afinidad de las personas a cierta película una faceta importante de n
 cualquier persona que posea un cierto grado de cinefilia podrá pertenecer al grupo de stakeholders.
 \\
 También podríamos incluir empresas dedicadas al sector de actividades de exhibición cinematográfica en España tales como Cinesa o Yelmo, ya que podríamos incluir 
-una forma de redirigir a la compra de entradas para una película en la que el usuario está interesado para una de las dos entidades anteriores.
+una forma de redirigir a un usuario a la compra de entradas para una película en la está interesado.
 \newpage 
 \section{Escenarios}
 \label{makereference3.2}
 Antes de decidir como implementaríamos nuestra aplicación decidimos que sería importante establecer una serie
-de escenarios en los que podría ser usada. Tras esto pudimos ponernos de acuerdo en que funcionalidades incluiríamos y que 
-éstas se ajusten a las necesidades de los usuarios. Además, estos escenarios deberían usar la \textbf{realidad aumentada} para que 
+de escenarios en los que podría ser usada. Tras esto pudimos ponernos de acuerdo en qué funcionalidades incluiríamos y que 
+éstas se ajustasen a las necesidades de los usuarios. Además, estos escenarios deberían usar la Realidad Aumentada para que 
 les aporte valor, ya que, como hemos expuesto anteriormente en el capítulo 2, el grueso de nuestra aplicación se centra en esta tecnología.
 
 \paragraph{Escenario 1. Usando la aplicación en casa:\\}
@@ -42,16 +42,18 @@ les aporte valor, ya que, como hemos expuesto anteriormente en el capítulo 2, e
         \item Botón para guardar la película en tu lista de películas guardadas.
     \end{enumerate}
     \item Te apetece ir al cine y has visto varias películas que te interesan, pero no sabes a cuál ir, captas todas ellas con la aplicación 
-    y para cada una de ellas tendrás las opciones anteriores más poder añadirlas a un plan ya creado, crear un nuevo plan o guardarlas.
+    y para cada una de ellas tendrás las opciones anteriores más poder crear un nuevo plan o guardarlas para ver su información más tarde.
 \end{itemize}
 \newpage
 \paragraph{Escenario 2. Usando la aplicación en la calle.\\}
-En este escenario, queremos solucionar el problema que aparece cuando el usuario de la aplicación se encuentra con el cartel de una película y pretende registrarla en su aplicación lo más rápido posible.
-Este escenario se produce mayormente cuando el usuario está paseando por la calle, en el metro, en un centro comercial…
+\begin{itemize}
+\item En este escenario, queremos solucionar el problema que aparece cuando el usuario de la aplicación se encuentra con el cartel de una película y pretende registrarla en su aplicación lo más rápido posible.
+Este escenario se produce mayormente cuando el usuario está paseando por la calle, en el metro, en un centro comercial, etc.
 \\
 El usuario podrá rápidamente escanear el cartel de la película y guardar así ésta en su lista de películas para posteriormente añadirla a un plan o poder ver la información de ésta, además de la opción de poder valorarla.
 \\
 Este escenario requiere que el usuario guarde rápidamente la película, puesto que el usuario puede tener prisa y simplemente esté pasando cerca de un cartel mientras va a otro sitio.
+\end{itemize}
 
 
 
@@ -61,13 +63,13 @@ Este escenario requiere que el usuario guarde rápidamente la película, puesto 
 \paragraph{\large Planes:\\}
 
 Los planes están compuestos por una película, un usuario creador del plan, y los usuarios que se hayan unido. El plan
-es creado debido a la necesidad que tiene un usuario de querer ver una película específica con una serie de usuarios que 
-entrarán en el plan por tener interés en ver dicha película debido a su afinidad con la misma.
+es creado debido a la necesidad que tiene un usuario de querer ver una película específica, con una serie de usuarios que 
+entrarán en el plan por tener interés en ver la misma película debido a su afinidad con ella.
 \\
 \textbf{Funciones:}
 \begin{enumerate}
-    \item \textbf{Crear plan}: para crear un plan un usuario ha tenido que guardar previamente una película tras reconocerla con la cámara y al entrar a la interfaz de la información de dicha película podrá presionar el botón para crear un plan con dicha película.
-    \item \textbf{Unirse a un plan}: dependiendo de si el plan es privado o público solo podrán unirse los amigos del usuario creador del plan o cualquiera, al entrar en la interfaz que tiene la información de un plan podremos pulsar un botón para unirnos.
+    \item \textbf{Crear plan}: para crear un plan, un usuario ha tenido que guardar previamente una película tras reconocerla con la cámara y al entrar a la interfaz de la información de la película podrá presionar el botón para crear un plan con dicha película.
+    \item \textbf{Unirse a un plan}: solo podrán unirse los amigos del usuario creador del plan, al entrar en la interfaz que tiene la información de un plan podremos pulsar un botón para unirnos.
     \item \textbf{Información de un plan}: simplemente con presionar en un plan podremos ver la información del mismo, es decir, la película a ver y los usuarios que se han unido.
 \end{enumerate}
 \newpage
@@ -77,20 +79,23 @@ Las películas guardadas son aquellas que el usuario ha decidido guardar para ve
 \\
 \textbf{Funciones:}
 \begin{enumerate}
-    \item \textbf{Guardar película}: cuando un usuario reconoce una película con la cámara, le aparecerá un botón que le permitirá guardar la película como favorita, para poder ver su información posteriormente o crear un plan con ella.
-    \item \textbf{Información de una película}: un usuario puede ver la información de una película que haya guardado con presionar en la misma. Podrá ver una pequeña sinopsis, el género y el director, además de la posibilidad de poder valorarla.
+    \item \textbf{Guardar película}: cuando un usuario reconoce una película con la cámara, le aparecerá un botón que le permitirá guardar la película como favorita, para poder ver su información posteriormente o crear un plan con ella. También podrá guardar la película si la encuentra mediante la barra de búsqueda pulsando un botón con el mismo icono.
+    \item \textbf{Información de una película}: un usuario puede ver la información de una película que haya guardado con presionar en la misma. Podrá ver una pequeña sinopsis, el género y el director, además de la posibilidad de poder valorarla o acceder a su traíler en Youtube.
 \end{enumerate} 
 
 \section{Sistema de recomendación}
 \label{makereference3.5}
-Para la implementación de los sistemas de recomendación nos hemos encontrados con tres librerías:
+Para la implementación de los sistemas de recomendación hemos encontrados tres librerías:
 \begin{enumerate}
     \item \textbf{Mahout}: Se trata de una librería bastante compleja, que básicamente abarca la mayoría de necesidades para la implementación del sistema de recomendación.
-    \item \textbf{Lenskit}: Es otra librería de java que para la implementación de sistemas de recomendación.
-    \item \textbf{LibRec}: Esta está colgada en un repositorio de github, se trata de una librería de terceros.
+    \item \textbf{Lenskit}: Es otra librería de \textbf{Java} para la implementación de sistemas de recomendación.
+    \item \textbf{LibRec}: Se trata de una librería de terceros que está subida en un repositorio de \textbf{GitHub}.
 \end{enumerate}
 
-Al final se ha decantado por \textbf{Mahout}, pues es la librería más conocida de las tres. Además, que aporta una buena documentación, otro motivo es que ofrece clases para la conexión directamente con base de datos y sin tener que leer desde ficheros csv. Por otro lado, en el testeo de librería de \textbf{Lenskit}, cuando se intentaba reproducir el ejemplo que ofrecían, se encontraban que algunas funciones estaban obsoletas y, por tanto, no daban mucha confianza. Por último, \textbf{Mahout} se destaca por minimizar el uso del esfuerzo.
+Al final nos hemos decantado por \textbf{Mahout}, ya que aporta una documentación más completa. Otro de los motivos es que ofrece clases para realizar la conexión directamente con la base de datos 
+sin tener que leer desde ficheros csv. Por otro lado, en el testeo de 
+\textbf{Lenskit}, cuando intentábamos reproducir el ejemplo que ofrecían, nos encontramos que algunas funciones estaban 
+obsoletas y, por tanto, no nos transmitía mucha confianza. Por último, \textbf{Mahout} destaca por ser más fácil de usar y minimizar nuestro esfuerzo en aprender esta nueva tecnología.
 
 \section{Prototipos}
 \label{makereference3.6}
