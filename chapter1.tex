@@ -20,6 +20,20 @@
 %\label{ch:chapter1}
 \label{makereference}
 
+\begin{flushleft}
+    En este capítulo introduciremos la idea de nuestro proyecto, de dónde surge, qué objetivos queremos lograr y cómo nos hemos organizado a la hora de trabajar.
+    Con este proyecto queremos solventar una serie de situaciones en las que una persona
+    tiene ganas de ver cierta película, ya sea porque se ha encontrado el cartel de la nueva película
+    de su saga favorita anunciada en la calle y no sabe con quién ir, o porque quizás un amigo le ha sugerido que le acompañe
+    a ver una película de la que no saben nada por el mero hecho de ir al cine. 
+    Decidimos ponernos manos a la obra y desarrollar una aplicación móvil que permitiera a sus usuarios actuar en distintas situaciones
+    para que con el simple uso de la cámara de su smartphone, e incluso sin ella, pudieran de forma
+    fácil e interactiva, organizarse para ir al cine o a ver la película a casa de otra persona. Además podrían apoyarse en la 
+    información que la aplicación les proporciona sobre las distintas películas para decidir si les es interesante ir a verla, sobre todo 
+    si es para ir al cine ya que el usuario podría ahorrarse el gasto de acabar viendo una película que no le gusta por no poder saber si se 
+    ajusta a sus gustos. Además, tener una red de contactos de personas interesadas en ver películas que a ti también te gusten y tener la posibilidad
+    de quedar en un lugar, fecha y hora determinados refuerzan el atractivo de nuestra aplicación en el dominio del ocio.
+\end{flushleft}
 % +--------------------------------------------------------------------+
 % |To create cross-references to figures, tables and segments
 % |of text, LaTeX provides the following commands:
@@ -46,68 +60,64 @@
 \section{Antecedentes}
 \label{makereference1.1}
 \begin{flushleft}
-    Esta idea surge de la propuesta de mejora de un Trabajo de Fin de Grado anterior
-    al nuestro cuyo enfoque y finalidad era el mismo. Nuestro objetivo principal es 
+    Para entender de donde surge nuestra idea tenemos que remontarnos al momento en el que se propuso este proyecto.
+    El principal motivo es la mejora de un Trabajo de Fin de Grado anterior
+    al nuestro, con el mismo título (\textbf{*referenciar al anterior TFG*}), cuyo enfoque y finalidad era el mismo. Nuestro objetivo principal es 
     ampliar su funcionalidad diferenciándonos, sobre todo, en las tecnologías usadas y 
     en los casos de uso representados.
-    En nuestra aplicación hemos cambiado el enfoque desde la perspectiva del usuario, no 
-    nos centramos únicamente en el acto de ir al cine y reconocer películas que estuvieran en la cartelera
-    para que nuestra aplicación nos recomiende la que más se ajuste a nuestros gustos. Si no que, hemos 
-    abogado por la creación de planes, en los cuales podemos incluir películas que hayamos visto o que queramos ver
-    y pueden unirse otros usuarios de la aplicación, haciendo así que su funcionalidad sea mucho más interactiva y 
-    abierta al uso en el día a día.
-    En cuanto a la diferencia desde el punto de vista tecnológico, hemos decidido usar \textbf{Unity} y \textbf{Vuforia} para el reconocimiento
-    de imágenes y el uso de la Realidad Aumentada para aportar valor a la experiencia de usuario. En cuanto a la parte backend, 
-    hemos usado \textbf{Spring} como framework para nuestra \textbf{API REST}, ya que está siendo usado ampliamente a nivel empresarial actualmente.
+    En nuestra aplicación no solo nos centramos en ir al cine y reconocer películas que estuvieran en la cartelera
+    para que nos recomiende la que más se ajuste a nuestros gustos. Decidimos que el usuario podría crear planes con
+    una película que le interesase ver y que sus amigos u otros usuarios pudieran unirse para ir todos juntos a verla.
+    También nos permitirá reconocer imágenes de caras de usuarios para añadirlos como amigos o que nos recomiende en tiempo real
+    que películas podemos ir a ver con éstos.
 \end{flushleft}
-\newpage
 \section{Objetivos}
 \label{makereference1.2}
+Nuestro objetivo principal es crear una aplicación completa que funcione en un entorno real, con una comunicación cliente servidor que además 
+incluya Realidad Aumentada para aportar un valor añadido a su funcionalidad.
+También tenemos una lista de subobjetivos a cumplir:
 \begin{itemize}  
     \item Estudiar las tecnologías de realidad aumentada actuales e implementarlas.
     \item Analizar sistemas de recomendación, así como su uso dentro del proyecto.
-    \item Desarrollar una aplicación para dispositivos móviles que aplique las anteriores tecnologías en un proyecto real.
+    \item Diseñar una aplicación para dispositivos móviles que aplique las anteriores tecnologías en un proyecto real.
     \item Definir casos de uso reales que aporten valor a la aplicación.
     \item Administrar y configurar servicios web que provisionen de información a la aplicación.
     \item Desplegar un servidor e implementar sus servicios de forma que su modificación sea lo más sencilla posible.
     \item Coordinar el trabajo en grupo y la gestión de los cambios mediante el uso de prácticas de las metodologías ágiles.
     \item Investigar la mejor forma de mejorar la experiencia de usuario de nuestra aplicación.
-    \item Aplicar los conocimientos y disciplinas aprendidos de la Ingeniería del Software.
 \end{itemize}
 
-\newpage
 \section{Plan de trabajo}
 \begin{flushleft}
-    Para comenzar analizaremos el estado del arte, en el que aprenderemos los conceptos
-     básicos de la Realidad Aumentada y buscaremos las tecnologías actuales a las fechas del proyecto,
-     que funcionen en dispositivos móviles.
+    Para comenzar con nuestro proyecto analizaremos el estado del arte, en el Capítulo 2, en el que estudiaremos los conceptos
+     básicos de la Realidad Aumentada y buscaremos las tecnologías actuales a la fecha del proyecto
+     que funcionen en dispositivos móviles. También realizaremos en este capítulo un análisis de aquellas aplicaciones que se asemejen
+     a nuestra idea, junto con un estudio de las distintas fuentes de información de las que podemos obtener datos y una breve introducción
+    a los sistemas de recomendación que podríamos usar.
 \end{flushleft}
 
 \begin{flushleft}     
-    Después realizaremos las tareas de diseño en las que desarrollaremos prototipos usando
-     tecnologías de Realidad Aumentada en distintas plataformas y crearemos otros prototipos para una \textbf{API REST}.
-     También realizaremos una lista de las funcionalidades más importantes de nuestra aplicación
-     y diseñaremos bocetos para la interfaz de usuario, que nos servirán como guía en
-     la implementación.
+    Después realizaremos las tareas de diseño, descritas en el Capítulo 3. Primero,
+    desarrollaremos prototipos usando tecnologías de Realidad Aumentada en distintas plataformas y crearemos otros prototipos para nuestra capa de datos. 
+    A continuación, nos plantearemos los distintos
+    escenarios en los que sería usada nuestra aplicación, posteriormente realizaremos una lista de las funcionalidades 
+    más importantes de nuestra aplicación y diseñaremos las interfaces de usuario que acompañaran a dichas funcionalidades. 
 \end{flushleft}
 
 \begin{flushleft}    
-    El siguiente paso será la implementación del software para el cual aplicaremos
-     algunas prácticas de la metodología \textbf{SCRUM}. Nuestro proyecto estará dividido en tres repositorios, uno para la
-     \textbf{API REST} y dos más, uno de ellos para la parte de \textbf{RA} que se integra como una
-     escena en el segundo proyecto, realizado en \textbf{Android Studio}. El desarrollo se realizará
+    El siguiente paso será la implementación del software, descrito en el Capítulo 4, para el cual aplicaremos
+     algunas prácticas de la metodología SCRUM. El desarrollo se realizará
      con iteraciones cercanas a las dos semanas, comenzará con la selección de
      objetivos más prioritarios y terminará con las reuniones de revisión junto
-     con los directores del Trabajo de Fin de Grado, posteriormente otra reunión de retrospectiva en
-     la que participa únicamente el equipo, que nos servirá para realizar mejoras en la
-     siguiente iteración.
+     con los directores del Trabajo de Fin de Grado. Tras cada iteración, los miembros del equipo 
+     realizaremos una reunión de retrospectiva para identificar en qué hemos fallado durante esta iteración y
+     cómo podemos mejorar para la siguiente.
 \end{flushleft}
 
 \begin{flushleft}
-    Finalmente, pasaremos a estudiar distintas propuestas para el sistema
-     de recomendación con el fin de elegir la que mejor se adapte a nuestro
-     proyecto e implementarla como servicio para que la aplicación pueda
-     utilizarlo.
+    Por último, pasaremos a estudiar distintas formas de implementar un sistema
+     de recomendación con el fin de elegir el que mejor se adapte a nuestro proyecto. Tras
+     decidirnos comenzaremos a implementarlo y a probarlo.
 \end{flushleft}
 
 \label{makereference1.3}
