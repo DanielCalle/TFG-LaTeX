@@ -22,15 +22,15 @@ de imágenes con \textbf{Vuforia} usamos un \textbf{Cloud} gratuito que nos ofre
 Para la parte del servidor, hemos realizado una \textbf{API Rest} con \textbf{Spring}, usando además una base de datos relacional en \textbf{PostgreSQL}. 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6in]{figures/Arquitectura.png}
+    \includegraphics[width=6in]{figures/chapter-4/arquitectura.png}
     \caption{Arquitectura}
 \end{figure}
 \section{Servidor}
 \label{makereference4.2}
 Nuestro servidor está programado en \textbf{Java}, usando el framework \textbf{Spring} para la creación de una \textbf{API Rest} que mediante peticiones \textbf{HTTP} y una base de datos relacional en \textbf{PostgreSQL} nos proporcionará
-toda la información necesaria para alimentar de datos a nuestro cliente. El servidor necesita ser desplegado para que la aplicación pueda tener un uso real por lo que decidimos desplegarlo de forma gratuita en \textbf{Heroku}, que además ofrece
-facilidades para desplegar un servidor creado mediante \textbf{Spring}, por lo que nos facilitó el trabajo considerablemente. También se encuentra en el servidor la implementación del sistema de recomendación, con el siguiente punto de acceso \textbf{/recommendations/\{user\}}.
-\subsection{Despliegue en Heroku}
+toda la información necesaria para alimentar de datos a nuestro cliente. El servidor necesita ser desplegado para que la aplicación pueda tener un uso real por lo que conseguimos desplegarlo de forma gratuita en \textbf{Heroku}, que además ofrece
+facilidades para desplegar un servidor creado mediante \textbf{Spring}, por lo que nos facilitó el trabajo considerablemente. También se encuentra en el servidor la implementación del sistema de recomendación.
+\subsection{Despliegue en Heroku}. 
 \label{makereference4.2.1}
 Para el despliegue de la aplicación de servidor utilizamos Heroku. Esta plataforma nos ofrece un alojamiento gratuito con las características suficientes para el desarrollo del proyecto.
 \begin{figure}[H]
