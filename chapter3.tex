@@ -13,7 +13,28 @@
 \label{makereference3}
 
 
-
+\section{Análisis de la competencia}
+\label{makereference3.1}
+\begin{flushleft}
+    Consideramos que la aplicación que hemos diseñado consta de dos partes claramente diferenciadas (la parte de realidad aumentada
+    y la parte de recomendación y gestión de películas), además, pensamos que existen distintos tipos de competencia dependiendo de cada una de ellas.
+     \begin{itemize}  
+         \item En la parte de recomendación y gestión de películas, compite claramente con aplicaciones como IMDB\cite{imdb} o MovieBase\cite{moviebase}. 
+         Estas aplicaciones proporcionan, herramientas para guardar películas y recomendar éstas a los usuarios en función de sus gustos. Estas funcionalidades son 
+         muy parecidas a las que nosotros hemos decidido proporcionar a nuestros usuarios, con la diferencia que nuestra aplicación, además de las funcionalidades anteriormente 
+         mencionadas, permite realizar más acciones sobre las películas como crear planes con amigos.
+        \item A diferencia de la parte de recomendación y gestión en donde hay una gran variedad de aplicaciones que ofrecen servicios parecidos a los nuestros, únicamente hemos 
+        encontrado una aplicación (Paramount AR+\cite{paramountar}) que ofrezca servicios parecidos a los nuestros relacionados con Realidad Aumentada. Según las especificaciones de la aplicación permite identificar pósteres y 
+        mostrar información sobre la película detectada, servicio muy parecido al que nosotros hemos proporcionado. 
+    \end{itemize}
+    Para intentar alejarnos de esta competencia, hemos decidido unir ambas funcionalidades en una aplicación y, además, proporcionar al usuario más funcionalidades como escanear una aplicación con Realidad Aumentada, 
+    ver su información y añadirla a un plan con amigos para ver dicha película. Para funcionalidades como ésta y otras en las que unimos la realidad aumentada con la recomendación de películas y gestión de planes no hemos encontrado actualmente ninguna aplicación que proporcione estos servicios.
+    \\
+    Además, la gestión de amigos con Realidad Aumentada es una funcionalidad que, tras nuestro análisis de la competencia, solamente la posee nuestra aplicación. 
+    Se basa en enfocar con la cámara a la imagen de un usuario de la aplicación y que mediante realidad aumentada muestre visualmente la información de los tres 
+    planes activos que tiene este usuario, una vez ha sido añadido como amigo, que más podrían gustarme y cuanto se estima que me gustaría ese plan.
+    
+\end{flushleft}
 \section{Escenarios}
 \label{makereference3.2}
 Antes de decidir como implementaríamos nuestra aplicación decidimos que sería importante establecer una serie
@@ -75,6 +96,13 @@ Las películas guardadas son aquellas que el usuario ha decidido guardar para ve
 
 \section{Sistema de recomendación}
 \label{makereference3.5}
+Finalmente decidimos usar para la aplicación el sistema de Filtrado Colaborativo por los siguientes motivos:
+
+\begin{itemize}
+    \item Tenemos valoraciones de usuarios a películas que podemos aprovechar, ya que es una de las acciones que puede realizar un usuario y se aprovecha para recolectar los datos.
+    \item Hemos conseguido un archivo csv de unas 200000 valoraciones de usuarios a películas con sus respectivos títulos, por lo que sólo tendríamos que crear usuarios ficticios para conseguir una base de datos inicial.
+    \item Para usar el filtrado basado en el contenido tenemos que diseñar muy bien los datos de cada una de las entidades, además de aplicar los pesos de importancia a los atributos para en un futuro aplicar el sistema.  
+\end{itemize} 
 Para la implementación de los sistemas de recomendación hemos encontrados tres librerías:
 \begin{enumerate}
     \item \textbf{Mahout}: Se trata de una librería bastante compleja, que básicamente abarca la mayoría de necesidades para la implementación del sistema de recomendación.
