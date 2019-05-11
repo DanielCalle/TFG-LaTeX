@@ -12,8 +12,270 @@
 \chapter{Implementación}
 \label{makereference4}
 A continuación, comenzaremos a exponer cómo hemos implementado nuestra aplicación, desde la arquitectura que hemos seguido, las tecnologías usadas para la parte 
-\textbf{frontend} y la parte \textbf{backend} junto a las dificultades que nos hemos encontrado mientras trabajábamos y finalmente hablaremos de las herramientas de trabajo
+frontend y la parte backend junto a las dificultades que nos hemos encontrado mientras trabajábamos y finalmente hablaremos de las herramientas de trabajo
 utilizadas para facilitarnos el trabajo en equipo.
+\section{Prototipos}
+\label{makereference4.1}
+
+\subsection{ARCore} 
+\label{makereference3.6.1} 
+\begin{flushleft}
+    Al comenzar la fase de desarrollo de proyectos, pensamos que una de las tecnologías que debíamos 
+    investigar y probar debía ser \textbf{ARCore}. Esto se debía a que, la empresa detrás de esta 
+    tecnología es \textbf{Google} y esto podría significar que tendríamos más material de consulta 
+    y ejemplos en comparación con otras tecnologías de fabricantes con menos recursos.
+    \textbf{ARCore} se encuentra disponible para \textbf{Java}, \textbf{Unity}, \textbf{Unreal} e \textbf{iOS}. Comenzamos realizando el 
+    "Quickstart" para \textbf{Android} y posteriormente para \textbf{Unity}. 
+    Tras realizar los proyectos propuestos por \textbf{ARCore}, realizamos algún proyecto propio 
+    para comprobar si la herramienta se ajustaba a la idea que teníamos para nuestro futuro proyecto.
+    Tras realizar ambos proyectos, concluimos que, aunque \textbf{ARCore} reúne las características 
+    necesarias para en un futuro convertirse en una de las tecnologías más importantes en Realidad Aumentada, 
+    no íbamos a seleccionarla para nuestro proyecto por las siguientes razones:
+    \begin{enumerate}
+        \item \textbf{ARCore} dispone de mucha documentación para comenzar a usar la herramienta, pero poca para realizar tareas más complejas
+        \item \textbf{ARCore} resulta muy útil para realizar superposiciones de modelos 3D sobre superficies, sin embargo, una de las funcionalidades más importantes que nuestra aplicación requería era la interacción con la realidad aumentada mediante el uso de botones, imágenes y la carga dinámica de elementos para posicionar en la pantalla de Realidad Aumentada e interaccionar con el usuario. En este sentido \textbf{ARCore} no está, por el momento, tan preparada como otras tecnologías.
+    \end{enumerate}
+    
+\end{flushleft}
+\subsection{Viro Media} 
+\label{makereference3.6.2}
+\begin{flushleft}
+El objetivo del prototipo realizado con \textbf{Viro Media} es reconocer imágenes almacenadas en el dispositivo para mostrar texto y
+ objetos virtuales. Además de probar tecnologías de desarrollo móvil web como en este caso \textbf{React Native}
+ para plataformas \textbf{iOS} y \textbf{Android}.
+\end{flushleft}
+\begin{flushleft}
+Comenzamos construyendo una interfaz sencilla con botones que nos redirigen a la escena de Realidad Aumentada.
+Para esta interfaz utilizamos \textbf{NativeBase} que es una librería que nos permite
+realizar una aplicación con apariencias de tipo \textbf{iOS} o \textbf{Android} según el dispositivo.
+\end{flushleft}
+
+\begin{figure}[htb]
+    \centering
+    \makebox[0pt][c]{%
+    \begin{minipage}[b]{0.5\linewidth}
+    \centering
+      \includegraphics[scale=0.3]{figures/chapter-3/viromedia/android.png}
+      \caption{Visualización con NativeBase en Android}
+    \label{sva}
+    \end{minipage}%
+    \hspace{0.3cm}
+    \begin{minipage}[b]{0.5\linewidth}
+    \centering
+     \includegraphics[scale=0.3]{figures/chapter-3/viromedia/ios.jpg}
+      \caption{Visualización con NativeBase en iOS}
+    \label{svb}
+    \end{minipage}%
+    }%
+\end{figure}
+
+\begin{flushleft}
+Para la escena de Realidad Aumentada mostramos texto y al detectar el póster de Pantera Negra,
+ reacciona mostrando una animación de dicho súper héroe saliendo del póster.
+\end{flushleft}
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3in]{figures/chapter-3/viromedia/blackpanther.png}
+    \caption{Visualización de RA}
+\end{figure}
+
+\begin{flushleft}
+Una de las ventajas que apreciamos fue la facilidad del lenguaje, en este caso \textbf{Javascript},
+ utilizando la popular librería \textbf{ReactJS} y la buena documentación de \textbf{Viro Media}
+ que hacían que el proceso de codificación fuera agradable.
+\end{flushleft}
+\begin{flushleft}
+Uno de los problemas que presentaba este prototipo era que las dependencias de \textbf{Viro Media} entraban en conflicto con las de \textbf{NativeBase}
+imposibilitándonos la forma de encontrar versiones compatibles. Utilizamos las últimas que, a pesar de lanzar
+ advertencias, funcionaba en el ejemplo realizado.
+Otro problema fue la compilación de la aplicación, \textbf{Viro Media} tiene una aplicación para probar lo
+ que desarrollamos conectándose a nuestro ordenador a través de la red. El problema es
+ que algunos recursos, como los iconos que utilizaba \textbf{NativeBase}, no eran descargados, por lo que la
+ mejor forma era probar la versión compilada de \textbf{iOS} y \textbf{Android}. La forma de compilar
+ la aplicación era un proceso costoso para los ordenadores, lento y con multitud de problemas según
+ se ampliaban las librerías que se utilizan.
+\end{flushleft}
+
+\begin{flushleft}
+La conclusión que obtuvimos de este prototipo fue que \textbf{Viro Media} y \textbf{React Native} son tecnologías muy prometedoras, pero debido a los
+ problemas surgidos y a que todas sus versiones no eran estables vimos un claro riesgo para
+ nuestro proyecto.
+\end{flushleft}
+
+\newpage
+\subsection{Vuforia + Android} 
+\label{makereference3.6.3} 
+ 
+\begin{flushleft}
+En este prototipo utilizamos la librería nativa de \textbf{Vuforia} para \textbf{Android} para 
+realizar las pruebas de tecnología de reconocimiento de imágenes tanto en  
+local como usando la nube que nos ofrecía \textbf{Vuforia}, para la posterior renderización
+de objetos y textos.
+
+Las características tecnológicas de este prototipo son las siguientes:
+\end{flushleft}
+
+\begin{enumerate}
+    \item La librería de \textbf{Vuforia} para \textbf{Android} está diseñada a muy bajo nivel.
+    \item \textbf{Vuforia} para dibujar en 3D usa la librería \textbf{OpenGL}.
+    \item \textbf{OpenGL} utiliza una serie de espacios donde se van colocando los elementos: 
+    \begin{enumerate}
+        \item \textbf{Local space}: Es el espacio local de cada objeto.
+        \item \textbf{World space}: Es el mundo donde se encuentran los objetos.
+        \item \textbf{View space}: El mundo visto desde la perspectiva de la cámara.
+        \item \textbf{Clip space}: Se integra con la pantalla del móvil y, definiendo los límites visibles, se establecen unas coordenadas de rango (-1,-1) - (1,1).
+    \end{enumerate}
+    \begin{flushleft}
+        Las transformaciones de estos espacios se realizan mediante matrices 4x4, 
+        en las que la primera fila hace referencia a la coordenada x, la segunda a la coordenada y y la 
+        tercera a la coordenada z, mientras que la última columna hace referencia a los desplazamientos 
+        de los objetos en esos 3 ejes.
+        \end{flushleft}
+        
+
+        
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=5in]{figures/space-transformation.png}
+                \caption{Esquema de los distintos espacios que usa OpenGL}
+            \end{figure}
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=5in]{figures/teapot.png}
+                \caption{Ejemplo de un modelo en 3D}
+            \end{figure}
+    
+    \item En \textbf{OpenGL} es necesario escribir código para que las tarjetas gráficas rendericen el modelo 3D,
+    el lenguaje que se usa es \textbf{GLSL}. Este código de \textbf{GLSL} se escribe en forma de \textbf{String} y se llama a un método 
+    que proporciona \textbf{OpenGL}.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=5in]{figures/GLSL.png}
+        \caption{Código en GLSL}
+    \end{figure}
+        
+    \item Otro aspecto a tener en cuenta es que \textbf{OpenGL} solo nos ofrece lo básico, no nos ofrece métodos para dibujar 
+    directamente objetos, sino que hay que seguir un pipeline de procesos para conseguir dibujar algo.
+    \newline
+    \begin{flushleft}
+    Esto consiste en pasar un \textbf{array} de números (cada tres para definir un punto) 
+    a las tarjetas gráficas, establecer triángulos entre los puntos (más arrays de números) 
+    definir colores a partir de los puntos (más arrays)..., y con el código del shader, ejecutar 
+    estos datos.
+    \begin{figure}
+        \centering
+        \includegraphics[width=4in]{figures/pipeline.png}
+        \caption{Pipeline de la construcción de un modelo}
+    \end{figure}
+    \end{flushleft}
+    \newpage
+    \item Por último, como sólo ofrece métodos básicos, no hay métodos de escritura de texto, y la forma que 
+    encontramos y que funcione fue usar un bitmap con los caracteres. Rechazamos esto por un principal motivo, para hacer que funciones hay que codificar a muy bajo nivel y 
+    nos costaría mucho tiempo y esfuerzo.
+    \begin{figure}
+        \centering
+        \includegraphics[width=5in]{figures/bitmap-font.png}
+        \caption{Mapa de bits de caracteres usado}
+    \end{figure}
+\end{enumerate}
+ 
+
+\newpage
+\subsection{Vuforia + Unity} 
+\label{makereference3.6.4}
+\begin{flushleft}
+    Para realizar este prototipo utilizamos \textbf{Unity} como herramienta básica para realizar la aplicación y \textbf{Vuforia} para dar soporte a la Realidad Aumentada.
+    El prototipo a desarrollar consistió en un modelo 3D de un dragón que aparecía al detectar una imagen que previamente habíamos establecido como ``imagen objetivo''.
+\end{flushleft}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=5in]{figures/prototipoUnity.jpg}
+        \caption{Modelo en 3D que aparecía al detectar la imagen}
+    \end{figure}
+\begin{flushleft}
+    Pese a que nadie del equipo había utilizado \textbf{Unity} previamente el resultado fue bastante positivo ya que:
+    \begin{enumerate}
+    \item \textbf{Unity} resultó ser intuitivo y relativamente fácil en cuanto al aprendizaje de las funcionalidades básicas.
+    \item \textbf{Vuforia} parecía estar muy probada e incluía de serie muchas funcionalidades.
+    \item \textbf{Vuforia} tenía la opción de utilizar un \textbf{Cloud} para almacenar las imágenes objetivo.
+    \end{enumerate}
+\end{flushleft}
+
+\subsection{Vuforia + Unity + Android} 
+\label{makereference3.6.5}
+\begin{flushleft}
+Una vez realizado el prototipo en \textbf{Vuforia} con \textbf{Unity} comenzamos a investigar cómo realizar el resto de la aplicación que no requería de Realidad Aumentada.
+\break
+Hasta este momento teníamos claro que \textbf{Vuforia} con \textbf{Unity} era la mejor combinación para realizar la parte de Realidad Aumentada, sin embargo, \textbf{Unity} no era igual de intuitivo ni eficaz a la hora de realizar tareas propias de una aplicación "normal", como el desarrollo de interfaces o la lógica.
+\break
+Por este motivo intentamos buscar la opción de realizar una aplicación en la que la Realidad Aumentada estuviese diseñada en \textbf{Unity} con \textbf{Vuforia} y el resto de la aplicación en Android.
+\end{flushleft}
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=1in]{figures/androidUnityVuforia.jpg}
+        \caption{Botón que comunicaba Android con Unity}
+\end{figure}
+\begin{flushleft}
+    Finalmente conseguimos tener ambos proyectos independientes, la Realidad Aumentada se desarrollaba en \textbf{Unity} con \textbf{Vuforia} y se exportaba a un proyecto Android donde se encontraba el resto de la aplicación.
+    Esto nos permitía realizar la Realidad Aumentada con la herramienta que tras las primeras tomas de contacto habíamos comprobado que era la mejor (\textbf{Unity} con \textbf{Vuforia}) y del mismo modo realizar el resto de la aplicación con la mejor herramienta para esta parte (AndroidStudio).
+\end{flushleft}
+\begin{flushleft}
+    Tras realizar este prototipo, consideramos que estas herramientas podrían ser las que usásemos en la aplicación final puesto que:
+    \begin{enumerate}
+    \item Como ya habíamos descubierto en el prototipo anterior, \textbf{Unity} era una herramienta muy completa y junto con \textbf{Vuforia} nos proporcionaban todas las herramientas necesarias para cumplir con los casos de uso de Realidad Aumentada que teníamos en mente.
+    \item Al haber encontrado la forma de combinar \textbf{Unity + Android} no teníamos que renunciar a ninguna de las dos herramientas. Lo que nos permitía explotar las cosas buenas de ambas herramientas.
+    \item La comunicación entre \textbf{Unity} y Android era relativamente sencilla pese a ser dos proyectos distintos.
+    \end{enumerate}
+\end{flushleft}
+
+\newpage
+\subsection{Server en Spring} 
+\label{makereference3.6.6}
+
+\begin{flushleft}
+    Para la realización de la parte backend de la aplicación decidimos
+    incorporar la tecnología de \textbf{Spring} para codificar un \textbf{servicio web REST} en \textbf{Java}
+    y el acceso a datos mediante \textbf{MySQL}.
+\break
+\break
+    Para el prototipo seguimos el siguiente tutorial: 
+\newline
+Cómo crear un microservicio o servicio web REST con Spring Boot\cite{tutorialspring}
+\break
+    que consistía en 3 partes bien definidas para la creación de dicho \textbf{servicio web REST} para la gestión de una entidad de contactos muy simple, se puede observar su estructura
+    en la figura 3.6.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=6in]{figures/ContactsEntity.png}
+        \caption{Entidad de Contactos}
+    \end{figure}
+\break
+\break
+    También se investigaron distintas formas de realizar el acceso a la base de datos desde el servidor, pero finalmente nos decantamos por usar la
+    clase \textbf{JPARepository} o \textbf{CRUDRepository}, las cuales nos ofrecen ya implementados los métodos típicos de las operaciones \textbf{CRUD}, además de la opción 
+    de poder crear nuestros propios métodos.
+\end{flushleft}
+
+\begin{flushleft}
+    Para poder probar las distintas peticiones de tipo \textbf{POST} y \textbf{GET}, que realizamos en local, usamos la herramienta 
+    \textbf{Postman}, ver figura 3.7.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=6in]{figures/Postman.png}
+        \caption{Postman}
+    \end{figure}
+    Para este prototipo decidimos usar \textbf{MySQL} como sistema de gestión de bases de datos relacional, aunque
+    a la hora de probar a levantar nuestro servidor de prueba tuvimos que rehacer este prototipo, además de adaptarlo para 
+    que gestionara entidades de películas, y que usara \textbf{PostgreSQL}, además de cambiar una serie de anotaciones y limpiar 
+    el archivo \textbf{pom.xml} de líneas de código innecesarias, ver figura 3.8, que es el que contiene las dependencias de nuestro proyecto.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=6in]{figures/PomXML.png}
+        \caption{Archivo pom.xml}
+    \end{figure}
+\end{flushleft}
 \section{Arquitectura}
 \label{makereference4.1}
 En cuanto a la arquitectura usada en nuestra aplicación hemos adjuntado un esquema que podemos observar en la figura 4.1. Nuestro cliente estará implementado tanto en \textbf{Android}
@@ -150,9 +412,28 @@ Entre los componentes que ofrece \textbf{Android} hay algunas funcionalidades qu
     \item \textbf{CustomViewPager:} ViewPager es lo que se usa en el MainActivity para colocar los tres fragmentos. Se crea esta clase para desactivar la acción de poder pasar los fragmentos mediante deslizamiento.
     \item \textbf{ExpandableTextView:} Es una clase que extiende de un TextView, se le añade un método para que cuando haya mucho texto, se pueda acortar. Además dispone de un botón para expandir.
 \end{itemize} 
-
-\section{Dificultades encontradas}
+\section{Sistemas de recomendación}
 \label{makereference4.4}
+Finalmente decidimos usar para la aplicación el sistema de Filtrado Colaborativo por los siguientes motivos:
+
+\begin{itemize}
+    \item Tenemos valoraciones de usuarios a películas que podemos aprovechar, ya que es una de las acciones que puede realizar un usuario y se aprovecha para recolectar los datos.
+    \item Hemos conseguido un archivo csv de unas 200000 valoraciones de usuarios a películas con sus respectivos títulos, por lo que sólo tendríamos que crear usuarios ficticios para conseguir una base de datos inicial.
+    \item Para usar el filtrado basado en el contenido tenemos que diseñar muy bien los datos de cada una de las entidades, además de aplicar los pesos de importancia a los atributos para en un futuro aplicar el sistema.  
+\end{itemize} 
+Para la implementación de los sistemas de recomendación hemos encontrados tres librerías:
+\begin{enumerate}
+    \item \textbf{Mahout}: Se trata de una librería bastante compleja, que básicamente abarca la mayoría de necesidades para la implementación del sistema de recomendación.
+    \item \textbf{Lenskit}: Es otra librería de \textbf{Java} para la implementación de sistemas de recomendación.
+    \item \textbf{LibRec}: Se trata de una librería de terceros que está subida en un repositorio de \textbf{GitHub}.
+\end{enumerate}
+
+Al final nos hemos decantado por \textbf{Mahout}, ya que aporta una documentación más completa. Otro de los motivos es que ofrece clases para realizar la conexión directamente con la base de datos 
+sin tener que leer desde ficheros csv. Por otro lado, en el testeo de 
+\textbf{Lenskit}, cuando intentábamos reproducir el ejemplo que ofrecían, nos encontramos que algunas funciones estaban 
+obsoletas y, por tanto, no nos transmitía mucha confianza. Por último, \textbf{Mahout} destaca por ser más fácil de usar y minimizar nuestro esfuerzo en aprender esta nueva tecnología.
+\section{Dificultades encontradas}
+\label{makereference4.5}
 A continuación, mostraremos una lista de todas las dificultades encontradas a la hora de implementar nuestra aplicación:
 \begin{itemize}
     \item Diseño de las interfaces para que fueran familiares e intuitivas para el usuario.
@@ -171,7 +452,7 @@ A continuación, mostraremos una lista de todas las dificultades encontradas a l
     \item Parte de la documentación de \textbf{Vuforia} contiene elementos de \textbf{Unity} y \textbf{Vuforia} de versiones desfasadas.
 \end{itemize}
 \section{Herramientas de trabajo}
-\label{makereference4.5}
+\label{makereference4.6}
 Las distintas herramientas de trabajo que hemos decidido usar para que el trabajo realizado fuera más eficiente son las siguientes:
 \begin{itemize}
     \item \textbf{Telegram:} hemos usado esta aplicación de mensajería para poder comunicarnos entre todos los miembros pertenecientes al proyecto, ya fuera para la sugerencia de ideas o que un bot de \textbf{Github} nos avisara de los cambios en los distintos repositorios que hemos creado. 
