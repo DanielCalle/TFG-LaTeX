@@ -4,8 +4,103 @@
 
 \cleardoublepage
 
-\chapter{Title for This Appendix}
+\chapter{Guía de instalación para el servidor}
 \label{Appendix:Key1}
+
+\section{Docker}
+\label{makereference7.1}
+Esta es una guía para el despliegue del servidor en Docker.
+
+Para ello primero tenemos que tener una instancia de docker, si se quiere ejecutar en local, 
+hay que instalar docker por el enlace \url{https://www.docker.com/}
+La imagen de docker se descarga por git por el siguiente enlace:
+\url{https://github.com/ZReKoJ/Docker.git}
+
+\begin{lstlisting}[language=bash, caption=Dockerfile]
+    FROM ubuntu:16.04
+
+    RUN apt-get update 
+    RUN apt-get install -y openssh-server
+    RUN mkdir /var/run/sshd
+    RUN echo 'root:tfg-ucm' | chpasswd
+    RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin
+         yes/' /etc/ssh/sshd_config
+    
+    # SSH login fix. Otherwise user is kicked off after login
+    RUN sed 's@session\s*required\s*pam_loginuid.so@session optional
+         pam_loginuid.so@g' -i /etc/pam.d/sshd
+    
+    ENV NOTVISIBLE "in users profile"
+    RUN echo "export VISIBLE=now" >> /etc/profile
+    
+    EXPOSE 22 8000 8080
+    CMD ["/usr/sbin/sshd", "-D"]
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash, caption=Descarga de la imagen de docker]
+    # Descarga de la imagen
+    git clone https://github.com/ZReKoJ/Docker.git 
+    # Entrar en la carpeta
+    cd Docker 
+    # Crear la imagen
+    docker build --tag=filmar . 
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/appendix-A/list-docker-images.png}
+    \caption{Imágenes creadas de docker}
+\end{figure}
+
+Se han creado dos imágenes tras la ejecución, la de ubuntu es una dependencia usada, para tener el entorno de linux, por eso no se puede borrar.
+
+\begin{lstlisting}[language=bash, caption=Levantamiento de la instancia de docker]
+    # Levanta docker mapeando puertos
+    docker run -p 22022:22 -p 8080:8080 filmar 
+    # No hace falta ejecutar los siguientes comandos
+    # Comando para listar containers de docker corriendo
+    docker ps 
+    # Listar todos los containers
+    docker container ls --all 
+    # Parar el container
+    docker stop 018 
+    # Borrar el container
+    docker rm 018 
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/appendix-A/list-docker-containers.png}
+    \caption{La instancia de docker levantada}
+\end{figure}
+
+Ahora que se ha levantado la instancia de docker con un ID 0186392cce18 y sus respectivos puertos mapeados.
+Se conecta al container mediante ssh con la contraseña \textbf{tfg-ucm}
+
+\begin{lstlisting}[language=bash, caption=Conexión ssh]
+    # El puerto 22022 es el que se habia mapeado
+    ssh root@localhost -p 22022
+\end{lstlisting}
+
+Una vez conectado al container, hay que instalar las siguientes herramientas
+
+\begin{lstlisting}[language=bash, caption=Instalaciones]
+    # Actualizacion por si acaso
+    apt update 
+    # Para descargar el repositorio en github
+    apt install git
+    # El servidor es un proyecto maven
+    apt install maven
+    # Base de datos
+    apt install postgresql
+    # Editor de texto
+    apt install vim
+    # Para usuarios
+    apt install sudo
+    # El servidor es un proyecto de java
+    apt install openjdk-8-jdk
+\end{lstlisting}
+
 
 
 % +--------------------------------------------------------------------+
