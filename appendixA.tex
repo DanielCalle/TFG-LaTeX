@@ -93,15 +93,63 @@ Una vez conectado al container, hay que instalar las siguientes herramientas
     apt install maven
     # Base de datos
     apt install postgresql
-    # Editor de texto
-    apt install vim
     # Para usuarios
     apt install sudo
     # El servidor es un proyecto de java
     apt install openjdk-8-jdk
 \end{lstlisting}
 
+Una vez instalado todas las herramientas, descargar el proyecto del servidor,
+que esta en \url{https://github.com/DanielCalle/TFG-Server.git}
 
+\begin{lstlisting}[language=bash, caption=Descarga del proyecto]
+    # Se recomienda descargar el proyecto en la carpeta home
+    cd /home
+    git clone https://github.com/DanielCalle/TFG-Server.git
+\end{lstlisting}
+
+Antes de levantar el servicio, hay que preparar postgresql. El archivo sql está dentro del proyecto
+en el siguiente path: \url{/src/main/webapp/WEB-INF/sql/filmar_low.sql}
+
+\begin{lstlisting}[language=bash, caption=Configuración postgresql]
+    # Cambiar al usuario postgres (por defecto)
+    sudo -i -u postgres
+    # Iniciar psql
+    psql
+    # Cambiar el password a 'admin'
+    \password
+    # Creacion de una base de datos
+    create database films;
+    # Salir de psql
+    \q
+    # Crear la estructura de base de datos
+    # Anadir datos
+    psql -d films -f /home/TFG-Server/src/main/webapp/
+        WEB-INF/sql/filmar_low.sql
+    # Salir del usuario postgres
+    exit
+\end{lstlisting}
+
+Una vez configurado postgres, se procede al despliegue del servicio.
+
+\begin{lstlisting}[language=bash, caption=Despliegue]
+    # Acceder a la raiz del repositorio
+    cd /home/TFG-Server
+    # Empaquetar con el perfil de docker
+    mvn package -P Docker
+    # Dar permiso de ejecucion al script
+    chmod +x server.sh
+    # Ejecutar 
+    ./server.sh start
+    # No hace falta ejecutar los siguientes comandos
+    # Para parar el servicio
+    ./server.sh start
+    # Para reiniciar el servicio
+    ./server.sh restart
+\end{lstlisting}
+
+Ya está levantado el servicio en el puerto 8080, se puede probar con el siguiente enlace
+\url{localhost:8080/films}.
 
 % +--------------------------------------------------------------------+
 % | Enter text for your Appendix page in the space below this box.     |
