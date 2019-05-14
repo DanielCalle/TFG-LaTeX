@@ -52,11 +52,11 @@ La imagen de docker se descarga por git por el siguiente enlace:
     \caption{Imágenes creadas de docker}
 \end{figure}
 
-Se han creado dos imágenes tras la ejecución, la de ubuntu es una dependencia usada, para tener el entorno de linux, por eso no se puede borrar.
+Se han creado dos imágenes tras la ejecución, la de ubuntu es una dependencia usada, para tener el entorno de Linux, por eso no se puede borrar.
 
 \begin{lstlisting}[language=bash, caption=Levantamiento de la instancia de docker]
     # Levanta docker mapeando puertos
-    # Tras la ejecutar se va quedar corriendo
+    # Tras la ejecutar se va a quedar corriendo
     # Pulse Ctrl + C para parar
     # Pero estaria levantado el contenedor
     docker run -p 22022:22 -p 8080:8080 filmar 
@@ -103,7 +103,7 @@ Una vez conectado al container, hay que instalar las siguientes herramientas
 \end{lstlisting}
 
 Una vez instalado todas las herramientas, descargar el proyecto del servidor,
-que esta en \url{https://github.com/DanielCalle/TFG-Server.git}
+que está en \url{https://github.com/DanielCalle/TFG-Server.git}
 
 \begin{lstlisting}[language=bash, caption=Descarga del proyecto]
     # Se recomienda descargar el proyecto en la carpeta home
@@ -111,7 +111,7 @@ que esta en \url{https://github.com/DanielCalle/TFG-Server.git}
     git clone https://github.com/DanielCalle/TFG-Server.git
 \end{lstlisting}
 
-Antes de levantar el servicio, hay que preparar postgresql. El archivo sql está dentro del proyecto
+Antes de levantar el servicio, hay que preparar postgresql. El archivo SQL está dentro del proyecto
 en el siguiente path: \url{/src/main/webapp/WEB-INF/sql/filmar_low.sql}
 
 \begin{lstlisting}[language=bash, caption=Configuración postgresql]

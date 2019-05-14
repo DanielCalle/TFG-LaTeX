@@ -56,7 +56,7 @@ nos rodea.
 
 
 La realidad aumentada se aplica a diversas áreas como seguridad, logística, sanidad, ocio, etc...
- Se puede aplicar a tantas disciplinas como podamos imaginar y no sólo se ha convertido en una herramienta útil sino que es una tecnología atractiva
+ Se puede aplicar a tantas disciplinas como podamos imaginar y no sólo se ha convertido en una herramienta útil, sino que es una tecnología atractiva
  y además signo de modernidad. Por estas razones actualmente vemos ejemplos como el de las televisiones, que compiten por aplicarla a sus programas
  y presumir de dar el mejor servicio a sus espectadores como vemos en las figuras 2.1 y 2.2. Con esta situación podemos por tanto estar de acuerdo
  en que es una tecnología en auge actualmente. 
@@ -78,7 +78,7 @@ Los smartphones son los dispositivos que más interaccionan con esta tecnología
 \end{figure}
 \subsection{Tecnologías actuales}
 \label{makereference2.1.1}
-A continuación describiremos las distintas tecnologías que hemos investigado para la implementación de la Realidad Aumentada.
+A continuación, describiremos las distintas tecnologías que hemos investigado para la implementación de la Realidad Aumentada.
 \begin{itemize}
     \item ARCore\cite{arcore}: plataforma creada por Google para desarrollar aplicaciones de
  realidad aumentada con soporte para Android, Android NDK, iOS,
@@ -106,10 +106,10 @@ ARCore usa tres características a través de la cámara del dispositivo:
 experiencias de realidad aumentada persistente y compartirlas entre distintos dispositivos iOS. 
 Detecta imágenes 2D incluso en movimiento y objetos 3D. Esta tecnología se basa en la odometría visual inercial, esta es capaz 
 de reconocer las imágenes que capta la cámara y la forma en la que la luz se refleja 
-en los diferentes elementos que aparecen para obtener un mapa 3D del entorno y , calcular las distancias que hay entre los diferentes objetos 
+en los diferentes elementos que aparecen para obtener un mapa 3D del entorno y, calcular las distancias que hay entre los diferentes objetos 
 desde la posición del dispositivo. Tras iniciar la realidad aumentada con ARKit, nuestro dispositivo crea un entorno virtual donde nuestro
 dispositivo representa la coordenada (0,0,0), con los tres ejes, el horizontal, vertical y el de profundidad, pero también es necesario otro eje,
-el eje W que representa la rotación del dispositivo. En la figura 2.4 se puede observar como cambia el elemento virtual según como situemos nuestro
+el eje W que representa la rotación del dispositivo. En la figura 2.4 se puede observar cómo cambia el elemento virtual según como situemos nuestro
 smartphone.
 
 \begin{figure}[H]
@@ -125,7 +125,7 @@ kit de desarrollo para realidad aumentada con soporte para Android, iOS, Unity, 
 Su licencia es de pago, aunque hay versiones limitadas gratuitas.
 Utiliza ARCore o ARKit cuando los dispositivos lo soportan y en caso contrario utiliza tecnología de Wikitude
  para que el número de dispositivos compatibles sea mayor. Algunas de las tecnologías que soporta Wikitude son la geolocalización, el reconocimiento 
- de imágenes y el reconocimiento en la nube. Para entender como funciona este SDK tenemos que describir tres términos básicos fundamentales:
+ de imágenes y el reconocimiento en la nube. Para entender cómo funciona este SDK tenemos que describir tres términos básicos fundamentales:
 \begin{itemize}
     \item Target: conjunto de datos extraídos de una imagen, empleados por un rastreador al reconocerla para realizar alguna acción.
     \item Target Collection: es un conjunto de targets empleado por el rastreador para reconocer imágenes en el mundo real.
@@ -155,7 +155,7 @@ Es un conjunto de librerías escritas de forma nativa para cada plataforma, prop
 dispositivo (como pueden ser la cámara, notificaciones emergentes, contactos, almacenamiento local y otro tipo de hardware) desde JavaScript. Está 
 desarrollado para suavizar las diferencias entre plataformas lo máximo posible, consiguiendo que los proyectos que se realicen sean muy portables ya que pueden
 ejecutarse en cualquier entorno nativo que contengo el SDK de Expo.
-También proporciona componentes de interfaz de usuario para manejar una variedad de casos de uso que casi todas las aplicaciónes móviles tiene que cubrir pero no están
+También proporciona componentes de interfaz de usuario para manejar una variedad de casos de uso que casi todas las aplicaciones móviles tienen que cubrir pero no están
 construidas en el núcleo de React Native, por ejemplo, iconos, vistas borrosas (aquellas que aparecen de fondo para que el usuario se centre más en los elementos que están superpuesto a la imagen), etc.
 \end{itemize}
 
