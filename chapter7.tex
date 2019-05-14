@@ -142,28 +142,30 @@ En este capítulo especificaremos las aportaciones de cada integrante del grupo,
     \subsection{Estado del arte}
     \label{makereference7.4.1}
         \begin{itemize}
-            \item
+            \item Estudio de Vuforia + Android, de las dependencias que necesitaba. Investigación del pipeline 
+            que usan para renderizar objetos en el espacio, la librería de dibujo en 3D que se usa internamente \textbf{OpenGL}, 
+            incluso aprendizaje de lenguajes de de bajo nivel (\textbf{GLSL}) que se usa en las tarjetas gráficas.
+            \item Aprendizaje de los distintos métodos de recomendación, prueba, evaluación y final elección del algoritmo usado en el proyecto.  
         \end{itemize}
     \subsection{Diseño de la aplicación}
     \label{makereference7.4.2}
         \begin{itemize}
-            \item
+            \item Participación en escenarios diseñando algunos casos de escenarios como boceto.
+            \item Diseño de las interfaces de usuario de los amigos y de sesión. Éstas interfaces se fueron cambiando con la implementación.
         \end{itemize}
     \subsection{Implementación}
     \label{makereference7.4.3}
         \begin{itemize}  
-            \item Creación de prototipo con Vuforia en Android.
-            \item Creación de prototipo de la arquitectura de Microservicios.
-            \item Evaluación y pruebas para establecer el proyecto de Unity.
-            \item Evaluación del uso del Docker ofrecido por la universidad.
-            \item Diseño de arquitectura del proyecto de android y de las
-             vistas.
-            \item Configuración del proyecto del servidor mediante maven y
-             perfiles para el despliegue en un entorno Linux.
-            \item Estudio de sistemas de recomendación y su implementación en el
-            servidor.
+            \item Creación de prototipo con Vuforia en Android, encontrándose con la dificultad de que se necesita programar con lenguajes a bajo nivel, entre otra cosas.
+            \item Creación de prototipo de la arquitectura de Microservicios, para posterior incorporación en el proyecto.
+            \item Creación, prueba, y evaluación de varios ejemplos de Unity con Realidad Aumentada y elección final para establecer el proyecto de Unity.
+            \item Evaluación del uso del Docker ofrecido por la universidad, creación de scripts para imágenes de docker, como para el despliegue de proyectos de maven en un entorno linux como un servicio. 
+            \item Creación de la base de la de arquitectura del proyecto de android y de las vistas que lo componen.
+            \item Configuración del proyecto del servidor mediante maven y perfiles para el despliegue en un entorno Linux.
+            \item Implementación de rutas en el servidor, como sus servicios de aplicación, repositorios, etc.
+            \item Implementación en el servidor el sistema de recomendación por medio de la librería de mahout, que ofrece un método para la conexión con la base de datos \textbf{Postgresql} sin tener que leerlo de un fichero csv.
             \item Revisor de código.
-            \item Establecimiento del uso de patrones de diseño. 
+            \item Establecimiento del uso de patrones de diseño, como comandos, singleton, constructor, etc. Los cuales se encuentran en la implementación de Android. 
         \end{itemize}
     \subsection{Memoria}
     \label{makereference7.4.3}
