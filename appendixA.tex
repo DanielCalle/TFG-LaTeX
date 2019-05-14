@@ -56,6 +56,9 @@ Se han creado dos imágenes tras la ejecución, la de ubuntu es una dependencia 
 
 \begin{lstlisting}[language=bash, caption=Levantamiento de la instancia de docker]
     # Levanta docker mapeando puertos
+    # Tras la ejecutar se va quedar corriendo
+    # Pulse Ctrl + C para parar
+    # Pero estaria levantado el contenedor
     docker run -p 22022:22 -p 8080:8080 filmar 
     # No hace falta ejecutar los siguientes comandos
     # Comando para listar containers de docker corriendo
@@ -112,6 +115,8 @@ Antes de levantar el servicio, hay que preparar postgresql. El archivo sql está
 en el siguiente path: \url{/src/main/webapp/WEB-INF/sql/filmar_low.sql}
 
 \begin{lstlisting}[language=bash, caption=Configuración postgresql]
+    # Levantar postgresql
+    service postgresql start
     # Cambiar al usuario postgres (por defecto)
     sudo -i -u postgres
     # Iniciar psql
