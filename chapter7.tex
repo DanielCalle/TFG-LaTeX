@@ -19,30 +19,36 @@ En este capítulo especificaremos las aportaciones de cada integrante del grupo,
     \subsection{Estado del arte}
     \label{makereference7.1.1}
         \begin{itemize}
-            \item
+            \item Investigación de las distintas fuentes de información para la obtención de los datos referentes para las películas, valorando cuál sería la que mejor información aportaba para el proyecto.
         \end{itemize}
     \subsection{Diseño de la aplicación}
     \label{makereference7.1.2}
         \begin{itemize}
-            \item Diseños de vistas de la aplicación con \textbf{MockFlow}.
+            \item Diseños de vistas de la aplicación con MockFlow. Es decir, el diseño de los primeros bocetos de las interfaces que terminaron por ser lo que hemos diseñado en el capítulo 3.
             \item Diseño de las interfaces de usuario de los planes y películas
-            guardadas.
+            guardadas. Tras varias pruebas y diseños fallidos diseñé la forma de mostrar los planes y películas basándome en aplicaciones del ámbito del cine o de las series, como puede ser TV Time \cite{tvtime}
+            \item Diseño de la vista que aparece tras guardar una película mediante la realidad aumentada, con la que se confirma que película se ha guardado.
         \end{itemize}
     \subsection{Implementación}
     \label{makereference7.1.3}
         \begin{itemize}
-            \item Estudio y creación del prototipo de servidor en \textbf{Spring}.
-            \item Obtención de imágenes mediante \textbf{Picasso} a la aplicación.
-            \item Funcionalidad para guardar películas mediante realidad aumentada.
+            \item Estudio y creación del prototipo de servidor en Spring. Búsqueda de tutoriales y la codificación de un pequeño servidor en local usando el framework de Spring, tras el prototipo contribuí a su ampliación y modificación para que se ajustase correctamente a lo que necesitaba nuestra aplicación.
+            \item Obtención de imágenes mediante Picasso a la aplicación. 
+            \item Funcionalidad para guardar películas mediante realidad aumentada, esto implica la comunicación con Android y Unity para saber la relación que tiene la película que se ha reconocido desde el cloud, con la película que se guarda en el servidor y otorgar feedback al usuario de su correcto funcionamiento.
             \item Disposición y diseño de botones que aparecen tras reconocer una
-            película con realidad aumentada.
+            película con realidad aumentada. Los botones que mostrábamos al principio no tenían mucho sentido con sus iconos y ocupaban mucho espacio, opté por incluir un botón inicial que al pulsarse se desplegase y mostrase más botones por encima del mismo, en los cuales puedes acceder a la información de la película o guardarla.
+            \item Implementación de funciones del servidor tales como unirse a un plan, salirse de un plan y buscar los planes de un usuario concreto. Cuando me dedicaba a implementar ciertas vistas de la aplicación de Android, como mostrar los planes o las películas guardadas, me vi en la necesidad de incluir funciones en el servidor para obtener los datos que necesitaba, las cuales no nos habíamos planteado ninguno hasta el momento en el que fueron necesarias. 
         \end{itemize}
     \subsection{Memoria}
     \label{makereference7.1.3}
         \begin{itemize}
-            \item Redacción del resumen.
+            \item Redacción del resumen tanto en español como en inglés.
+            \item Redacción de la introducción a nuestro proyecto así como de los antecedentes.
             \item Redacción de las distintas interfaces de usuario de la aplicación.
-            \item Revisión de calidad de la memoria.
+            \item Redacción del prototipo del servidor que implementé con Spring.
+            \item Redacción de cómo está implementado nuestro servidor, es decir, qué entidades poseemos, que servicios de aplicación, controladores y repositorios.
+            \item Revisión de calidad de la memoria. Me he ocupado de revisar las posibles faltas ortográficas o fallos de estilo al usar LaTeX.
+            \item Redacción de las dificultades de trabajo así como de las soluciones que les dimos durante el desarrollo del proyecto.
         \end{itemize}
 
 \section{Daniel Calle Sánchez}
