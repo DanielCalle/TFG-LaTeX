@@ -230,7 +230,9 @@ que gestionara entidades de películas, y que usara PostgreSQL.
 \label{makereference4.2}
 En cuanto a la arquitectura usada en nuestra aplicación hemos adjuntado un esquema que podemos observar en la Figura 4.12. Nuestra aplicación móvil estará implementada tanto en Android
 como en Unity, la aplicación general está en Android, mientras que la parte de realidad aumentada está desarrollada en Unity y usa Vuforia. Para el reconocimiento
-de imágenes con Vuforia usamos un almacenamiento en la nube gratuito que nos ofrece para almacenar las imágenes ya que, tener todas las imágenes en la misma aplicación la cargaría de un peso innecesario.
+de imágenes con Vuforia usamos un almacenamiento en la nube gratuito que nos ofrece para almacenar las imágenes ya que, tener todas las imágenes en la misma aplicación la cargaría de un peso innecesario. Vuforia es una herramienta de pago, sin embargo, 
+ofrece una licencia gratuita para desarrolladores que pretendan aprender la tecnología sin lucrarse de ella\cite{vuforia_prices}. Tiene limitaciones como el número de accesos al mes o el número de imágenes que se pueden guardar, pero para el uso que pretendemos 
+darle es suficiente \cite{vuforia_free}. 
 Para la parte del servidor, hemos realizado una API Rest con Spring, usando además una base de datos relacional en PostgreSQL. La comunicación entre cliente y servidor se realiza mediante peticiones HTTP a 
 nuestro servidor desplegado en Heroku el cual nos devolverá los datos en formato JSON y posteriormente los mapearemos a una clase Java.
 \begin{figure}[H]
