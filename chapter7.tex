@@ -56,32 +56,67 @@ En este capítulo especificaremos las aportaciones de cada integrante del grupo,
     \subsection{Estado del arte}
     \label{makereference7.2.1}
         \begin{itemize}
-            \item Estudio de la tecnologías de Realidad Aumentada, Viro React y
-            Expo AR.
+            \item Investigación de las tecnologías de Realidad Aumentada ViroReact y
+            Expo AR. Con el fin de decidir el entorno en el que finalmente se implementará la aplicación.
         \end{itemize}
     \subsection{Diseño de la aplicación}
     \label{makereference7.2.2}
         \begin{itemize}
-            \item Identificación de requisitos funcionales de la aplicación.
-            \item Diseños de vistas de la aplicación con MockFlow.
+            \item Colaboración en la identificación de requisitos funcionales de la aplicación.
+            \item Creación de los segundos bocetos para las interfaces en
+             MockFlow, definiendo un recorrido en el uso de la aplicación.
         \end{itemize}
     \subsection{Implementación}
     \label{makereference7.2.3}
         \begin{itemize}
-            \item Creación de prototipo con ViroReact y ARCore.
-            \item Diseño de la arquitectura.
-            \item Configuración de Heroku.
-            \item Implementación de servicios en Spring.
-            \item Reconocimiento de usuarios con Vuforia en Unity.
-            \item Desarrollo de vistas para planes en Android.
+            \item Creación de un \href{https://github.com/DanielCalle/react-native-demo}{prototipo con ViroReact y React Native}
+             siguiendo los ejemplos de la documentación oficial de Viro Media\cite{viroreact},
+             incluye un menú desde el que se accede a dos escenas de RA, una
+             que muestra texto y otra que muestra al personaje de una película
+             saliendo del poster de la película cuando el
+             dispositivo lo reconoce. También se usa la librería llamada NativeBase que
+             muestra distinta apariencia en las interfaces si es iOS o Android.
+             Se solucionó problemas de dependencias al usar las distintas librerías.
+            \item Creación de un \href{https://github.com/DanielCalle/DemoARCore}{prototipo con ARCore usando Kotlyn} como lenguaje
+            en la plataforma de Android, siguiendo los ejemplos proporcionados por
+            la documentación de Google ARCore\cite{arcore}.
+            \item Gestión de los repositorios utilizados para el proyecto en 
+            GitHub.
+            \item Diseño de la arquitectura que ha permitido la comunicación
+             entre servidor y cliente.
+            \item Configuración de los recursos y la aplicación en Heroku para
+             el despliegue automático. 
+            \item Implementación de los primeros servicios para planes y amigos
+             que contenían todas las operaciones CRUD en Spring.
+            \item Cambios en los servicios de usuarios y películas para añadir
+             nuevas operaciones y datos.
+            \item Implementación de controles a los datos de entrada en los servicios del Spring.
+            \item Uso de patrón Transfer para los datos de entrada y salida en Spring.
+            \item Uso de los patrones Factoría y Singleton en Spring.
+            \item Cambios en los métodos HTTP de los servicios de Spring para
+            usar los correctos que describen los estándares de API REST.
+            \item Implementación del reconocimiento de usuarios con Vuforia en Unity
+             para que al detectar que la imagen es la de un usuario mostrar los
+             paneles correspondientes y si es una película mostrar los anteriores
+             ya existentes.
+            \item Cambios en la lista de planes en la interfaz de Android para
+             mostrar fecha, imágenes de usuarios.
+            \item Guiar las reuniones de retrospectiva utilizando algunas dinámicas
+             como la técnica del barco velero para recolectar datos del equipo y
+             generar ideas. Después de la anterior, aplicamos la lista abierta de
+             acciones para decidir qué hacer con el fin de mejorar en la
+             siguiente iteración.
             \item Búsqueda y configuración de herramientas que mejoren el
-             rendimiento del equipo.
+             rendimiento de trabajo en equipo como Slack, Trello.
         \end{itemize}
     \subsection{Memoria}
     \label{makereference7.2.3}
         \begin{itemize}
+            \item Definir estructura de la memoria.
             \item Redacción de \autoref{makereference5} Conclusiones.
             \item Redacción de \autoref{makereference6} Trabajo futuro.
+            \item Referencias a la bibliografía.
+            \item Revisión de la memoria.
         \end{itemize}
 
         \section{Carlos Gómez Cereceda}
