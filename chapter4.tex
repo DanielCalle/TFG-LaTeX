@@ -151,8 +151,8 @@ Las características tecnológicas de este prototipo son las siguientes:
         \caption{Pipeline de la construcción de un modelo}
     \end{figure}
     \item Por último, como sólo ofrece métodos básicos, no hay métodos de escritura de texto, y la forma que 
-    encontramos para que funcione fue usar un bitmap con los caracteres, ver Figura 4.8. Rechazamos esto por un principal motivo, para conseguir esta funcionalidad tendríamos que codificar a muy bajo nivel y 
-    nos costaría mucho tiempo y esfuerzo.
+    encontramos para que funcione fue usar un bitmap con los caracteres, ver Figura 4.8.Este fue el principal 
+    motivo de rechazar esta tecnología ya que, dependiendo de la funcionalidad que se desee implementar, es necesario codificar a muy bajo nivel, lo que costaría mucho tiempo y esfuerzo.
     \begin{figure}
         \centering
         \includegraphics[width=5in]{figures/bitmap-font.png}
@@ -184,7 +184,7 @@ Las características tecnológicas de este prototipo son las siguientes:
 \label{makereference3.6.5}
 
 Una vez realizado el prototipo en Vuforia con Unity comenzamos a investigar cómo realizar el resto de la aplicación que no requería de Realidad Aumentada.
-Hasta este momento teníamos claro que Vuforia con Unity era la mejor combinación para realizar la parte de realidad aumentada. Sin embargo, Unity no era igual de intuitivo ni eficaz a la hora de realizar tareas propias de una aplicación "normal", como el desarrollo de interfaces o la lógica.
+Hasta este momento teníamos claro que Vuforia con Unity era la mejor combinación para realizar la parte de realidad aumentada. Sin embargo, tras realizar pruebas desarrollando en Unity interfaces y lógica nos dimos cuenta de que Unity no era igual de intuitivo ni eficaz a la hora de realizar estas tareas que necesitábamos para desarrollar el resto de la aplicación que no necesitaba Realidad Aumentada.
 Por este motivo intentamos buscar la opción de realizar una aplicación en la que la realidad aumentada estuviese diseñada en Unity con Vuforia y el resto de la aplicación en Android, ver Figura 4.10.
 
 \begin{figure}[H]
@@ -211,7 +211,7 @@ Para la realización de la parte backend de la aplicación decidimos
 incorporar la tecnología de Spring para codificar un servicio web REST en Java
 y el acceso a datos mediante MySQL. Para el prototipo seguimos un tutorial\cite{tutorialspring} de 3 partes para crear un servicio web REST
 que gestionara una simple entidad de contactos de personas, con atributos como el nombre completo del contacto, su número de teléfono o su correo electrónico. Se puede observar su estructura
-en la figura 3.11.
+en la figura 4.11.
     \begin{figure}[H]
         \centering
         \includegraphics[width=6in]{figures/ContactsEntity.png}
