@@ -1,24 +1,178 @@
 % +--------------------------------------------------------------------+
-% | Appendix A Page (Optional)                                         |
+% | Sample Chapter 7
 % +--------------------------------------------------------------------+
 
 \cleardoublepage
 
-\chapter{Guía de instalación para el servidor}
-\label{Appendix:Key1}
+% +--------------------------------------------------------------------+
+% | Replace "This is Chapter 7" below with the title of your chapter.
+% | LaTeX will automatically number the chapters.
+% +--------------------------------------------------------------------+
 
-\section{Docker}
+\chapter{Contribución al proyecto}
+\label{makereference7}
+En este capítulo especificaremos las aportaciones de cada integrante del grupo,
+ las cuales se ordenarán por las fases del proyecto.
+
+\section{Diego Acuña Berger}
 \label{makereference7.1}
-Esta es una guía para el despliegue del servidor en Docker.
+    \subsection{Estado del arte}
+    \label{makereference7.1.1}
+        \begin{itemize}
+            \item Investigación de las distintas fuentes de información para la obtención de los datos referentes para las películas, valorando cuál sería la que mejor información aportaba para el proyecto.
+        \end{itemize}
+    \subsection{Diseño de la aplicación}
+    \label{makereference7.1.2}
+        \begin{itemize}
+            \item Diseños de vistas de la aplicación con MockFlow. Es decir, el diseño de los primeros bocetos de las interfaces que terminaron por ser lo que hemos diseñado en el capítulo 3.
+            \item Diseño de las interfaces de usuario de los planes y películas
+            guardadas. Tras varias pruebas y diseños fallidos diseñé la forma de mostrar los planes y películas basándome en aplicaciones del ámbito del cine o de las series, como puede ser TV Time \cite{tvtime}
+            \item Diseño de la vista que aparece tras guardar una película mediante la realidad aumentada, con la que se confirma que película se ha guardado.
+        \end{itemize}
+    \subsection{Implementación}
+    \label{makereference7.1.3}
+        \begin{itemize}
+            \item Estudio y creación del prototipo de servidor en Spring. Búsqueda de tutoriales y la codificación de un pequeño servidor en local usando el framework de Spring, tras el prototipo contribuí a su ampliación y modificación para que se ajustase correctamente a lo que necesitaba nuestra aplicación.
+            \item Obtención de imágenes mediante Picasso a la aplicación. 
+            \item Funcionalidad para guardar películas mediante realidad aumentada, esto implica la comunicación con Android y Unity para saber la relación que tiene la película que se ha reconocido desde el cloud, con la película que se guarda en el servidor y otorgar feedback al usuario de su correcto funcionamiento.
+            \item Disposición y diseño de botones que aparecen tras reconocer una
+            película con realidad aumentada. Los botones que mostrábamos al principio no tenían mucho sentido con sus iconos y ocupaban mucho espacio, opté por incluir un botón inicial que al pulsarse se desplegase y mostrase más botones por encima del mismo, en los cuales puedes acceder a la información de la película o guardarla.
+            \item Implementación de funciones del servidor tales como unirse a un plan, salirse de un plan y buscar los planes de un usuario concreto. Cuando me dedicaba a implementar ciertas vistas de la aplicación de Android, como mostrar los planes o las películas guardadas, me vi en la necesidad de incluir funciones en el servidor para obtener los datos que necesitaba, las cuales no nos habíamos planteado ninguno hasta el momento en el que fueron necesarias. 
+        \end{itemize}
+    \subsection{Memoria}
+    \label{makereference7.1.3}
+        \begin{itemize}
+            \item Redacción del resumen tanto en español como en inglés.
+            \item Redacción de la introducción a nuestro proyecto así como de los antecedentes.
+            \item Redacción de las distintas interfaces de usuario de la aplicación.
+            \item Redacción del prototipo del servidor que implementé con Spring.
+            \item Redacción de cómo está implementado nuestro servidor, es decir, qué entidades poseemos, que servicios de aplicación, controladores y repositorios.
+            \item Revisión de calidad de la memoria. Me he ocupado de revisar las posibles faltas ortográficas o fallos de estilo al usar LaTeX.
+            \item Redacción de las dificultades de trabajo así como de las soluciones que les dimos durante el desarrollo del proyecto.
+        \end{itemize}
 
-Para ello primero tenemos que tener una instancia de docker.
-\begin{lstlisting}[language=bash,caption={bash version}]
-    #!/bin/bash
-    echo "Hello, world!"
-    \end{lstlisting}
+\section{Daniel Calle Sánchez}
+\label{makereference7.2}
+    \subsection{Estado del arte}
+    \label{makereference7.2.1}
+        \begin{itemize}
+            \item Estudio de la tecnologías de Realidad Aumentada, Viro React y
+            Expo AR.
+        \end{itemize}
+    \subsection{Diseño de la aplicación}
+    \label{makereference7.2.2}
+        \begin{itemize}
+            \item Identificación de requisitos funcionales de la aplicación.
+            \item Diseños de vistas de la aplicación con MockFlow.
+        \end{itemize}
+    \subsection{Implementación}
+    \label{makereference7.2.3}
+        \begin{itemize}
+            \item Creación de prototipo con ViroReact y ARCore.
+            \item Diseño de la arquitectura.
+            \item Configuración de Heroku.
+            \item Implementación de servicios en Spring.
+            \item Reconocimiento de usuarios con Vuforia en Unity.
+            \item Desarrollo de vistas para planes en Android.
+            \item Búsqueda y configuración de herramientas que mejoren el
+             rendimiento del equipo.
+        \end{itemize}
+    \subsection{Memoria}
+    \label{makereference7.2.3}
+        \begin{itemize}
+            \item Redacción de capítulo 5 Conclusiones.
+            \item Redacción de capítulo 6 Trabajo futuro.
+        \end{itemize}
 
-
-% +--------------------------------------------------------------------+
-% | Enter text for your Appendix page in the space below this box.     |
-% |                                                                    |
-% +--------------------------------------------------------------------+
+        \section{Carlos Gómez Cereceda}
+        \label{makereference7.3}
+            \subsection{Estado del arte}
+            \label{makereference7.3.1}
+                \begin{itemize}
+                    \item Investigación de Vuforia en Unity y su exportación a Android, con el fin de decidir el entorno en el que 
+                    finalmente se implementaría la aplicación. 
+                    \item Estudio del funcionamiento del Cloud de Vuforia, con el objetivo de decidir su viabilidad en la incorporación 
+                    al proyecto y si con la licencia gratuita ofrecida por Vuforia era suficiente. 
+                    \item Investigación de ARCore con el objetivo de decidir si las funcionalidades ofrecidas por esta tecnología eran las que necesitábamos.
+                \end{itemize}
+            \subsection{Diseño de la aplicación}
+            \label{makereference7.3.2}
+                \begin{itemize}
+                    \item Diseño de las interfaces mostradas en Realidad Aumentada cuando se reconoce a un usuario o a una película. 
+                    \item Primeras interfaces desarrolladas con Realidad Aumentada en las que se mostraban vídeos. En un primer momento, 
+                    pensamos que sería buena idea mostrar los tráileres de las películas en Realidad Aumentada, aunque finalmente se desechó la idea porque saturaba la interfaz.
+                    \item Participación en la identificación de escenarios y creando los primeros bocetos.
+                \end{itemize}
+            \subsection{Implementación}
+            \label{makereference7.3.3}
+                \begin{itemize}  
+                    \item Estudio y creación de una aplicación desarrollada enteramente en Unity con Vuforia. Puesto que ninguno de los integrantes 
+                    del equipo habíamos tenido ninguna experiencia con Unity ni con Vuforia, mediante tutoriales y documentación desarrollé un prototipo 
+                    básico en el que se detectaba una imagen objetivo y se situaba encima de ésta un modelo 3D.
+                    \item Una vez desarrollado el prototipo anterior, investigué como de factible era realizar el resto de la aplicación en Unity. Realicé 
+                    alguna interfaz y funcionalidades básicas, finalmente decidimos que no era viable ya que Unity no proporciona demasiadas facilidades ya 
+                    que no es para lo que está diseñado. Por lo investigué cual era la forma de exportar el proyecto de Unity a uno en Android, creando un 
+                    prototipo simple en Android que al pulsar un botón llevase a Unity.
+                    \item Finalmente, al prototipo anterior le incluí el Cloud de Vuforia para no sobrecargar la aplicación con imágenes.
+                    \item Estudio y creación de un prototipo de ARCore en Android. Con la guía oficial de ARCore realicé un prototipo de ARCore, sin embargo, 
+                    la comparación Vuforia era muy grande, éste último era mucho más sencillo de aprender e intuitivo por lo que finalmente no se realizó el proyecto con ARCore.
+                    \item Una vez teníamos el proyecto en Android con la parte de Realidad Aumentada en Unity con Vuforia investigué como enviar información 
+                    de una parte a otra, ya que en cierto modo son partes distintas de la aplicación.
+                    \item Desarrollé las primeras versiones de la parte de Realidad Aumentada en las que se mostraban vídeos con los tráileres de las películas y texto con la sinopsis.
+                    \item Comunicación en Vuforia con el servidor, aunque finalmente decidimos no usar este método y que todas las llamadas al servidor se realizasen desde Android.
+                    \item Diseñé e implementé la mecánica que permite distinguir si el objeto al que se está enfocando es una película o un usuario sin necesidad de 
+                    tener dos tipos de Realidad Aumentada. Al igual que la mecánica anterior, una vez que se sabe que es un usuario, desarrollé la mecánica para saber si es un amigo o no.
+                    \item Creación con ayuda de los ejemplos de Vuforia del escáner que proporciona al usuario el feedback de que está escaneando.
+                    \item Creación de la vista en Unity que se muestra al identificar una película mediante Realidad Aumentada, además de su funcionalidad y comunicación 
+                    con Android. Ejemplo: mostrar tráiler, puntuación, información...
+                    \item Creación de la vista en Unity que se muestra al identificar a un usuario no identificado como amigo. Así como la funcionalidad en Realidad Aumentada 
+                    y Android para agregar a dicho usuario como amigo.
+                    \item Creación de la vista en Unity que se muestra al identificar a un amigo en donde se muestran los tres planes recomendados y la información visual de cuánto 
+                    se prevé que les guste ese plan a los usuarios dentro del plan.
+                    \item Implementación en Android de la mayoría de las funciones que reciben información de Unity, realizan alguna petición al servidor y devuelven dicha información a Unity.
+                    \item Creación en Android de métodos de comunicación con el servidor para acciones como añadir amigos, borrar plan, obtener amistad, obtener planes...
+                    \item Creación en el servidor de la primera versión de usuarios y su relación con películas.
+                \end{itemize}
+            \subsection{Memoria}
+            \label{makereference7.3.3}
+                \begin{itemize}
+                    \item Revisión de la memoria.
+                    \item Aportaciones en distintas partes como Interfaces de usuario que se muestran en Unity, herramientas usadas, contribuciones, dificultades encontradas.
+                \end{itemize}
+        
+\section{Zihao Hong}
+\label{makereference7.4}
+    \subsection{Estado del arte}
+    \label{makereference7.4.1}
+        \begin{itemize}
+            \item Estudio de Vuforia + Android, de las dependencias que necesitaba. Investigación del pipeline 
+            que usan para renderizar objetos en el espacio, la librería de dibujo en 3D que se usa internamente \textbf{OpenGL}, 
+            incluso aprendizaje de lenguajes de bajo nivel (\textbf{GLSL}) que se usa en las tarjetas gráficas.
+            \item Aprendizaje de los distintos métodos de recomendación, prueba, evaluación y final elección del algoritmo usado en el proyecto.  
+        \end{itemize}
+    \subsection{Diseño de la aplicación}
+    \label{makereference7.4.2}
+        \begin{itemize}
+            \item Participación en escenarios diseñando algunos casos de escenarios como boceto.
+            \item Diseño de las interfaces de usuario de los amigos y de sesión. Éstas interfaces se fueron cambiando con la implementación.
+        \end{itemize}
+    \subsection{Implementación}
+    \label{makereference7.4.3}
+        \begin{itemize}  
+            \item Creadas cuentas para el cloud de vuforia y pruebas insertando imágenes y comprobación con prototipos.
+            \item Creación de prototipo con Vuforia en Android, encontrándose con la dificultad de que se necesita programar con lenguajes a bajo nivel, entre otras cosas.
+            \item Creación de prototipo de la arquitectura de Microservicios, para posterior incorporación en el proyecto.
+            \item Creación, prueba, y evaluación de varios ejemplos de Unity con Realidad Aumentada y elección final para establecer el proyecto de Unity.
+            \item Evaluación del uso del Docker ofrecido por la universidad, creación de scripts para imágenes de docker, como para el despliegue de proyectos de maven en un entorno Linux como un servicio. 
+            \item Creación de la base de la de arquitectura del proyecto de Android y de las vistas que lo componen.
+            \item Configuración del proyecto del servidor mediante maven y perfiles para el despliegue en un entorno Linux.
+            \item Implementación de rutas en el servidor, como sus servicios de aplicación, repositorios, etc.
+            \item Implementación en el servidor el sistema de recomendación por medio de la librería de mahout, que ofrece un método para la conexión con la base de datos \textbf{Postgresql} sin tener que leerlo de un fichero csv.
+            \item Revisor de código.
+            \item Establecimiento del uso de patrones de diseño, como comandos, singleton, constructor, etc. Los cuales se encuentran en la implementación de Android. 
+        \end{itemize}
+    \subsection{Memoria}
+    \label{makereference7.4.3}
+        \begin{itemize}
+            \item
+        \end{itemize}
