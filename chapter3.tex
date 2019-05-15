@@ -17,7 +17,6 @@ seguido por los requisitos funcionales extraídos de estos escenarios y describi
 
 \section{Análisis de la competencia}
 \label{makereference3.1}
-\begin{flushleft}
     Consideramos que la aplicación que hemos diseñado consta de dos partes claramente diferenciadas (la parte de realidad aumentada
     y la parte de recomendación y gestión de películas), además, pensamos que existen distintos tipos de competencia dependiendo de cada una de ellas.
      \begin{itemize}  
@@ -29,14 +28,14 @@ seguido por los requisitos funcionales extraídos de estos escenarios y describi
         encontrado una aplicación (Paramount AR+\cite{paramountar}) que ofrezca servicios parecidos a los nuestros relacionados con Realidad Aumentada. Según las especificaciones de la aplicación permite identificar pósteres y 
         mostrar información sobre la película detectada, servicio muy parecido al que nosotros hemos proporcionado. 
     \end{itemize}
-    Para intentar alejarnos de esta competencia, hemos decidido unir ambas funcionalidades en una aplicación y, además, proporcionar al usuario más funcionalidades como escanear una aplicación con Realidad Aumentada, 
-    ver su información y añadirla a un plan con amigos para ver dicha película. Para funcionalidades como ésta y otras en las que unimos la realidad aumentada con la recomendación de películas y gestión de planes no hemos encontrado actualmente ninguna aplicación que proporcione estos servicios.
-    \\
-    Además, la gestión de amigos con Realidad Aumentada es una funcionalidad que, tras nuestro análisis de la competencia, solamente la posee nuestra aplicación. 
-    Se basa en enfocar con la cámara a la imagen de un usuario de la aplicación y que mediante realidad aumentada muestre visualmente la información de los tres 
-    planes activos que tiene este usuario, una vez ha sido añadido como amigo, que más podrían gustarme y cuanto se estima que me gustaría ese plan.
     
-\end{flushleft}
+Para intentar alejarnos de esta competencia, hemos decidido unir ambas funcionalidades en una aplicación y, además, proporcionar al usuario más funcionalidades como escanear una aplicación con Realidad Aumentada, 
+ ver su información y añadirla a un plan con amigos para ver dicha película. Para funcionalidades como ésta y otras en las que unimos la realidad aumentada con la recomendación de películas y gestión de planes no hemos encontrado actualmente ninguna aplicación que proporcione estos servicios.
+
+Además, la gestión de amigos con Realidad Aumentada es una funcionalidad que, tras nuestro análisis de la competencia, solamente la posee nuestra aplicación. 
+Se basa en enfocar con la cámara a la imagen de un usuario de la aplicación y que mediante realidad aumentada muestre visualmente la información de los tres 
+ planes activos que tiene este usuario, una vez ha sido añadido como amigo, que más podrían gustarme y cuanto se estima que me gustaría ese plan.
+    
 \section{Escenarios}
 \label{makereference3.2}
 Antes de decidir como implementaríamos nuestra aplicación decidimos que sería importante establecer una serie
@@ -45,36 +44,28 @@ de escenarios en los que podría ser usada. Tras esto pudimos ponernos de acuerd
 les aporte valor, ya que, como hemos expuesto anteriormente en el capítulo 2, el grueso de nuestra aplicación se centra en esta tecnología.
 
 \paragraph{Escenario 1. Reconociendo carteles de películas.}
-\begin{flushleft}
     Te apetece ir al cine y encuentras el cartel de una película que te interesa ver en una revista. Sacas tu móvil, abres la aplicación y 
     la escaneas. Con la realidad aumentada serás capaz de ver la valoración de la película, acceder a su tráiler en Youtube, ver la información
     referente a la película (título, director, duración, sinopsis) y guardarla como favorita.
     
-\end{flushleft}
 \paragraph{Escenario 2. Reconociendo usuarios.}
-\begin{flushleft}
     Encuentras a otra persona que también usa la aplicación, por lo que te interesaría mantener contacto con ella para saber si tenéis los mismos 
     gustos. La aplicación te permitirá reconocer una imagen de su cara para poder añadirle como amigo mediante la realidad aumentada. 
-\end{flushleft}
+
 \paragraph{Escenario 3. Obtener recomendación.}
-\begin{flushleft}
     Una vez seáis amigos en la aplicación,
     la próxima vez que se reconozca la imagen de la cara del usuario aparecerán planes con películas que os puedan interesar a los dos, permitiéndote unirte o decidir cuál es el
     que más se ajusta a vuestros gustos. 
-\end{flushleft}
+
 
 
 \paragraph{Escenario 4. Quedar con amigos para ver una película.}
-\begin{flushleft}
     Una vez que has guardado una película porque te interesa ir a verla con alguien, ya sea que quieras verla en el cine o en tu casa, sea fin de semana o no, la aplicación te facilitará quedar 
     con las personas que estén interesadas en verla, además de que la aplicación supondrá un apoyo para que los usuarios tomen sus decisiones, mostrándoles cuánta afinidad a dicha película tienen.
-\end{flushleft}
 
 \paragraph{Escenario 5. Usar la aplicación sin la realidad aumentada.}
-\begin{flushleft}
      Si no te apetece usar la cámara de tu dispositivo también podrás acceder a toda la funcionalidad descrita anteriormente solo con el uso de la aplicación, podrás buscar planes, crearlos, borrarlos y unirte a ellos, también podrás buscar películas y valorarlas y buscar usuarios añadirlos. También se te 
      recomendarán películas basadas en tus gustos.
-\end{flushleft}
 
 \section{Requisitos funcionales}
 \label{makereference3.3}
@@ -139,19 +130,6 @@ Todo esto podemos verlo en la Figura 3.1.
 
 \subsection{Interfaz de información de un plan}
 \label{makereference3.4.3}
-Esta interfaz aparece cuando pulsamos en un plan, ver Figura 3.2. Nos aparecerá en grande la imagen de la película que se quiere ir a ver con dicho plan, junto con información
-relevante de dicho plan, que podemos ver en la Figura 3.3:
-\begin{itemize}
-    \item Fecha: día, mes y año en el que tendrá lugar dicho plan.
-    \item Hora: hora del plan.
-    \item Lugar: localización que haya puesto el creador del plan para ver la película.
-    \item Descripción: breves anotaciones características que haya escrito el creador sobre el plan.
-    \item Usuarios unidos: imágenes de los usuarios que se han unido al plan.
-\end{itemize}
-La información de cada plan la introduce el usuario mediante un formulario muy simple cuando crea un plan con una película.
-Además, nos aparece un botón en la parte inferior con el texto: UNIRSE AL PLAN o SALIR DEL PLAN, según estemos o no ya dentro del plan.
-También en la parte inferior derecha de la imagen de la película tenemos un botón que nos redirige a la interfaz de información de dicha película.
-En la parte superior derecha nos aparecería un icono de una basura, lo que nos permitirá borrar el plan, si somos el creador.
 \begin{figure}[H]
     \centering
     \makebox[0pt][c]{%
@@ -170,6 +148,22 @@ En la parte superior derecha nos aparecería un icono de una basura, lo que nos 
     \end{minipage}%
     }%
 \end{figure}
+Esta interfaz aparece cuando pulsamos en un plan, ver Figura 3.2. Nos aparecerá en grande la imagen de la película que se quiere ir a ver con dicho plan, junto con información
+relevante de dicho plan, que podemos ver en la Figura 3.3:
+\begin{itemize}
+    \item Fecha: día, mes y año en el que tendrá lugar dicho plan.
+    \item Hora: hora del plan.
+    \item Lugar: localización que haya puesto el creador del plan para ver la película.
+    \item Descripción: breves anotaciones características que haya escrito el creador sobre el plan.
+    \item Usuarios unidos: imágenes de los usuarios que se han unido al plan.
+\end{itemize}
+\vspace{1cm}
+
+La información de cada plan la introduce el usuario mediante un formulario muy simple cuando crea un plan con una película.
+Además, nos aparece un botón en la parte inferior con el texto: UNIRSE AL PLAN o SALIR DEL PLAN, según estemos o no ya dentro del plan.
+También en la parte inferior derecha de la imagen de la película tenemos un botón que nos redirige a la interfaz de información de dicha película.
+En la parte superior derecha nos aparecería un icono de una basura, lo que nos permitirá borrar el plan, si somos el creador.
+
 \subsection{Interfaz de mis películas}
 \label{makereference3.4.4}
 Para mostrar las películas guardadas decidimos usar una cuadrícula que muestre solamente los carteles de las películas, es una interfaz simple pero muy visual. Para acceder a la información
@@ -244,7 +238,7 @@ pueda entender que debe escanear una imagen, como podemos ver en la Figura 3.9.
     \caption{Escáner}
 \end{figure}
 \subsection{Interfaz de realidad aumentada tras reconocer un cartel de película}
-\label{makereference3.4.4}
+\label{makereference3.4.5}
 En esta interfaz destacamos los distintos componentes que aparecen al usar la cámara de nuestro teléfono y reconocer el cartel de una película.
 Cuando reconocemos un cartel, sobre la imagen de la película nos aparecerá en la parte superior una valoración numérica de la película, la cual la hemos 
 sacado de IMDB. justo en el medio de la imagen encontramos el icono típico de Youtube que, al pulsarlo, nos abrirá nuestra aplicación de Youtube para que
@@ -260,10 +254,8 @@ guardar la película en nuestra lista de películas guardadas, para posteriormen
 
 \subsection{Interfaz de realidad aumentada al reconocer a un usuario que no es amigo}
 \label{makereference3.4.5.1}
-\begin{flushleft}
 Se trata de una interfaz sencilla en donde a la persona que está usando la cámara se le proporciona el nombre del usuario al
  que está enfocando (siempre que el usuario enfocado esté registrado) junto a un botón de añadir amigo, como podemos ver en la Figura 3.11.
-\end{flushleft}
 \begin{figure}[H]
     \centering
     \includegraphics[height=4in]{figures/usernotFriendrecognized.jpg}
@@ -271,31 +263,28 @@ Se trata de una interfaz sencilla en donde a la persona que está usando la cám
 \end{figure}
 \subsection{Interfaz de realidad aumentada al reconocer a un usuario que sí es amigo}
 \label{makereference3.4.5.2}
-\begin{flushleft}
 Esta interfaz aparece al enfocar con la cámara a un usuario que es amigo del que enfoca, 
 es una interfaz más compleja que la anteriormente descrita.
-\end{flushleft}
-\begin{flushleft}
+
 Cuando un usuario enfoca a otro que es amigo, se proporciona la opción de incorporarse a uno de los planes del
  amigo. Para ello, se le muestra una interfaz con los tres planes que, según nuestro algoritmo de recomendación,
   más pueden interesarle de los que su amigo tiene. En caso de que haya menos de tres planes para mostrar, mostrará esos.
-\end{flushleft}
-\begin{flushleft}
+
 La interfaz proporciona la imagen de las películas de los tres planes, además, mediante una interfaz dinámica 
 podemos movernos de un plan a otro, de esta forma podemos ver que usuarios hay en cada plan.
-\end{flushleft}
+
 \begin{figure}[H]
         \centering
         \includegraphics[width=3in, angle=270]{figures/chapter-2/CapturaRecomendador.JPG}
         \caption{Vista encargada de recomendar planes en RA al enfocar a un amigo}
 \end{figure}
-\begin{flushleft}
+
 Como se puede ver en la Figura 3.12, en la interfaz aparecen tres películas, esto se debe a que el recomendador ha encontrado tres planes que al usuario le pueden gustar. Únicamente se muestra la 
 información relacionada con los usuarios del plan situado en el centro para no saturar la interfaz. Mediante los 
 botones de izquierda y derecha el usuario puede moverse entre planes para poder ver la información necesaria 
 de cada plan y elegir aquel que más le guste.
-\end{flushleft}
-\begin{flushleft}
+
+
 La información visual que aparece relacionada con los usuarios representa:
 \begin{itemize}
     \item Arriba a la izquierda, la foto del usuario que está valorando unirse al plan, es decir, el que ha enfocado a su amigo para ver en cuál de sus planes se puede unir. Además, aparece una representación 
@@ -306,13 +295,12 @@ La información visual que aparece relacionada con los usuarios representa:
 Además, aparece un botón situado debajo del plan central que permite al usuario que lo pulse unirse al 
 plan. Este botón mostrará una interfaz como la de la Figura 3.2 y 3.3 para que el usuario pueda ver todos 
 los detalles del plan y decidir si se quiere unir.
-\end{flushleft}
 
-\begin{flushleft}
-     En este capítulo hemos observado los distintos escenarios que hemos planteado para el uso de nuestra aplicación, a partir de ellos hemos sacado una serie de 
-     requisitos funcionales que posteriormente han sido mejor especificados tras las descripciones de las interfaces de usuario que hemos diseñado, apoyándonos en imágenes 
-     para mostrar visualmente a lo que nos referimos en cada subsección de las interfaces de usuario.
-\end{flushleft}
+
+
+En este capítulo hemos observado los distintos escenarios que hemos planteado para el uso de nuestra aplicación, a partir de ellos hemos sacado una serie de 
+ requisitos funcionales que posteriormente han sido mejor especificados tras las descripciones de las interfaces de usuario que hemos diseñado, apoyándonos en imágenes 
+ para mostrar visualmente a lo que nos referimos en cada subsección de las interfaces de usuario.
 
 
 
