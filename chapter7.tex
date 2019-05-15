@@ -84,59 +84,62 @@ En este capítulo especificaremos las aportaciones de cada integrante del grupo,
             \item Redacción de capítulo 6 Trabajo futuro.
         \end{itemize}
 
-\section{Carlos Gómez Cereceda}
-\label{makereference7.3}
-    \subsection{Estado del arte}
-    \label{makereference7.3.1}
-        \begin{itemize}
-            \item
-        \end{itemize}
-    \subsection{Diseño de la aplicación}
-    \label{makereference7.3.2}
-        \begin{itemize}
-            \item
-        \end{itemize}
-    \subsection{Implementación}
-    \label{makereference7.3.3}
-        \begin{itemize}  
-            \item Creación de prototipo con ARCore en Android.
-            \item Creación de prototipo con Vuforia en Unity.
-            \item Creación de prototipo con Vuforia en Unity exportado a
-             Android.
-            \item Configuración del proyecto para poder tener la parte de
-             Vuforia separada de la de Android.
-            \item Comunicación entre la parte de Vuforia en Unity y la de
-             Android.
-            \item Configuración del proyecto para que se pueda comunicar con el
-             Cloud de Vuforia.
-            \item Creación de las primeras vistas prototipo del proyecto, tales
-             como: Mostrar vídeos en \textbf{Realidad Aumentada}, botones y
-             películas.
-            \item Comunicación en Vuforia con el servidor.
-            \item Creación de la vista en Unity que se muestra al identificar
-             una película mediante \textbf{Realidad Aumentada}, además de su
-             funcionalidad y comunicación con \textbf{Android}. Ejemplo: mostrar
-             tráiler, puntuación, información…
-            \item Creación de la vista en Unity que se muestra al identificar a
-             un usuario no identificado como amigo. Así como la funcionalidad en
-             Realidad Aumentada y Android para agregar a dicho usuario como
-             amigo.
-            \item Creación de la vista en Unity que se muestra al identificar a
-             un amigo en donde se muestran los tres planes recomendados y la
-             información visual de cuánto se prevé que les guste ese plan a los
-             usuarios dentro del plan.
-            \item Creación en Android de métodos de comunicación con el servidor
-             para acciones como añadir amigos, borrar plan, añadir amigo,
-             obtener amistad…
-            \item Creación en el servidor de la primera versión de usuarios y su
-             relación con películas.
-        \end{itemize}
-    \subsection{Memoria}
-    \label{makereference7.3.3}
-        \begin{itemize}
-            \item
-        \end{itemize}
-
+        \section{Carlos Gómez Cereceda}
+        \label{makereference7.3}
+            \subsection{Estado del arte}
+            \label{makereference7.3.1}
+                \begin{itemize}
+                    \item Investigación de Vuforia en Unity y su exportación a Android, con el fin de decidir el entorno en el que 
+                    finalmente se implementaría la aplicación. 
+                    \item Estudio del funcionamiento del Cloud de Vuforia, con el objetivo de decidir su viabilidad en la incorporación 
+                    al proyecto y si con la licencia gratuita ofrecida por Vuforia era suficiente. 
+                    \item Investigación de ARCore con el objetivo de decidir si las funcionalidades ofrecidas por esta tecnología eran las que necesitábamos.
+                \end{itemize}
+            \subsection{Diseño de la aplicación}
+            \label{makereference7.3.2}
+                \begin{itemize}
+                    \item Diseño de las interfaces mostradas en Realidad Aumentada cuando se reconoce a un usuario o a una película. 
+                    \item Primeras interfaces desarrolladas con Realidad Aumentada en las que se mostraban vídeos. En un primer momento, 
+                    pensamos que sería buena idea mostrar los tráileres de las películas en Realidad Aumentada, aunque finalmente se desechó la idea porque saturaba la interfaz.
+                    \item Participación en la identificación de escenarios y creando los primeros bocetos.
+                \end{itemize}
+            \subsection{Implementación}
+            \label{makereference7.3.3}
+                \begin{itemize}  
+                    \item Estudio y creación de una aplicación desarrollada enteramente en Unity con Vuforia. Puesto que ninguno de los integrantes 
+                    del equipo habíamos tenido ninguna experiencia con Unity ni con Vuforia, mediante tutoriales y documentación desarrollé un prototipo 
+                    básico en el que se detectaba una imagen objetivo y se situaba encima de ésta un modelo 3D.
+                    \item Una vez desarrollado el prototipo anterior, investigué como de factible era realizar el resto de la aplicación en Unity. Realicé 
+                    alguna interfaz y funcionalidades básicas, finalmente decidimos que no era viable ya que Unity no proporciona demasiadas facilidades ya 
+                    que no es para lo que está diseñado. Por lo investigué cual era la forma de exportar el proyecto de Unity a uno en Android, creando un 
+                    prototipo simple en Android que al pulsar un botón llevase a Unity.
+                    \item Finalmente, al prototipo anterior le incluí el Cloud de Vuforia para no sobrecargar la aplicación con imágenes.
+                    \item Estudio y creación de un prototipo de ARCore en Android. Con la guía oficial de ARCore realicé un prototipo de ARCore, sin embargo, 
+                    la comparación Vuforia era muy grande, éste último era mucho más sencillo de aprender e intuitivo por lo que finalmente no se realizó el proyecto con ARCore.
+                    \item Una vez teníamos el proyecto en Android con la parte de Realidad Aumentada en Unity con Vuforia investigué como enviar información 
+                    de una parte a otra, ya que en cierto modo son partes distintas de la aplicación.
+                    \item Desarrollé las primeras versiones de la parte de Realidad Aumentada en las que se mostraban vídeos con los tráileres de las películas y texto con la sinopsis.
+                    \item Comunicación en Vuforia con el servidor, aunque finalmente decidimos no usar este método y que todas las llamadas al servidor se realizasen desde Android.
+                    \item Diseñé e implementé la mecánica que permite distinguir si el objeto al que se está enfocando es una película o un usuario sin necesidad de 
+                    tener dos tipos de Realidad Aumentada. Al igual que la mecánica anterior, una vez que se sabe que es un usuario, desarrollé la mecánica para saber si es un amigo o no.
+                    \item Creación con ayuda de los ejemplos de Vuforia del escáner que proporciona al usuario el feedback de que está escaneando.
+                    \item Creación de la vista en Unity que se muestra al identificar una película mediante Realidad Aumentada, además de su funcionalidad y comunicación 
+                    con Android. Ejemplo: mostrar tráiler, puntuación, información...
+                    \item Creación de la vista en Unity que se muestra al identificar a un usuario no identificado como amigo. Así como la funcionalidad en Realidad Aumentada 
+                    y Android para agregar a dicho usuario como amigo.
+                    \item Creación de la vista en Unity que se muestra al identificar a un amigo en donde se muestran los tres planes recomendados y la información visual de cuánto 
+                    se prevé que les guste ese plan a los usuarios dentro del plan.
+                    \item Implementación en Android de la mayoría de las funciones que reciben información de Unity, realizan alguna petición al servidor y devuelven dicha información a Unity.
+                    \item Creación en Android de métodos de comunicación con el servidor para acciones como añadir amigos, borrar plan, obtener amistad, obtener planes...
+                    \item Creación en el servidor de la primera versión de usuarios y su relación con películas.
+                \end{itemize}
+            \subsection{Memoria}
+            \label{makereference7.3.3}
+                \begin{itemize}
+                    \item Revisión de la memoria.
+                    \item Aportaciones en distintas partes como Interfaces de usuario que se muestran en Unity, herramientas usadas, contribuciones, dificultades encontradas.
+                \end{itemize}
+        
 \section{Zihao Hong}
 \label{makereference7.4}
     \subsection{Estado del arte}
