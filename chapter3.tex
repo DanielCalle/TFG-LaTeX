@@ -120,7 +120,7 @@ que creó dicho plan y los usuarios que se han unido.
 Podemos observar como cada elemento representa un plan, con el fondo siendo el cartel de la película, la fecha en la que tendrá lugar el plan en la esquina superior izquierda,
 justo debajo el título del plan, arriba a la derecha el número del plan (algo simple pero que nos indica
 claramente lo que representa este elemento) y en la parte inferior aparecen las fotos de los usuarios que se han unido al plan.
-Todo esto podemos verlo en la Figura 3.1.
+Todo esto podemos verlo en la figura \ref{fig:birds}.
 \begin{figure}[H]
     \centering
     \includegraphics[height=4in]{figures/plansList.jpg}
@@ -137,19 +137,19 @@ Todo esto podemos verlo en la Figura 3.1.
     \centering
       \includegraphics[height=4in]{figures/infoPlan1.jpg}
       \caption{Información del plan}
-    \label{sva}
+    \label{fig:info_planes}
     \end{minipage}%
     \hspace{0.2cm}
     \begin{minipage}[b]{0.5\linewidth}
     \centering
      \includegraphics[height=4in]{figures/infoPlan2.jpg}
       \caption{Información del plan}
-    \label{svb}
+    \label{fig:info_planes_1}
     \end{minipage}%
     }%
 \end{figure}
-Esta interfaz aparece cuando pulsamos en un plan, ver Figura 3.2. Nos aparecerá en grande la imagen de la película que se quiere ir a ver con dicho plan, junto con información
-relevante de dicho plan, que podemos ver en la Figura 3.3:
+Esta interfaz aparece cuando pulsamos en un plan, ver \ref{fig:info_planes}. Nos aparecerá en grande la imagen de la película que se quiere ir a ver con dicho plan, junto con información
+relevante de dicho plan, que podemos ver en la figura \ref{fig:info_planes_1}:
 \begin{itemize}
     \item Fecha: día, mes y año en el que tendrá lugar dicho plan.
     \item Hora: hora del plan.
@@ -172,14 +172,15 @@ de cada película simplemente debemos pulsar en uno de los carteles.
     \centering
     \includegraphics[height=4in]{figures/FilmsList.jpg}
     \caption{Lista de películas guardadas}
+    \label{fig:lista_planes}
 \end{figure}
-En la figura 3.4 podemos observar cómo es la interfaz. En este caso el usuario solo ha guardado 2 películas.
+En la~\ref{fig:lista_planes} podemos observar cómo es la interfaz. En este caso el usuario solo ha guardado 2 películas.
 \subsection{Interfaz de información de una película}
 \label{makereference3.4.5}
 
 Tras pulsar en una de las películas que hemos guardado nos aparecerá dicha interfaz. 
 Esta vista nos permite ver en primer plano el cartel de la película y la información correspondiente a la misma, como puede
-ser la sinopsis de la película, el género y el nombre del director, podemos observarlo en la Figura 3.5 y la Figura 3.6. Además, poseemos un indicador de calibre circular que nos permite, al pulsarlo,
+ser la sinopsis de la película, el género y el nombre del director, podemos observarlo en la Figura~\ref{fig:info_pelicula_1} y la Figura~\ref{fig:info_pelicula_2}. Además, poseemos un indicador de calibre circular que nos permite, al pulsarlo,
 valorar la película mediante un deslizador.
 Si hacemos scroll hacia abajo, la imagen de la película se irá ocultando para ofrecernos una mejor visión de la información de la película.
 En la parte inferior se nos presentan dos botones, uno para crear un plan con la película con el texto: AÑADIR AL PLAN. El otro botón con el símbolo de reproducir un vídeo, nos llevará al tráiler de la película en Youtube.
@@ -193,22 +194,22 @@ lista de películas guardadas.
     \centering
       \includegraphics[height=4in]{figures/infoFilm1.jpg}
       \caption{Información de la película}
-    \label{sva}
+    \label{fig:info_pelicula_1}
     \end{minipage}%
     \hspace{0.2cm}
     \begin{minipage}[b]{0.5\linewidth}
     \centering
      \includegraphics[height=4in]{figures/infoFilm2.jpg}
       \caption{Información de la película}
-    \label{svb}
+    \label{fig:info_pelicula_2}
     \end{minipage}%
     }%
 \end{figure}
 \subsection{Interfaz de recomendaciones}
 \label{makereference3.4.6}
 En esta interfaz tenemos presentes 3 secciones de recomendaciones, cada una con carteles de películas junto al título debajo que se le recomiendan al usuario. Cada sección presenta scroll horizontal para poder
-visualizar todas las películas que se le recomiendan en dicha sección, ver en Figura 3.7 y 3.8. La primera sección son las películas recomendadas al usuario según sus gustos, la segunda representa las películas más populares
-y las películas que están siendo estrenadas. Al pulsar en cada una de ellas accederemos a la información de cada película (Figura 3.5) pudiendo guardarla como favorita si no lo hemos hecho ya.
+visualizar todas las películas que se le recomiendan en dicha sección, ver en las figuras \ref{fig:recomendaciones_1} y \ref{fig:recomendaciones_2}. La primera sección son las películas recomendadas al usuario según sus gustos, la segunda representa las películas más populares
+y las películas que están siendo estrenadas. Al pulsar en cada una de ellas accederemos a la información de cada película (Figura \ref{fig:info_pelicula_1} ) pudiendo guardarla como favorita si no lo hemos hecho ya.
 \begin{figure}[H]
     \centering
     \makebox[0pt][c]{%
@@ -216,14 +217,14 @@ y las películas que están siendo estrenadas. Al pulsar en cada una de ellas ac
     \centering
       \includegraphics[height=4in]{figures/recommendations1.jpg}
       \caption{Recomendaciones de películas}
-    \label{sva}
+    \label{fig:recomendaciones_1}
     \end{minipage}%
     \hspace{0.2cm}
     \begin{minipage}[b]{0.5\linewidth}
     \centering
      \includegraphics[height=4in]{figures/recommendations2.jpg}
       \caption{Recomendaciones de películas}
-    \label{svb}
+    \label{fig:recomendaciones_2}
     \end{minipage}%
     }%
 \end{figure}
@@ -231,11 +232,12 @@ y las películas que están siendo estrenadas. Al pulsar en cada una de ellas ac
 \subsection{Interfaz de realidad aumentada principal}
 \label{makereference3.4.4}
 Una interfaz muy simple en la que tenemos una línea horizontal que se mueve de arriba hacia abajo y viceversa en la pantalla como si se tratara de un escáner, para que el usuario
-pueda entender que debe escanear una imagen, como podemos ver en la Figura 3.9.
+pueda entender que debe escanear una imagen, como podemos ver en la Figura \ref{fig:escaner}.
 \begin{figure}[H]
     \centering
     \includegraphics[height=4in]{figures/escaner.jpg}
     \caption{Escáner}
+    \label{fig:escaner}
 \end{figure}
 \subsection{Interfaz de realidad aumentada tras reconocer un cartel de película}
 \label{makereference3.4.5}
@@ -244,22 +246,24 @@ Cuando reconocemos un cartel, sobre la imagen de la película nos aparecerá en 
 sacado de IMDB. justo en el medio de la imagen encontramos el icono típico de Youtube que, al pulsarlo, nos abrirá nuestra aplicación de Youtube para que
 el usuario pueda ver el tráiler de esta película. En la esquina inferior derecha encontramos otro icono que al ser pulsado lo que hará será desplegar una serie de botones con distinta funcionalidad,
 uno de ellos nos redirige a la información de la película en IMDB, que sería el icono representado por una letra i, el otro botón representado por una mano con un pulgar hacia arriba nos permitirá
-guardar la película en nuestra lista de películas guardadas, para posteriormente acceder a su información, valorarla o crear un plan con ella. Todo esto lo podemos observar en la figura 3.10.
+guardar la película en nuestra lista de películas guardadas, para posteriormente acceder a su información, valorarla o crear un plan con ella. Todo esto lo podemos observar en la figura \ref{fig:ra_pelicula}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[height=4in]{figures/filmrecognized2.jpg}
     \caption{Realidad aumentada tras reconocer una película}
+    \label{fig:ra_pelicula}
 \end{figure}
 
 \subsection{Interfaz de realidad aumentada al reconocer a un usuario que no es amigo}
 \label{makereference3.4.5.1}
 Se trata de una interfaz sencilla en donde a la persona que está usando la cámara se le proporciona el nombre del usuario al
- que está enfocando (siempre que el usuario enfocado esté registrado) junto a un botón de añadir amigo, como podemos ver en la Figura 3.11.
+ que está enfocando (siempre que el usuario enfocado esté registrado) junto a un botón de añadir amigo, como podemos ver en la Figura \ref{fig:ra_usuario}.
 \begin{figure}[H]
     \centering
     \includegraphics[height=4in]{figures/usernotFriendrecognized.jpg}
     \caption{Realidad aumentada tras reconocer a un usuario que no es amigo}
+    \label{fig:ra_usuario}
 \end{figure}
 \subsection{Interfaz de realidad aumentada al reconocer a un usuario que sí es amigo}
 \label{makereference3.4.5.2}
@@ -277,9 +281,10 @@ podemos movernos de un plan a otro, de esta forma podemos ver que usuarios hay e
         \centering
         \includegraphics[width=3in, angle=270]{figures/chapter-2/CapturaRecomendador.JPG}
         \caption{Vista encargada de recomendar planes en RA al enfocar a un amigo}
+        \label{fig:ra_recomendacion}
 \end{figure}
 
-Como se puede ver en la Figura 3.12, en la interfaz aparecen tres películas, esto se debe a que el recomendador ha encontrado tres planes que al usuario le pueden gustar. Únicamente se muestra la 
+Como se puede ver en la Figura \ref{fig:ra_recomendacion}, en la interfaz aparecen tres películas, esto se debe a que el recomendador ha encontrado tres planes que al usuario le pueden gustar. Únicamente se muestra la 
 información relacionada con los usuarios del plan situado en el centro para no saturar la interfaz. Mediante los 
 botones de izquierda y derecha el usuario puede moverse entre planes para poder ver la información necesaria 
 de cada plan y elegir aquel que más le guste.
@@ -293,7 +298,7 @@ La información visual que aparece relacionada con los usuarios representa:
     \item El resto de las posiciones (hasta 6) identifican al resto de usuarios que se hayan unido a ese plan.
 \end{itemize}
 Además, aparece un botón situado debajo del plan central que permite al usuario que lo pulse unirse al 
-plan. Este botón mostrará una interfaz como la de la Figura 3.2 y 3.3 para que el usuario pueda ver todos 
+plan. Este botón mostrará una interfaz como la de la Figura \ref{fig:info_planes} y \ref{fig:info_planes_1} para que el usuario pueda ver todos 
 los detalles del plan y decidir si se quiere unir.
 
 
