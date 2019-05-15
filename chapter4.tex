@@ -247,7 +247,7 @@ toda la información necesaria para alimentar de datos a nuestro cliente. El ser
 facilidades para desplegar un servidor creado mediante Spring, por lo que nos facilitó el trabajo considerablemente. También se encuentra en el servidor la implementación del sistema de recomendación.
 En el servidor tendremos todas las entidades que necesitamos representadas mediante clases Java y anotaciones de JPA, para facilitar el mapeo entre tablas de la base de datos y dichas entidades. Hemos implementado las siguientes entidades:
 \begin{itemize}
-    \item Film: entidad referente a las películas que guardamos, con su respectivo título, director, duración, valoración, etc.
+    \item Film: entidad referente a las películas que guardamos, con su respectivo título, director, duración, valoración, url del trailer, sinopsis, url de la imagen de la película, género, país y fecha de estreno.
     \item User: entidad para representar a los usuarios de la aplicación, con su nombre, foto, email y contraseña.
     \item Friendship: entidad para representar la relación de amistad entre usuarios.
     \item Plan: entidad para representar los planes, estos poseerán una película, un usuario creador, fecha, hora, lugar, título, descripción y una lista de usuarios unidos.
@@ -256,6 +256,19 @@ En el servidor tendremos todas las entidades que necesitamos representadas media
 \end{itemize}
 Para cada una de estas entidades necesitamos una clase Controller, que actuará de controlador para saber redirigir cada petición HTTP a su correspondiente servicio de aplicación, donde se aplicará la lógica del negocio, comprobando 
 que los datos son correctos y obteniendo, modificando o creando elementos en la base de datos a través de las clases Repository correspondiente a cada entidad.
+Las distintas peticiones HTTP que realizamos son las siguientes:
+\begin{itemize}
+    \item Film: todas las peticiones HTTP realizadas comenzarán por la url \textbf{/films} 
+    \begin{itemize}
+        \item Obtener todas las películas: petición de tipo GET a la url \textbf{/}.
+        \item Guardar una película: petición de tipo POST con la información de la película en el body de la petición a la url \textbf{/}.
+        \item Actualizar una película: petición de tipo PUT con la información de la película en el body de la petición a la url \textbf{/}.
+        \item Buscar una película por su nombre: petición de tipo GET con el nombre de la película en la url \textbf{/search/name}. 
+        \item Buscar una película por su id: petición de tipo GET con el id de la película en la url \textbf{/id}.
+        \item Buscar una película por su uuid: petición de tipo GET con el uuid de la película en la url \textbf{/uuid/uuid}, el segundo uuid se refiere al uuid de la película que se quiera buscar.
+        \item Borrar una película: petición de tipo DELETE con el id de la película en la url \textbf{/id}.
+    \end{itemize}
+\end{itemize}
 
 \section{Cliente}
 \label{makereference4.4}
