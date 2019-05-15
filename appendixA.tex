@@ -156,7 +156,41 @@ Una vez configurado postgres, se procede al despliegue del servicio.
 Ya está levantado el servicio en el puerto 8080, se puede probar con el siguiente enlace
 \url{localhost:8080/films}.
 
-% +--------------------------------------------------------------------+
-% | Enter text for your Appendix page in the space below this box.     |
-% |                                                                    |
-% +--------------------------------------------------------------------+
+\section{Heroku}
+\label{makereference7.2}
+Para comenzar debemos crear una cuenta en \href{https://www.heroku.com/}{Heroku}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/heroku_1.png}
+    \caption{Crear nueva aplicación en Heroku}
+    \label{fig:heroku_1}
+\end{figure}
+Una vez tenemos una cuenta en la plataforma creamos una nueva aplicación a la cual daremos un nombre como vemos en la figura~\ref{fig:heroku_1} y este nombre a su vez será parte de la URL pública.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/heroku_2.png}
+    \caption{Configuración de la aplicación}
+    \label{fig:heroku_2}
+\end{figure}
+Cuando creemos la aplicación accederemos a la configuración en la que veremos opciones como en la figura~\ref{fig:heroku_2}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/heroku_3.png}
+    \caption{Métodos de despliegue}
+    \label{fig:heroku_3}
+\end{figure}
+En la figura~\ref{fig:heroku_3} vemos que nos ofrece diversos métodos de despliegue:
+\begin{itemize}
+    \item Heroku Git
+    \item GitHub
+    \item Container Registry
+\end{itemize}
+Elegimos la opción de GitHub que nos proporciona un despliegue fácil y rápido. Tenemos que vincular la cuenta de nuestro GitHub (Importante ser el dueño del repositorio).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/heroku_4.png}
+    \caption{Opciones de despliegue utilizando Github}
+    \label{fig:heroku_4}
+\end{figure}
+Una vez vinculada la cuenta de GitHub tenemos dos métodos de despliegue como vemos en la figura~\ref{fig:heroku_4}. Un método automático para desplegar los cambios de una rama del repositorio que se accionará cada vez que subamos cambios y otro método manual que se desplegará sólo cuando presionemos el botón. 
+Cuando elijamos una de las opciones, la aplicación estará lista para usarse.

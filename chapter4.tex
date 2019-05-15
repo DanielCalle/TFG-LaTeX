@@ -22,24 +22,24 @@ utilizadas para facilitarnos el trabajo en equipo.
 \label{makereference4.1}
 
 \subsection{ARCore} 
-\label{makereference3.6.1} 
+\label{makereference4.1.1} 
     Al comenzar la fase de desarrollo de proyectos, pensamos que una de las tecnologías que debíamos 
     investigar y probar debía ser ARCore. Esto se debía a que, la empresa detrás de esta 
     tecnología es Google y esto podría significar que tendríamos más material de consulta 
     y ejemplos en comparación con otras tecnologías de fabricantes con menos recursos.
     ARCore se encuentra disponible para Java, Unity, Unreal e iOS. Comenzamos realizando el 
-    "Quickstart" para Android y posteriormente para Unity. 
+    "Quickstart"\ para Android y posteriormente para Unity. 
     Tras realizar los proyectos propuestos por ARCore, realizamos algún proyecto propio 
     para comprobar si la herramienta se ajustaba a la idea que teníamos para nuestro futuro proyecto.
     Tras realizar ambos proyectos, concluimos que, aunque ARCore reúne las características 
     necesarias para en un futuro convertirse en una de las tecnologías más importantes en Realidad Aumentada, 
     no íbamos a seleccionarla para nuestro proyecto por las siguientes razones:
-    \begin{enumerate}
-        \item ARCore dispone de mucha documentación para comenzar a usar la herramienta, pero poca para realizar tareas más complejas.
-        \item ARCore resulta muy útil para realizar superposiciones de modelos 3D sobre superficies. Sin embargo, una de las funcionalidades más importantes que nuestra aplicación requería era la interacción con la realidad aumentada mediante el uso de botones, imágenes y la carga dinámica de elementos para posicionar en la pantalla de Realidad Aumentada e interaccionar con el usuario. En este sentido ARCore no está, por el momento, tan preparada como otras tecnologías.
-    \end{enumerate}
+    \begin{itemize}
+        \item Dispone de mucha documentación para comenzar a usar la herramienta, pero poca para realizar tareas más complejas.
+        \item Resulta muy útil para realizar superposiciones de modelos 3D sobre superficies. Sin embargo, una de las funcionalidades más importantes que nuestra aplicación requería era la interacción con la realidad aumentada mediante el uso de botones, imágenes y la carga dinámica de elementos para posicionar en la pantalla de Realidad Aumentada e interaccionar con el usuario. En este sentido ARCore no está, por el momento, tan preparada como otras tecnologías.
+    \end{itemize}
 \subsection{Viro Media} 
-\label{makereference3.6.2}
+\label{makereference4.1.2}
 
 El objetivo del prototipo realizado con Viro Media es reconocer imágenes almacenadas en el dispositivo para mostrar texto y
 objetos virtuales. Además de probar tecnologías de desarrollo móvil web como en este caso React Native
@@ -93,7 +93,7 @@ La conclusión que obtuvimos de este prototipo fue que Viro Media y React Native
  problemas surgidos y a que todas sus versiones no eran estables vimos un claro riesgo para
 
 \subsection{Vuforia + Android} 
-\label{makereference3.6.3} 
+\label{makereference4.1.3} 
  
 En este prototipo utilizamos la librería nativa de Vuforia para Android para 
 realizar las pruebas de tecnología de reconocimiento de imágenes tanto en  
@@ -121,14 +121,16 @@ Las características tecnológicas de este prototipo son las siguientes:
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=5in]{figures/space-transformation.png}
-                \caption{Esquema de los distintos espacios que usa OpenGL}
+                \caption{Esquema de los distintos espacios que usa OpenGL\cite{spaceopengl}}
             \end{figure}
+
 
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=5in]{figures/teapot.png}
-                \caption{Ejemplo de un modelo en 3D}
+                \caption{Captura de un ejemplo de un modelo en 3D}
             \end{figure}
+
     
     \item En OpenGL es necesario escribir código para que las tarjetas gráficas rendericen el modelo 3D,
     el lenguaje que se usa es GLSL. Este código de GLSL se escribe en forma de String y se llama a un método 
@@ -148,7 +150,7 @@ Las características tecnológicas de este prototipo son las siguientes:
     \begin{figure}
         \centering
         \includegraphics[width=4in]{figures/pipeline.png}
-        \caption{Pipeline de la construcción de un modelo}
+        \caption{Pipeline de la construcción de un modelo\cite{pipelineopengl}}
     \end{figure}
     \item Por último, como sólo ofrece métodos básicos, no hay métodos de escritura de texto, y la forma que 
     encontramos para que funcione fue usar un bitmap con los caracteres, ver Figura 4.8.Este fue el principal 
@@ -161,7 +163,7 @@ Las características tecnológicas de este prototipo son las siguientes:
 \end{enumerate}
 
 \subsection{Vuforia + Unity} 
-\label{makereference3.6.4}
+\label{makereference4.1.4}
 
     Para realizar este prototipo utilizamos Unity como herramienta básica para realizar la aplicación y Vuforia para dar soporte a la realidad aumentada.
     El prototipo a desarrollar consistió en un modelo 3D de un dragón que aparecía al detectar una imagen que previamente habíamos establecido como ``imagen objetivo''.
@@ -171,41 +173,41 @@ Las características tecnológicas de este prototipo son las siguientes:
         \includegraphics[width=5in]{figures/prototipoUnity.jpg}
         \caption{Modelo en 3D que aparecía al detectar la imagen}
     \end{figure}
-\begin{flushleft}
-    Pese a que nadie del equipo había utilizado Unity previamente el resultado fue bastante positivo ya que:
-    \begin{enumerate}
+
+Pese a que nadie del equipo había utilizado Unity previamente el resultado fue bastante positivo ya que:
+\begin{enumerate}
     \item Unity resultó ser intuitivo y relativamente fácil en cuanto al aprendizaje de las funcionalidades básicas.
     \item Vuforia parecía estar muy probada e incluía de serie muchas funcionalidades.
     \item Vuforia tenía la opción de utilizar un Cloud para almacenar las imágenes objetivo.
-    \end{enumerate}
-\end{flushleft}
+\end{enumerate}
+
 
 \subsection{Vuforia + Unity + Android} 
-\label{makereference3.6.5}
+\label{makereference4.1.5}
 
 Una vez realizado el prototipo en Vuforia con Unity comenzamos a investigar cómo realizar el resto de la aplicación que no requería de Realidad Aumentada.
 Hasta este momento teníamos claro que Vuforia con Unity era la mejor combinación para realizar la parte de realidad aumentada. Sin embargo, tras realizar pruebas desarrollando en Unity interfaces y lógica nos dimos cuenta de que Unity no era igual de intuitivo ni eficaz a la hora de realizar estas tareas que necesitábamos para desarrollar el resto de la aplicación que no necesitaba Realidad Aumentada.
 Por este motivo intentamos buscar la opción de realizar una aplicación en la que la realidad aumentada estuviese diseñada en Unity con Vuforia y el resto de la aplicación en Android, ver Figura 4.10.
 
 \begin{figure}[H]
-        \centering
-        \includegraphics[height=4in]{figures/androidUnityVuforia.jpg}
-        \caption{Botón que comunica Android con Unity}
+    \centering
+    \includegraphics[height=4in]{figures/androidUnityVuforia.jpg}
+    \caption{Botón que comunica Android con Unity}
 \end{figure}
 
-    Finalmente conseguimos tener ambos proyectos independientes. La realidad aumentada se desarrollaba en Unity con Vuforia y se exportaba a un proyecto Android donde se encontraba el resto de la aplicación.
-    Esto nos permitía realizar la realidad aumentada con la herramienta que tras las primeras tomas de contacto habíamos comprobado que era la mejor (Unity con Vuforia) y del mismo modo realizar el resto de la aplicación con la mejor herramienta para esta parte (Android Studio).
-\begin{flushleft}
-    Tras realizar este prototipo, consideramos que estas herramientas podrían ser las que usásemos en la aplicación final puesto que:
-    \begin{enumerate}
+Finalmente conseguimos tener ambos proyectos independientes. La realidad aumentada se desarrollaba en Unity con Vuforia y se exportaba a un proyecto Android donde se encontraba el resto de la aplicación.
+Esto nos permitía realizar la realidad aumentada con la herramienta que tras las primeras tomas de contacto habíamos comprobado que era la mejor (Unity con Vuforia) y del mismo modo realizar el resto de la aplicación con la mejor herramienta para esta parte (Android Studio).
+
+Tras realizar este prototipo, consideramos que estas herramientas podrían ser las que usásemos en la aplicación final puesto que:
+\begin{enumerate}
     \item Como ya habíamos descubierto en el prototipo anterior, Unity era una herramienta muy completa y junto con Vuforia nos proporcionaban todas las herramientas necesarias para cumplir con los casos de uso de Realidad Aumentada que teníamos en mente.
     \item Al haber encontrado la forma de combinar Unity y Android no teníamos que renunciar a ninguna de las dos herramientas. Lo que nos permitía explotar las cosas buenas de ambas herramientas.
     \item La comunicación entre Unity y Android era relativamente sencilla pese a ser dos proyectos distintos.
-    \end{enumerate}
-\end{flushleft}
+\end{enumerate}
+
 
 \subsection{Server en Spring} 
-\label{makereference3.6.6}
+\label{makereference4.1.6}
 
 Para la realización de la parte backend de la aplicación decidimos
 incorporar la tecnología de Spring para codificar un servicio web REST en Java
@@ -225,7 +227,7 @@ Para este prototipo decidimos usar MySQL como sistema de gestión de bases de da
 a la hora de probar a levantar nuestro servidor de prueba tuvimos que rehacer este prototipo, además de adaptarlo para 
 que gestionara entidades de películas, y que usara PostgreSQL.
 \section{Arquitectura}
-\label{makereference4.1}
+\label{makereference4.2}
 En cuanto a la arquitectura usada en nuestra aplicación hemos adjuntado un esquema que podemos observar en la Figura 4.12. Nuestra aplicación móvil estará implementada tanto en Android
 como en Unity, la aplicación general está en Android, mientras que la parte de realidad aumentada está desarrollada en Unity y usa Vuforia. Para el reconocimiento
 de imágenes con Vuforia usamos un almacenamiento en la nube gratuito que nos ofrece para almacenar las imágenes ya que, tener todas las imágenes en la misma aplicación la cargaría de un peso innecesario.
@@ -237,7 +239,7 @@ nuestro servidor desplegado en Heroku el cual nos devolverá los datos en format
     \caption{Arquitectura}
 \end{figure}
 \section{Servidor}
-\label{makereference4.2}
+\label{makereference4.3}
 Nuestro servidor está programado en Java, usando el framework Spring para la creación de una API Rest que mediante peticiones HTTP y una base de datos relacional en PostgreSQL nos proporcionará
 toda la información necesaria para alimentar de datos a nuestro cliente. El servidor necesita ser desplegado para que la aplicación pueda tener un uso real por lo que conseguimos desplegarlo de forma gratuita en Heroku, que además ofrece
 facilidades para desplegar un servidor creado mediante Spring, por lo que nos facilitó el trabajo considerablemente. También se encuentra en el servidor la implementación del sistema de recomendación.
@@ -254,7 +256,7 @@ Para cada una de estas entidades necesitamos una clase Controller, que actuará 
 que los datos son correctos y obteniendo, modificando o creando elementos en la base de datos a través de las clases Repository correspondiente a cada entidad.
 
 \section{Cliente}
-\label{makereference4.3}
+\label{makereference4.4}
 Nuestra aplicación está implementada principalmente en Android, las interfaces principales para el uso de los planes, recomendaciones y acceso a la información de las películas guardadas han sido desarrolladas mediante Android Studio. Sin embargo,
 la parte del cliente que otorga el gran valor a nuestra aplicación está desarrollada en Unity y el uso de Vuforia, todas las escenas que aparecen al reconocer carteles de películas e imágenes de usuarios fueron implementadas de esta forma. Vuforia además nos ofrece un
 servicio de Cloud para el almacenamiento de imágenes, a las cuales les asocia una valoración según lo fácil que le resultará a la aplicación reconocerla y un identificador único (UUID), que es el que usaremos para guardar la distinta información de dicha película o usuario en la base de datos.
@@ -268,7 +270,7 @@ Como la mayor parte de la aplicación está implementada en Android Studio, la e
 
 
 \subsection{Actividades}
-\label{makereference4.3.1}
+\label{makereference4.4.1}
 Son los componentes de la aplicación que representan una pantalla con la que los usuarios pueden interactuar para realizar una determinada acción.
 
 \begin{figure}[H]
@@ -284,11 +286,11 @@ Entre nuestras actividades podemos destacar dos:
 \end{itemize} 
 
 \subsection{Adaptadores}
-\label{makereference4.3.2} 
+\label{makereference4.4.2} 
 Son elementos de manipulación de datos que se aplican a vistas y componentes. En el proyecto se les ha dado mucho uso a las vistas de tipo RecyclerView para representar listas de objetos. Para manejar los datos de cada elemento de la lista, se ha utilizado un RecyclerView.Adapter, el cual manipula cada dato correspondiente a un elemento de la lista. También se han creado otros adaptadores, como uno para manejar tres fragmentos dentro de una actividad, como hemos dicho anteriormente al describir la actividad principal (MainActivity).
 
 \subsection{Comandos}
-\label{makereference4.3.3}
+\label{makereference4.4.3}
 Aquí se encuentran todos los elementos relacionados con el patrón comando, ver Figura 4.14, y ha sido diseñado para realizar la conexión con la parte del proyecto desarrollado en Unity.
 
 Este patrón permite solicitar una operación a un objeto sin conocer realmente el contenido de esta operación, ni el receptor real de la misma. Para ello se encapsula la petición como un objeto, 
@@ -304,17 +306,17 @@ Lo que nos permite es abstraer la lógica de los métodos implementados en Andro
 
 
 \subsection{Entidades}
-\label{makereference4.3.4}
+\label{makereference4.4.4}
 Todos los modelos de datos que podemos recibir del servidor, los cuales hemos descrito anteriormente en este capítulo, en la sección 4.3 describiendo el servidor, son representados por entidades en nuestro proyecto de Android, con los mismos atributos que tienen sus entidades correspondientes en el servidor.
 
 \subsection{Fragmentos}
-\label{makereference4.3.5}
+\label{makereference4.4.5}
 Representan un comportamiento o una parte de la interfaz de usuario en una actividad.
 Se utilizan para formar una vista compuesta de paginación en una actividad. 
 Aquí es donde tendremos los 3 componentes principales de nuestra aplicación, la actividad referente a mis planes, la actividad de las recomendaciones y la de mis películas.
 
 \subsection{Servicios}
-\label{makereference4.3.6}
+\label{makereference4.4.6}
 Se trata de un conjunto de clases que solo poseen métodos estáticos para llevar a cabo peticiones HTTP al servidor. Se ha creado una clase genérica para la creación y llamada de peticiones HTTP, se ha diseñado de manera que las respuestas se devuelvan en forma de callback para un uso más sencillo.
 Los servicios que hemos implementado son los siguientes:
 \begin{itemize}
@@ -327,7 +329,7 @@ Los servicios que hemos implementado son los siguientes:
 \end{itemize}
 
 \subsection{Vistas}
-\label{makereference4.3.7}
+\label{makereference4.4.7}
 Entre los componentes que ofrece Android existen algunas funcionalidades no soportadas. Por ello hemos creado componentes personalizados para satisfacer estas funcionalidades:
 \begin{itemize}
     \item AnchorVisibilityBehavior: Implementa el comportamiento de los elementos que aparecen y desaparecen en las actividades, por ejemplo, en la Figura 3.2 tenemos un botón para la información de la película pero al hacer el scroll hacia abajo, en la Figura 3.3, vemos que éste desaparece.
@@ -335,7 +337,7 @@ Entre los componentes que ofrece Android existen algunas funcionalidades no sopo
     \item ExpandableTextView: Es una clase que extiende de un TextView, se le añade un método para que cuando haya mucho texto, se pueda acortar. Además dispone de un botón para expandir.
 \end{itemize} 
 \section{Sistemas de recomendación}
-\label{makereference4.4}
+\label{makereference4.5}
 Finalmente decidimos usar para la aplicación el sistema de Filtrado Colaborativo por los siguientes motivos:
 
 \begin{itemize}
@@ -354,42 +356,17 @@ Al final nos hemos decantado por Mahout, ya que aporta una documentación más c
 sin tener que leer desde ficheros csv. Por otro lado, en el testeo de 
 Lenskit, cuando intentábamos reproducir el ejemplo que ofrecían, nos encontramos que algunas funciones estaban 
 obsoletas y, por tanto, no nos transmitía mucha confianza. Por último, Mahout destaca por ser más fácil de usar y minimizar nuestro esfuerzo en aprender esta nueva tecnología.
-\section{Despliegue en Heroku}. 
-\label{makereference4.2}
-Para el despliegue de la aplicación de servidor utilizamos Heroku. Esta plataforma nos ofrece un alojamiento gratuito con las características suficientes para el desarrollo del proyecto.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=6in]{figures/chapter-4/heroku_1.png}
-    \caption{Crear nueva aplicación en Heroku}
-\end{figure}
-Una vez tenemos una cuenta en la plataforma creamos una nueva aplicación a la cual daremos un nombre como vemos en la figura 4.2 y este nombre a su vez será parte de la URL pública.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=6in]{figures/chapter-4/heroku_2.png}
-    \caption{Configuración de la aplicación}
-\end{figure}
-Cuando creemos la aplicación accederemos a la configuración en la que veremos opciones como en la figura 4.3.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=6in]{figures/chapter-4/heroku_3.png}
-    \caption{Métodos de despliegue}
-\end{figure}
-En la figura 4.4 vemos que nos ofrece diversos métodos de despliegue:
-\begin{itemize}
-    \item Heroku Git
-    \item GitHub
-    \item Container Registry
-\end{itemize}
-Elegimos la opción de GitHub que nos proporciona un despliegue fácil y rápido. Tenemos que vincular la cuenta de nuestro GitHub (Importante ser el dueño del repositorio).
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=6in]{figures/chapter-4/heroku_4.png}
-    \caption{Opciones de despliegue utilizando Github}
-\end{figure}
-Una vez vinculada la cuenta de GitHub tenemos dos métodos de despliegue como vemos en la figura 4.5. Un método automático para desplegar los cambios de una rama del repositorio que se accionará cada vez que subamos cambios y otro método manual que se desplegará sólo cuando presionemos el botón. 
-Cuando elijamos una de las opciones, la aplicación estará lista para usarse.
+\section{Despliegue}. 
+\label{makereference4.6}
+Para el despliegue de la aplicación de servidor utilizamos Heroku.
+Esta plataforma nos ofrece una versión gratis de alojamiento limitado con las
+ características suficientes para el desarrollo del proyecto.
+Utilizamos un despliegue automático que al realizar cambios en una rama del
+ repositorio de GitHub, Heroku descarga esos cambios y lo despliega en el servidor.
+
+
 \section{Dificultades encontradas}
-\label{makereference4.5}
+\label{makereference4.7}
 A continuación, mostraremos una lista de todas las dificultades encontradas a la hora de implementar nuestra aplicación:
 \begin{itemize}
     \item Diseño de las interfaces para que fueran familiares e intuitivas para el usuario. Tuvimos que rehacer muchas veces los distintos bocetos de las interfaces ya que no eran intuitivos para los usuarios, gracias a las sugerencias que se nos iban haciendo conseguimos mejorarlas bastante.
@@ -406,7 +383,7 @@ A continuación, mostraremos una lista de todas las dificultades encontradas a l
     \item Incompatibilidades con las nuevas actualizaciones de Unity. Hemos tenido cuidado con no actualizar el IDE de Unity porque nuestro proyecto quedaría obsoleto, ya nos vimos en la situación de que uno de los miembros tenía una versión superior a la de los demás y tuvimos que rehacer lo que habíamos implementado.
 \end{itemize}
 \section{Herramientas de trabajo}
-\label{makereference4.6}
+\label{makereference4.8}
 Las distintas herramientas de trabajo que hemos decidido usar para que el trabajo realizado fuera más eficiente son las siguientes:
 \begin{itemize}
     \item Telegram: hemos usado esta aplicación de mensajería para poder comunicarnos entre todos los miembros pertenecientes al proyecto, ya fuera para la sugerencia de ideas o que un bot de GitHub nos avisara de los cambios en los distintos repositorios que hemos creado. 
