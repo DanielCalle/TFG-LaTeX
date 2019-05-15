@@ -43,7 +43,7 @@ utilizadas para facilitarnos el trabajo en equipo.
 
 El objetivo del prototipo realizado con Viro Media es reconocer imágenes almacenadas en el dispositivo para mostrar texto y
 objetos virtuales. Además de probar tecnologías de desarrollo móvil web como en este caso React Native
-para plataformas iOS y Android. Comenzamos construyendo una interfaz sencilla con botones que nos redirigen a la escena de Realidad Aumentada, ver Figura 4.1 y 4.2.
+para plataformas iOS y Android. Comenzamos construyendo una interfaz sencilla con botones que nos redirigen a la escena de Realidad Aumentada, ver Figura \ref{fig:nativeBase_android} y \ref{fig:nativeBase_ios}.
 Para esta interfaz utilizamos NativeBase que es una librería que nos permite
 realizar una aplicación con apariencias de tipo iOS o Android según el dispositivo.
 
@@ -54,25 +54,26 @@ realizar una aplicación con apariencias de tipo iOS o Android según el disposi
     \centering
       \includegraphics[scale=0.3]{figures/chapter-3/viromedia/android.png}
       \caption{Visualización con NativeBase en Android}
-    \label{sva}
+    \label{fig:nativeBase_android}
     \end{minipage}%
     \hspace{0.3cm}
     \begin{minipage}[b]{0.5\linewidth}
     \centering
      \includegraphics[scale=0.3]{figures/chapter-3/viromedia/ios.jpg}
       \caption{Visualización con NativeBase en iOS}
-    \label{svb}
+    \label{fig:nativeBase_ios}
     \end{minipage}%
     }%
 \end{figure}
 
 Para la escena de realidad aumentada mostramos texto y al detectar el póster de Pantera Negra,
-reacciona mostrando una animación de dicho superhéroe saliendo del póster, ver Figura 4.3.
+reacciona mostrando una animación de dicho superhéroe saliendo del póster, ver Figura \ref{fig:visualizacionRANAtibe}.
  
 \begin{figure}[H]
     \centering
     \includegraphics[height=4in]{figures/chapter-3/viromedia/blackpanther.png}
     \caption{Visualización de RA}
+    \label{visualizacionRANAtibe}
 \end{figure}
 \newpage
 Una de las ventajas que apreciamos fue la facilidad del lenguaje, en este caso Javascript,
@@ -105,8 +106,8 @@ Las características tecnológicas de este prototipo son las siguientes:
 
 \begin{enumerate}
     \item La librería de Vuforia para Android está diseñada a muy bajo nivel.
-    \item Vuforia para dibujar en 3D usa la librería OpenGL, ver Figura 4.5.
-    \item OpenGL utiliza una serie de espacios donde se van colocando los elementos, ver Figura 4.4: 
+    \item Vuforia para dibujar en 3D usa la librería OpenGL, ver Figura \ref{fig:modelo3D}.
+    \item OpenGL utiliza una serie de espacios donde se van colocando los elementos, ver Figura \ref{fig:esquemaOpenGl}: 
     \begin{enumerate}
         \item Local space: Es el espacio local de cada objeto.
         \item World space: Es el mundo donde se encuentran los objetos.
@@ -122,6 +123,7 @@ Las características tecnológicas de este prototipo son las siguientes:
                 \centering
                 \includegraphics[width=5in]{figures/space-transformation.png}
                 \caption{Esquema de los distintos espacios que usa OpenGL\cite{spaceopengl}}
+                \label{fig:esquemaOpenGl}
             \end{figure}
 
 
@@ -129,20 +131,22 @@ Las características tecnológicas de este prototipo son las siguientes:
                 \centering
                 \includegraphics[width=5in]{figures/teapot.png}
                 \caption{Captura de un ejemplo de un modelo en 3D}
+                \label{fig:modelo3D}
             \end{figure}
 
     
     \item En OpenGL es necesario escribir código para que las tarjetas gráficas rendericen el modelo 3D,
     el lenguaje que se usa es GLSL. Este código de GLSL se escribe en forma de String y se llama a un método 
-    que proporciona OpenGL, podemos ver un ejemplo de este código en la Figura 4.6.
+    que proporciona OpenGL, podemos ver un ejemplo de este código en la Figura \ref{fig:codigoGLSL}.
     \begin{figure}[H]
         \centering
         \includegraphics[width=5in]{figures/GLSL.png}
         \caption{Código en GLSL}
+        \label{fig:codigoGLSL}
     \end{figure}
     \newpage    
     \item Otro aspecto a tener en cuenta es que OpenGL solo nos ofrece lo básico, no nos ofrece métodos para dibujar 
-    directamente objetos, sino que hay que seguir un pipeline de procesos para conseguir dibujar algo, ver Figura 4.7.
+    directamente objetos, sino que hay que seguir un pipeline de procesos para conseguir dibujar algo, ver Figura \ref{fig:pipeline}.
     Esto consiste en pasar un array de números (cada tres para definir un punto) 
     a las tarjetas gráficas, establecer triángulos entre los puntos (más arrays de números) 
     definir colores a partir de los puntos (más arrays...), y con el código del shader, ejecutar 
@@ -151,14 +155,16 @@ Las características tecnológicas de este prototipo son las siguientes:
         \centering
         \includegraphics[width=4in]{figures/pipeline.png}
         \caption{Pipeline de la construcción de un modelo\cite{pipelineopengl}}
+        \label{fig:pipeline}
     \end{figure}
     \item Por último, como sólo ofrece métodos básicos, no hay métodos de escritura de texto, y la forma que 
-    encontramos para que funcione fue usar un bitmap con los caracteres, ver Figura 4.8.Este fue el principal 
+    encontramos para que funcione fue usar un bitmap con los caracteres, ver Figura \ref{fig:mapaBits}.Este fue el principal 
     motivo de rechazar esta tecnología ya que, dependiendo de la funcionalidad que se desee implementar, es necesario codificar a muy bajo nivel, lo que costaría mucho tiempo y esfuerzo.
     \begin{figure}
         \centering
         \includegraphics[width=5in]{figures/bitmap-font.png}
         \caption{Mapa de bits de caracteres usado}
+        \label{fig:mapaBits}
     \end{figure}
 \end{enumerate}
 
@@ -187,12 +193,13 @@ Pese a que nadie del equipo había utilizado Unity previamente el resultado fue 
 
 Una vez realizado el prototipo en Vuforia con Unity comenzamos a investigar cómo realizar el resto de la aplicación que no requería de Realidad Aumentada.
 Hasta este momento teníamos claro que Vuforia con Unity era la mejor combinación para realizar la parte de realidad aumentada. Sin embargo, tras realizar pruebas desarrollando en Unity interfaces y lógica nos dimos cuenta de que Unity no era igual de intuitivo ni eficaz a la hora de realizar estas tareas que necesitábamos para desarrollar el resto de la aplicación que no necesitaba Realidad Aumentada.
-Por este motivo intentamos buscar la opción de realizar una aplicación en la que la realidad aumentada estuviese diseñada en Unity con Vuforia y el resto de la aplicación en Android, ver Figura 4.10.
+Por este motivo intentamos buscar la opción de realizar una aplicación en la que la realidad aumentada estuviese diseñada en Unity con Vuforia y el resto de la aplicación en Android, ver Figura \ref{fig:botonAndroidUnity}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[height=4in]{figures/androidUnityVuforia.jpg}
     \caption{Botón que comunica Android con Unity}
+    \label{fig:botonAndroidUnity}
 \end{figure}
 
 Finalmente conseguimos tener ambos proyectos independientes. La realidad aumentada se desarrollaba en Unity con Vuforia y se exportaba a un proyecto Android donde se encontraba el resto de la aplicación.
@@ -213,11 +220,12 @@ Para la realización de la parte backend de la aplicación decidimos
 incorporar la tecnología de Spring para codificar un servicio web REST en Java
 y el acceso a datos mediante MySQL. Para el prototipo seguimos un tutorial\cite{tutorialspring} de 3 partes para crear un servicio web REST
 que gestionara una simple entidad de contactos de personas, con atributos como el nombre completo del contacto, su número de teléfono o su correo electrónico. Se puede observar su estructura
-en la figura 4.11.
+en la figura \ref{fig:entidadContactos}.
     \begin{figure}[H]
         \centering
         \includegraphics[width=6in]{figures/ContactsEntity.png}
         \caption{Entidad de Contactos}
+        \label{fig:entidadContactos}
     \end{figure}
 
 También se investigaron distintas formas de realizar el acceso a la base de datos desde el servidor, nos decantamos por una clase que nos ofrecía implementados los métodos básicos para crear, leer, actualizar y borrar datos. Además de la opción 
@@ -228,7 +236,7 @@ a la hora de probar a levantar nuestro servidor de prueba tuvimos que rehacer es
 que gestionara entidades de películas, y que usara PostgreSQL.
 \section{Arquitectura}
 \label{makereference4.2}
-En cuanto a la arquitectura usada en nuestra aplicación hemos adjuntado un esquema que podemos observar en la Figura 4.12. Nuestra aplicación móvil estará implementada tanto en Android
+En cuanto a la arquitectura usada en nuestra aplicación hemos adjuntado un esquema que podemos observar en la Figura \ref{fig:arquitectura}. Nuestra aplicación móvil estará implementada tanto en Android
 como en Unity, la aplicación general está en Android, mientras que la parte de realidad aumentada está desarrollada en Unity y usa Vuforia. Para el reconocimiento
 de imágenes con Vuforia usamos un almacenamiento en la nube gratuito que nos ofrece para almacenar las imágenes ya que, tener todas las imágenes en la misma aplicación la cargaría de un peso innecesario. Vuforia es una herramienta de pago, sin embargo, 
 ofrece una licencia gratuita para desarrolladores que pretendan aprender la tecnología sin lucrarse de ella\cite{vuforia_prices}. Tiene limitaciones como el número de accesos al mes o el número de imágenes que se pueden guardar, pero para el uso que pretendemos 
@@ -239,6 +247,7 @@ nuestro servidor desplegado en Heroku el cual nos devolverá los datos en format
     \centering
     \includegraphics[width=6in]{figures/chapter-4/arquitectura.png}
     \caption{Arquitectura}
+    \label{fig:arquitectura}
 \end{figure}
 \section{Servidor}
 \label{makereference4.3}
@@ -296,7 +305,7 @@ Son los componentes de la aplicación que representan una pantalla con la que lo
 
 Entre nuestras actividades podemos destacar dos: 
 \begin{itemize}
-    \item MainActivity: La primera actividad (actividad principal) que se activa al iniciar la aplicación, la cual comprueba el estado de sesión del usuario, si está logueado se queda en la actividad, y si no, se redirige al usuario a otra actividad llamada LoginActivity que mediante un formulario muy simple nos permite iniciar sesión o registrarnos. En MainActivity se encuentra un paginador (ViewPager) de 3 fragmentos, donde cada fragmento representa las interfaces de planes, recomendaciones y películas guardadas correspondientemente, podemos observarlo en las Figuras 3.1, 3.4 y 3.7 del \autoref{makereference3}.
+    \item MainActivity: La primera actividad (actividad principal) que se activa al iniciar la aplicación, la cual comprueba el estado de sesión del usuario, si está logueado se queda en la actividad, y si no, se redirige al usuario a otra actividad llamada LoginActivity que mediante un formulario muy simple nos permite iniciar sesión o registrarnos. En MainActivity se encuentra un paginador (ViewPager) de 3 fragmentos, donde cada fragmento representa las interfaces de planes, recomendaciones y películas guardadas correspondientemente, podemos observarlo en las Figuras \ref{fig:listaPlanes}, \ref{fig:lista_peliculas} y \ref{fig:recomendaciones_1} del \autoref{makereference3}.
     \item UnityPlayerActivity: Se trata de una actividad especial que nos permite comunicar la parte desarrollada en Unity con nuestro proyecto Android. Aquí se encuentran llamadas a funciones desde la parte de Unity, se realizan las órdenes y se devuelven a Unity.
 \end{itemize} 
 
@@ -306,7 +315,7 @@ Son elementos de manipulación de datos que se aplican a vistas y componentes. E
 
 \subsection{Comandos}
 \label{makereference4.4.3}
-Aquí se encuentran todos los elementos relacionados con el patrón comando, ver Figura 4.14, y ha sido diseñado para realizar la conexión con la parte del proyecto desarrollado en Unity.
+Aquí se encuentran todos los elementos relacionados con el patrón comando, ver Figura \ref{fig:comando}, y ha sido diseñado para realizar la conexión con la parte del proyecto desarrollado en Unity.
 
 Este patrón permite solicitar una operación a un objeto sin conocer realmente el contenido de esta operación, ni el receptor real de la misma. Para ello se encapsula la petición como un objeto, 
 lo que además facilita la parametrización de los métodos.
@@ -316,6 +325,7 @@ Lo que nos permite es abstraer la lógica de los métodos implementados en Andro
     \centering
     \includegraphics[width=3in]{figures/chapter-4/command_pattern.png}
     \caption{Patrón comando}
+    \label{fig:comando}
 \end{figure}
 
 
@@ -347,7 +357,7 @@ Los servicios que hemos implementado son los siguientes:
 \label{makereference4.4.7}
 Entre los componentes que ofrece Android existen algunas funcionalidades no soportadas. Por ello hemos creado componentes personalizados para satisfacer estas funcionalidades:
 \begin{itemize}
-    \item AnchorVisibilityBehavior: Implementa el comportamiento de los elementos que aparecen y desaparecen en las actividades, por ejemplo, en la Figura 3.2 tenemos un botón para la información de la película pero al hacer el scroll hacia abajo, en la Figura 3.3, vemos que éste desaparece.
+    \item AnchorVisibilityBehavior: Implementa el comportamiento de los elementos que aparecen y desaparecen en las actividades, por ejemplo, en la Figura \ref{fig:info_planes} tenemos un botón para la información de la película pero al hacer el scroll hacia abajo, en la Figura \ref{fig:info_planes_1}, vemos que éste desaparece.
     \item CustomViewPager: el ViewPager es lo que usamos en la MainActivity para colocar los tres fragmentos. Se crea esta clase para desactivar la acción de cambiar entre fragmentos al deslizar con el dedo en la pantalla del smartphone. Esto nos daba problemas debido a que en el fragmento de las recomendaciones tenemos elementos con scroll horizontal y la acción de deslizar con el dedo en la pantalla interfería.
     \item ExpandableTextView: Es una clase que extiende de un TextView, se le añade un método para que cuando haya mucho texto, se pueda acortar. Además dispone de un botón para expandir.
 \end{itemize} 
