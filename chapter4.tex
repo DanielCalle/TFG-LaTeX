@@ -266,18 +266,7 @@ En el servidor tendremos todas las entidades que necesitamos representadas media
 Para cada una de estas entidades necesitamos una clase Controller, que actuará de controlador para saber redirigir cada petición HTTP a su correspondiente servicio de aplicación, donde se aplicará la lógica del negocio, comprobando 
 que los datos son correctos y obteniendo, modificando o creando elementos en la base de datos a través de las clases Repository correspondiente a cada entidad.
 Las distintas peticiones HTTP que realizamos son las siguientes:
-\begin{itemize}
-    \item Film: todas las peticiones HTTP realizadas comenzarán por la url \textbf{/films} 
-    \begin{itemize}
-        \item Obtener todas las películas: petición de tipo GET a la url \textbf{/}.
-        \item Guardar una película: petición de tipo POST con la información de la película en el body de la petición a la url \textbf{/}.
-        \item Actualizar una película: petición de tipo PUT con la información de la película en el body de la petición a la url \textbf{/}.
-        \item Buscar una película por su nombre: petición de tipo GET con el nombre de la película en la url \textbf{/search/name}. 
-        \item Buscar una película por su id: petición de tipo GET con el id de la película en la url \textbf{/id}.
-        \item Buscar una película por su uuid: petición de tipo GET con el uuid de la película en la url \textbf{/uuid/uuid}, el segundo uuid se refiere al uuid de la película que se quiera buscar.
-        \item Borrar una película: petición de tipo DELETE con el id de la película en la url \textbf{/id}.
-    \end{itemize}
-\end{itemize}
+
 \begin{center}
     \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
     \multicolumn{3}{|c|}{Film} \\ \hline
