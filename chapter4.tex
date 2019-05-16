@@ -316,7 +316,7 @@ Las distintas peticiones HTTP que realizamos son las siguientes:
     Obtener películas más relevantes & GET & /recommendations/trending \\ \hline
     Obtener películas más nuevas & GET & /recommendations/premiere \\ \hline
     Recomendaciones para un usuario & GET & /recommendations/\{id\} \\ \hline
-    Obtener las recomendaciones de planes & GET & /recommendations/\/{id}\/plans/{friend}\} \\ \hline
+    Obtener las recomendaciones de planes & GET & /recommendations/\{id\}/plans/\{friend\} \\ \hline
     Borrar todas las recomendaciones & DELETE & /recommendations/ \\ \hline
     Borrar todas las recomendaciones & DELETE & /recommendations/\{id\} \\ \hline
     \end{tabularx}
@@ -324,17 +324,30 @@ Las distintas peticiones HTTP que realizamos son las siguientes:
 \begin{center}
     \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
     \multicolumn{3}{|c|}{Images} \\ \hline
-    Obtener imagen & GET & /{image}/ \\ \hline
+    Obtener imagen & GET & /\{image\}/ \\ \hline
     \end{tabularx}
 \end{center}
 \begin{center}
     \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
     \multicolumn{3}{|c|}{Friendships} \\ \hline
     Obtener todas las amistades & GET & /friendships/ \\ \hline
-    Petición de amistad & POST & /friendships/{requesterId}/{friendId}/request \\ \hline
-    Aceptación de amistad & POST & /friendships/{requesterId}/{friendId}/accept \\ \hline
-    Declinar amistad & DELETE & /friendships/{requesterId}/{friendId}/decline \\ \hline
-    Eliminar amistad & DELETE & /friendships/{requesterId}/{friendId} \\ \hline
+    Petición de amistad & POST & /friendships/\{requesterId\}/\{friendId\}/request \\ \hline
+    Aceptación de amistad & POST & /friendships/\{requesterId\}/\{friendId\}/accept \\ \hline
+    Declinar amistad & DELETE & /friendships/\{requesterId\}/\{friendId\}/decline \\ \hline
+    Eliminar amistad & DELETE & /friendships/\{requesterId\}/\{friendId\} \\ \hline
+    \end{tabularx}
+\end{center}
+\begin{center}
+    \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
+    \multicolumn{3}{|c|}{Plans} \\ \hline
+    Obtener todos los planes & GET & /plans/ \\ \hline
+    Guardar un plan & POST & /plans/ \\ \hline
+    Unirse a un plan & PUT & /plans/\{id\}/join/\{userId\} \\ \hline
+    Eliminar un plan & DELETE & /plans/\{id\} \\ \hline
+    Obtener planes por id & GET & /plans/\{id\} \\ \hline
+    Obtener los usuarios unidos a plan & GET & /plans/\{id\}/joined-users \\ \hline
+    Obtener los usuarios de un plan & GET & /plans/\{id\}/users \\ \hline
+    Buscar un plan por nombre & GET & /plans/search/\{title\} \\ \hline
     \end{tabularx}
 \end{center}
 
