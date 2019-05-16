@@ -278,6 +278,47 @@ Las distintas peticiones HTTP que realizamos son las siguientes:
         \item Borrar una película: petición de tipo DELETE con el id de la película en la url \textbf{/id}.
     \end{itemize}
 \end{itemize}
+\begin{center}
+    \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
+    \multicolumn{3}{|c|}{Film} \\ \hline
+    Obtener todas las películas & GET & /films/ \\ \hline
+    Guardar una película & POST & /films/ \\ \hline
+    Actualizar una película & PUT & /films/ \\ \hline
+    Buscar una película por su nombre & GET & /films/search/\{name\} \\ \hline
+    Buscar una película por su id & GET & /films/\{id\} \\ \hline
+    Buscar una película por su uuid & GET & /films/uuid/\{uuid\} \\ \hline
+    Borrar una película & DELETE & /films/\{id\} \\ \hline
+    \end{tabularx}
+\end{center}
+
+\begin{center}
+    \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
+    \multicolumn{3}{|c|}{User} \\ \hline
+    Obtener todos los usuarios & GET & /users/ \\ \hline
+    Guardar un usuario & POST & /users/ \\ \hline
+    Actualizar un usuario & PUT & /users/ \\ \hline
+    Buscar un usuario por su nombre & GET & /users/search/\{name\} \\ \hline
+    Buscar un usuario por su id & GET & /users/\{id\} \\ \hline
+    Buscar un usuario por su uuid & GET & /users/uuid/\{uuid\} \\ \hline
+    Borrar un usuario & DELETE & /users/\{id\} \\ \hline
+    Obtener amistades de un usuario & GET & /users/\{id\}/friendships \\ \hline
+    Obtener amigos de un usuario & GET & /users/\{id\}/friends \\ \hline
+    Obtener planes de un usuario & GET & /users/\{id\}/plans \\ \hline
+    Obtener películas que gustan a un usuario & GET & /users/\{id\}/films \\ \hline
+    Login de un usuario & POST & /users/login \\ \hline
+    \end{tabularx}
+\end{center}
+
+\begin{center}
+    \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
+    \multicolumn{3}{|c|}{UserFilm} \\ \hline
+    Obtener todas puntuaciones & GET & /user-films/ \\ \hline
+    Guardar puntuación & POST & /user-films/ \\ \hline
+    Actualizar puntuación & PUT & /user-films/\{userId\}/\{filmId\}/rate/\{rating\} \\ \hline
+    Buscar una puntuación & GET & /user-films/\{userId\}/\{filmId\} \\ \hline
+    Borrar una puntuación & GET & /user-films/\{id\} \\ \hline
+    \end{tabularx}
+\end{center}
 
 \section{Cliente}
 \label{makereference4.4}
