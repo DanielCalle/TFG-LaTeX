@@ -319,6 +319,35 @@ Las distintas peticiones HTTP que realizamos son las siguientes:
     Borrar una puntuación & GET & /user-films/\{id\} \\ \hline
     \end{tabularx}
 \end{center}
+\begin{center}
+    \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
+    \multicolumn{3}{|c|}{Recommender} \\ \hline
+    Obtener todas las recomendaciones & GET & /recommendations/ \\ \hline
+    Obtener películas random & GET & /recommendations/random \\ \hline
+    Obtener películas más relevantes & GET & /recommendations/trending \\ \hline
+    Obtener películas más nuevas & GET & /recommendations/premiere \\ \hline
+    Recomendaciones para un usuario & GET & /recommendations/\{id\} \\ \hline
+    Obtener las recomendaciones de planes & GET & /recommendations/\/{id}\/plans/{friend}\} \\ \hline
+    Borrar todas las recomendaciones & DELETE & /recommendations/ \\ \hline
+    Borrar todas las recomendaciones & DELETE & /recommendations/\{id\} \\ \hline
+    \end{tabularx}
+\end{center}
+\begin{center}
+    \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
+    \multicolumn{3}{|c|}{Images} \\ \hline
+    Obtener imagen & GET & /{image}/ \\ \hline
+    \end{tabularx}
+\end{center}
+\begin{center}
+    \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
+    \multicolumn{3}{|c|}{Friendships} \\ \hline
+    Obtener todas las amistades & GET & /friendships/ \\ \hline
+    Petición de amistad & POST & /friendships/{requesterId}/{friendId}/request \\ \hline
+    Aceptación de amistad & POST & /friendships/{requesterId}/{friendId}/accept \\ \hline
+    Declinar amistad & DELETE & /friendships/{requesterId}/{friendId}/decline \\ \hline
+    Eliminar amistad & DELETE & /friendships/{requesterId}/{friendId} \\ \hline
+    \end{tabularx}
+\end{center}
 
 \section{Cliente}
 \label{makereference4.4}
