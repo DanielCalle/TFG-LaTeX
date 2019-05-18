@@ -22,20 +22,20 @@ Cuando comenzamos a hablar sobre este proyecto, lo que nos motivó fue el
  capaces de tener una previsión sobre lo que nos podría gustar la película en
  base a otras que hayamos valorado anteriormente.
  Con el uso de tecnología de RA buscamos que el usuario se sienta más cómodo
- utilizando la aplicación sin tener que introducir muchos datos, si no que el
- propio dispositivo móvil sea capaz de reconocer los carteles de películas o
- imágenes de usuarios y nos ofrezca acciones sobre ello.
+ utilizando la aplicación, siendo 
+ propio dispositivo móvil capaz de reconocer los carteles de películas, o las
+ imágenes de usuarios, ofreciéndonos la posibilidad de realizar acciones sobre éstas.
 
 Al principio buscamos aprender los aspectos más básicos que nos permitieran
- diseñar e implementar de la aplicación. Para ello realizamos un estudio
+ diseñar e implementar la aplicación. Para ello realizamos un estudio
  del estado del arte en el que desempeñamos las siguientes tareas:
 \begin{itemize}  
     \item Buscamos información y explicamos que es la Realidad Aumentada y cuál
      es su estado actual. Describimos diferentes librerías de Realidad Aumentada
      con sus aspectos más destacables.
     \item Descubrimos y especificamos distintas fuentes de información de las
-     cuales extraer los datos necesarios sobre las películas de la aplicación
-     que se mostrara o se utilizaran para el sistema de recomendación.
+     cuales extraer los datos necesarios sobre las películas de la aplicación,
+     que se mostrarán o se utilizarán para el sistema de recomendación.
     \item Buscamos información sobre los distintos tipos de técnicas de
      recomendación y definimos las más interesantes.
 \end{itemize}
@@ -62,7 +62,7 @@ Posteriormente, pasamos a la parte de implementación donde realizamos las
      reconocimiento de imágenes en la nube.
     \item Implementamos un servidor en Spring desplegado en Heroku que usa como
      base de datos PostgreSQL.
-    \item Implementamos la aplicación móvil en Android, la parte de RA en Unity
+    \item Implementamos la aplicación móvil en Android y la parte de RA en Unity
      con la librería Vuforia.
     \item Valoramos distintos sistemas de recomendación y finalmente lo
      implementamos con Mahout.
@@ -75,58 +75,39 @@ Finalmente, fuimos capaces de aplicar los conceptos generales que aprendimos
 
 \section{Conclusions}
 \label{makereference5.2}
-At the beginning, the fact of learning new technologies and facing them
-to solve a specific problem was the main issue that encouraged us for this project. 
+When we started talking about this project, the fact of learning new technologies and facing them
+to solve a specific problem was the main issue that encouraged us. 
 Our solution to this problem is a mobile application that offers us the ease of 
 creating and managing movie-based plans with friends. We are able to get predictions 
 about the likeliness of enjoyment for a movie by using a recommendation system, based on 
-a historical film valorations list. We are looking for the ease of using this application without 
-having to introduce many data, the application is capable of recognizing movie posters or
-user images by itself and apply actions.
+a historical film valorations list. Using Augmented Reality, our objective is that a 
+user feels more comfortable using this application, being the mobile device capable of recognizing 
+movie posters, or user images, offering us the possibility of performing actions on these.
 
-Al principio buscamos aprender los aspectos más básicos que nos permitieran
- diseñar e implementar de la aplicación. Para ello realizamos un estudio
- del estado del arte en el que desempeñamos las siguientes tareas:
+At the beginning we seek to learn the most basic aspects that would allow us to design
+and implement the application. In order to do so we carried out a study of the state of art where we did the following tasks:
 \begin{itemize}  
-    \item Buscamos información y explicamos que es la Realidad Aumentada y cuál
-     es su estado actual. Describimos diferentes librerías de Realidad Aumentada
-     con sus aspectos más destacables.
-    \item Descubrimos y especificamos distintas fuentes de información de las
-     cuales extraer los datos necesarios sobre las películas de la aplicación
-     que se mostrara o se utilizaran para el sistema de recomendación.
-    \item Buscamos información sobre los distintos tipos de técnicas de
-     recomendación y definimos las más interesantes.
+    \item We searched for information and explained what Augmented Reality is and what is it$'$s current state. We described different
+     Augmented Reality libraries with their most remarkable aspects.
+    \item We discovered and specificated different information sources from which we could extract the necessary data about the films in our application, which will be showed or used for the recommendation system.
+    \item We searched for information about the different types of recommendation techniques and we defined the most interesting ones.
 \end{itemize}
 
-En el siguiente paso, diseñamos la aplicación y definimos su funcionalidad,
- realizando las siguientes tareas:
+In the next step, we designed the application and defined it$'$s functionality, doing the following tasks:
 \begin{itemize}
-    \item Realizamos un análisis de competencia en el cual descubrimos
-     aplicaciones similares que nos ayudaron a visualizar el diseño de nuestra
-     aplicación.
-    \item Definimos escenarios donde se podría usar nuestra aplicación.
-    \item En base a los escenarios anteriormente definidos, establecimos los
-     requisitos funcionales que describen la funcionalidad de la aplicación.
-    \item Diseñamos las interfaces de la aplicación para las funcionalidades
-     anteriormente comentadas.
+    \item We made a competition analysis in which we discovered similar applications to ours which helped us visualize our application$'$s design.
+    \item We defined scenarios where our application could be used.
+    \item Based on those scenarios previously defined, we established the functional requirements which describe the application$'$s functionality.
+    \item We designed the interfaces of the application for the functionalities previously commented.
 \end{itemize}
 
-Posteriormente, pasamos a la parte de implementación donde realizamos las
- siguientes tareas:
+Later, we started with the implementation part, where we did the following tasks:
 \begin{itemize}
-    \item Desarrollamos prototipos con distintas librerías de realidad
-     aumentada en aplicaciones móviles y valoramos la experiencia con ellas.
-    \item Definimos una arquitectura REST para nuestra aplicación y un
-     reconocimiento de imágenes en la nube.
-    \item Implementamos un servidor en Spring desplegado en Heroku que usa como
-     base de datos PostgreSQL.
-    \item Implementamos la aplicación móvil en Android, la parte de RA en Unity
-     con la librería Vuforia.
-    \item Valoramos distintos sistemas de recomendación y finalmente lo
-     implementamos con Mahout.
+    \item We developed prototypes with different augmented reality libraries for mobile devices and we valued our experience with them.
+    \item We defined a REST arquitecture for our application and image recognition on the cloud.
+    \item We implemented a server on Spring deployed on Heroku which uses PostgreSQL as a database.
+    \item We implemented the mobile application on Android and the AR part on Unity using Vuforia$'$s library.
+    \item We valorated different recommendation systems and finally implemented one using Mahout.
 \end{itemize}
 
-Finalmente, fuimos capaces de aplicar los conceptos generales que aprendimos
- en el grado en un entorno nuevo y desafiante, gracias al valor humano de
- un equipo multidisciplinar en el cual los integrantes complementan sus
- puntos débiles individuales. 
+Finally, we were capable of applying the general concepts that we learned in our degree in a new and challenging environment, thanks to the human value of a multidisciplinary team in which the members complement each others individual weak points.
