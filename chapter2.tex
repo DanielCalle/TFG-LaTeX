@@ -215,25 +215,47 @@ estos datos, guardarlos en contenedores de datos y por último, representarlos a
 
 \begin{quote}
 ``
-Un sistema de recomendación es un sistema inteligente que proporciona a los usuarios una serie de 
-sugerencias personalizadas (\textbf{recomendaciones}) sobre un determinado tipo de elementos (\textbf{items}). Los 
+Un sistema de recomendación es un sistema inteligente que proporciona a los usuarios \textbf{usuarios} una serie de 
+sugerencias personalizadas (\textbf{recomendaciones}) sobre un determinado tipo de elementos (\textbf{objetos}). Los 
 sistemas de recomendación estudian las características de cada usuario y mediante un procesamiento 
 de los datos, encuentra un subconjunto de items que pueden resultar de interés para el usuario. 
 ''
 \end{quote}
 
-Entre los distintos tipos de técnicas de recomendación que hemos encontrado en Internet, vamos a destacar dos, pues son las que mejor se asemejan a nuestra situación.
+Hoy en día, con toda la información que estamos dejando en internet, está cada vez más poniendo de moda los sistemas de recomendación.
+Muchas empresas mundialmente conocidas nos ofrecen recomendaciones de sus productos en base de un análisis de los datos y comportamientos proporcionados.
+Como es el caso de Youtube, que registra los últimos videos que hemos visto y nos recomienda videos similares, basándose en el contenido de los videos. Otro caso es FilmAffinity, 
+una página de recomendación de película basada en las valoraciones que tenemos de las películas.
+
+De todas estas sistemas de recomendación, se pueden dividir según sus formas de realizar recomendaciones:
 
 \begin{itemize}
-    \item Filtrado Colaborativo\cite{filtradocolaborativo}: esta técnica de recomendación se basa en buscar usuarios que tienen preferencias similares, es decir, se basa en las valoraciones que han dado otros usuarios a los elementos.
     \item Filtrado basado en el contenido\cite{filtradocontenido}: al usuario se le recomendará aquella información que le ha interesado en el pasado, es decir, se le mostrarán elementos similares, independientemente de lo que opinen otros usuarios. 
+    Se basa en contenido de los objetos, se analiza el objeto para sacar características relevantes de ello, y a partir de las características 
+    extraídas, recomendar otros objetos con características similares.   
+    \item Filtrado Demográfico\cite{filtrademografico}: al contrario que el filtrado basado en el contenido que se basa en los objetos, este se basa en el usuario,
+    se realizan en función de las características que tienen los usuarios, como edad, sexo, profesión, etc. Ya que se asume que usuarios por ejemplo 
+    que han nacido en la misma década, van a tener preferencias similares frente a los de otras décadas. O que los profesores de matemáticas les gustan más los números 
+    que a los profesores de filolgía. 
+    \item Filtrado Colaborativo\cite{filtradocolaborativo}: esta técnica buscan similitudes de preferencias entre usuarios, y recomiendan objetos a un usuario, 
+    los cuales les han gustado a otros usuarios similares. La determinación de usuarios con preferencias similares se basan en 
+    las valoraciones de los usuarios a los objetos.
+    \item Filtrado Híbrido\cite{filtrahibrido}: Mezclan las tres técnicas descritas anteriormente, aprovechando los aspectos positivos
+    que ofrecen cada uno. Incluso se combinan con técnicas de inteligencia artificial como la lógica borrosa o la computación evolutiva. 
 \end{itemize} 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=3in, angle=0]{figures/chapter-2/recommendation_systems.png}
+    \includegraphics[width=6.5in, angle=0]{figures/chapter-2/recommendation_systems.png}
     \caption{Tipos de sistemas de recomendación \cite{imagefilters}}
 \end{figure}
+
+En nuestra aplicación, los objetos serán las películas que almacenaremos en nuestro contenedor de datos. Nos basaremos en 
+la técnica de filtrado colaborativo, dado como motivo principal el hecho de permitir a los usuarios la posibilidad de 
+interactuar en el sistema de recomendación valorando las películas que les gusten. Otro motivo es que tanto el filtrado basado
+en el contenido como el filtrado demográfico hace falta retener información extras sobre los usuarios como los objetos, representados 
+en formas de tags para finalmente recomendar. En un futuro se intentará trasladarse al filtrado híbrido integrando lo mejor de 
+cada uno.
 
 
 En este capítulo hemos podido conocer de primera mano la tecnología que representa el grueso de nuestra aplicación, la realidad aumentada. Se han descrito 
