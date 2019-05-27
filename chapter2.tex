@@ -189,7 +189,7 @@ estos datos, guardarlos en contenedores de datos y por último, representarlos a
     Por otro lado, la página ofrece dos idiomas, español e inglés, otro factor a favor pues en nuestra aplicación se usa el inglés como idioma primario y el español es la que usamos para comunicarnos. Sin embargo, la página por 
     hacer críticas bastantes serias y profesionales, la tendencia de valoraciones suelen ser bajas.
     \item MovieLens\cite{movielens}: una fuente de información, quizás menos conocida que FilmAffinity y que IMDB pero que ofrece sugerencias personalizadas y posibilidad de valorar. Se trata de un sistema de recomendación basado en una técnica de recomendación 
-    llamado filtrado colaborativo\cite{filtradocolaborativo}, que es una técnica candidata a usar en nuestra aplicación. Los datos que nos proporciona está en inglés.
+    llamado filtrado colaborativo\cite{filtradocolaborativo}, que es una técnica candidata a usar en nuestra aplicación. Los datos que nos proporciona están en inglés.
     \item IMDB\cite{imdb}: se trata de una base de datos online donde se guardan la información relacionada con las películas y series. Es una de las páginas mundialmente más usadas en estos aspectos.
     Actualmente, le pertenece a una de las empresas que más nubes tienen en el mundo, Amazon, por lo que se puede asegurar su fiabilidad. Su idioma está en inglés.
     \item Rotten Tomatoes\cite{rottentomatoes}: es una web donde usuarios y
@@ -227,7 +227,7 @@ Muchas empresas mundialmente conocidas nos ofrecen recomendaciones de sus produc
 Como es el caso de Youtube, que registra los últimos videos que hemos visto y nos recomienda videos similares, basándose en el contenido de los videos. Otro caso es FilmAffinity, 
 una página de recomendación de película basada en las valoraciones que tenemos de las películas.
 
-De todas estas sistemas de recomendación, se pueden dividir según sus formas de realizar recomendaciones:
+De todos estos sistemas de recomendación, se pueden dividir según sus formas de realizar recomendaciones:
 
 \begin{itemize}
     \item Filtrado basado en el contenido\cite{filtradocontenido}: al usuario se le recomendará aquella información que le ha interesado en el pasado, es decir, se le mostrarán elementos similares, independientemente de lo que opinen otros usuarios. 
@@ -236,9 +236,9 @@ De todas estas sistemas de recomendación, se pueden dividir según sus formas d
     \item Filtrado Demográfico\cite{filtrademografico}: al contrario que el filtrado basado en el contenido que se basa en los objetos, este se basa en el usuario,
     se realizan en función de las características que tienen los usuarios, como edad, sexo, profesión, etc. Ya que se asume que usuarios por ejemplo 
     que han nacido en la misma década, van a tener preferencias similares frente a los de otras décadas. O que los profesores de matemáticas les gustan más los números 
-    que a los profesores de filolgía. 
-    \item Filtrado Colaborativo\cite{filtradocolaborativo}: esta técnica buscan similitudes de preferencias entre usuarios, y recomiendan objetos a un usuario, 
-    los cuales les han gustado a otros usuarios similares. La determinación de usuarios con preferencias similares se basan en 
+    que a los profesores de filología. 
+    \item Filtrado Colaborativo\cite{filtradocolaborativo}: esta técnica busca similitudes de preferencias entre usuarios, y recomiendan objetos a un usuario, 
+    los cuales les han gustado a otros usuarios similares. La determinación de usuarios con preferencias similares se basa en 
     las valoraciones de los usuarios a los objetos.
     \item Filtrado Híbrido\cite{filtrahibrido}: Mezclan las tres técnicas descritas anteriormente, aprovechando los aspectos positivos
     que ofrecen cada uno. Incluso se combinan con técnicas de inteligencia artificial como la lógica borrosa o la computación evolutiva. 
@@ -253,7 +253,7 @@ De todas estas sistemas de recomendación, se pueden dividir según sus formas d
 En nuestra aplicación, los objetos serán las películas que almacenaremos en nuestro contenedor de datos. Nos basaremos en 
 la técnica de filtrado colaborativo, dado como motivo principal el hecho de permitir a los usuarios la posibilidad de 
 interactuar en el sistema de recomendación valorando las películas que les gusten. Otro motivo es que tanto el filtrado basado
-en el contenido como el filtrado demográfico hace falta retener información extras sobre los usuarios como los objetos, representados 
+en el contenido como el filtrado demográfico hace falta retener información extra sobre los usuarios como los objetos, representados 
 en formas de tags para finalmente recomendar. En un futuro se intentará trasladarse al filtrado híbrido integrando lo mejor de 
 cada uno.
 
