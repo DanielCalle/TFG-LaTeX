@@ -12,14 +12,28 @@
 \chapter{Implementación}
 \label{makereference4}
 Nuestra aplicación es una aplicación móvil desarrollada en Android, Unity y Vuforia y con un servidor desarrollado en Java usando Spring.
-En este capítulo comenzaremos mostrando todos los prototipos de implementación que hemos desarrollado, en los cuáles veremos los pros y contras de las
+En este capítulo comenzaremos describiendo todos los prototipos de implementación que hemos desarrollado, en los cuáles veremos los pros y contras de las
 tecnologías que hemos probado y el porqué de nuestra elección de implementar la aplicación con estas tecnologías. 
 Después describiremos cómo hemos implementado nuestra aplicación, desde la arquitectura que hemos seguido, 
 las tecnologías usadas para la parte frontend y la parte backend junto a las dificultades 
 que nos hemos encontrado mientras trabajábamos. Finalmente hablaremos de las herramientas de trabajo
 utilizadas para facilitarnos el trabajo en equipo.
-\section{Prototipos}
+\begin{center}
+    \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | X | l | l |} \hline
+    \multicolumn{3}{|l|}{Enlaces de GitHub } \\ \hline
+    Aplicación & Licencia & Enlace \\ \hline
+    Escena de AR en Unity con Vuforia & Apache-2.0 & \url{https://github.com/DanielCalle/TFG-Vuforia} \\ \hline
+    Aplicación de Android & Apache-2.0 & \url{https://github.com/DanielCalle/TFG-Android} \\ \hline
+    Servidor de Spring & Apache-2.0 & \url{https://github.com/DanielCalle/TFG-Server} \\ \hline
+    \end{tabularx}
+\end{center}
+\section{Pruebas de arquitectura}
 \label{makereference4.1}
+Estas pruebas sirven para conocer si las tecnologías seleccionadas
+de la \autoref{makereference2.1.1} son viables dentro de nuestro proyecto.
+Desarrollaremos prototipos con funcionalidades básicas y evaluaremos las partes
+positivas y negativas de dichas tecnologías. Esto nos permitirá decidir cuales
+son las mejores opciones para construir el software.
 
 \subsection{ARCore} 
 \label{makereference4.1.1} 
@@ -106,8 +120,8 @@ Las características tecnológicas de este prototipo son las siguientes:
 
 \begin{enumerate}
     \item La librería de Vuforia para Android está diseñada a muy bajo nivel.
-    \item Vuforia para dibujar en 3D usa la librería OpenGL, ver Figura \ref{fig:modelo3D}.
-    \item OpenGL utiliza una serie de espacios donde se van colocando los elementos, ver Figura \ref{fig:esquemaOpenGl}: 
+    \item Vuforia para dibujar en 3D usa la librería OpenGL (ver Figura \ref{fig:modelo3D}).
+    \item OpenGL utiliza una serie de espacios donde se van colocando los elementos (ver Figura \ref{fig:esquemaOpenGl}): 
     \begin{enumerate}
         \item Local space: Es el espacio local de cada objeto.
         \item World space: Es el mundo donde se encuentran los objetos.
@@ -216,17 +230,10 @@ Tras realizar este prototipo, consideramos que estas herramientas podrían ser l
 \subsection{Server en Spring} 
 \label{makereference4.1.6}
 
-Para la realización de la parte backend de la aplicación decidimos
-incorporar la tecnología de Spring para codificar un servicio web REST en Java
+Para la realización de la parte backend de la aplicación explicada a continuación,
+decidimos incorporar la tecnología de Spring para codificar un servicio web REST en Java
 y el acceso a datos mediante MySQL. Para el prototipo seguimos un tutorial\cite{tutorialspring} de 3 partes para crear un servicio web REST
-que gestionara una simple entidad de contactos de personas, con atributos como el nombre completo del contacto, su número de teléfono o su correo electrónico. Se puede observar su estructura
-en la figura \ref{fig:entidadContactos}.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=6in]{figures/ContactsEntity.png}
-        \caption{Entidad de Contactos}
-        \label{fig:entidadContactos}
-    \end{figure}
+que gestionara una simple entidad de contactos de personas, con atributos como el nombre completo del contacto, su número de teléfono o su correo electrónico.
 
 También se investigaron distintas formas de realizar el acceso a la base de datos desde el servidor, nos decantamos por una clase que nos ofrecía implementados los métodos básicos para crear, leer, actualizar y borrar datos. Además de la opción 
 de poder crear nuestros propios métodos.
@@ -237,10 +244,8 @@ que gestionara entidades de películas, y que usara PostgreSQL.
 \section{Arquitectura}
 \label{makereference4.2}
 En cuanto a la arquitectura usada en nuestra aplicación hemos adjuntado un esquema que podemos observar en la Figura \ref{fig:arquitectura}. Nuestra aplicación móvil estará implementada tanto en Android
-como en Unity, la aplicación general está en Android, mientras que la parte de realidad aumentada está desarrollada en Unity y usa Vuforia. Para el reconocimiento
-de imágenes con Vuforia usamos un almacenamiento en la nube gratuito que nos ofrece para almacenar las imágenes ya que, tener todas las imágenes en la misma aplicación la cargaría de un peso innecesario. Vuforia es una herramienta de pago, sin embargo, 
-ofrece una licencia gratuita para desarrolladores que pretendan aprender la tecnología sin lucrarse de ella\cite{vuforia_prices}. Tiene limitaciones como el número de accesos al mes o el número de imágenes que se pueden guardar, pero para el uso que pretendemos 
-darle es suficiente \cite{vuforia_free}. 
+como en Unity. La aplicación general está en Android, mientras que la parte de realidad aumentada está desarrollada en Unity y usa Vuforia. Para el reconocimiento
+de imágenes con Vuforia usamos un almacenamiento en la nube gratuito.
 Para la parte del servidor, hemos realizado una API Rest con Spring, usando además una base de datos relacional en PostgreSQL. La comunicación entre cliente y servidor se realiza mediante peticiones HTTP a 
 nuestro servidor desplegado en Heroku el cual nos devolverá los datos en formato JSON y posteriormente los mapearemos a una clase Java.
 \begin{figure}[H]
@@ -251,20 +256,31 @@ nuestro servidor desplegado en Heroku el cual nos devolverá los datos en format
 \end{figure}
 \section{Servidor}
 \label{makereference4.3}
-Nuestro servidor está programado en Java, usando el framework Spring para la creación de una API Rest que mediante peticiones HTTP y una base de datos relacional en PostgreSQL nos proporcionará
-toda la información necesaria para alimentar de datos a nuestro cliente. El servidor necesita ser desplegado para que la aplicación pueda tener un uso real por lo que conseguimos desplegarlo de forma gratuita en Heroku, que además ofrece
-facilidades para desplegar un servidor creado mediante Spring, por lo que nos facilitó el trabajo considerablemente. También se encuentra en el servidor la implementación del sistema de recomendación.
+Nuestro servidor está programado en Java, usando el framework Spring para la creación de una API Rest que, mediante peticiones HTTP y una base de datos relacional en PostgreSQL, nos proporcionará
+toda la información necesaria para alimentar de datos a nuestro cliente. También se encuentra en el servidor la implementación del sistema de recomendación.
+\subsection{Entidades}
+\label{makereference4.3.1}
 En el servidor tendremos todas las entidades que necesitamos representadas mediante clases Java y anotaciones de JPA, para facilitar el mapeo entre tablas de la base de datos y dichas entidades. Hemos implementado las siguientes entidades:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/Entidades-ER.jpeg}
+    \caption{Modelo entidad-relación}
+    \label{fig:arquitectura}
+\end{figure}
 \begin{itemize}
     \item Film: entidad referente a las películas que guardamos, con su respectivo título, director, duración, valoración, url del tráiler, sinopsis, url de la imagen de la película, género, país y fecha de estreno.
     \item User: entidad para representar a los usuarios de la aplicación, con su nombre, foto, email y contraseña.
     \item Friendship: entidad para representar la relación de amistad entre usuarios.
-    \item Plan: entidad para representar los planes, estos poseerán una película, un usuario creador, fecha, hora, lugar, título, descripción y una lista de usuarios unidos.
+    \item Plan: entidad para representar los planes. Estos poseerán una película, un usuario creador, fecha, hora, lugar, título, descripción y una lista de usuarios unidos.
     \item UserFilm: entidad intermedia para representar la relación de usuarios con películas, es decir, las películas que son guardadas por cierto usuario.
-    \item Recommendation: entidad para representar las recomendaciones a los usuarios.
 \end{itemize}
+\subsection{Controladores}
+\label{makereference4.3.2}
 Para cada una de estas entidades necesitamos una clase Controller, que actuará de controlador para saber redirigir cada petición HTTP a su correspondiente servicio de aplicación, donde se aplicará la lógica del negocio, comprobando 
 que los datos son correctos y obteniendo, modificando o creando elementos en la base de datos a través de las clases Repository correspondiente a cada entidad.
+A la búsqueda por ID tuvimos que añadir la búsqueda por UUID en usuarios y películas.
+El ID es necesario para utilizarlo en el sistema de recomendación de Mahout y
+el UUID es necesario para el reconocimiento de imágenes de Vuforia.
 Las distintas peticiones HTTP que realizamos son las siguientes:
 
 \begin{center}
@@ -301,11 +317,11 @@ Las distintas peticiones HTTP que realizamos son las siguientes:
 \begin{center}
     \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
     \multicolumn{3}{|c|}{UserFilm} \\ \hline
-    Obtener todas puntuaciones & GET & /user-films/ \\ \hline
-    Guardar puntuación & POST & /user-films/ \\ \hline
-    Actualizar puntuación & PUT & /user-films/\{userId\}/\{filmId\}/rate/\{rating\} \\ \hline
-    Buscar una puntuación & GET & /user-films/\{userId\}/\{filmId\} \\ \hline
-    Borrar una puntuación & GET & /user-films/\{id\} \\ \hline
+    Obtener todas las valoraciones & GET & /user-films/ \\ \hline
+    Guardar valoración & POST & /user-films/ \\ \hline
+    Actualizar valoración & PUT & /user-films/\{userId\}/\{filmId\}/rate/\{rating\} \\ \hline
+    Buscar una valoración & GET & /user-films/\{userId\}/\{filmId\} \\ \hline
+    Borrar una valoración & GET & /user-films/\{id\} \\ \hline
     \end{tabularx}
 \end{center}
 \begin{center}
@@ -354,12 +370,10 @@ Las distintas peticiones HTTP que realizamos son las siguientes:
 \section{Cliente}
 \label{makereference4.4}
 Nuestra aplicación está implementada principalmente en Android, las interfaces principales para el uso de los planes, recomendaciones y acceso a la información de las películas guardadas han sido desarrolladas mediante Android Studio. Sin embargo,
-la parte del cliente que otorga el gran valor a nuestra aplicación está desarrollada en Unity y el uso de Vuforia, todas las escenas que aparecen al reconocer carteles de películas e imágenes de usuarios fueron implementadas de esta forma. Vuforia además nos ofrece un
-servicio de Cloud para el almacenamiento de imágenes, a las cuales les asocia una valoración según lo fácil que le resultará a la aplicación reconocerla y un identificador único (UUID), que es el que usaremos para guardar la distinta información de dicha película o usuario en la base de datos.
+la parte del cliente que otorga el gran valor a nuestra aplicación está desarrollada en Unity y el uso de Vuforia, todas las escenas que aparecen al reconocer carteles de películas e imágenes de usuarios fueron implementadas de esta forma.
 La parte de la aplicación realizada en Unity, utiliza una serie de clases de la parte desarrollada en Android para realizar las peticiones al servidor y así poder mostrar información específica cuando se reconoce una cierta imagen.
-Al principio hicimos que las dos partes realizaran las peticiones en sus respectivos lenguajes, pero decidimos que sería mejor que el acceso a la capa de datos se realizara por el mismo sitio y así conseguir que las distintas capas estuvieran separadas.
-Además, en un principio, las imágenes que mostramos en la parte de Android se almacenan en Google Drive y mediante la librería de Picasso las obtenemos en tiempo de ejecución, esto se ha implementado de esta forma por la misma razón por la que tenemos las imágenes a reconocer en un Cloud.
-Finalmente, debido al coste en tiempo de esta operación y tras debatirlo con nuestros directores del Trabajo de Fin de Grado, hemos decidido guardar dichas imágenes en el mismo servidor para su rápida obtención.
+Al principio la parte de Android implementaba la obtención de datos del servidor que necesitaba y la parte de Unity la suya. Después decidimos implementar la obtención de datos únicamente en Android y hacer usarlo desde Unity para tener mejor control y no duplicar soluciones al mismo problema.
+Las imágenes que mostramos en la parte de Android se almacenan en el mismo servidor.
 
 
 Como la mayor parte de la aplicación está implementada en Android Studio, la estructura de ésta se adapta a lo que ofrece el IDE, consistiendo en el flujo de unas actividades y fragmentos que explicaremos a continuación.
@@ -368,16 +382,22 @@ Como la mayor parte de la aplicación está implementada en Android Studio, la e
 \subsection{Actividades}
 \label{makereference4.4.1}
 Son los componentes de la aplicación que representan una pantalla con la que los usuarios pueden interactuar para realizar una determinada acción.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/Activity.jpeg}
+    \caption{Actividades}
+    \label{fig:activity}
+\end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=3in]{figures/chapter-4/activity_lifecycle.png}
+    \includegraphics[width=5in]{figures/chapter-4/activity_lifecycle.png}
     \caption{Ciclo de vida de una actividad}
 \end{figure}
 
 Entre nuestras actividades podemos destacar dos: 
 \begin{itemize}
-    \item MainActivity: La primera actividad (actividad principal) que se activa al iniciar la aplicación, la cual comprueba el estado de sesión del usuario, si está logueado se queda en la actividad, y si no, se redirige al usuario a otra actividad llamada LoginActivity que mediante un formulario muy simple nos permite iniciar sesión o registrarnos. En MainActivity se encuentra un paginador (ViewPager) de 3 fragmentos, donde cada fragmento representa las interfaces de planes, recomendaciones y películas guardadas correspondientemente, podemos observarlo en las Figuras \ref{fig:listaPlanes}, \ref{fig:lista_peliculas} y \ref{fig:recomendaciones_1} del \autoref{makereference3}.
+    \item MainActivity: La primera actividad (actividad principal) que se activa al iniciar la aplicación, la cual comprueba el estado de sesión del usuario, si está logueado se queda en la actividad, y si no, se redirige al usuario a otra actividad llamada LoginActivity que mediante un formulario muy simple nos permite iniciar sesión o registrarnos. En MainActivity se encuentra un paginador (ViewPager) de 3 fragmentos, donde cada fragmento representa las interfaces de planes, recomendaciones y películas guardadas correspondientemente. Podemos observarlo en las Figuras \ref{fig:listaPlanes}, \ref{fig:lista_peliculas} y \ref{fig:recomendaciones_1} del \autoref{makereference3}.
     \item UnityPlayerActivity: Se trata de una actividad especial que nos permite comunicar la parte desarrollada en Unity con nuestro proyecto Android. Aquí se encuentran llamadas a funciones desde la parte de Unity, se realizan las órdenes y se devuelven a Unity.
 \end{itemize} 
 
@@ -404,7 +424,7 @@ Lo que nos permite es abstraer la lógica de los métodos implementados en Andro
 
 \subsection{Entidades}
 \label{makereference4.4.4}
-Todos los modelos de datos que podemos recibir del servidor, los cuales hemos descrito anteriormente en este capítulo, en la sección 4.3 describiendo el servidor, son representados por entidades en nuestro proyecto de Android, con los mismos atributos que tienen sus entidades correspondientes en el servidor.
+Todos los modelos de datos que podemos recibir del servidor, los cuales hemos descrito anteriormente en este capítulo, en la Sección 4.3, son representados por entidades en nuestro proyecto de Android, con los mismos atributos que tienen sus entidades correspondientes en el servidor.
 
 \subsection{Fragmentos}
 \label{makereference4.4.5}
@@ -412,17 +432,23 @@ Representan un comportamiento o una parte de la interfaz de usuario en una activ
 Se utilizan para formar una vista compuesta de paginación en una actividad. 
 Aquí es donde tendremos los 3 componentes principales de nuestra aplicación, la actividad referente a mis planes, la actividad de las recomendaciones y la de mis películas.
 
-\subsection{Servicios}
+\subsection{Petición de servicios}
 \label{makereference4.4.6}
 Se trata de un conjunto de clases que solo poseen métodos estáticos para llevar a cabo peticiones HTTP al servidor. Se ha creado una clase genérica para la creación y llamada de peticiones HTTP, se ha diseñado de manera que las respuestas se devuelvan en forma de callback para un uso más sencillo.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/Request.jpeg}
+    \caption{Petición de servicios}
+    \label{fig:activity}
+\end{figure}
 Los servicios que hemos implementado son los siguientes:
 \begin{itemize}
-    \item FilmService: servicio encargado de realizar las peticiones sobre películas al servidor, como podría ser buscar una película por su ID.
-    \item FriendshipService: servicio responsable de obtener los datos relacionados a las relaciones entre amistad, como podría ser aceptar una petición o comprobar si dos usuarios son amigos.
-    \item PlanService: servicio cuya finalidad es la de conseguir la información relacionada con los planes, como podría ser la operación de crear un plan y unirse o salirse de uno ya existente.
-    \item RecommendationService: este servicio se ocupa de obtener las distintas recomendaciones de películas y planes de un usuario.
-    \item UserFilmService: servicio creado para obtener la información referente a ciertos métodos de la relación entre películas y usuarios. Por ejemplo, con este servicio podríamos guardar una película como favorita de un usuario. También es usado para cuando un usuario valora cierta película.
-    \item UserService: servicio que nos permite obtener todo lo relacionado con los usuarios, ya sean sus perfiles, los amigos de un usuario, los planes en los que está o las películas que ha guardado.
+    \item FilmRequest: servicio encargado de realizar las peticiones sobre películas al servidor, como podría ser buscar una película por su ID.
+    \item FriendshipRequest: servicio responsable de obtener los datos relacionados a las relaciones entre amistad, como podría ser aceptar una petición o comprobar si dos usuarios son amigos.
+    \item PlanRequest: servicio cuya finalidad es la de conseguir la información relacionada con los planes, como podría ser la operación de crear un plan y unirse o salirse de uno ya existente.
+    \item RecommendationRequest: este servicio se ocupa de obtener las distintas recomendaciones de películas y planes de un usuario.
+    \item UserFilmRequest: servicio creado para obtener la información referente a ciertos métodos de la relación entre películas y usuarios. Por ejemplo, con este servicio podríamos guardar una película como favorita de un usuario. También es usado para cuando un usuario valora cierta película.
+    \item UserRequest: servicio que nos permite obtener todo lo relacionado con los usuarios, ya sean sus perfiles, los amigos de un usuario, los planes en los que está o las películas que ha guardado.
 \end{itemize}
 
 \subsection{Vistas}
@@ -442,6 +468,16 @@ Finalmente decidimos usar para la aplicación el sistema de Filtrado Colaborativ
     \item Hemos conseguido un archivo csv de unas 200000 valoraciones de usuarios a películas con sus respectivos títulos, por lo que sólo tendríamos que crear usuarios ficticios para conseguir una base de datos inicial.
     \item Para usar el filtrado basado en el contenido tenemos que diseñar muy bien los datos de cada una de las entidades, además de aplicar los pesos de importancia a los atributos para en un futuro aplicar el sistema.  
 \end{itemize} 
+
+Para la implementación del sistema de recomendación, utilzamos un procedimiento
+que se ejecuta automáticamente por cada periodo de tiempo. En este procedimiento,
+se usa una funcionalidad de la librería Mahout, para extraer los datos de recomendación
+de nuestra base de datos. Transformándolo en un modelo de datos que, posteriormente tras
+ejecutar mediante algunos parámetros aplicados a la técnica de filtrado colaborativo, obtener 
+resultados de recomendación. Con estos resultados, se almacenan en una tabla de base de datos 
+para después poder hacer consultas.
+
+
 Para la implementación de los sistemas de recomendación hemos encontrados tres librerías:
 \begin{enumerate}
     \item Mahout: Se trata de una librería que abarca la mayoría de necesidades para la implementación del sistema de recomendación.
@@ -453,7 +489,7 @@ Al final nos hemos decantado por Mahout, ya que aporta una documentación más c
 sin tener que leer desde ficheros csv. Por otro lado, en el testeo de 
 Lenskit, cuando intentábamos reproducir el ejemplo que ofrecían, nos encontramos que algunas funciones estaban 
 obsoletas y, por tanto, no nos transmitía mucha confianza. Por último, Mahout destaca por ser más fácil de usar y minimizar nuestro esfuerzo en aprender esta nueva tecnología.
-\section{Despliegue}. 
+\section{Despliegue}
 \label{makereference4.6}
 Para el despliegue de la aplicación de servidor utilizamos Heroku.
 Esta plataforma nos ofrece una versión gratis de alojamiento limitado con las
@@ -461,26 +497,8 @@ Esta plataforma nos ofrece una versión gratis de alojamiento limitado con las
 Utilizamos un despliegue automático que al realizar cambios en una rama del
  repositorio de GitHub, Heroku descarga esos cambios y lo despliega en el servidor.
 
-
-\section{Dificultades encontradas}
-\label{makereference4.7}
-A continuación, mostraremos una lista de todas las dificultades encontradas a la hora de implementar nuestra aplicación:
-\begin{itemize}
-    \item Diseño de las interfaces para que fueran familiares e intuitivas para el usuario. Tuvimos que rehacer muchas veces los distintos bocetos de las interfaces ya que no eran intuitivos para los usuarios, gracias a las sugerencias que se nos iban haciendo conseguimos mejorarlas bastante.
-    \item Desconocimiento del entorno de desarrollo y peculiaridades del desarrollo de aplicaciones en Android. Para resolver nuestro desconocimiento de Android realizamos una serie de prototipos y buscamos tutoriales que nos sirvieran como ejemplo para desarrollar cada parte de nuestra aplicación.
-    \item Incompatibilidad de realización de peticiones HTTP en ciertas versiones de Android. Tras probar la aplicación en un smartphone con versión de Android 9.0 descubrimos que los permisos para hacer peticiones de este tipo a un servidor no funcionaban con la configuración inicial de nuestro proyecto. Para solucionarlo cambiamos una serie de líneas de código en nuestro archivo AndroidManifest.xml para solventarlo.
-    \item Problemas a la hora de intentar desplegar el servidor de forma correcta para que fuera accesible siempre. Para que el servidor estuviera siempre levantado se nos ocurrió realizar su despliegue en Heroku para así poder realizar peticiones en cualquier momento desde la app.
-    \item Poca familiaridad con el uso de Unity y el lenguaje C\# para realizar la parte de realidad aumentada. Para familiarizarnos con el entorno implementamos una serie de prototipos y buscamos tutoriales que nos sirvieran como guía para diseñar nuestra parte de realidad aumentada. 
-    \item Caducidad de las licencias gratuitas para el uso del Cloud de Vuforia. La solución a este problema fue muy simple, crearnos cuentas nuevas cada vez que se acabara la licencia para poder seguir accediendo a este servicio.
-    \item Primera vez usando el framework de Spring para la realización de una API Rest. Su solución fue seguir un tutorial paso a paso para crearlo con una sola entidad e ir ampliándolo a todas las entidades que necesitaba nuestra aplicación.
-    \item Comunicación entre la parte cliente en Android y el servidor. Conseguimos realizar servicios en Android que realizaban las peticiones al servidor de forma asíncrona, obteniendo su resultado en una función callback para usar dicha información como correspondiera en cada caso.
-    \item Comunicación entre la parte cliente en Unity con la parte cliente en Android. Para abstraer la lógica desarrollada en Android a la de Unity implementamos clases que usaban el patrón Command para facilitar la comunicación entre estas dos partes de nuestro proyecto.
-    \item Rendimiento en cuanto al reconocimiento de ciertas imágenes, sobre todo de personas, debido a la calidad de las mismas. El Cloud de Vuforia no las reconoce tan fácilmente como las de carteles de películas. Para arreglarlo tuvimos que buscar imágenes de usuarios con una mejor calidad para facilitar a la librería su reconocimiento, finalmente optamos por poner imágenes de los integrantes del proyecto durante el desarrollo de la aplicación.
-    \item Almacenamiento de imágenes en Google Drive y su obtención desde Android y Unity, junto con el retardo que esto produce. Para no tener las imágenes de los usuarios en la aplicación se nos ocurrió guardarlas en Google Drive y obtenerlas con la librería de Picasso de Android, pero esto era muy lento y decidimos guardarlas en el mismo servidor.
-    \item Incompatibilidades con las nuevas actualizaciones de Unity. Hemos tenido cuidado con no actualizar el IDE de Unity porque nuestro proyecto quedaría obsoleto, ya nos vimos en la situación de que uno de los miembros tenía una versión superior a la de los demás y tuvimos que rehacer lo que habíamos implementado.
-\end{itemize}
 \section{Herramientas de trabajo}
-\label{makereference4.8}
+\label{makereference4.7}
 Las distintas herramientas de trabajo que hemos decidido usar para que el trabajo realizado fuera más eficiente son las siguientes:
 \begin{itemize}
     \item Telegram: hemos usado esta aplicación de mensajería para poder comunicarnos entre todos los miembros pertenecientes al proyecto, ya fuera para la sugerencia de ideas o que un bot de GitHub nos avisara de los cambios en los distintos repositorios que hemos creado. 
@@ -495,4 +513,24 @@ Las distintas herramientas de trabajo que hemos decidido usar para que el trabaj
     \item Visual Studio: Utilizamos Visual Studio para codificar los scripts en C\# necesarios para el funcionamiento de la parte de realidad aumentada en Unity.
     \item Postman: aplicación para el envío de peticiones HTTP REST, que utilizamos para depurar los servicios de Spring.
     \item MockFlow: herramienta online para el diseño de mockups, nosotros la utilizamos para el diseño de las vistas de la aplicación Android.
+\end{itemize}
+
+\section{Conclusiones}
+\label{makereference4.8}
+\subsection{Dificultades encontradas}
+\label{makereference4.8.1}
+A continuación, mostraremos una lista de todas las dificultades encontradas a la hora de implementar nuestra aplicación:
+\begin{itemize}
+    \item Diseño de las interfaces para que fueran familiares e intuitivas para el usuario. Tuvimos que rehacer muchas veces los distintos bocetos de las interfaces ya que no eran intuitivos para los usuarios. Gracias a las sugerencias que se nos iban haciendo conseguimos mejorarlas bastante.
+    \item Desconocimiento del entorno de desarrollo y peculiaridades del desarrollo de aplicaciones en Android. Para resolver nuestro desconocimiento de Android realizamos una serie de prototipos y buscamos tutoriales que nos sirvieran como ejemplo para desarrollar cada parte de nuestra aplicación.
+    \item Incompatibilidad de realización de peticiones HTTP en ciertas versiones de Android. Tras probar la aplicación en un smartphone con versión de Android 9.0 descubrimos que los permisos para hacer peticiones de este tipo a un servidor no funcionaban con la configuración inicial de nuestro proyecto. Para solucionarlo cambiamos una serie de líneas de código en nuestro archivo AndroidManifest.xml para solventarlo.
+    \item Problemas a la hora de intentar desplegar el servidor de forma correcta para que fuera accesible siempre. Para que el servidor estuviera siempre levantado se nos ocurrió realizar su despliegue en Heroku para así poder realizar peticiones en cualquier momento desde la app.
+    \item Poca familiaridad con el uso de Unity y el lenguaje C\# para realizar la parte de realidad aumentada. Para familiarizarnos con el entorno implementamos una serie de prototipos y buscamos tutoriales que nos sirvieran como guía para diseñar nuestra parte de realidad aumentada. 
+    \item Caducidad de las licencias gratuitas para el uso del Cloud de Vuforia. La solución a este problema fue muy simple, crearnos cuentas nuevas cada vez que se acabara la licencia para poder seguir accediendo a este servicio.
+    \item Primera vez usando el framework de Spring para la realización de una API Rest. Su solución fue seguir un tutorial paso a paso para crearlo con una sola entidad e ir ampliándolo a todas las entidades que necesitaba nuestra aplicación.
+    \item Comunicación entre la parte cliente en Android y el servidor. Conseguimos realizar servicios en Android que realizaban las peticiones al servidor de forma asíncrona, obteniendo su resultado en una función callback para usar dicha información como correspondiera en cada caso.
+    \item Comunicación entre la parte cliente en Unity con la parte cliente en Android. Para abstraer la lógica desarrollada en Android a la de Unity implementamos clases que usaban el patrón Command para facilitar la comunicación entre estas dos partes de nuestro proyecto.
+    \item Rendimiento en cuanto al reconocimiento de ciertas imágenes, sobre todo de personas, debido a la calidad de las mismas. El Cloud de Vuforia no las reconoce tan fácilmente como las de carteles de películas. Para arreglarlo tuvimos que buscar imágenes de usuarios con una mejor calidad para facilitar a la librería su reconocimiento, finalmente optamos por poner imágenes de los integrantes del proyecto durante el desarrollo de la aplicación.
+    \item Almacenamiento de imágenes en Google Drive y su obtención desde Android y Unity, junto con el retardo que esto produce. Para no tener las imágenes de los usuarios en la aplicación se nos ocurrió guardarlas en Google Drive y obtenerlas con la librería de Picasso de Android, pero esto era muy lento y decidimos guardarlas en el mismo servidor.
+    \item Incompatibilidades con las nuevas actualizaciones de Unity. Hemos tenido cuidado con no actualizar el IDE de Unity porque nuestro proyecto quedaría obsoleto, ya nos vimos en la situación de que uno de los miembros tenía una versión superior a la de los demás y tuvimos que rehacer lo que habíamos implementado.
 \end{itemize}
