@@ -324,8 +324,34 @@ Además, aparece un botón situado debajo del plan central que permite al usuari
 plan. Este botón mostrará una interfaz como la de la Figura \ref{fig:info_planes} y \ref{fig:info_planes_1} para que el usuario pueda ver todos 
 los detalles del plan y decidir si se quiere unir.
 
-\section{Conclusiones}
+\section{Navegación entre interfaces}
+A continuación, explicaremos el diagrama mostrado en la Figura \ref{fig:navegacion}. Este diagrama muestra la manera en que se puede navegar entre las distintas interfaces
+de la aplicación.
+\begin{enumerate}
+    \item El usuario al entrar en la aplicación accede a la vista de recomendación (Figura \ref{fig:navegacion}). Esta vista como hemos explicado anteriormente
+permite navegar haciendo uso de la barra de navegación inferior, con las vistas de Planes (Figura \ref{fig:listaPlanes}) y la vista de Mis películas (Figura \ref{fig:lista_peliculas}).
+    \item Presionando cualquiera de los planes mostrados en la lista de planes se accede a la vista de cada plan (Figura \ref{fig:info_planes}).
+    \item Presionando alguna de las películas que aparecen en la vista de recomendaciones accedemos a la vista de cada película (Figura \ref{fig:info_pelicula_1}).
+    \item Al presionar alguna de las películas de la vista de Mis películas se accede a la vista de cada película (Figura \ref{fig:info_pelicula_1}).
+    \item Desde cualquiera de las vistas citadas en el punto 1 se puede acceder a la Realidad Aumentada haciendo uso del botón habilitado para ello.
+    \item Una vez estamos en la Realidad Aumentada, dependiendo de a qué decidamos enfocar con la cámara accederemos a una vista u otra:
+    \begin{enumerate}
+        \item Al enfocar a un usuario que no es amigo se accederá a la vista en Realidad Aumentada habilitada para añadirlo como amigo. (Figura \ref{fig:ra_usuario}).
+        \item Al enfocar a un usuario que sí es amigo accederemos a la interfaz en la que podremos unirnos a alguno de los planes de nuestro amigo. (Figura \ref{fig:ra_recomendacion}).
+        Si finalmente decidimos unirnos a uno de sus planes, accederemos a la vista fuera de la Realidad Aumentada habilitada para ello (Figura \ref{fig:info_planes}).
+        \item Al enfocar a una película, podremos ver todos los detalles de esta en Realidad Aumentada. (Figura \ref{fig:ra_pelicula}). Si decidimos ver más información de la película
+        fuera de la Realidad Aumentada, al presionar el botón habilitado para ello, accederemos a la interfaz de Película (Figura \ref{fig:info_pelicula_1}).
+    \end{enumerate}
+\end{enumerate}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-3/Navegacion.png}
+    \caption{Diagrama con la navegación entre interfaces de la aplicación}
+    \label{fig:navegacion}
+\end{figure}
+
+\section{Conclusiones}
 En este capítulo hemos observado los distintos escenarios que hemos planteado para el uso de nuestra aplicación, a partir de ellos hemos sacado una serie de 
  requisitos funcionales que posteriormente han sido mejor especificados tras las descripciones de las interfaces de usuario que hemos diseñado, apoyándonos en imágenes 
  para mostrar visualmente a lo que nos referimos en cada subsección de las interfaces de usuario.
