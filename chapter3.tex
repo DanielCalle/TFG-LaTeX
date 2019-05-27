@@ -139,7 +139,7 @@ claramente lo que representa este elemento) y en la parte inferior aparecen las 
 Todo esto podemos verlo en la Figura \ref{fig:listaPlanes}.
 \begin{figure}[H]
     \centering
-    \includegraphics[height=4in]{figures/plansList.jpg}
+    \includegraphics[height=4in]{figures/chapter-3/plan-list.jpg}
     \caption{Lista de planes}
     \label{fig:listaPlanes}
 \end{figure}
@@ -151,14 +151,14 @@ Todo esto podemos verlo en la Figura \ref{fig:listaPlanes}.
     \makebox[0pt][c]{%
     \begin{minipage}[b]{0.5\linewidth}
     \centering
-      \includegraphics[height=4in]{figures/infoPlan1.jpg}
+      \includegraphics[height=4in]{figures/chapter-3/info-plan-extended.jpg}
       \caption{Información del plan}
     \label{fig:info_planes}
     \end{minipage}%
     \hspace{0.2cm}
     \begin{minipage}[b]{0.5\linewidth}
     \centering
-     \includegraphics[height=4in]{figures/infoPlan2.jpg}
+     \includegraphics[height=4in]{figures/chapter-3/info-plan.jpg}
       \caption{Información del plan}
     \label{fig:info_planes_1}
     \end{minipage}%
@@ -185,7 +185,7 @@ Para mostrar las películas guardadas decidimos usar una cuadrícula que muestre
 de cada película simplemente debemos pulsar en uno de los carteles.
 \begin{figure}[H]
     \centering
-    \includegraphics[height=4in]{figures/FilmsList.jpg}
+    \includegraphics[height=4in]{figures/chapter-3/film-list.jpg}
     \caption{Lista de películas guardadas}
     \label{fig:lista_peliculas}
 \end{figure}
@@ -208,14 +208,14 @@ lista de películas guardadas.
     \makebox[0pt][c]{%
     \begin{minipage}[b]{0.5\linewidth}
     \centering
-      \includegraphics[height=4in]{figures/infoFilm1.jpg}
+      \includegraphics[height=4in]{figures/chapter-3/info-film-extended.jpg}
       \caption{Información de la película}
     \label{fig:info_pelicula_1}
     \end{minipage}%
     \hspace{0.2cm}
     \begin{minipage}[b]{0.5\linewidth}
     \centering
-     \includegraphics[height=4in]{figures/infoFilm2.jpg}
+     \includegraphics[height=4in]{figures/chapter-3/info-film.jpg}
       \caption{Información de la película}
     \label{fig:info_pelicula_2}
     \end{minipage}%
@@ -233,27 +233,81 @@ y las películas que están siendo estrenadas. Al pulsar en cada una de ellas ac
     \makebox[0pt][c]{%
     \begin{minipage}[b]{0.5\linewidth}
     \centering
-      \includegraphics[height=4in]{figures/recommendations1.jpg}
+      \includegraphics[height=4in]{figures/chapter-3/recommendations1.jpg}
       \caption{Recomendaciones de películas}
     \label{fig:recomendaciones_1}
     \end{minipage}%
     \hspace{0.2cm}
     \begin{minipage}[b]{0.5\linewidth}
     \centering
-     \includegraphics[height=4in]{figures/recommendations2.jpg}
+     \includegraphics[height=4in]{figures/chapter-3/recommendations2.jpg}
       \caption{Recomendaciones de películas}
     \label{fig:recomendaciones_2}
     \end{minipage}%
     }%
 \end{figure}
 
+\subsection{Interfaz Usuario}
+Al pulsar la foto de un amigo en cualquier lugar de la aplicación, podremos acceder a una vista de ese usuario.
+En esta interfaz podremos ver la imagen del usuario, el nombre de este, los planes que tiene actualmente activos 
+y el estado de nuestra relación con él. Este estado puede ser:
+\begin{enumerate}
+    \item Enviar petición de amistad. No hemos interactuado con este usuario y tenemos la posibilidad de enviarle 
+    una petición de amistad.
+    \item Esperando respuesta. Le hemos enviado en algún momento una petición de amistad y estamos esperando su respuesta.
+    \item Aceptar o rechazar. El usuario en el que estamos nos ha enviado una petición de amistad y tenemos la posibilidad de 
+    aceptarlo o rechazarlo.
+    \item Eliminar amigo. El usuario que estamos viendo es nuestro amigo y tenemos la opción de dejar de serlo.
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4in]{figures/chapter-3/info-user.jpg}
+    \caption{Vista de usuario}
+    \label{fig:usuario}
+\end{figure}
+\subsection{Interfaz Lista de amigos}
+Hemos decidido incorporar esta vista a nuestra aplicación ya que, es una forma muy intuitiva para que el usuario pueda ver una lista de sus amigos y usuarios a los que
+ha enviado una petición de amistad.
+
+La vista es una lista en la que se muestra la foto del amigo o usuario al que se le he enviado la petición de amistad y su nombre.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4in]{figures/chapter-3/listaAmigos.jpg}
+    \caption{Lista de amigos}
+    \label{fig:listaAmigos}
+\end{figure}
+\subsection{Búsquedas en las vistas}
+Para facilitar al usuario el uso de la aplicación cuando haya muchos datos en esta, hemos implementado un buscador para cada una de las siguientes vistas:
+\begin{enumerate}
+    \item En la vista de Mis planes para permitir al usuario encontrar un plan determinado.
+    \item En la vista de Recomendaciones para encontrar una película determinada.
+    \item En la vista de Mis películas para, al igual que en la vista anterior, encontrar una película determinada.
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \makebox[0pt][c]{%
+    \begin{minipage}[b]{0.5\linewidth}
+    \centering
+      \includegraphics[height=4in]{figures/chapter-3/BuscaMisPeliculas.jpg}
+      \caption{Busqueda de Mis películas}
+    \label{fig:buscaPeliculas}
+    \end{minipage}%
+    \hspace{0.2cm}
+    \begin{minipage}[b]{0.5\linewidth}
+    \centering
+     \includegraphics[height=4in]{figures/chapter-3/BuscaMisPlanes.jpg}
+      \caption{Búsqueda de Mis planes}
+    \label{fig:buscaPlanes}
+    \end{minipage}%
+    }%
+\end{figure}
 \subsection{Interfaz de realidad aumentada principal}
 \label{makereference3.4.4}
 Una interfaz muy simple en la que tenemos una línea horizontal que se mueve de arriba hacia abajo y viceversa en la pantalla como si se tratara de un escáner, para que el usuario
 pueda entender que debe escanear una imagen, como podemos ver en la Figura \ref{fig:escaner}.
 \begin{figure}[H]
     \centering
-    \includegraphics[height=4in]{figures/escaner.jpg}
+    \includegraphics[height=4in]{figures/chapter-3/escaner.jpg}
     \caption{Escáner}
     \label{fig:escaner}
 \end{figure}
@@ -268,7 +322,7 @@ guardar la película en nuestra lista de películas guardadas, para posteriormen
 
 \begin{figure}[H]
     \centering
-    \includegraphics[height=4in]{figures/filmrecognized2.jpg}
+    \includegraphics[height=4in]{figures/chapter-3/film-recognized.jpg}
     \caption{Realidad aumentada tras reconocer una película}
     \label{fig:ra_pelicula}
 \end{figure}
@@ -279,7 +333,7 @@ Se trata de una interfaz sencilla en donde a la persona que está usando la cám
  que está enfocando (siempre que el usuario enfocado esté registrado) junto a un botón de añadir amigo, como podemos ver en la Figura \ref{fig:ra_usuario}.
 \begin{figure}[H]
     \centering
-    \includegraphics[height=4in]{figures/usernotFriendrecognized.jpg}
+    \includegraphics[height=4in]{figures/chapter-3/usernotFriendrecognized.jpg}
     \caption{Realidad aumentada tras reconocer a un usuario que no es amigo}
     \label{fig:ra_usuario}
 \end{figure}
@@ -324,8 +378,35 @@ Además, aparece un botón situado debajo del plan central que permite al usuari
 plan. Este botón mostrará una interfaz como la de la Figura \ref{fig:info_planes} y \ref{fig:info_planes_1} para que el usuario pueda ver todos 
 los detalles del plan y decidir si se quiere unir.
 
-\section{Conclusiones}
+\section{Navegación entre interfaces}
+A continuación, explicaremos el diagrama mostrado en la Figura \ref{fig:navegacion}. Este diagrama muestra la manera en que se puede navegar entre las distintas interfaces
+de la aplicación.
+\begin{enumerate}
+    \item El usuario al entrar en la aplicación accede a la vista de recomendación (Figura \ref{fig:navegacion}). Esta vista como hemos explicado anteriormente
+permite navegar haciendo uso de la barra de navegación inferior, con las vistas de Planes (Figura \ref{fig:listaPlanes}) y la vista de Mis películas (Figura \ref{fig:lista_peliculas}).
+    \item Presionando cualquiera de los planes mostrados en la lista de planes se accede a la vista de cada plan (Figura \ref{fig:info_planes}).
+    \item Presionando alguna de las películas que aparecen en la vista de recomendaciones accedemos a la vista de cada película (Figura \ref{fig:info_pelicula_1}).
+    \item Al presionar alguna de las películas de la vista de Mis películas se accede a la vista de cada película (Figura \ref{fig:info_pelicula_1}).
+    \item Desde cualquiera de las vistas citadas en el punto 1 se puede acceder a la Realidad Aumentada haciendo uso del botón habilitado para ello.
+    \item Al pulsar la imagen de un usuario desde cualquier vista en la aplicación, nos redirigirá a la vista de ese usuario. (Figura \ref{fig:usuario}).
+    \item Una vez estamos en la Realidad Aumentada, dependiendo de a qué decidamos enfocar con la cámara accederemos a una vista u otra:
+    \begin{enumerate}
+        \item Al enfocar a un usuario que no es amigo se accederá a la vista en Realidad Aumentada habilitada para añadirlo como amigo. (Figura \ref{fig:ra_usuario}).
+        \item Al enfocar a un usuario que sí es amigo accederemos a la interfaz en la que podremos unirnos a alguno de los planes de nuestro amigo. (Figura \ref{fig:ra_recomendacion}).
+        Si finalmente decidimos unirnos a uno de sus planes, accederemos a la vista fuera de la Realidad Aumentada habilitada para ello (Figura \ref{fig:info_planes}).
+        \item Al enfocar a una película, podremos ver todos los detalles de esta en Realidad Aumentada. (Figura \ref{fig:ra_pelicula}). Si decidimos ver más información de la película
+        fuera de la Realidad Aumentada, al presionar el botón habilitado para ello, accederemos a la interfaz de Película (Figura \ref{fig:info_pelicula_1}).
+    \end{enumerate}
+\end{enumerate}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-3/Navegacion.png}
+    \caption{Diagrama con la navegación entre interfaces de la aplicación}
+    \label{fig:navegacion}
+\end{figure}
+
+\section{Conclusiones}
 En este capítulo hemos observado los distintos escenarios que hemos planteado para el uso de nuestra aplicación, a partir de ellos hemos sacado una serie de 
  requisitos funcionales que posteriormente han sido mejor especificados tras las descripciones de las interfaces de usuario que hemos diseñado, apoyándonos en imágenes 
  para mostrar visualmente a lo que nos referimos en cada subsección de las interfaces de usuario.
