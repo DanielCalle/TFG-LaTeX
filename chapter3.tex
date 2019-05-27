@@ -276,6 +276,31 @@ La vista es una lista en la que se muestra la foto del amigo o usuario al que se
     \caption{Lista de amigos}
     \label{fig:listaAmigos}
 \end{figure}
+\subsection{Búsquedas en las vistas}
+Para facilitar al usuario el uso de la aplicación cuando haya muchos datos en esta, hemos implementado un buscador para cada una de las siguientes vistas:
+\begin{enumerate}
+    \item En la vista de Mis planes para permitir al usuario encontrar un plan determinado.
+    \item En la vista de Recomendaciones para encontrar una película determinada.
+    \item En la vista de Mis películas para, al igual que en la vista anterior, encontrar una película determinada.
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \makebox[0pt][c]{%
+    \begin{minipage}[b]{0.5\linewidth}
+    \centering
+      \includegraphics[height=4in]{figures/chapter-3/BuscaMisPeliculas.jpg}
+      \caption{Busqueda de Mis películas}
+    \label{fig:buscaPeliculas}
+    \end{minipage}%
+    \hspace{0.2cm}
+    \begin{minipage}[b]{0.5\linewidth}
+    \centering
+     \includegraphics[height=4in]{figures/chapter-3/BuscaMisPlanes.jpg}
+      \caption{Búsqueda de Mis planes}
+    \label{fig:buscaPlanes}
+    \end{minipage}%
+    }%
+\end{figure}
 \subsection{Interfaz de realidad aumentada principal}
 \label{makereference3.4.4}
 Una interfaz muy simple en la que tenemos una línea horizontal que se mueve de arriba hacia abajo y viceversa en la pantalla como si se tratara de un escáner, para que el usuario
@@ -363,6 +388,7 @@ permite navegar haciendo uso de la barra de navegación inferior, con las vistas
     \item Presionando alguna de las películas que aparecen en la vista de recomendaciones accedemos a la vista de cada película (Figura \ref{fig:info_pelicula_1}).
     \item Al presionar alguna de las películas de la vista de Mis películas se accede a la vista de cada película (Figura \ref{fig:info_pelicula_1}).
     \item Desde cualquiera de las vistas citadas en el punto 1 se puede acceder a la Realidad Aumentada haciendo uso del botón habilitado para ello.
+    \item Al pulsar la imagen de un usuario desde cualquier vista en la aplicación, nos redirigirá a la vista de ese usuario. (Figura \ref{fig:usuario}).
     \item Una vez estamos en la Realidad Aumentada, dependiendo de a qué decidamos enfocar con la cámara accederemos a una vista u otra:
     \begin{enumerate}
         \item Al enfocar a un usuario que no es amigo se accederá a la vista en Realidad Aumentada habilitada para añadirlo como amigo. (Figura \ref{fig:ra_usuario}).
