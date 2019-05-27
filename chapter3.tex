@@ -248,8 +248,23 @@ y las películas que están siendo estrenadas. Al pulsar en cada una de ellas ac
 \end{figure}
 
 \subsection{Interfaz Usuario}
-Al pulsar la foto de un amigo en cualquier lugar de la aplicación, podremos acceder a una vista de 
-
+Al pulsar la foto de un amigo en cualquier lugar de la aplicación, podremos acceder a una vista de ese usuario.
+En esta interfaz podremos ver la imagen del usuario, el nombre de este, los planes que tiene actualmente activos 
+y el estado de nuestra relación con él. Este estado puede ser:
+\begin{enumerate}
+    \item Enviar petición de amistad. No hemos interactuado con este usuario y tenemos la posibilidad de enviarle 
+    una petición de amistad.
+    \item Esperando respuesta. Le hemos enviado en algún momento una petición de amistad y estamos esperando su respuesta.
+    \item Aceptar o rechazar. El usuario en el que estamos nos ha enviado una petición de amistad y tenemos la posibilidad de 
+    aceptarlo o rechazarlo.
+    \item Eliminar amigo. El usuario que estamos viendo es nuestro amigo y tenemos la opción de dejar de serlo.
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4in]{figures/chapter-3/info-user.jpg}
+    \caption{Vista de usuario}
+    \label{fig:usuario}
+\end{figure}
 \subsection{Interfaz Lista de amigos}
 Hemos decidido incorporar esta vista a nuestra aplicación ya que, es una forma muy intuitiva para que el usuario pueda ver una lista de sus amigos y usuarios a los que
 ha enviado una petición de amistad.
