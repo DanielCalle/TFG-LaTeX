@@ -260,6 +260,18 @@ en el contenido como el filtrado demográfico hace falta retener información ex
 en formas de tags para finalmente recomendar. En un futuro se intentará trasladarse al filtrado híbrido integrando lo mejor de 
 cada uno.
 
+Para la implementación de los sistemas de recomendación hemos encontrados tres librerías:
+\begin{enumerate}
+    \item Mahout: Se trata de una librería que abarca la mayoría de necesidades para la implementación del sistema de recomendación.
+    \item Lenskit: Es otra librería de Java para la implementación de sistemas de recomendación.
+    \item LibRec: Se trata de una librería que está subida en un repositorio de GitHub.
+\end{enumerate}
+
+Al final nos hemos decantado por Mahout, ya que aporta una documentación más completa. Otro de los motivos es que ofrece clases para realizar la conexión directamente con la base de datos 
+sin tener que leer desde ficheros csv. Por otro lado, en el testeo de 
+Lenskit, cuando intentábamos reproducir el ejemplo que ofrecían, nos encontramos que algunas funciones estaban 
+obsoletas y, por tanto, no nos transmitía mucha confianza. Por último, Mahout destaca por ser más fácil de usar y minimizar nuestro esfuerzo en aprender esta nueva tecnología.
+
 \section{Conclusiones}
 \label{makereference2.4}
 En este capítulo hemos podido conocer de primera mano la tecnología que representa el grueso de nuestra aplicación, la realidad aumentada. Se han descrito 
