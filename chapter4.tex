@@ -243,7 +243,6 @@ de poder crear nuestros propios métodos.
 Para este prototipo decidimos usar MySQL como sistema de gestión de bases de datos relacional, aunque
 a la hora de probar a levantar nuestro servidor de prueba tuvimos que rehacer este prototipo, además de adaptarlo para 
 que gestionara entidades de películas, y que usara PostgreSQL.
-\section{Arquitectura}
 
 \subsection{Microservicios} 
 \label{makereference4.1.7}
@@ -260,6 +259,7 @@ Al final se consiguió implementar este patrón mediante \textbf{Eureka} (regist
 Sin embargo, se rechazó la implementación de este patrón en el proyecto pues nuestro proyecto no era lo bastante grande como tener 
 la necesitad de usar este patrón. Se bastaba con solo un simple servidor de API REST.
 
+\section{Arquitectura}
 \label{makereference4.2}
 En cuanto a la arquitectura usada en nuestra aplicación hemos adjuntado un esquema que podemos observar en la \autoref{fig:arquitectura}. Nuestra aplicación móvil estará implementada tanto en Android
 como en Unity. La aplicación general está en Android, mientras que la parte de realidad aumentada está desarrollada en Unity y usa Vuforia. Para el reconocimiento
