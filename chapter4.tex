@@ -244,6 +244,22 @@ Para este prototipo decidimos usar MySQL como sistema de gestión de bases de da
 a la hora de probar a levantar nuestro servidor de prueba tuvimos que rehacer este prototipo, además de adaptarlo para 
 que gestionara entidades de películas, y que usara PostgreSQL.
 \section{Arquitectura}
+
+\subsection{Microservicios} 
+\label{makereference4.1.7}
+
+En backend, una de los arquitecturas de moda hoy en día es el de microservicios\cite{microservices}\cite{microservicesspring}. Este patrón permite la creación 
+de un servidor gigante formado por pequeños servicios interrelacionados entre sí. Esto hace más fácil el despliegue y 
+apagado de los pequeños servicios ya que no se tiene que detener el proyecto entero cuando se hace una modificación.
+Se trata de una tecnología compuesta por dos componentes fundamentales:
+\begin{enumerate}
+    \item Puerta de enlace (\textbf{Gateway}), es el punto de acceso del patrón, donde llegan todas las peticiones HTTP.
+    \item Registrador de servicios (\textbf{Registry}), es el componente que se registran todos los servicios. Para organizarlos y distribuirlos.
+\end{enumerate}
+Al final se consiguió implementar este patrón mediante \textbf{Eureka} (registrador de servicios) y \textbf{Zuul} (puerta de enlace).
+Sin embargo, se rechazó la implementación de este patrón en el proyecto pues nuestro proyecto no era lo bastante grande como tener 
+la necesitad de usar este patrón. Se bastaba con solo un simple servidor de API REST.
+
 \label{makereference4.2}
 En cuanto a la arquitectura usada en nuestra aplicación hemos adjuntado un esquema que podemos observar en la \autoref{fig:arquitectura}. Nuestra aplicación móvil estará implementada tanto en Android
 como en Unity. La aplicación general está en Android, mientras que la parte de realidad aumentada está desarrollada en Unity y usa Vuforia. Para el reconocimiento
