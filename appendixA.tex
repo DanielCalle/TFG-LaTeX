@@ -194,3 +194,57 @@ Elegimos la opción de GitHub que nos proporciona un despliegue fácil y rápido
 \end{figure}
 Una vez vinculada la cuenta de GitHub tenemos dos métodos de despliegue como vemos en la figura~\ref{fig:heroku_4}. Un método automático para desplegar los cambios de una rama del repositorio que se accionará cada vez que subamos cambios y otro método manual que se desplegará sólo cuando presionemos el botón. 
 Cuando elijamos una de las opciones, la aplicación estará lista para usarse.
+
+\section{Guía para generar un apk}
+Como hemos comentado anteriormente, nuestra aplicación consta de dos partes: La parte de Realidad Aumentada y 
+la parte de Android. Por ello, a la hora de generar una apk completa de la aplicación habrá que generar estas partes 
+por separado.
+
+\subsection{Generar la parte de la aplicación en Unity.}
+Para generar la aplicación en Unity:
+\begin{enumerate}
+    \item Abrimos en Unity el proyecto. El nombre de este es TFG-Vuforia.
+    \item A continuación debemos seleccionar la escena en la que se encuentra la aplicación en Unity. Esta escena se encuentra en 
+    el directorio principal Assets > Scenes y su nombre es CloudRecognition.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=6in]{figures/Appendix-A/CapturaCloudRecognition.JPG}
+        \caption{Ubicación de la escena principal}
+        \label{fig:CloudRecognitionUbication}
+    \end{figure}
+    \item Una vez localizada la escena principal, debemos seleccionarla. Para ello la arrastraremos al panel de trabajo (situado 
+    arriba a la izquierda).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=4in]{figures/Appendix-A/CapturaPanel.JPG}
+        \caption{Panel principal}
+        \label{fig:CloudRecognitionUbication}
+    \end{figure}
+    \item El siguiente paso es exportar este proyecto en Unity para que pueda usarlo la parte de Android. Para ello, pulsaremos 
+    File > Build Settings. Aparecerá una vista como la de la Figura \ref{fig:BuildSettings}, es muy importante antes de exportar la 
+    aplicación a Android tener seleccionado Android (a la izquierda). Para seleccionarlo se marca y se presiona el botón de Switch Platform.
+
+    Una vez que nos hemos asegurado de tener seleccionada la plataforma Android ya podemos exportar el proyecto. Para ello seleccionamos la opción 
+    que dice Export proyect con el Build system de Gradle, como se indica en la Figura \ref{fig:BuildSettings}.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=4in]{figures/Appendix-A/CapturaBuildSettings.JPG}
+        \caption{Build Settings}
+        \label{fig:BuildSettings}
+    \end{figure}
+\end{enumerate}
+\subsection{Cómo unir la parte de Unity y Android}
+Como solución del la sección anterior se habrá generado en la carpeta especificada un proyecto en Android llamado FilmAR.
+
+Si fuésemos a crear un proyecto en Android desde cero, partiríamos desde este proyecto generado por Unity. 
+
+Si lo que queremos es actualizar nuevos cambios en Unity en la aplicación de Android seguiremos los siguientes pasos:
+\begin{enumerate}
+    \item Accederemos a los directorios FilmAR > src > main de las dos aplicaciones (la generada por Unity con los nuevos cambios 
+    y la aplicación en Android general de la aplicación).
+    \item Eliminaremos la carpeta Assets de la aplicación general y la cambiaremos por la nueva carpeta Assets generada por Unity.
+\end{enumerate}
+De esta manera, tendremos la aplicación en Android actualizada a los nuevos cambios de la parte de Realidad Aumentada.
+\subsection{Generar un APK}
+Para generar un APK, simplemente tendremos que ir en Android Studio a la pestaña Build y hacer click en generar APK. De esta forma podremos 
+descargar la aplicación.
