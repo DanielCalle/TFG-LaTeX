@@ -90,10 +90,6 @@ para ello hace falta descargarse \textbf{vim}, y cambiarle el formato a los scri
     vim script.sh
     :set fileformat=unix
     :wq
-    # Para para la conexion con el ssh
-    exit 
-    # Para apagar la instancia de docker
-    docker-compose down
 \end{lstlisting}
 
 Una vez terminada la ejecución, ya está levantado el servicio en el puerto 8080, 
@@ -102,6 +98,15 @@ se puede probar con el siguiente enlace en cualquier navegador
 
 Si se quiere ver la estructura de la base de datos se encuentra en 
 el siguiente fichero: \url{path-al-proyecto/src/main/webapp/WEB-INF/sql/filmar_low.sql}.
+
+Cuando queramos terminar el proyecto, habríamos que desconectar la conexión de ssh y apagar la instancia de docker.
+
+\begin{lstlisting}[language=bash, caption=Salir de ssh y docker]
+    # Para desconectar la conexion con el ssh
+    exit 
+    # Para apagar la instancia de docker
+    docker-compose down
+\end{lstlisting}
 
 \section{Heroku}
 \label{app:heroku}
