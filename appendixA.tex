@@ -11,67 +11,97 @@
 \label{app:docker}
 Esta es una guía para el despliegue del servidor en Docker.
 
-El repositorio del proyecto del servidor se encuentra en:
+El repositorio del proyecto del servidor se encuentra en: 
+
 \url{https://github.com/DanielCalle/TFG-Server}
 
 Para ello primero tenemos que tener docker instalado, el cual 
-se puede instalar por el siguiente enlace \url{https://www.docker.com/}
+se puede instalar por el siguiente enlace:
 
-Tras descargarse el repositorio, mediante commando, situarse en la carpeta raíz del proyecto.
+\url{https://www.docker.com/}
+
+Tras descargarse el repositorio e iniciado docker, situarse en la carpeta raíz del proyecto mediante el comando \textbf{cd}.
 
 \begin{lstlisting}[language=bash, caption=Despliegue de la instancia de docker]
+    # Ir a la raiz del proyecto
+    cd <path-del-proyecto> 
     # Despliegue
     docker-compose up
 \end{lstlisting}
 
 Con la sentecia \textbf{docker-compose up} se despliega la instancia de docker con las configuraciones 
-que están en el archivo docker-compose.yml.
+que están en el archivo docker-compose.yml. Esperar hasta que en el terminal de comandos aparezcan las líneas
+de la \autoref{fig:docker}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=4in]{figures/appendix-A/docker.png}
+    \caption{Docker desplegado}
+    \label{fig:docker}
+\end{figure}
 
 Ahora que se ha levantado la instancia de docker y sus respectivos puertos mapeados.
-Se conecta al container mediante ssh con la contraseña \textbf{tfg-ucm}
+Abrir un nuevo terminal de comandos y conectarse al contenedor mediante ssh con la contraseña \textbf{tfg-ucm}
 
 \begin{lstlisting}[language=bash, caption=Conexión ssh]
     # El puerto 22022 es el que se habia mapeado
     ssh root@localhost -p 22022
 \end{lstlisting}
 
-Una vez conectado al container, hay que ir a la ruta en el que se encuentra el proyecto: \url{/usr/src/app}
+Una vez conectado al contenedor, hay que ir a la ruta en la que se encuentra el proyecto: \url{/usr/src/app}
 
-Antes de levantar el servicio, hay que preparar postgresql. El archivo SQL está dentro del proyecto
-en el siguiente path: \url{/src/main/webapp/WEB-INF/sql/filmar_low.sql}. En la raíz del proyecto se 
-encuentra un script llamado \textbf{database.sh}.
+\begin{lstlisting}[language=bash, caption=Ir a la ruta del proyecto]
+    # Ir a ruta
+    cd /usr/src/app
+\end{lstlisting}
+
+Antes de levantar el servicio, hay que preparar postgresql. 
+Hay que ejecutar el script de configuración llamado \textbf{database.sh}. Para ello hace falta primero darle permiso de ejecución al 
+script.
 
 \begin{lstlisting}[language=bash, caption=Configuración postgresql]
+    # Dar permiso de ejecucion al script
+    chmod +x database.sh
+    # Ejecutar el script
     ./database.sh
 \end{lstlisting}
 
 Una vez configurado postgres, se procede al despliegue del servicio. Con \textbf{service.sh}.
 
 \begin{lstlisting}[language=bash, caption=Despliegue]
-    # Para parar el servicio
+    # Dar permiso de ejecucion al script
+    chmod +x service.sh
+    # Para iniciar el servicio
     ./service.sh start
     # Para reiniciar el servicio
     ./service.sh restart
     # Para parar el servicio
-    ./service.sh
+    ./service.sh stop
 \end{lstlisting}
 
-Para ejecutar los scripts hacen falta añadirles permiso de ejecución. Puede que halla problemas con el formato 
-de los scripts pues los scripts se escribieron en Windows, para ello hace falta descargarse \textbf{vim}, y cambiarle el formato a los scripts.
+Puede que haya problemas con el formato 
+de los scripts pues los scripts se escribieron en Windows, 
+para ello hace falta descargarse \textbf{vim}, y cambiarle el formato a los scripts.
 
 \begin{lstlisting}[language=bash, caption=Ayudas]
-    # Dar permiso de de ejecucion
-    chmod +x script.sh
     # Descarga de vim
     apt-get install -y vim
     # Cambiar formato
     vim script.sh
     :set fileformat=unix
     :wq
+    # Para para la conexion con el ssh
+    exit 
+    # Para apagar la instancia de docker
+    docker-compose down
 \end{lstlisting}
 
-Ya está levantado el servicio en el puerto 8080, se puede probar con el siguiente enlace
+Una vez terminada la ejecución, ya está levantado el servicio en el puerto 8080, 
+se puede probar con el siguiente enlace en cualquier navegador
 \url{localhost:8080/films}.
+
+Si se quiere ver la estructura de la base de datos se encuentra en 
+el siguiente fichero: \url{path-al-proyecto/src/main/webapp/WEB-INF/sql/filmar_low.sql}.
 
 \section{Heroku}
 \label{app:heroku}
