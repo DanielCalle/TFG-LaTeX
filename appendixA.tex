@@ -17,22 +17,15 @@ El repositorio del proyecto del servidor se encuentra en:
 Para ello primero tenemos que tener docker instalado, el cual 
 se puede instalar por el siguiente enlace \url{https://www.docker.com/}
 
-Se han creado dos imágenes tras la ejecución, la de ubuntu es una dependencia usada, para tener el entorno de Linux, por eso no se puede borrar.
-
 Tras descargarse el repositorio, mediante commando, situarse en la carpeta raíz del proyecto.
 
-\begin{lstlisting}[language=bash, caption=Levantamiento de la instancia de docker]
+\begin{lstlisting}[language=bash, caption=Despliegue de la instancia de docker]
+    # Despliegue
     docker-compose up
 \end{lstlisting}
 
 Con la sentecia \textbf{docker-compose up} se despliega la instancia de docker con las configuraciones 
 que están en el archivo docker-compose.yml.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=6in]{figures/appendix-A/list-docker-containers.png}
-    \caption{La instancia de docker levantada}
-\end{figure}
 
 Ahora que se ha levantado la instancia de docker y sus respectivos puertos mapeados.
 Se conecta al container mediante ssh con la contraseña \textbf{tfg-ucm}
