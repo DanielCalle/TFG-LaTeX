@@ -268,11 +268,13 @@ También se encuentra en el servidor la implementación del sistema de
  En la \autoref{fig:general_architecture_server}, podemos ver como se comunican
  los distintos componentes dentro del servidor para dar respuesta a las peticiones
  HTTP que se realizan desde la aplicación del cliente.
-Las peticiones se gestionan en un controlador que utiliza un servicio de
- aplicación para ejecutar las operaciones de la base de datos, utilizando un
- repositorio. El repositorio abstrae los datos de la base de datos con una
- entidad. También encontramos el sistema de recomendación que genera las
- predicciones, usando los datos de las valoraciones de los clientes existentes. 
+Las peticiones se gestionan en un controlador que, a través un servicio de
+ aplicación, lleva a cabo la lógica de negocio, comprobando si los datos son correctos.  
+ Nuestro servicio de aplicación, tras realizar las comprobaciones necesarias, utiliza un 
+ repositorio para realizar las operaciones contra la base de datos. Por otro lado encontramos 
+ el sistema de recomendación que genera predicciones usando los datos de las valoraciones de los usuarios. 
+ El sistema de recomendación también usará un servicio de aplicación para realizar las operaciones necesarias y, 
+ a través de los repositorios, acceder a las entidades que necesite. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=6in]{figures/chapter-4/general_server_architecture.png}
@@ -282,8 +284,8 @@ Las peticiones se gestionan en un controlador que utiliza un servicio de
 \subsection{Entidades}
 \label{makereference4.3.1}
 En el servidor tendremos todas las entidades que necesitamos
- (Ver \autoref{fig:modelo-ER}), estas son representadas
- mediante clases Java y anotaciones de JPA. Para facilitar el mapeo entre
+ (Ver \autoref{fig:modelo-ER}), éstas son representadas
+ mediante clases Java y anotaciones de JPA, para facilitar el mapeo entre
  tablas de la base de datos y dichas entidades.
 Hemos implementado las siguientes entidades:
 \begin{figure}[H]
@@ -299,8 +301,24 @@ Hemos implementado las siguientes entidades:
     \item Plan: entidad para representar los planes. Estos poseerán una película, un usuario creador, fecha, hora, lugar, título, descripción y una lista de usuarios unidos.
     \item UserFilm: entidad intermedia para representar la relación de usuarios con películas, es decir, las películas que son guardadas por cierto usuario.
 \end{itemize}
-\subsection{Sistemas de recomendación}
+
+\subsection{Repositorios}
 \label{makereference4.3.2}
+Tendremos un repositorio por cada entidad.
+En Spring las clases de tipo repositorio son aquellas clases que heredan de la clase JPARepository. Son una serie de interfaces
+que nos proporcionan ya implementados los métodos de tipo CRUD (crear, leer, actualizar y borrar) para la entidad que gestiona dicho repositorio. También
+se pueden crear métodos personalizados. Los repositorios nos simplifican la forma de acceder a la base de datos ya que nos evita tener que implementar métodos para ello.
+
+\subsection{Servicios de Aplicación}
+\label{makereference4.3.3} 
+Tendremos un servicio de aplicación por cada entidad.
+Son las clases encargadas de la lógica de negocio de nuestra aplicación. Se comprueba que los datos que le 
+llegan a los servicios de aplicación a través de los controladores 
+o del sistema de recomendación sean correctos. Tras comprobar la validez de los datos, el servicio de aplicación
+llamará a los métodos correspondientes de la clase repositorio que corresponda.
+
+\subsection{Sistemas de recomendación}
+\label{makereference4.3.4}
 Implementamos el sistema de recomendación para obtener películas y planes
 que pueden ser interesantes para cada usuario, en base a sus gustos.
 Estas recomendaciones se utilizan en la parte de cliente y se muestran al
