@@ -56,6 +56,20 @@ Una vez configurado postgres, se procede al despliegue del servicio. Con \textbf
     ./service.sh
 \end{lstlisting}
 
+Para ejecutar los scripts hacen falta añadirles permiso de ejecución. Puede que halla problemas con el formato 
+de los scripts pues los scripts se escribieron en Windows, para ello hace falta descargarse \textbf{vim}, y cambiarle el formato a los scripts.
+
+\begin{lstlisting}[language=bash, caption=Ayudas]
+    # Dar permiso de de ejecucion
+    chmod +x script.sh
+    # Descarga de vim
+    apt-get install -y vim
+    # Cambiar formato
+    vim script.sh
+    :set fileformat=unix
+    :wq
+\end{lstlisting}
+
 Ya está levantado el servicio en el puerto 8080, se puede probar con el siguiente enlace
 \url{localhost:8080/films}.
 
