@@ -57,7 +57,7 @@ son las mejores opciones para construir el software.
 
 El objetivo del prototipo realizado con Viro Media es reconocer imágenes almacenadas en el dispositivo para mostrar texto y
 objetos virtuales. Además de probar tecnologías de desarrollo móvil web como en este caso React Native
-para plataformas iOS y Android. Comenzamos construyendo una interfaz sencilla con botones que nos redirigen a la escena de Realidad Aumentada, ver Figura \ref{fig:nativeBase_android} y \ref{fig:nativeBase_ios}.
+para plataformas iOS y Android. Comenzamos construyendo una interfaz sencilla con botones que nos redirigen a la escena de Realidad Aumentada (ver \autoref{fig:nativeBase_android} y \autoref{fig:nativeBase_ios}).
 Para esta interfaz utilizamos NativeBase que es una librería que nos permite
 realizar una aplicación con apariencias de tipo iOS o Android según el dispositivo.
 
@@ -81,7 +81,7 @@ realizar una aplicación con apariencias de tipo iOS o Android según el disposi
 \end{figure}
 
 Para la escena de realidad aumentada mostramos texto y al detectar el póster de Pantera Negra,
-reacciona mostrando una animación de dicho superhéroe saliendo del póster, ver Figura \ref{fig:visualizacionRANAtibe}.
+reacciona mostrando una animación de dicho superhéroe saliendo del póster (ver \autoref{fig:visualizacionRANAtibe}).
  
 \begin{figure}[H]
     \centering
@@ -120,8 +120,8 @@ Las características tecnológicas de este prototipo son las siguientes:
 
 \begin{enumerate}
     \item La librería de Vuforia para Android está diseñada a muy bajo nivel.
-    \item Vuforia para dibujar en 3D usa la librería OpenGL (ver Figura \ref{fig:modelo3D}).
-    \item OpenGL utiliza una serie de espacios donde se van colocando los elementos (ver Figura \ref{fig:esquemaOpenGl}): 
+    \item Vuforia para dibujar en 3D usa la librería OpenGL (ver \autoref{fig:modelo3D}).
+    \item OpenGL utiliza una serie de espacios donde se van colocando los elementos (ver \autoref{fig:esquemaOpenGl}): 
     \begin{enumerate}
         \item Local space: Es el espacio local de cada objeto.
         \item World space: Es el mundo donde se encuentran los objetos.
@@ -151,7 +151,7 @@ Las características tecnológicas de este prototipo son las siguientes:
     
     \item En OpenGL es necesario escribir código para que las tarjetas gráficas rendericen el modelo 3D,
     el lenguaje que se usa es GLSL. Este código de GLSL se escribe en forma de String y se llama a un método 
-    que proporciona OpenGL, podemos ver un ejemplo de este código en la Figura \ref{fig:codigoGLSL}.
+    que proporciona OpenGL, podemos ver un ejemplo de este código en la \autoref{fig:codigoGLSL}.
     \begin{figure}[H]
         \centering
         \includegraphics[width=5in]{figures/GLSL.png}
@@ -160,7 +160,7 @@ Las características tecnológicas de este prototipo son las siguientes:
     \end{figure}
     \newpage    
     \item Otro aspecto a tener en cuenta es que OpenGL solo nos ofrece lo básico, no nos ofrece métodos para dibujar 
-    directamente objetos, sino que hay que seguir un pipeline de procesos para conseguir dibujar algo, ver Figura \ref{fig:pipeline}.
+    directamente objetos, sino que hay que seguir un pipeline de procesos para conseguir dibujar algo (ver \autoref{fig:pipeline}).
     Esto consiste en pasar un array de números (cada tres para definir un punto) 
     a las tarjetas gráficas, establecer triángulos entre los puntos (más arrays de números) 
     definir colores a partir de los puntos (más arrays...), y con el código del shader, ejecutar 
@@ -172,7 +172,7 @@ Las características tecnológicas de este prototipo son las siguientes:
         \label{fig:pipeline}
     \end{figure}
     \item Por último, como sólo ofrece métodos básicos, no hay métodos de escritura de texto, y la forma que 
-    encontramos para que funcione fue usar un bitmap con los caracteres, ver Figura \ref{fig:mapaBits}. Este fue el principal 
+    encontramos para que funcione fue usar un bitmap con los caracteres (ver \autoref{fig:mapaBits}). Este fue el principal 
     motivo de rechazar esta tecnología ya que, dependiendo de la funcionalidad que se desee implementar, es necesario codificar a muy bajo nivel, lo que costaría mucho tiempo y esfuerzo.
     \begin{figure}
         \centering
@@ -207,7 +207,7 @@ Pese a que nadie del equipo había utilizado Unity previamente el resultado fue 
 
 Una vez realizado el prototipo en Vuforia con Unity comenzamos a investigar cómo realizar el resto de la aplicación que no requería de Realidad Aumentada.
 Hasta este momento teníamos claro que Vuforia con Unity era la mejor combinación para realizar la parte de realidad aumentada. Sin embargo, tras realizar pruebas desarrollando en Unity interfaces y lógica nos dimos cuenta de que Unity no era igual de intuitivo ni eficaz a la hora de realizar estas tareas que necesitábamos para desarrollar el resto de la aplicación que no necesitaba Realidad Aumentada.
-Por este motivo intentamos buscar la opción de realizar una aplicación en la que la realidad aumentada estuviese diseñada en Unity con Vuforia y el resto de la aplicación en Android, ver Figura \ref{fig:botonAndroidUnity}.
+Por este motivo intentamos buscar la opción de realizar una aplicación en la que la realidad aumentada estuviese diseñada en Unity con Vuforia y el resto de la aplicación en Android (ver \autoref{fig:botonAndroidUnity}).
 
 \begin{figure}[H]
     \centering
@@ -243,7 +243,7 @@ a la hora de probar a levantar nuestro servidor de prueba tuvimos que rehacer es
 que gestionara entidades de películas, y que usara PostgreSQL.
 \section{Arquitectura}
 \label{makereference4.2}
-En cuanto a la arquitectura usada en nuestra aplicación hemos adjuntado un esquema que podemos observar en la Figura \ref{fig:arquitectura}. Nuestra aplicación móvil estará implementada tanto en Android
+En cuanto a la arquitectura usada en nuestra aplicación hemos adjuntado un esquema que podemos observar en la \autoref{fig:arquitectura}. Nuestra aplicación móvil estará implementada tanto en Android
 como en Unity. La aplicación general está en Android, mientras que la parte de realidad aumentada está desarrollada en Unity y usa Vuforia. Para el reconocimiento
 de imágenes con Vuforia usamos un almacenamiento en la nube gratuito.
 Para la parte del servidor, hemos realizado una API Rest con Spring, usando además una base de datos relacional en PostgreSQL. La comunicación entre cliente y servidor se realiza mediante peticiones HTTP a 
@@ -260,12 +260,16 @@ Nuestro servidor está programado en Java, usando el framework Spring para la cr
 toda la información necesaria para alimentar de datos a nuestro cliente. También se encuentra en el servidor la implementación del sistema de recomendación.
 \subsection{Entidades}
 \label{makereference4.3.1}
-En el servidor tendremos todas las entidades que necesitamos representadas mediante clases Java y anotaciones de JPA, para facilitar el mapeo entre tablas de la base de datos y dichas entidades. Hemos implementado las siguientes entidades:
+En el servidor tendremos todas las entidades que necesitamos
+ (Ver \autoref{fig:modelo-ER}), estas son representadas
+ mediante clases Java y anotaciones de JPA. Para facilitar el mapeo entre
+ tablas de la base de datos y dichas entidades.
+Hemos implementado las siguientes entidades:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6in]{figures/chapter-4/Entidades-ER.jpeg}
+    \includegraphics[width=6in]{figures/chapter-4/Entidades-ER.png}
     \caption{Modelo entidad-relación}
-    \label{fig:arquitectura}
+    \label{fig:modelo-ER}
 \end{figure}
 \begin{itemize}
     \item Film: entidad referente a las películas que guardamos, con su respectivo título, director, duración, valoración, url del tráiler, sinopsis, url de la imagen de la película, género, país y fecha de estreno.
@@ -274,8 +278,26 @@ En el servidor tendremos todas las entidades que necesitamos representadas media
     \item Plan: entidad para representar los planes. Estos poseerán una película, un usuario creador, fecha, hora, lugar, título, descripción y una lista de usuarios unidos.
     \item UserFilm: entidad intermedia para representar la relación de usuarios con películas, es decir, las películas que son guardadas por cierto usuario.
 \end{itemize}
-\subsection{Controladores}
+\subsection{Sistemas de recomendación}
 \label{makereference4.3.2}
+Implementamos el sistema de recomendación para obtener películas y planes
+que pueden ser interesantes para cada usuario, en base a sus gustos.
+Estas recomendaciones se utilizan en la parte de cliente y se muestran al
+usuario a través de la interfaz.
+La aplicación de Android se comunica con el servidor usando la
+ API REST (Ver \autoref{makereference4.3.3}).
+En la que disponemos de todas las búsquedas necesarias.
+Los datos de las recomendaciones se guardan en una tabla de la base de datos.
+Cada periodo de tiempo establecido previamente un procedimiento se ejecuta
+ y actualiza la tabla para aplicar los nuevos datos guardados a las recomendaciones.
+Este procedimiento usa una funcionalidad de la librería Mahout,
+ para extraer los datos de valoraciones de usuarios a películas.
+Con estos datos y usando una técnica de filtrado colaborativo genera las recomendaciones.
+Como generar las recomendaciones es un proceso costoso y lento guardamos los
+ resultados para ser utilizados.
+
+\subsection{Controladores}
+\label{makereference4.3.3}
 Para cada una de estas entidades necesitamos una clase Controller, que actuará de controlador para saber redirigir cada petición HTTP a su correspondiente servicio de aplicación, donde se aplicará la lógica del negocio, comprobando 
 que los datos son correctos y obteniendo, modificando o creando elementos en la base de datos a través de las clases Repository correspondiente a cada entidad.
 A la búsqueda por ID tuvimos que añadir la búsqueda por UUID en usuarios y películas.
@@ -381,7 +403,9 @@ Como la mayor parte de la aplicación está implementada en Android Studio, la e
 
 \subsection{Actividades}
 \label{makereference4.4.1}
-Son los componentes de la aplicación que representan una pantalla con la que los usuarios pueden interactuar para realizar una determinada acción.
+Son los componentes de la aplicación que representan una pantalla con la que
+ los usuarios pueden interactuar para realizar una determinada
+ acción (ver \autoref{fig:activity}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=6in]{figures/chapter-4/recyclerView.jpg}
@@ -389,15 +413,9 @@ Son los componentes de la aplicación que representan una pantalla con la que lo
     \label{fig:activity}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=5in]{figures/chapter-4/activity_lifecycle.png}
-    \caption{Ciclo de vida de una actividad}
-\end{figure}
-
 Entre nuestras actividades podemos destacar dos: 
 \begin{itemize}
-    \item MainActivity: La primera actividad (actividad principal) que se activa al iniciar la aplicación, la cual comprueba el estado de sesión del usuario, si está logueado se queda en la actividad, y si no, se redirige al usuario a otra actividad llamada LoginActivity que mediante un formulario muy simple nos permite iniciar sesión o registrarnos. En MainActivity se encuentra un paginador (ViewPager) de 3 fragmentos, donde cada fragmento representa las interfaces de planes, recomendaciones y películas guardadas correspondientemente. Podemos observarlo en las Figuras \ref{fig:listaPlanes}, \ref{fig:lista_peliculas} y \ref{fig:recomendaciones_1} del \autoref{makereference3}.
+    \item MainActivity: La primera actividad (actividad principal) que se activa al iniciar la aplicación, la cual comprueba el estado de sesión del usuario, si está logueado se queda en la actividad, y si no, se redirige al usuario a otra actividad llamada LoginActivity que mediante un formulario muy simple nos permite iniciar sesión o registrarnos. En MainActivity se encuentra un paginador (ViewPager) de 3 fragmentos, donde cada fragmento representa las interfaces de planes, recomendaciones y películas guardadas correspondientemente. Podemos observarlo en la \autoref{fig:listaPlanes}, \autoref{fig:lista_peliculas} y \autoref{fig:recomendaciones_1} del \autoref{makereference3}.
     \item UnityPlayerActivity: Se trata de una actividad especial que nos permite comunicar la parte desarrollada en Unity con nuestro proyecto Android. Aquí se encuentran llamadas a funciones desde la parte de Unity, se realizan las órdenes y se devuelven a Unity.
 \end{itemize} 
 
@@ -407,11 +425,17 @@ Son elementos de manipulación de datos que se aplican a vistas y componentes. E
 
 \subsection{Comandos}
 \label{makereference4.4.3}
-Aquí se encuentran todos los elementos relacionados con el patrón comando, ver Figura \ref{fig:comando}, y ha sido diseñado para realizar la conexión con la parte del proyecto desarrollado en Unity.
-
-Este patrón permite solicitar una operación a un objeto sin conocer realmente el contenido de esta operación, ni el receptor real de la misma. Para ello se encapsula la petición como un objeto, 
-lo que además facilita la parametrización de los métodos.
-Lo que nos permite es abstraer la lógica de los métodos implementados en Android de Unity, es decir, si Unity necesita usarlos llamará a los comandos y esperará la respuesta.
+Aquí se encuentran todos los elementos relacionados con el patrón comando (ver \autoref{fig:comando}).
+Ha sido diseñado para realizar la conexión con la parte del proyecto desarrollado en Unity.
+Al principio las peticiones al servidor se realizaban tanto en Android como en
+Unity. Esto causaba que tuviéramos implementaciones duplicadas y originaba
+ problemas si había que modificar estos métodos, porque era necesario aplicar los
+ cambios en ambas capas.
+Decidimos utilizar desde Unity los métodos de Android para resolver el problema.
+Para evitar que Unity tuviera múltiples dependencias con la capa de Android,
+ decidimos aplicar el patrón comando.
+Este patrón nos permite abstraer la capa de Android con la capa de Unity y
+ minimizar las dependencias que eran necesarias.
 
 \begin{figure}[H]
     \centering
@@ -434,12 +458,16 @@ Aquí es donde tendremos los 3 componentes principales de nuestra aplicación, l
 
 \subsection{Petición de servicios}
 \label{makereference4.4.6}
-Se trata de un conjunto de clases que solo poseen métodos estáticos para llevar a cabo peticiones HTTP al servidor. Se ha creado una clase genérica para la creación y llamada de peticiones HTTP, se ha diseñado de manera que las respuestas se devuelvan en forma de callback para un uso más sencillo.
+Se trata de un conjunto de clases que solo poseen métodos estáticos para llevar
+ a cabo peticiones HTTP al servidor. Se ha creado una clase genérica para la
+ creación y llamada de peticiones HTTP, se ha diseñado de manera que las
+ respuestas se devuelvan en forma de callback para un uso más sencillo
+ (ver \autoref{fig:server}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=6in]{figures/chapter-4/request.jpg}
     \caption{Petición de servicios}
-    \label{fig:activity}
+    \label{fig:server}
 \end{figure}
 Los servicios que hemos implementado son los siguientes:
 \begin{itemize}
@@ -455,47 +483,23 @@ Los servicios que hemos implementado son los siguientes:
 \label{makereference4.4.7}
 Entre los componentes que ofrece Android existen algunas funcionalidades no soportadas. Por ello hemos creado componentes personalizados para satisfacer estas funcionalidades:
 \begin{itemize}
-    \item AnchorVisibilityBehavior: Implementa el comportamiento de los elementos que aparecen y desaparecen en las actividades, por ejemplo, en la Figura \ref{fig:info_planes} tenemos un botón para la información de la película pero al hacer el scroll hacia abajo, en la Figura \ref{fig:info_planes_1}, vemos que éste desaparece.
+    \item AnchorVisibilityBehavior: Implementa el comportamiento de los elementos que aparecen y desaparecen en las actividades, por ejemplo, en la \autoref{fig:info_planes} tenemos un botón para la información de la película pero al hacer el scroll hacia abajo, en la \autoref{fig:info_planes_1}, vemos que éste desaparece.
     \item CustomViewPager: el ViewPager es lo que usamos en la MainActivity para colocar los tres fragmentos. Se crea esta clase para desactivar la acción de cambiar entre fragmentos al deslizar con el dedo en la pantalla del smartphone. Esto nos daba problemas debido a que en el fragmento de las recomendaciones tenemos elementos con scroll horizontal y la acción de deslizar con el dedo en la pantalla interfería.
     \item ExpandableTextView: Es una clase que extiende de un TextView, se le añade un método para que cuando haya mucho texto, se pueda acortar. Además dispone de un botón para expandir.
 \end{itemize} 
-\section{Sistemas de recomendación}
-\label{makereference4.5}
-Finalmente decidimos usar para la aplicación el sistema de Filtrado Colaborativo por los siguientes motivos:
 
-\begin{itemize}
-    \item Tenemos valoraciones de usuarios a películas que podemos aprovechar, ya que es una de las acciones que puede realizar un usuario y se aprovecha para recolectar los datos.
-    \item Hemos conseguido un archivo csv de unas 200000 valoraciones de usuarios a películas con sus respectivos títulos, por lo que sólo tendríamos que crear usuarios ficticios para conseguir una base de datos inicial.
-    \item Para usar el filtrado basado en el contenido tenemos que diseñar muy bien los datos de cada una de las entidades, además de aplicar los pesos de importancia a los atributos para en un futuro aplicar el sistema.  
-\end{itemize} 
-
-Para la implementación del sistema de recomendación, utilzamos un procedimiento
-que se ejecuta automáticamente por cada periodo de tiempo. En este procedimiento,
-se usa una funcionalidad de la librería Mahout, para extraer los datos de recomendación
-de nuestra base de datos. Transformándolo en un modelo de datos que, posteriormente tras
-ejecutar mediante algunos parámetros aplicados a la técnica de filtrado colaborativo, obtener 
-resultados de recomendación. Con estos resultados, se almacenan en una tabla de base de datos 
-para después poder hacer consultas.
-
-
-Para la implementación de los sistemas de recomendación hemos encontrados tres librerías:
-\begin{enumerate}
-    \item Mahout: Se trata de una librería que abarca la mayoría de necesidades para la implementación del sistema de recomendación.
-    \item Lenskit: Es otra librería de Java para la implementación de sistemas de recomendación.
-    \item LibRec: Se trata de una librería que está subida en un repositorio de GitHub.
-\end{enumerate}
-
-Al final nos hemos decantado por Mahout, ya que aporta una documentación más completa. Otro de los motivos es que ofrece clases para realizar la conexión directamente con la base de datos 
-sin tener que leer desde ficheros csv. Por otro lado, en el testeo de 
-Lenskit, cuando intentábamos reproducir el ejemplo que ofrecían, nos encontramos que algunas funciones estaban 
-obsoletas y, por tanto, no nos transmitía mucha confianza. Por último, Mahout destaca por ser más fácil de usar y minimizar nuestro esfuerzo en aprender esta nueva tecnología.
 \section{Despliegue}
 \label{makereference4.6}
-Para el despliegue de la aplicación de servidor utilizamos Heroku.
-Esta plataforma nos ofrece una versión gratis de alojamiento limitado con las
+El servidor puede desplegarse como un Docker o en Heroku.
+Para el desarrollo del proyecto hemos utilizado Heroku por la facilidad y
+comodidad que ofrece. 
+Usamos una cuenta gratuita que nos permite un alojamiento limitado con las
  características suficientes para el desarrollo del proyecto.
 Utilizamos un despliegue automático que al realizar cambios en una rama del
  repositorio de GitHub, Heroku descarga esos cambios y lo despliega en el servidor.
+En la \autoref{app:heroku} encontramos una guía de como desplegar la
+aplicación con tu usuario de Heroku. En la \autoref{app:docker} vemos como
+desplegar la aplicación en un Docker.
 
 \section{Herramientas de trabajo}
 \label{makereference4.7}
@@ -517,8 +521,6 @@ Las distintas herramientas de trabajo que hemos decidido usar para que el trabaj
 
 \section{Conclusiones}
 \label{makereference4.8}
-\subsection{Dificultades encontradas}
-\label{makereference4.8.1}
 A continuación, mostraremos una lista de todas las dificultades encontradas a la hora de implementar nuestra aplicación:
 \begin{itemize}
     \item Diseño de las interfaces para que fueran familiares e intuitivas para el usuario. Tuvimos que rehacer muchas veces los distintos bocetos de las interfaces ya que no eran intuitivos para los usuarios. Gracias a las sugerencias que se nos iban haciendo conseguimos mejorarlas bastante.

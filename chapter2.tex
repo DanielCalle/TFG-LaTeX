@@ -17,7 +17,8 @@ tales como la realidad aumentada, las distintas fuentes de información y alguna
 técnicas de recomendación. 
 \section{Realidad Aumentada}
 \label{makereference2.1}
-
+El gran peso de nuestra aplicación está basado en la tecnología de la realidad aumentada que, tras investigar su significado en varias fuentes de información,
+decidimos definirla de la siguiente forma:
 \begin{quote}
 ``
 La realidad aumentada nos permite añadir capas de información visual sobre el 
@@ -65,7 +66,8 @@ Los smartphones son los dispositivos que más interaccionan con esta tecnología
  La realidad aumentada en cualquier dispositivo se basa en dónde nos encontramos y hacia donde estamos mirando, es decir, si usamos la cámara del teléfono,
  según a donde estemos mirando a través de ésta, la realidad aumentada superpondrá objetos virtuales o información a nuestra realidad, con un cierto tamaño y una cierta posición
  basándose en las medidas de lo que vemos a través de nuestra cámara. Por ejemplo, la famosa aplicación de Pokemon Go, que superpone la imagen de un pokemon a la realidad
- que vemos con la cámara para que podamos atraparlo, haciendo así que su uso sea más interactivo y visual para el usuario, como podemos observar en las Figuras \ref{fig:pokemon}, \ref{fig:libertystatue} y \ref{fig:measure}.
+ que vemos con la cámara para que podamos atraparlo, haciendo así que su uso sea más interactivo y visual para el usuario, como podemos observar en la Figura \ref{fig:pokemon}. En las Figuras \ref{fig:libertystatue} y \ref{fig:measure}
+ podemos ver otros ejemplos del uso de la realidad aumentada en dispositivos móviles, como el reconocimiento de monumentos turísticos o para medir ciertas distancias.
 
  \begin{figure}[H]
     \centering
@@ -79,14 +81,14 @@ Los smartphones son los dispositivos que más interaccionan con esta tecnología
     \makebox[0pt][c]{%
     \begin{minipage}[b]{0.5\linewidth}
     \centering
-      \includegraphics[scale=0.2]{figures/chapter-2/ralibertystatue.png}
+      \includegraphics[scale=0.3]{figures/chapter-2/ralibertystatue.png}
       \caption{RA para zonas turísticas\cite{ralibertystatue}}
       \label{fig:libertystatue}
     \end{minipage}%
     \hspace{0.3cm}
     \begin{minipage}[b]{0.5\linewidth}
     \centering
-     \includegraphics[scale=0.25]{figures/chapter-2/rameasure.jpg}
+     \includegraphics[scale=0.3]{figures/chapter-2/rameasure.jpg}
       \caption{RA para mediciones\cite{rameasure}}
     \label{fig:measure}
     \end{minipage}%
@@ -185,19 +187,19 @@ tenido que investigar de qué fuentes de información podríamos obtener estos d
 estos datos, guardarlos en contenedores de datos y por último, representarlos ante los usuarios.
 \begin{itemize}
     \item FilmAffinity\cite{filmaffinity}: es una de las páginas webs más relevantes para obtener información sobre películas y series, además de críticas y valoraciones de profesionales y sugerencias personalizadas.
-    Esta página fue creado al principio, con la única intención de ser un sistema recomendador, el cual es un factor que nos beneficia ya que podemos asegurarnos de que sus datos están preparados para la recomendación.
-    Por otro lado, la página ofrece dos idiomas, español e inglés, otro factor a favor pues en nuestra aplicación se usa el inglés como idioma primario y el español es la que usamos para comunicarnos. Sin embargo, la página por 
-    hacer críticas bastantes serias y profesionales, la tendencia de valoraciones suelen ser bajas.
-    \item MovieLens\cite{movielens}: una fuente de información, quizás menos conocida que FilmAffinity y que IMDB pero que ofrece sugerencias personalizadas y posibilidad de valorar. Se trata de un sistema de recomendación basado en una técnica de recomendación 
-    llamado filtrado colaborativo\cite{filtradocolaborativo}, que es una técnica candidata a usar en nuestra aplicación. Los datos que nos proporciona están en inglés.
-    \item IMDB\cite{imdb}: se trata de una base de datos online donde se guardan la información relacionada con las películas y series. Es una de las páginas mundialmente más usadas en estos aspectos.
-    Actualmente, le pertenece a una de las empresas que más nubes tienen en el mundo, Amazon, por lo que se puede asegurar su fiabilidad. Su idioma está en inglés.
+    Esta página fue creada con el objetivo de ser un sistema de recomendación, siendo un factor que nos beneficia ya que podemos estar seguros de que sus datos nos servirán para realizar recomendaciones a los usuarios.
+    Por otro lado, la página está en dos idiomas, español e inglés, otro factor a favor ya que nuestra aplicación muestra los datos en inglés. Sin embargo, al ser una página en la 
+    que se realizan críticas serias y profesionales, las valoraciones suelen ser bajas.
+    \item MovieLens\cite{movielens}: es una fuente de información, quizás menos conocida que FilmAffinity y que IMDB pero que ofrece sugerencias personalizadas y la posibilidad de valorar. Se trata de un sistema de recomendación basado en una técnica de recomendación 
+    llamada filtrado colaborativo\cite{filtradocolaborativo}, técnica candidata a usar en nuestra aplicación y de la que hablaremos posteriormente. Los datos que nos proporciona están en inglés, valiéndonos perfectamente para nuestra aplicación.
+    \item IMDB\cite{imdb}: se trata de una base de datos online donde se guarda información sobre películas y series. Es una de las páginas más usadas a nivel mundial en estos aspectos.
+    Actualmente, le pertenece a una de las empresas que más clouds de almacenamiento tiene en el mundo, Amazon, por lo que podemos asegurar su fiabilidad. El idioma de la página también es el inglés.
     \item Rotten Tomatoes\cite{rottentomatoes}: es una web donde usuarios y
      críticos profesionales puntúan películas y espectáculos televisivos.
     La puntuación es representada con tomates frescos si el 60\% de las
      críticas son positivas y si es menor de ese porcentaje es representada con
      un tomate podrido explotando.
-    Existen certificados de una distinción especial si además, cumplen más
+    Existen certificados de una distinción especial si además cumplen más
      requisitos:
      \begin{itemize}
          \item Una puntuación constante en el Tomatómetro de 75\% o más.
@@ -210,41 +212,40 @@ estos datos, guardarlos en contenedores de datos y por último, representarlos a
     no sea capaz de mantener los requisitos.
 \end{itemize}
 
-Finalmente, hemos elegido IMDB como fuente de información para nuestra aplicación, ya que es una de las páginas webs más conocidas mundialmente. Se asegura su fiabilidad.
-Además, estamos más familiarizados con IMBD pues es la que usamos normalmente, y fue también nuestro fuente de información en otros proyectos de otras asignaturas.
+Finalmente, hemos elegido IMDB como fuente de información para nuestra aplicación, ya que es una de las páginas webs más conocidas mundialmente. Su fiabilidad está asegurada y
+además estamos más familiarizados con ella ya que es la que usamos normalmente en nuestro día a día.
 
 \section{Técnicas de recomendación}
 \label{makereference2.3}
+Comenzaremos esta sección definiendo qué es un sistema de recomendación y para qué se usan.
+Los sistemas de recomendación (SRs)\cite{HandbookRS} son herramientas software y técnicas que proporcionan sugerencias de productos útiles para un usuario. 
+Las sugerencias están relacionadas a varios procesos de toma de decisiones
+como pueden ser productos que comprar, qué música escuchar, o que noticias online podrías leer.
+Un SR normalmente se centra en un tipo específico de producto (por ejemplo, CDs o noticias) 
+y de acuerdo a su diseño, su interfaz gráfica de usuario, y el núcleo de la 
+técnica de recomendación usada para generar recomendaciones están todas personalizadas para proveer de sugerencias útiles y efectivas para ese tipo específico de objeto.
 
-\begin{quote}
-``
-Un sistema de recomendación es un sistema inteligente que proporciona a los usuarios \textbf{usuarios} una serie de 
-sugerencias personalizadas (\textbf{recomendaciones}) sobre un determinado tipo de elementos (\textbf{objetos}). Los 
-sistemas de recomendación estudian las características de cada usuario y mediante un procesamiento 
-de los datos, encuentra un subconjunto de items que pueden resultar de interés para el usuario. 
-''
-\end{quote}
 
-Hoy en día, con toda la información que estamos dejando en internet, está cada vez más poniendo de moda los sistemas de recomendación.
-Muchas empresas mundialmente conocidas nos ofrecen recomendaciones de sus productos en base de un análisis de los datos y comportamientos proporcionados.
-Como es el caso de Youtube, que registra los últimos videos que hemos visto y nos recomienda videos similares, basándose en el contenido de los videos. Otro caso es FilmAffinity, 
-una página de recomendación de película basada en las valoraciones que tenemos de las películas.
+Hoy en día, con toda la información que dejamos en internet, los sistemas de recomendación comienzan a ganar popularidad.
+Muchas empresas mundialmente conocidas nos ofrecen recomendaciones de sus productos en base a un análisis de nuestros datos y comportamientos.
+Por ejemplo Youtube, que registra los últimos videos que hemos visto y nos recomienda vídeos similares, basándose en el contenido de dichos vídeos. Otro caso es FilmAffinity, 
+una página de recomendación de películas basada en las valoraciones que hemos hecho de las películas.
 
-De todos estos sistemas de recomendación, se pueden dividir según sus formas de realizar recomendaciones:
+Los sistemas de recomendación se pueden dividir según su forma de realizar las recomendaciones:
 
 \begin{itemize}
     \item Filtrado basado en el contenido\cite{filtradocontenido}: al usuario se le recomendará aquella información que le ha interesado en el pasado, es decir, se le mostrarán elementos similares, independientemente de lo que opinen otros usuarios. 
     Se basa en contenido de los objetos, se analiza el objeto para sacar características relevantes de ello, y a partir de las características 
     extraídas, recomendar otros objetos con características similares.   
     \item Filtrado Demográfico\cite{filtrademografico}: al contrario que el filtrado basado en el contenido que se basa en los objetos, este se basa en el usuario,
-    se realizan en función de las características que tienen los usuarios, como edad, sexo, profesión, etc. Ya que se asume que usuarios por ejemplo 
-    que han nacido en la misma década, van a tener preferencias similares frente a los de otras décadas. O que los profesores de matemáticas les gustan más los números 
+    se realiza en función de las características que tienen los usuarios, como edad, sexo, profesión, etc. Ya que se asume que usuarios que, por ejemplo,
+    han nacido en la misma década van a tener preferencias similares frente a los de otras décadas. O que a los profesores de matemáticas les gustan más los números 
     que a los profesores de filología. 
-    \item Filtrado Colaborativo\cite{filtradocolaborativo}: esta técnica busca similitudes de preferencias entre usuarios, y recomiendan objetos a un usuario, 
-    los cuales les han gustado a otros usuarios similares. La determinación de usuarios con preferencias similares se basa en 
-    las valoraciones de los usuarios a los objetos.
-    \item Filtrado Híbrido\cite{filtrahibrido}: Mezclan las tres técnicas descritas anteriormente, aprovechando los aspectos positivos
-    que ofrecen cada uno. Incluso se combinan con técnicas de inteligencia artificial como la lógica borrosa o la computación evolutiva. 
+    \item Filtrado Colaborativo\cite{filtradocolaborativo}: esta técnica busca similitudes de preferencias entre usuarios, y recomienda objetos 
+    que le hayan gustado a otros usuarios similares. La determinación de usuarios con preferencias similares se basa en 
+    las valoraciones que hayan dado los usuarios a los objetos.
+    \item Filtrado Híbrido\cite{filtrahibrido}: Mezcla las tres técnicas descritas anteriormente, aprovechando los aspectos positivos
+    que ofrece cada una. Incluso se combina con técnicas de inteligencia artificial como la lógica borrosa o la computación evolutiva. 
 \end{itemize} 
 
 \begin{figure}[H]
@@ -254,11 +255,22 @@ De todos estos sistemas de recomendación, se pueden dividir según sus formas d
 \end{figure}
 
 En nuestra aplicación, los objetos serán las películas que almacenaremos en nuestro contenedor de datos. Nos basaremos en 
-la técnica de filtrado colaborativo, dado como motivo principal el hecho de permitir a los usuarios la posibilidad de 
-interactuar en el sistema de recomendación valorando las películas que les gusten. Otro motivo es que tanto el filtrado basado
-en el contenido como el filtrado demográfico hace falta retener información extra sobre los usuarios como los objetos, representados 
-en formas de tags para finalmente recomendar. En un futuro se intentará trasladarse al filtrado híbrido integrando lo mejor de 
-cada uno.
+la técnica de filtrado colaborativo, ya que permitimos a los usuarios la posibilidad de 
+interactuar en el sistema de recomendación valorando las películas que les gusten. Otro motivo es que, tanto el filtrado basado
+en el contenido como el filtrado demográfico, necesitan retener información extra sobre los usuarios, como los objetos, representados 
+en forma de etiquetas, para finalmente llevar a cabo una recomendación.
+
+Para la implementación de los sistemas de recomendación hemos encontrados tres librerías:
+\begin{enumerate}
+    \item Mahout: Se trata de una librería que abarca la mayoría de necesidades para la implementación del sistema de recomendación.
+    \item Lenskit: Es otra librería de Java para la implementación de sistemas de recomendación.
+    \item LibRec: Se trata de una librería que está subida en un repositorio de GitHub.
+\end{enumerate}
+
+Al final nos hemos decantado por Mahout, ya que aporta una documentación más completa. Otro de los motivos es que ofrece clases para realizar la conexión directamente con la base de datos 
+sin tener que leer desde ficheros csv. Por otro lado, en el testeo de 
+Lenskit, cuando intentábamos reproducir el ejemplo que ofrecían, nos encontramos que algunas funciones estaban 
+obsoletas y, por tanto, no nos transmitía mucha confianza. Por último, Mahout destaca por ser más fácil de usar y minimizar nuestro esfuerzo en aprender esta nueva tecnología.
 
 \section{Conclusiones}
 \label{makereference2.4}
