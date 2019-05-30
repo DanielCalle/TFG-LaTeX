@@ -89,20 +89,22 @@ reacciona mostrando una animación de dicho superhéroe saliendo del póster (ve
     \caption{Visualización de RA}
     \label{fig:visualizacionRANAtibe}
 \end{figure}
-\newpage
 Una de las ventajas que apreciamos fue la facilidad del lenguaje, en este caso Javascript,
  utilizando la popular librería ReactJS y la buena documentación de Viro Media
- que hacían que el proceso de codificación fuera agradable.\\
+ que hacían que el proceso de codificación fuera agradable.
 
-Uno de los problemas que presentaba este prototipo era que las dependencias de Viro Media entraban en conflicto con las de NativeBase
-imposibilitándonos la forma de encontrar versiones compatibles. Utilizamos las últimas que, a pesar de lanzar
+Uno de los problemas que presentaba este prototipo era que las dependencias de
+ Viro Media entraban en conflicto con las de NativeBase
+ imposibilitándonos la forma de encontrar versiones compatibles. Utilizamos las últimas que, a pesar de lanzar
  advertencias, funcionaba en el ejemplo realizado.
+
 Otro problema fue la compilación de la aplicación, Viro Media tiene una aplicación para probar lo
  que desarrollamos conectándose a nuestro ordenador a través de la red. El problema es
  que algunos recursos, como los iconos que utilizaba NativeBase, no eran descargados, por lo que la
- mejor forma era probar la versión compilada de iOS y Android. La forma de compilar
- la aplicación era un proceso costoso para los ordenadores, lento y con multitud de problemas según
- se ampliaban las librerías que se utilizan.\\
+ mejor forma era probar la versión compilada de iOS y Android.
+ 
+ La forma de compilar la aplicación era un proceso costoso para los ordenadores,
+ lento y con multitud de problemas según se ampliaban las librerías que se utilizan.
 
 La conclusión que obtuvimos de este prototipo fue que Viro Media y React Native son tecnologías muy prometedoras, pero debido a los
  problemas surgidos y a que todas sus versiones no eran estables vimos un claro riesgo para
@@ -256,8 +258,27 @@ nuestro servidor desplegado en Heroku el cual nos devolverá los datos en format
 \end{figure}
 \section{Servidor}
 \label{makereference4.3}
-Nuestro servidor está programado en Java, usando el framework Spring para la creación de una API Rest que, mediante peticiones HTTP y una base de datos relacional en PostgreSQL, nos proporcionará
-toda la información necesaria para alimentar de datos a nuestro cliente. También se encuentra en el servidor la implementación del sistema de recomendación.
+Nuestro servidor está programado en Java, usando el framework Spring para la
+ creación de una API Rest que, mediante peticiones HTTP y una base de datos
+ relacional en PostgreSQL, nos proporcionará toda la información necesaria
+ para alimentar de datos a nuestro cliente.
+También se encuentra en el servidor la implementación del sistema de
+ recomendación.
+
+ En la \autoref{fig:general_architecture_server}, podemos ver como se comunican
+ los distintos componentes dentro del servidor para dar respuesta a las peticiones
+ HTTP que se realizan desde la aplicación del cliente.
+Las peticiones se gestionan en un controlador que utiliza un servicio de
+ aplicación para ejecutar las operaciones de la base de datos, utilizando un
+ repositorio. El repositorio abstrae los datos de la base de datos con una
+ entidad. También encontramos el sistema de recomendación que genera las
+ predicciones, usando los datos de las valoraciones de los clientes existentes. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/general_server_architecture.png}
+    \caption{Diagrama de funcionamiento del servidor}
+    \label{fig:general_architecture_server}
+\end{figure}
 \subsection{Entidades}
 \label{makereference4.3.1}
 En el servidor tendremos todas las entidades que necesitamos
