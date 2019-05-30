@@ -89,23 +89,25 @@ reacciona mostrando una animación de dicho superhéroe saliendo del póster (ve
     \caption{Visualización de RA}
     \label{fig:visualizacionRANAtibe}
 \end{figure}
-\newpage
 Una de las ventajas que apreciamos fue la facilidad del lenguaje, en este caso Javascript,
  utilizando la popular librería ReactJS y la buena documentación de Viro Media
- que hacían que el proceso de codificación fuera agradable.\\
+ que hacían que el proceso de codificación fuera agradable.
 
-Uno de los problemas que presentaba este prototipo era que las dependencias de Viro Media entraban en conflicto con las de NativeBase
-imposibilitándonos la forma de encontrar versiones compatibles. Utilizamos las últimas que, a pesar de lanzar
+Uno de los problemas que presentaba este prototipo era que las dependencias de
+ Viro Media entraban en conflicto con las de NativeBase
+ imposibilitándonos la forma de encontrar versiones compatibles. Utilizamos las últimas que, a pesar de lanzar
  advertencias, funcionaba en el ejemplo realizado.
+
 Otro problema fue la compilación de la aplicación, Viro Media tiene una aplicación para probar lo
  que desarrollamos conectándose a nuestro ordenador a través de la red. El problema es
  que algunos recursos, como los iconos que utilizaba NativeBase, no eran descargados, por lo que la
- mejor forma era probar la versión compilada de iOS y Android. La forma de compilar
- la aplicación era un proceso costoso para los ordenadores, lento y con multitud de problemas según
- se ampliaban las librerías que se utilizan.\\
+ mejor forma era probar la versión compilada de iOS y Android.
+ 
+ La forma de compilar la aplicación era un proceso costoso para los ordenadores,
+ lento y con multitud de problemas según se ampliaban las librerías que se utilizan.
 
 La conclusión que obtuvimos de este prototipo fue que Viro Media y React Native son tecnologías muy prometedoras, pero debido a los
- problemas surgidos y a que todas sus versiones no eran estables vimos un claro riesgo para
+ problemas surgidos y a que todas sus versiones no eran estables vimos un claro riesgo para el proyecto.
 
 \subsection{Vuforia + Android} 
 \label{makereference4.1.3} 
@@ -241,6 +243,22 @@ de poder crear nuestros propios métodos.
 Para este prototipo decidimos usar MySQL como sistema de gestión de bases de datos relacional, aunque
 a la hora de probar a levantar nuestro servidor de prueba tuvimos que rehacer este prototipo, además de adaptarlo para 
 que gestionara entidades de películas, y que usara PostgreSQL.
+
+\subsection{Microservicios} 
+\label{makereference4.1.7}
+
+En backend, una de los arquitecturas más usadas hoy en día es aquella basada en microservicios\cite{microservices}\cite{microservicesspring}. 
+Este patrón de arquitectura permite la creación de un servidor gigante formado por pequeños servicios interrelacionados entre sí. Esto hace más fácil el despliegue y 
+apagado de los pequeños servicios ya que no se tiene que detener el proyecto entero cuando se hace una modificación.
+Se trata de una tecnología compuesta por dos componentes fundamentales:
+\begin{enumerate}
+    \item Puerta de enlace (\textbf{Gateway}), es el punto de acceso del patrón, donde llegan todas las peticiones HTTP.
+    \item Registrador de servicios (\textbf{Registry}), es el componente que registra todos los servicios. Para organizarlos y distribuirlos.
+\end{enumerate}
+Al final se consiguió implementar mediante \textbf{Eureka} (registrador de servicios) y \textbf{Zuul} (puerta de enlace).
+Sin embargo, se rechazó la implementación en el proyecto pues no era lo bastante grande como para
+necesitarlo. Para nuestra aplicación nos bastaba con una simple API Rest.
+
 \section{Arquitectura}
 \label{makereference4.2}
 En cuanto a la arquitectura usada en nuestra aplicación hemos adjuntado un esquema que podemos observar en la \autoref{fig:arquitectura}. Nuestra aplicación móvil estará implementada tanto en Android
@@ -256,13 +274,34 @@ nuestro servidor desplegado en Heroku el cual nos devolverá los datos en format
 \end{figure}
 \section{Servidor}
 \label{makereference4.3}
-Nuestro servidor está programado en Java, usando el framework Spring para la creación de una API Rest que, mediante peticiones HTTP y una base de datos relacional en PostgreSQL, nos proporcionará
-toda la información necesaria para alimentar de datos a nuestro cliente. También se encuentra en el servidor la implementación del sistema de recomendación.
+Nuestro servidor está programado en Java, usando el framework Spring para la
+ creación de una API Rest que, mediante peticiones HTTP y una base de datos
+ relacional en PostgreSQL, nos proporcionará toda la información necesaria
+ para alimentar de datos a nuestro cliente.
+También se encuentra en el servidor la implementación del sistema de
+ recomendación.
+
+ En la \autoref{fig:general_architecture_server}, podemos ver como se comunican
+ los distintos componentes dentro del servidor para dar respuesta a las peticiones
+ HTTP que se realizan desde la aplicación del cliente.
+Las peticiones se gestionan mediante controladores que, a través de los servicios de
+ aplicación, llevan a cabo la lógica de negocio, comprobando si los datos son correctos.  
+ Nuestros servicios de aplicación, tras realizar las comprobaciones necesarias, utilizan 
+ repositorios para realizar las operaciones contra la base de datos. Por otro lado encontramos 
+ el sistema de recomendación que genera predicciones usando los datos de las valoraciones de los usuarios. 
+ El sistema de recomendación también usará un servicio de aplicación para realizar las operaciones necesarias y, 
+ a través de los repositorios, acceder a las entidades que necesite. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/general_server_architecture.png}
+    \caption{Diagrama de funcionamiento del servidor}
+    \label{fig:general_architecture_server}
+\end{figure}
 \subsection{Entidades}
 \label{makereference4.3.1}
 En el servidor tendremos todas las entidades que necesitamos
- (Ver \autoref{fig:modelo-ER}), estas son representadas
- mediante clases Java y anotaciones de JPA. Para facilitar el mapeo entre
+ (Ver \autoref{fig:modelo-ER}), éstas son representadas
+ mediante clases Java y anotaciones de JPA, para facilitar el mapeo entre
  tablas de la base de datos y dichas entidades.
 Hemos implementado las siguientes entidades:
 \begin{figure}[H]
@@ -278,32 +317,32 @@ Hemos implementado las siguientes entidades:
     \item Plan: entidad para representar los planes. Estos poseerán una película, un usuario creador, fecha, hora, lugar, título, descripción y una lista de usuarios unidos.
     \item UserFilm: entidad intermedia para representar la relación de usuarios con películas, es decir, las películas que son guardadas por cierto usuario.
 \end{itemize}
-\subsection{Sistemas de recomendación}
+
+\subsection{Repositorios}
 \label{makereference4.3.2}
-Implementamos el sistema de recomendación para obtener películas y planes
-que pueden ser interesantes para cada usuario, en base a sus gustos.
-Estas recomendaciones se utilizan en la parte de cliente y se muestran al
-usuario a través de la interfaz.
-La aplicación de Android se comunica con el servidor usando la
- API REST (Ver \autoref{makereference4.3.3}).
-En la que disponemos de todas las búsquedas necesarias.
-Los datos de las recomendaciones se guardan en una tabla de la base de datos.
-Cada periodo de tiempo establecido previamente un procedimiento se ejecuta
- y actualiza la tabla para aplicar los nuevos datos guardados a las recomendaciones.
-Este procedimiento usa una funcionalidad de la librería Mahout,
- para extraer los datos de valoraciones de usuarios a películas.
-Con estos datos y usando una técnica de filtrado colaborativo genera las recomendaciones.
-Como generar las recomendaciones es un proceso costoso y lento guardamos los
- resultados para ser utilizados.
+Tendremos un repositorio por cada entidad.
+En Spring las clases de tipo repositorio son aquellas clases que heredan de la clase JPARepository. Son una serie de interfaces
+que nos proporcionan ya implementados los métodos de tipo CRUD (crear, leer, actualizar y borrar) para la entidad que gestiona dicho repositorio. También
+se pueden crear métodos personalizados. Los repositorios nos simplifican la forma de acceder a la base de datos ya que nos evita tener que implementar métodos para ello.
+
+\subsection{Servicios de Aplicación}
+\label{makereference4.3.3} 
+Tendremos un servicio de aplicación por cada entidad.
+Son las clases encargadas de la lógica de negocio de nuestra aplicación. Se comprueba que los datos que le 
+llegan a los servicios de aplicación a través de los controladores 
+o del sistema de recomendación sean correctos. Tras comprobar la validez de los datos, el servicio de aplicación
+llamará a los métodos correspondientes de la clase repositorio que corresponda.
 
 \subsection{Controladores}
-\label{makereference4.3.3}
-Para cada una de estas entidades necesitamos una clase Controller, que actuará de controlador para saber redirigir cada petición HTTP a su correspondiente servicio de aplicación, donde se aplicará la lógica del negocio, comprobando 
-que los datos son correctos y obteniendo, modificando o creando elementos en la base de datos a través de las clases Repository correspondiente a cada entidad.
-A la búsqueda por ID tuvimos que añadir la búsqueda por UUID en usuarios y películas.
-El ID es necesario para utilizarlo en el sistema de recomendación de Mahout y
-el UUID es necesario para el reconocimiento de imágenes de Vuforia.
-Las distintas peticiones HTTP que realizamos son las siguientes:
+\label{makereference4.3.4}
+Para cada una de estas entidades necesitamos una clase Controller, 
+que actuará de controlador para saber redirigir cada petición HTTP a 
+su correspondiente servicio de aplicación.
+A la búsqueda por ID tuvimos que añadir la búsqueda por UUID en usuarios 
+y películas.El ID es necesario para utilizarlo en el sistema de 
+recomendación de Mahout yel UUID es necesario para el reconocimiento 
+de imágenes de Vuforia. Las distintas peticiones HTTP que realizamos son 
+las siguientes:
 
 \begin{center}
     \begin{tabularx}{1\textwidth}{@{\extracolsep{\fill}} | l | l | X |} \hline
@@ -388,17 +427,75 @@ Las distintas peticiones HTTP que realizamos son las siguientes:
     Buscar un plan por nombre & GET & /plans/search/\{title\} \\ \hline
     \end{tabularx}
 \end{center}
-
+\subsection{Sistemas de recomendación}
+\label{makereference4.3.5}
+Implementamos el sistema de recomendación para obtener películas y planes
+que pueden ser interesantes para cada usuario, en base a sus gustos.
+Estas recomendaciones se utilizan en la parte de cliente y se muestran al
+usuario a través de la interfaz.
+Los datos de las recomendaciones se guardan en una tabla de la base de datos.
+Cada periodo de tiempo establecido previamente un procedimiento se ejecuta
+ y actualiza la tabla para aplicar los nuevos datos guardados a las recomendaciones.
+Este procedimiento usa una funcionalidad de la librería Mahout,
+ para extraer los datos de valoraciones de usuarios a películas.
+Con estos datos y usando una técnica de filtrado colaborativo genera las recomendaciones.
+Como generar las recomendaciones es un proceso costoso y lento guardamos los
+ resultados para ser utilizados.
 \section{Cliente}
 \label{makereference4.4}
-Nuestra aplicación está implementada principalmente en Android, las interfaces principales para el uso de los planes, recomendaciones y acceso a la información de las películas guardadas han sido desarrolladas mediante Android Studio. Sin embargo,
-la parte del cliente que otorga el gran valor a nuestra aplicación está desarrollada en Unity y el uso de Vuforia, todas las escenas que aparecen al reconocer carteles de películas e imágenes de usuarios fueron implementadas de esta forma.
-La parte de la aplicación realizada en Unity, utiliza una serie de clases de la parte desarrollada en Android para realizar las peticiones al servidor y así poder mostrar información específica cuando se reconoce una cierta imagen.
-Al principio la parte de Android implementaba la obtención de datos del servidor que necesitaba y la parte de Unity la suya. Después decidimos implementar la obtención de datos únicamente en Android y hacer usarlo desde Unity para tener mejor control y no duplicar soluciones al mismo problema.
-Las imágenes que mostramos en la parte de Android se almacenan en el mismo servidor.
+Nuestra aplicación está implementada principalmente en Android, las interfaces 
+principales para el uso de los planes, recomendaciones y acceso a la información 
+de las películas guardadas han sido desarrolladas mediante Android Studio. 
+
+Sin embargo,la parte del cliente que otorga el gran valor a nuestra aplicación está desarrollada 
+en Unity usando la librería de Vuforia. Todas las escenas que aparecen al reconocer carteles de 
+películas e imágenes de usuarios fueron implementadas de esta forma.
+
+La parte de la aplicación realizada en Unity, utiliza una serie de clases de la 
+parte desarrollada en Android para realizar las peticiones al servidor y así poder 
+mostrar información específica cuando se reconoce una cierta imagen.
+
+Al principio, tanto la parte de Android como la parte de Unity, realizaban peticiones al servidor
+de forma independiente. Más tarde, para tener un mejor control y no hacer peticiones
+de dos sitios diferentes, decidimos implementar la obtención 
+de datos únicamente en Android y que Unity usara las clases de Android para acceder al servidor.
 
 
-Como la mayor parte de la aplicación está implementada en Android Studio, la estructura de ésta se adapta a lo que ofrece el IDE, consistiendo en el flujo de unas actividades y fragmentos que explicaremos a continuación.
+Como la mayor parte de la aplicación está implementada en Android Studio, 
+la estructura de ésta se adapta a lo que ofrece el IDE, consistiendo en el flujo de 
+actividades.
+
+Una Activity (\autoref{makereference4.4.1}) es cada una de las pantallas o vistas de una 
+aplicación \cite{activity}, las cuales pueden ser modificadas a través de Adapters 
+(\autoref{makereference4.4.2}), para crear listas de objetos o incluso dividir una misma
+actividad en varias. 
+
+Tras dividir una actividad obtenemos Fragments (\autoref{makereference4.4.5}), que
+son considerados secciones de una actividad con un comportamiento determinado \cite{fragment}. Los Fragments los 
+hemos usado para hacer una actividad principal con 3 secciones por las que se puede navegar, 
+donde cada sección representa un Fragment. 
+
+Las Entities (\autoref{makereference4.4.4}) son los
+modelos de datos correspondientes a las tablas almacenadas en la base de datos. Tendremos una Entity en Android
+por cada Entidad del Servidor (\autoref{makereference4.3.1}), para así mapear los datos de las Entities del Servidor
+a las Entities de la parte Android.
+
+También tendremos las clases View (\autoref{makereference4.4.7}) que permiten configurar comportamientos personalizados para las vistas,
+como ocultar y mostrar objetos según los gestos que se realicen.
+
+Para acceder al servidor, debemos implementar unas clases para obtener datos, llamadas Request (\autoref{makereference4.4.6}).
+
+Como tenemos una parte de cliente implementada en Unity, y anteriormente hemos dicho que Unity utiliza las clases de Android para acceder al servidor,
+hemos implementado el patrón Command (\autoref{makereference4.4.3}). Esto permite que 
+la Activity creada para comunicar Android con Unity use comandos para saber que petición realizar al Servidor.
+
+La arquitectura de la parte de cliente podemos verla en la \autoref{fig:diagrama_arquitectura}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/chapter-4/diagrama_cliente.png}
+    \caption{Diagrama de arquitectura de cliente}
+    \label{fig:diagrama_arquitectura}
+\end{figure}
 
 
 \subsection{Actividades}
@@ -408,7 +505,7 @@ Son los componentes de la aplicación que representan una pantalla con la que
  acción (ver \autoref{fig:activity}).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6in]{figures/chapter-4/Activity.jpeg}
+    \includegraphics[width=6in]{figures/chapter-4/recyclerView.jpg}
     \caption{Actividades}
     \label{fig:activity}
 \end{figure}
@@ -439,7 +536,7 @@ Este patrón nos permite abstraer la capa de Android con la capa de Unity y
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6in]{figures/chapter-4/Command.jpeg}
+    \includegraphics[width=6in]{figures/chapter-4/command.jpg}
     \caption{Patrón comando}
     \label{fig:comando}
 \end{figure}
@@ -465,7 +562,7 @@ Se trata de un conjunto de clases que solo poseen métodos estáticos para lleva
  (ver \autoref{fig:server}).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6in]{figures/chapter-4/Request.jpeg}
+    \includegraphics[width=6in]{figures/chapter-4/request.jpg}
     \caption{Petición de servicios}
     \label{fig:server}
 \end{figure}

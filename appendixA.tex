@@ -11,188 +11,170 @@
 \label{app:docker}
 Esta es una guía para el despliegue del servidor en Docker.
 
-Para ello primero tenemos que tener una instancia de docker, si se quiere ejecutar en local, 
-hay que instalar docker por el enlace \url{https://www.docker.com/}
-La imagen de docker se descarga por git por el siguiente enlace:
-\url{https://github.com/ZReKoJ/Docker.git}
+El repositorio del proyecto del servidor se encuentra en: 
 
-\begin{lstlisting}[language=bash, caption=Dockerfile]
-    FROM ubuntu:16.04
+\url{https://github.com/DanielCalle/TFG-Server}
 
-    RUN apt-get update 
-    RUN apt-get install -y openssh-server
-    RUN mkdir /var/run/sshd
-    RUN echo 'root:tfg-ucm' | chpasswd
-    RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin
-         yes/' /etc/ssh/sshd_config
-    
-    # SSH login fix. Otherwise user is kicked off after login
-    RUN sed 's@session\s*required\s*pam_loginuid.so@session optional
-         pam_loginuid.so@g' -i /etc/pam.d/sshd
-    
-    ENV NOTVISIBLE "in users profile"
-    RUN echo "export VISIBLE=now" >> /etc/profile
-    
-    EXPOSE 22 8000 8080
-    CMD ["/usr/sbin/sshd", "-D"]
+Para ello primero tenemos que tener docker instalado, el cual 
+se puede instalar por el siguiente enlace:
+
+\url{https://www.docker.com/}
+
+Tras descargarse el repositorio e iniciado docker, situarse en la carpeta raíz del proyecto mediante el comando \textbf{cd}.
+
+\begin{lstlisting}[language=bash, caption=Despliegue de la instancia de docker]
+    # Ir a la raiz del proyecto
+    cd <path-del-proyecto> 
+    # Despliegue
+    docker-compose up
 \end{lstlisting}
 
-\begin{lstlisting}[language=bash, caption=Descarga de la imagen de docker]
-    # Descarga de la imagen
-    git clone https://github.com/ZReKoJ/Docker.git 
-    # Entrar en la carpeta
-    cd Docker 
-    # Crear la imagen
-    docker build --tag=filmar . 
-\end{lstlisting}
+Con la sentecia \textbf{docker-compose up} se despliega la instancia de docker con las configuraciones 
+que están en el archivo docker-compose.yml. Esperar hasta que en el terminal de comandos aparezcan las líneas
+de la \autoref{fig:docker}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6in]{figures/appendix-A/list-docker-images.png}
-    \caption{Imágenes creadas de docker}
+    \includegraphics[width=4in]{figures/appendix-A/docker.png}
+    \caption{Docker desplegado}
+    \label{fig:docker}
 \end{figure}
 
-Se han creado dos imágenes tras la ejecución, la de ubuntu es una dependencia usada, para tener el entorno de Linux, por eso no se puede borrar.
-
-\begin{lstlisting}[language=bash, caption=Levantamiento de la instancia de docker]
-    # Levanta docker mapeando puertos
-    # Tras la ejecutar se va a quedar corriendo
-    # Pulse Ctrl + C para parar
-    # Pero estaria levantado el contenedor
-    docker run -p 22022:22 -p 8080:8080 filmar 
-    # No hace falta ejecutar los siguientes comandos
-    # Comando para listar containers de docker corriendo
-    docker ps 
-    # Listar todos los containers
-    docker container ls --all 
-    # Parar el container
-    docker stop 018 
-    # Borrar el container
-    docker rm 018 
-\end{lstlisting}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=6in]{figures/appendix-A/list-docker-containers.png}
-    \caption{La instancia de docker levantada}
-\end{figure}
-
-Ahora que se ha levantado la instancia de docker con un ID 0186392cce18 y sus respectivos puertos mapeados.
-Se conecta al container mediante ssh con la contraseña \textbf{tfg-ucm}
+Ahora que se ha levantado la instancia de docker y sus respectivos puertos mapeados.
+Abrir un nuevo terminal de comandos y conectarse al contenedor mediante ssh con la contraseña \textbf{tfg-ucm}
 
 \begin{lstlisting}[language=bash, caption=Conexión ssh]
     # El puerto 22022 es el que se habia mapeado
     ssh root@localhost -p 22022
 \end{lstlisting}
 
-Una vez conectado al container, hay que instalar las siguientes herramientas
+Una vez conectado al contenedor, hay que ir a la ruta en la que se encuentra el proyecto: \url{/usr/src/app}
 
-\begin{lstlisting}[language=bash, caption=Instalaciones]
-    # Actualizacion por si acaso
-    apt update 
-    # Para descargar el repositorio en github
-    apt install git
-    # El servidor es un proyecto maven
-    apt install maven
-    # Base de datos
-    apt install postgresql
-    # Para usuarios
-    apt install sudo
-    # El servidor es un proyecto de java
-    apt install openjdk-8-jdk
+\begin{lstlisting}[language=bash, caption=Ir a la ruta del proyecto]
+    # Ir a ruta
+    cd /usr/src/app
 \end{lstlisting}
 
-Una vez instalado todas las herramientas, descargar el proyecto del servidor,
-que está en \url{https://github.com/DanielCalle/TFG-Server.git}
-
-\begin{lstlisting}[language=bash, caption=Descarga del proyecto]
-    # Se recomienda descargar el proyecto en la carpeta home
-    cd /home
-    git clone https://github.com/DanielCalle/TFG-Server.git
-\end{lstlisting}
-
-Antes de levantar el servicio, hay que preparar postgresql. El archivo SQL está dentro del proyecto
-en el siguiente path: \url{/src/main/webapp/WEB-INF/sql/filmar_low.sql}
+Antes de levantar el servicio, hay que preparar postgresql. 
+Hay que ejecutar el script de configuración llamado \textbf{database.sh}. Para ello hace falta primero darle permiso de ejecución al 
+script.
 
 \begin{lstlisting}[language=bash, caption=Configuración postgresql]
-    # Levantar postgresql
-    service postgresql start
-    # Cambiar al usuario postgres (por defecto)
-    sudo -i -u postgres
-    # Iniciar psql
-    psql
-    # Cambiar el password a 'admin'
-    \password
-    # Creacion de una base de datos
-    create database films;
-    # Salir de psql
-    \q
-    # Crear la estructura de base de datos
-    # Anadir datos
-    psql -d films -f /home/TFG-Server/src/main/webapp/
-        WEB-INF/sql/filmar_low.sql
-    # Salir del usuario postgres
-    exit
+    # Dar permiso de ejecucion al script
+    chmod +x database.sh
+    # Ejecutar el script
+    ./database.sh
 \end{lstlisting}
 
-Una vez configurado postgres, se procede al despliegue del servicio.
+Una vez configurado postgres, se procede al despliegue del servicio. Con \textbf{service.sh}.
 
 \begin{lstlisting}[language=bash, caption=Despliegue]
-    # Acceder a la raiz del repositorio
-    cd /home/TFG-Server
-    # Empaquetar con el perfil de docker
-    mvn package -P Docker
     # Dar permiso de ejecucion al script
-    chmod +x server.sh
-    # Ejecutar 
-    ./server.sh start
-    # No hace falta ejecutar los siguientes comandos
-    # Para parar el servicio
-    ./server.sh start
+    chmod +x service.sh
+    # Para iniciar el servicio
+    ./service.sh start
     # Para reiniciar el servicio
-    ./server.sh restart
+    ./service.sh restart
+    # Para parar el servicio
+    ./service.sh stop
 \end{lstlisting}
 
-Ya está levantado el servicio en el puerto 8080, se puede probar con el siguiente enlace
+Puede que haya problemas con el formato 
+de los scripts pues los scripts se escribieron en Windows, 
+para ello hace falta descargarse \textbf{vim}, y cambiarle el formato a los scripts.
+
+\begin{lstlisting}[language=bash, caption=Ayudas]
+    # Descarga de vim
+    apt-get install -y vim
+    # Cambiar formato
+    vim script.sh
+    :set fileformat=unix
+    :wq
+\end{lstlisting}
+
+Una vez terminada la ejecución, ya está levantado el servicio en el puerto 8080, 
+se puede probar con el siguiente enlace en cualquier navegador
 \url{localhost:8080/films}.
+
+Si se quiere ver la estructura de la base de datos se encuentra en 
+el siguiente fichero: \url{path-al-proyecto/src/main/webapp/WEB-INF/sql/filmar_low.sql}.
+
+Cuando queramos terminar el proyecto, habríamos que desconectar la conexión de ssh y apagar la instancia de docker.
+
+\begin{lstlisting}[language=bash, caption=Salir de ssh y docker]
+    # Para desconectar la conexion con el ssh
+    exit 
+    # Para apagar la instancia de docker
+    docker-compose down
+\end{lstlisting}
 
 \section{Heroku}
 \label{app:heroku}
 Para comenzar debemos crear una cuenta en \href{https://www.heroku.com/}{Heroku}.
+Una vez la tenemos creamos una nueva aplicación a la
+ cual daremos un nombre como vemos en la \autoref{fig:heroku_1} y este
+ nombre a su vez será parte de la URL pública.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6in]{figures/chapter-4/heroku_1.png}
+    \includegraphics[width=6in]{figures/appendix-A/heroku_1.png}
     \caption{Crear nueva aplicación en Heroku}
     \label{fig:heroku_1}
 \end{figure}
-Una vez tenemos una cuenta en la plataforma creamos una nueva aplicación a la cual daremos un nombre como vemos en la figura~\ref{fig:heroku_1} y este nombre a su vez será parte de la URL pública.
+Cuando creemos la aplicación accederemos a la configuración en la que veremos
+ opciones como en la figura \autoref{fig:heroku_2}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6in]{figures/chapter-4/heroku_2.png}
+    \includegraphics[width=6in]{figures/appendix-A/heroku_2.png}
     \caption{Configuración de la aplicación}
     \label{fig:heroku_2}
 \end{figure}
-Cuando creemos la aplicación accederemos a la configuración en la que veremos opciones como en la figura~\ref{fig:heroku_2}.
+Entramos en la pestaña de recursos y buscamos Postgres como vemos en la
+\autoref{fig:heroku_3}. La seleccionamos y agregamos la versión gratuita.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6in]{figures/chapter-4/heroku_3.png}
-    \caption{Métodos de despliegue}
+    \includegraphics[width=6in]{figures/appendix-A/heroku_3.png}
+    \caption{Añadir nuevos recursos}
     \label{fig:heroku_3}
 \end{figure}
-En la figura~\ref{fig:heroku_3} vemos que nos ofrece diversos métodos de despliegue:
+Si accedemos al recurso de la base de datos que acabamos de crear y Entramos
+ en la configuración podemos ver las credenciales que necesitamos añadir a
+ nuestro servidor para que funcione correctamente como vemos en la
+ \autoref{fig:heroku_4}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/appendix-A/heroku_4.png}
+    \caption{Ver credenciales}
+    \label{fig:heroku_4}
+\end{figure}
+Si vamos a la pestaña de despliegue de la aplicación, como vemos en la
+ \autoref{fig:heroku_5} nos ofrece diversos métodos de
+ despliegue:
 \begin{itemize}
     \item Heroku Git
     \item GitHub
     \item Container Registry
 \end{itemize}
-Elegimos la opción de GitHub que nos proporciona un despliegue fácil y rápido. Tenemos que vincular la cuenta de nuestro GitHub (Importante ser el dueño del repositorio).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6in]{figures/chapter-4/heroku_4.png}
-    \caption{Opciones de despliegue utilizando Github}
-    \label{fig:heroku_4}
+    \includegraphics[width=6in]{figures/appendix-A/heroku_5.png}
+    \caption{Métodos de despliegue}
+    \label{fig:heroku_5}
 \end{figure}
-Una vez vinculada la cuenta de GitHub tenemos dos métodos de despliegue como vemos en la figura~\ref{fig:heroku_4}. Un método automático para desplegar los cambios de una rama del repositorio que se accionará cada vez que subamos cambios y otro método manual que se desplegará sólo cuando presionemos el botón. 
+Elegimos la opción de GitHub que nos proporciona un despliegue fácil y rápido.
+Tenemos que vincular la cuenta de nuestro GitHub (Importante ser el dueño del
+ repositorio).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in]{figures/appendix-A/heroku_6.png}
+    \caption{Opciones de despliegue utilizando Github}
+    \label{fig:heroku_6}
+\end{figure}
+
+Una vez vinculada la cuenta de GitHub tenemos dos métodos de despliegue como
+ vemos en la \autoref{fig:heroku_6}. Un método automático para desplegar los
+ cambios de una rama del repositorio que se accionará cada vez que subamos
+ cambios y otro método manual que se desplegará sólo cuando presionemos
+ el botón. 
 Cuando elijamos una de las opciones, la aplicación estará lista para usarse.
 
 \section{Guía para generar un apk}
