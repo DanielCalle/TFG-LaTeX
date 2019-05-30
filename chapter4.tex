@@ -268,10 +268,10 @@ También se encuentra en el servidor la implementación del sistema de
  En la \autoref{fig:general_architecture_server}, podemos ver como se comunican
  los distintos componentes dentro del servidor para dar respuesta a las peticiones
  HTTP que se realizan desde la aplicación del cliente.
-Las peticiones se gestionan en un controlador que, a través un servicio de
- aplicación, lleva a cabo la lógica de negocio, comprobando si los datos son correctos.  
- Nuestro servicio de aplicación, tras realizar las comprobaciones necesarias, utiliza un 
- repositorio para realizar las operaciones contra la base de datos. Por otro lado encontramos 
+Las peticiones se gestionan mediante controladores que, a través de los servicios de
+ aplicación, llevan a cabo la lógica de negocio, comprobando si los datos son correctos.  
+ Nuestros servicios de aplicación, tras realizar las comprobaciones necesarias, utilizan 
+ repositorios para realizar las operaciones contra la base de datos. Por otro lado encontramos 
  el sistema de recomendación que genera predicciones usando los datos de las valoraciones de los usuarios. 
  El sistema de recomendación también usará un servicio de aplicación para realizar las operaciones necesarias y, 
  a través de los repositorios, acceder a las entidades que necesite. 
@@ -467,7 +467,7 @@ a las Entities de la parte Android.
 También tendremos las clases View (\autoref{makereference4.4.7}) que permiten configurar comportamientos personalizados para las vistas,
 como ocultar y mostrar objetos según los gestos que se realicen.
 
-Para acceder al servidor, debemos implementar unas clases para obtener datos, llamadas Request Services (\autoref{makereference4.4.6}).
+Para acceder al servidor, debemos implementar unas clases para obtener datos, llamadas Request (\autoref{makereference4.4.6}).
 
 Como tenemos una parte de cliente implementada en Unity, y anteriormente hemos dicho que Unity utiliza las clases de Android para acceder al servidor,
 hemos implementado el patrón Command (\autoref{makereference4.4.3}). Esto permite que 
