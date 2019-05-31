@@ -448,6 +448,13 @@ La parte de la aplicación realizada en Unity, utiliza una serie de clases de la
 parte desarrollada en Android para realizar las peticiones al servidor y así poder 
 mostrar información específica cuando se reconoce una cierta imagen.
 
+Toda la parte de la aplicación que hace uso de Realidad Aumentada está desarrollada en Unity con Vuforia. 
+Vuforia, como hemos explicado anteriormente, sirve para identificar fotografías que se han fijado como "objetivos". Esta 
+técnica nos ha resultado muy útil para el reconocimiento de carteles de películas. Sin embargo, nos encontramos con un 
+problema a la hora de identificar usuarios para todas las mecánicas relacionadas con ellos en Realidad aumentada tales como 
+agregar amigos u obtener recomendaciones. Este problema surge de que Vuforia aún no incluye en su librería el reconocimiento 
+facial. Por este motivo, nuestra aplicación en vez de reconocer usuarios reconoce las fotografías de estos.
+
 Al principio, tanto la parte de Android como la parte de Unity, realizaban peticiones al servidor
 de forma independiente. Más tarde, para tener un mejor control y no hacer peticiones
 de dos sitios diferentes, decidimos implementar la obtención 
