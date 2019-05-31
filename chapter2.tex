@@ -97,86 +97,191 @@ Los smartphones son los dispositivos que más interaccionan con esta tecnología
 
 \subsection{Tecnologías actuales}
 \label{makereference2.1.1}
-A continuación, describiremos las distintas tecnologías que hemos investigado para la implementación de la Realidad Aumentada.
+A continuación, describiremos las distintas tecnologías que hemos investigado
+ para la implementación de la Realidad Aumentada.
 \begin{itemize}
-    \item ARCore\cite{arcore}: esta plataforma creada por Google para desarrollar aplicaciones de
- realidad aumentada con soporte para Android, Android NDK, iOS,
- Unity y Unreal Engine, aunque las funcionalidades que se ofrecen
- para iOS y Unity for iOS se limitan a Cloud Anchors. Los anchors
- son herramientas que permiten que objetos virtuales aparezcan en un lugar
- captado por la cámara de nuestro dispositivo, estos son compartidos
- en la nube para que multitud de dispositivos disfruten de la misma
- experiencia, aquellos que posean iOS podrán usarlos utilizando ARKit.
+    \item ARCore\cite{arcore}: esta plataforma creada por Google para
+    desarrollar aplicaciones de realidad aumentada con soporte para Android,
+    Android NDK, iOS, Unity y Unreal Engine, aunque las funcionalidades que
+    se ofrecen para iOS y Unity for iOS se limitan a Cloud Anchors.
+    Los anchors son herramientas que permiten que objetos virtuales
+    aparezcan en un lugar captado por la cámara de nuestro dispositivo,
+    estos son compartidos en la nube para que multitud de dispositivos
+    disfruten de la misma experiencia.
 
-Tiene una curva de aprendizaje media y con su versión 1.5 demuestra una
- estabilidad interesante respecto a su reciente creación. Cabe destacar
- que no todos los dispositivos son compatibles. Esto depende de que las
- empresas que desarrollan estos dispositivos cumplan unos requisitos
- para asegurar que la experiencia con ARCore es la adecuada y de la
- versión del sistema operativo.
-ARCore usa tres características a través de la cámara del dispositivo:
- \begin{itemize}  
-     \item Motion tracking: permite al dispositivo conocer la posición relativa del mundo.
-     \item Environmental understanding: permite al dispositivo detectar el tamaño y localización de todos los tipos de superficies.
-     \item Light estimation: permite al dispositivo estimar las condiciones de luz del entorno actual.
- \end{itemize}
+    ARCore usa tres características a través de la cámara del dispositivo:
+    \begin{itemize}  
+        \item Motion tracking: permite al dispositivo conocer la posición
+        relativa del mundo.
+        \item Environmental understanding: permite al dispositivo detectar el
+        tamaño y localización de todos los tipos de superficies.
+        \item Light estimation: permite al dispositivo estimar las condiciones
+        de luz del entorno actual.
+    \end{itemize}
+    Puntos positivos:
+    \begin{itemize}
+        \item Buena integración con Android.
+        \item Los dispositivos iOS que usen ARKit pueden utilizar los Cloud
+        Anchors.
+        \item Tiene una curva de aprendizaje media y con su versión 1.5
+        demuestra una estabilidad interesante respecto a su reciente creación.
+    \end{itemize}
+    Puntos negativos:
+    \begin{itemize}
+        \item Poca documentación para soluciones más complejas.
+        \item No todos los dispositivos son compatibles.
+        Esto depende de que las empresas que desarrollan estos dispositivos
+        cumplan unos requisitos para asegurar que la experiencia con ARCore
+        es la adecuada y de la versión del sistema operativo.
+    \end{itemize}
 
-\item ARKit\cite{arkit}: es una librería desarrollada por Apple que podemos utilizar para crear 
-experiencias de realidad aumentada persistente y compartirlas entre distintos dispositivos iOS. 
-Detecta imágenes 2D incluso en movimiento y objetos 3D. Esta tecnología se basa en la odometría visual inercial, esta es capaz 
-de reconocer las imágenes que capta la cámara y la forma en la que la luz se refleja 
-en los diferentes elementos que aparecen para obtener un mapa 3D del entorno y, calcular las distancias que hay entre los diferentes objetos 
-desde la posición del dispositivo. Tras iniciar la realidad aumentada con ARKit, nuestro dispositivo crea un entorno virtual donde nuestro
-dispositivo representa la coordenada (0,0,0), con los tres ejes, el horizontal, vertical y el de profundidad, pero también es necesario otro eje,
-el eje W que representa la rotación del dispositivo. En la Figura \ref{fig:arkit} se puede observar cómo cambia el elemento virtual según como situemos nuestro
-smartphone.
+    \item ARKit\cite{arkit}: es una librería desarrollada por Apple que
+    podemos utilizar para crear experiencias de realidad aumentada persistente y
+    compartirlas entre distintos dispositivos iOS. 
+    Esta tecnología se basa en la odometría visual inercial,
+    esta es capaz de reconocer las imágenes que capta la cámara y la forma en
+    la que la luz se refleja en los diferentes elementos que aparecen para
+    obtener un mapa 3D del entorno y, calcular las distancias que hay entre los
+    diferentes objetos desde la posición del dispositivo.
+    Tras iniciar la realidad aumentada con ARKit,
+    nuestro dispositivo crea un entorno virtual donde nuestro
+    dispositivo representa la coordenada (0,0,0), con los tres ejes,
+    el horizontal, vertical y el de profundidad, pero también es necesario
+    otro eje, el eje W que representa la rotación del dispositivo. En la Figura
+    \ref{fig:arkit} se puede observar cómo cambia el elemento virtual según como
+    situemos nuestro smartphone.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=4in]{figures/chapter-2/arkit.png}
-    \caption{RA en ARKit\cite{arkitimage}}
-    \label{fig:arkit}
-\end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=4in]{figures/chapter-2/arkit.png}
+        \caption{RA en ARKit\cite{arkitimage}}
+        \label{fig:arkit}
+    \end{figure}
+
+    Puntos positivos:
+    \begin{itemize}
+        \item Detecta imágenes 2D incluso en movimiento y objetos 3D.
+        \item Buena integración con iOS.
+    \end{itemize}
+    Puntos negativos:
+    \begin{itemize}
+        \item Es necesario ordenadores con macOS para el desarrollo.
+    \end{itemize}
 
 
+    \item Wikitude\cite{wikitude}:
+    es un kit de desarrollo para realidad aumentada con soporte para Android,
+    iOS, Unity, Cordova, Xamarin, Titanium y React Native.
+    Utiliza ARCore o ARKit cuando los dispositivos lo soportan y en caso
+    contrario utiliza tecnología de Wikitude para que el número de dispositivos
+    compatibles sea mayor. Algunas de las tecnologías que soporta Wikitude son
+    la geolocalización, el reconocimiento de imágenes y el reconocimiento en la
+    nube. Para entender cómo funciona este SDK tenemos que describir tres
+    términos básicos fundamentales:
+    \begin{itemize}
+        \item Target: conjunto de datos extraídos de una imagen, empleados por
+        un rastreador al reconocerla para realizar alguna acción.
+        \item Target Collection: es un conjunto de targets empleado por el
+        rastreador para reconocer imágenes en el mundo real.
+        \item Client Tracker: rastreador que usa la cámara para analizar objetos
+        2D, analiza el Target Collection y busca similitudes con la imagen
+        reconocida.
+    \end{itemize}
 
-\item Wikitude\cite{wikitude}:
-es un kit de desarrollo para realidad aumentada con soporte para Android, iOS, Unity, Cordova, Xamarin, Titanium y React Native.
-Su licencia es de pago, aunque hay versiones limitadas gratuitas.
-Utiliza ARCore o ARKit cuando los dispositivos lo soportan y en caso contrario utiliza tecnología de Wikitude
- para que el número de dispositivos compatibles sea mayor. Algunas de las tecnologías que soporta Wikitude son la geolocalización, el reconocimiento 
- de imágenes y el reconocimiento en la nube. Para entender cómo funciona este SDK tenemos que describir tres términos básicos fundamentales:
-\begin{itemize}
-    \item Target: conjunto de datos extraídos de una imagen, empleados por un rastreador al reconocerla para realizar alguna acción.
-    \item Target Collection: es un conjunto de targets empleado por el rastreador para reconocer imágenes en el mundo real.
-    \item Client Tracker: rastreador que usa la cámara para analizar objetos 2D, analiza el Target Collection y busca similitudes con la imagen reconocida.
-\end{itemize}
+    Puntos positivos:
+    \begin{itemize}
+        \item Compatibilidad con muchos dispositivos.
+        \item Dispone de reconocimiento de imágenes en la nube.
+    \end{itemize}
+    Puntos negativos:
+    \begin{itemize}
+        \item Su licencia es de pago, aunque hay versiones limitadas gratuitas,
+        pero limitan su funcionalidad.
+        \item Documentación obsoleta para algunas plataformas de desarrollo.
+    \end{itemize}
 
-\item Vuforia\cite{vuforia}:
-Kit de desarrollo para realidad aumentada con soporte para Android, iOS, UWP y Unity.
-Su licencia es de pago, aunque puede usarse gratis para el desarrollar y probar. Su integración con Unity permite crear aplicaciones y juegos 
-para que sean usados en Android y iOS simplemente arrastrando y soltando elementos. Usa un seguimiento basado en marcadores, los marcadores son las imágenes u objetos
-reconocidos por la aplicación para desencadenar la visualización del contenido virtual
-sobre su posición en la vista de la cámara.
-Los Image Targets u objetivos de imagen, son un tipo específico de marcador, son imágenes que se registran manualmente en la aplicación y que pueden ser guardadas en un Cloud,
-reduciendo así el peso de tener las imágenes a reconocer en el dispositivo.
-También se puede realizar un seguimiento sin marcado, basado en el GPS o en un giroscopio para insertar modelos de objetos virtuales en la realidad que capta la cámara.
 
-\item ViroReact\cite{viroreact}:
-Plataforma para construir aplicaciones con realidad aumentada usando React Native.
- Utiliza ARKit y ARCore para dotar a las aplicaciones de una experiencia de Realidad Aumentada sin
- utilizar código distinto y con una curva de aprendizaje fácil. Al basarse en React
- Native que no tiene versión estable provoca problemas con las versiones de dependencias,
- configuraciones tediosas y largas compilaciones.
-Es un software privativo gratuito.
+    \item Vuforia\cite{vuforia}:
+    Kit de desarrollo para realidad aumentada con soporte para Android, iOS,
+    UWP y Unity.
+    Su integración con Unity permite crear aplicaciones y juegos 
+    para que sean usados en Android y iOS simplemente arrastrando y soltando
+    elementos. Usa un seguimiento basado en marcadores, los marcadores son las
+    imágenes u objetos reconocidos por la aplicación para desencadenar la
+    visualización del contenido virtual sobre su posición en la vista de la
+    cámara.
+    Los Image Targets u objetivos de imagen, son un tipo específico de marcador,
+    son imágenes que se registran manualmente en la aplicación y que pueden ser
+    guardadas en un Cloud, reduciendo así el peso de tener las imágenes a
+    reconocer en el dispositivo.
+    También se puede realizar un seguimiento sin marcado, basado en el GPS o en
+    un giroscopio para insertar modelos de objetos virtuales en la realidad que
+    capta la cámara.
 
-\item Expo AR\cite{expoar}:
-Es un conjunto de librerías escritas de forma nativa para cada plataforma, proporcionando acceso a la funcionalidad del sistema del
-dispositivo (como pueden ser la cámara, notificaciones emergentes, contactos, almacenamiento local y otro tipo de hardware) desde JavaScript. Está 
-desarrollado para suavizar las diferencias entre plataformas lo máximo posible, consiguiendo que los proyectos que se realicen sean muy portables ya que pueden
-ejecutarse en cualquier entorno nativo que contengo el SDK de Expo.
-También proporciona componentes de interfaz de usuario para manejar una variedad de casos de uso que casi todas las aplicaciones móviles tienen que cubrir pero no están
-construidas en el núcleo de React Native, por ejemplo, iconos, vistas borrosas (aquellas que aparecen de fondo para que el usuario se centre más en los elementos que están superpuesto a la imagen), etc.
+    Puntos positivos:
+    \begin{itemize}
+        \item Se encuentran fácilmente ejemplos y documentación sobre su uso.
+        \item Compatibilidad con muchos dispositivos.
+        \item Dispone de reconocimiento de imágenes en la nube.
+    \end{itemize}
+    Puntos negativos:
+    \begin{itemize}
+        \item Su licencia es de pago, aunque puede usarse gratis para el desarrollar y
+        probar. Con limites de su funcionalidad.
+    \end{itemize}
+
+
+    \item ViroReact\cite{viroreact}:
+    Plataforma para construir aplicaciones con realidad aumentada usando
+    React Native. Es capaz de combinar tecnologías web que se pueden utilizar
+    en distintas plataformas con llamadas a APIs internas de las distintas
+    plataformas móviles. De este modo, podemos generar aplicaciones fácilmente
+    que funcionen en Android utilizando el potencial de ARCore y en iOS
+    utilizando el de ARKit.
+    A pesar de ser software privativo, su licencia no tiene limitaciones en
+    las funcionalidades.
+
+    Puntos positivos:
+    \begin{itemize}
+        \item Curva de aprendizaje fácil.
+        \item Se utiliza el mismo código para generar aplicaciones en iOS y
+        Android.
+    \end{itemize}
+    Puntos negativos:
+    \begin{itemize}
+        \item Al basarse en React Native que no tiene versión estable
+        provoca problemas con las versiones de dependencias.
+        \item Configuraciones tediosas y largas compilaciones.
+    \end{itemize}
+
+
+    \item Expo AR\cite{expoar}:
+    Es un conjunto de librerías escritas de forma nativa para cada plataforma,
+    proporcionando acceso a la funcionalidad del sistema del
+    dispositivo (como pueden ser la cámara, notificaciones emergentes,
+    contactos, almacenamiento local y otro tipo de hardware) desde JavaScript.
+    Está desarrollado para suavizar las diferencias entre plataformas lo máximo
+    posible, consiguiendo que los proyectos que se realicen sean muy portables
+    ya que pueden ejecutarse en cualquier entorno nativo que contengo el SDK de
+    Expo.
+    También proporciona componentes de interfaz de usuario para manejar una
+    variedad de casos de uso que casi todas las aplicaciones móviles tienen que
+    cubrir pero no están construidas en el núcleo de React Native, por ejemplo,
+    iconos, vistas borrosas (aquellas que aparecen de fondo para que el usuario
+    se centre más en los elementos que están superpuesto a la imagen), etc.
+
+    Puntos positivos:
+    \begin{itemize}
+        \item Curva de aprendizaje fácil.
+    \end{itemize}
+    Puntos negativos:
+    \begin{itemize}
+        \item En el momento del desarrollo de este proyecto solo tiene soporte
+        para iOS con ARKit.
+        \item Al basarse en React Native que no tiene versión estable
+        provoca problemas con las versiones de dependencias.
+        \item Configuraciones tediosas y largas compilaciones.
+    \end{itemize}
 \end{itemize}
 
 
